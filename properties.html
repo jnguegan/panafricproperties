@@ -4,56 +4,173 @@
   <meta charset="UTF-8" />
   <title>Properties — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-  <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42" />
-  <nav>
-    <a href="countries.html">Countries</a>
-    <a href="properties.html">Properties</a>
-    <a href="agents.html">Agents</a>
-    <a href="trust.html">Trust</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<header class="header">
+  <div class="wrap">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
+      </a>
 
-<div class="container">
-  <h1>Available Properties</h1>
-  <p>
-    Browse verified land, residential, and development opportunities.
-  </p>
-
-  <div class="property-grid">
-    <div class="property-card">
-      <h3>Modern Villa — Accra</h3>
-      <p>3-bedroom villa in East Legon.</p>
-      <p class="price">€180,000</p>
-    </div>
-
-    <div class="property-card">
-      <h3>Residential Land — Douala</h3>
-      <p>500 sqm titled plot.</p>
-      <p class="price">€35,000</p>
-    </div>
-
-    <div class="property-card">
-      <h3>Off-plan Apartments — Lagos</h3>
-      <p>2-bedroom apartments in Lekki.</p>
-      <p class="price">€95,000</p>
+      <nav class="navlinks">
+        <a href="countries.html">Countries</a>
+        <a href="properties.html">Properties</a>
+        <a href="agents.html">Agents</a>
+        <a href="trust.html">Trust</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </nav>
     </div>
   </div>
-</div>
+</header>
 
-<footer>
-  © 2026 PanAfric Properties. All rights reserved.
+<section class="section">
+  <div class="wrap">
+    <h1 style="color:var(--pap-blue);margin:0 0 8px;">Property Listings</h1>
+    <p class="small">MVP listings — static for now. Next step: real filters + country pages.</p>
+
+    <!-- Filter bar (visual only for MVP) -->
+    <div class="card" style="margin-top:12px;">
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;">
+        <div>
+          <label>Country</label>
+          <select>
+            <option>All</option>
+            <option>Ghana</option><option>Nigeria</option><option>Cameroon</option>
+            <option>Senegal</option><option>Ivory Coast</option><option>Mali</option><option>Zimbabwe</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Type</label>
+          <select>
+            <option>All</option>
+            <option>Land</option>
+            <option>Home</option>
+            <option>Development / Off-plan</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Budget</label>
+          <select>
+            <option>Any</option>
+            <option>Under €50k</option>
+            <option>€50k – €150k</option>
+            <option>€150k+</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Due diligence</label>
+          <select>
+            <option>Any</option>
+            <option>Verified</option>
+            <option>In Review</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <a class="btn" href="contact.html">Enquire</a>
+        <a class="btn ghost" href="trust.html" style="margin-left:10px;">How verification works</a>
+      </div>
+    </div>
+
+    <!-- Listings -->
+    <div class="grid" style="margin-top:14px;">
+      <div class="card">
+        <h3>Modern Villa — Accra (Ghana)</h3>
+        <p class="small">3-bedroom villa • East Legon • Ready to move in</p>
+        <p class="price">€180,000</p>
+        <p class="small"><b>Status:</b> Verified • <b>Agent:</b> Accra West Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+
+      <div class="card">
+        <h3>Residential Land — Douala (Cameroon)</h3>
+        <p class="small">500 sqm plot • Great access • Suitable for build</p>
+        <p class="price">€35,000</p>
+        <p class="small"><b>Status:</b> In Review • <b>Agent:</b> Douala Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+
+      <div class="card">
+        <h3>Off-plan Apartments — Lekki (Nigeria)</h3>
+        <p class="small">2-bedroom apartments • Payment plan available</p>
+        <p class="price">€95,000</p>
+        <p class="small"><b>Status:</b> Verified • <b>Agent:</b> Lagos Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+
+      <div class="card">
+        <h3>Residential Plot — Bamako (Mali)</h3>
+        <p class="small">Titled land • Residential zone • Good access</p>
+        <p class="price">€22,000</p>
+        <p class="small"><b>Status:</b> In Review • <b>Agent:</b> Bamako Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+
+      <div class="card">
+        <h3>Family Home — Harare (Zimbabwe)</h3>
+        <p class="small">3-bedroom home • Safe neighbourhood</p>
+        <p class="price">€78,000</p>
+        <p class="small"><b>Status:</b> Verified • <b>Agent:</b> Harare Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+
+      <div class="card">
+        <h3>City Apartment — Dakar (Senegal)</h3>
+        <p class="small">2-bedroom apartment • High rental demand</p>
+        <p class="price">€120,000</p>
+        <p class="small"><b>Status:</b> In Review • <b>Agent:</b> Dakar Partner</p>
+        <a class="btn ghost" href="contact.html">Request details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <p class="small" style="margin:10px 0 0;">
+          Trusted access to verified African real estate opportunities — built for the diaspora.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Platform</h3>
+        <p><a href="countries.html">Countries</a></p>
+        <p><a href="properties.html">Properties</a></p>
+        <p><a href="trust.html">Trust & Verification</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Franchise</h3>
+        <p class="small">Become a local partner and list verified opportunities in your territory.</p>
+        <p><a href="contact.html">Apply / Enquire</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Contact</h3>
+        <p class="small">For buyers, developers, and partners.</p>
+        <p><a href="contact.html">Message us</a></p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:18px;">
+      © 2026 PanAfric Properties. All rights reserved.
+    </p>
+  </div>
 </footer>
 
 </body>
 </html>
-
