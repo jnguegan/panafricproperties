@@ -4,49 +4,125 @@
   <meta charset="UTF-8" />
   <title>Contact — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-  <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42" />
-  <nav>
-    <a href="countries.html">Countries</a>
-    <a href="properties.html">Properties</a>
-    <a href="agents.html">Agents</a>
-    <a href="trust.html">Trust</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header class="header">
+  <div class="wrap">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
+      </a>
+
+      <nav class="navlinks">
+        <a href="countries.html">Countries</a>
+        <a href="properties.html">Properties</a>
+        <a href="agents.html">Agents</a>
+        <a href="trust.html">Trust</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </nav>
+    </div>
+  </div>
 </header>
 
-<div class="container">
-  <h1>Contact Us</h1>
-  <p>
-    Get in touch with our team for property enquiries, franchise opportunities,
-    or partnership discussions.
-  </p>
+<section class="section">
+  <div class="wrap">
+    <h1 style="color:var(--pap-blue);margin:0 0 8px;">Contact Us</h1>
+    <p class="small">Property enquiries, franchise applications, developer partnerships — send us a message.</p>
 
-  <form>
-    <label>Name</label>
-    <input type="text" />
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:12px;">
+      <div class="card">
+        <h3>Enquiry Form</h3>
 
-    <label>Email</label>
-    <input type="email" />
+        <!-- MVP form (static for now). Next: Netlify Forms -->
+        <form>
+          <label>Your name</label>
+          <input type="text" placeholder="Full name">
 
-    <label>Message</label>
-    <textarea rows="5"></textarea>
+          <label>Email</label>
+          <input type="email" placeholder="name@email.com">
 
-    <button type="submit">Send Message</button>
-  </form>
-</div>
+          <label>I am a…</label>
+          <select>
+            <option>Diaspora buyer</option>
+            <option>Local buyer</option>
+            <option>Developer / seller</option>
+            <option>Agent / franchise candidate</option>
+            <option>Partner / investor</option>
+          </select>
 
-<footer>
-  © 2026 PanAfric Properties. All rights reserved.
+          <label>Country of interest</label>
+          <select>
+            <option>Ghana</option><option>Nigeria</option><option>Cameroon</option>
+            <option>Senegal</option><option>Ivory Coast</option><option>Mali</option><option>Zimbabwe</option>
+          </select>
+
+          <label>Your message</label>
+          <textarea rows="5" placeholder="Tell us what you want to buy/build or how you want to partner."></textarea>
+
+          <div style="margin-top:12px;">
+            <button class="btn" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>What happens next?</h3>
+        <p class="small"><b>1)</b> We review your enquiry.</p>
+        <p class="small"><b>2)</b> We match you with the right local partner.</p>
+        <p class="small"><b>3)</b> You receive a clear action plan and next steps.</p>
+
+        <div class="section" style="padding:0;">
+          <h3 style="margin-top:14px;">Quick links</h3>
+          <p><a href="properties.html">Browse properties</a></p>
+          <p><a href="trust.html">Trust & verification</a></p>
+          <p><a href="agents.html">Franchise partners</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <p class="small" style="margin:10px 0 0;">
+          Trusted access to verified African real estate opportunities — built for the diaspora.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Platform</h3>
+        <p><a href="countries.html">Countries</a></p>
+        <p><a href="properties.html">Properties</a></p>
+        <p><a href="trust.html">Trust & Verification</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Franchise</h3>
+        <p class="small">Become a local partner and list verified opportunities in your territory.</p>
+        <p><a href="contact.html">Apply / Enquire</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Contact</h3>
+        <p class="small">For buyers, developers, and partners.</p>
+        <p><a href="contact.html">Message us</a></p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:18px;">
+      © 2026 PanAfric Properties. All rights reserved.
+    </p>
+  </div>
 </footer>
 
 </body>
 </html>
-
