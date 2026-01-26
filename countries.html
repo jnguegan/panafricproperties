@@ -4,47 +4,103 @@
   <meta charset="UTF-8" />
   <title>Countries — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-  <link rel="stylesheet" href="styles.css"></head>
-
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 
-<header>
-  <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42" />
-  <nav>
-    <a href="countries.html">Countries</a>
-    <a href="properties.html">Properties</a>
-    <a href="agents.html">Agents</a>
-    <a href="trust.html">Trust</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header class="header">
+  <div class="wrap">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
+      </a>
+
+      <nav class="navlinks">
+        <a href="countries.html">Countries</a>
+        <a href="properties.html">Properties</a>
+        <a href="agents.html">Agents</a>
+        <a href="trust.html">Trust</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </nav>
+    </div>
+  </div>
 </header>
 
-<div class="container">
-  <h1>Explore Countries</h1>
-  <p>
-    Discover verified property opportunities across Africa.  
-    Each country is managed by a licensed local franchise partner.
-  </p>
+<section class="section">
+  <div class="wrap">
+    <h1 style="color:var(--pap-blue);margin:0 0 8px;">Explore Countries</h1>
+    <p class="small">Choose a market to view verified opportunities and local franchise partners.</p>
 
-  <div class="country-grid">
-    <div class="country-card"><h3>Ghana</h3></div>
-    <div class="country-card"><h3>Nigeria</h3></div>
-    <div class="country-card"><h3>Cameroon</h3></div>
-    <div class="country-card"><h3>Senegal</h3></div>
-    <div class="country-card"><h3>Ivory Coast</h3></div>
-    <div class="country-card"><h3>Mali</h3></div>
-    <div class="country-card"><h3>Zimbabwe</h3></div>
+    <div class="grid" style="margin-top:12px;">
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Ghana</h3><p class="small">Accra • Kumasi • Tema</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Nigeria</h3><p class="small">Lagos • Abuja</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Cameroon</h3><p class="small">Douala • Yaoundé</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Senegal</h3><p class="small">Dakar • Thiès</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Ivory Coast</h3><p class="small">Abidjan • Bouaké</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Mali</h3><p class="small">Bamako</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Zimbabwe</h3><p class="small">Harare • Bulawayo</p>
+      </a>
+    </div>
 
+    <div style="margin-top:14px;">
+      <a class="btn" href="properties.html">Browse listings</a>
+      <a class="btn green" href="contact.html" style="margin-left:10px;">Franchise enquiry</a>
+    </div>
   </div>
-</div>
+</section>
 
-<footer>
-  © 2026 PanAfric Properties. All rights reserved.
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <p class="small" style="margin:10px 0 0;">
+          Trusted access to verified African real estate opportunities — built for the diaspora.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Platform</h3>
+        <p><a href="countries.html">Countries</a></p>
+        <p><a href="properties.html">Properties</a></p>
+        <p><a href="trust.html">Trust & Verification</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Franchise</h3>
+        <p class="small">Become a local partner and list verified opportunities in your territory.</p>
+        <p><a href="contact.html">Apply / Enquire</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Contact</h3>
+        <p class="small">For buyers, developers, and partners.</p>
+        <p><a href="contact.html">Message us</a></p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:18px;">
+      © 2026 PanAfric Properties. All rights reserved.
+    </p>
+  </div>
 </footer>
 
 </body>
 </html>
-
