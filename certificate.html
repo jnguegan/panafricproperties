@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partner Certificate — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script src="academy.js"></script>
+<script src="modules.js"></script>
+<script>
+papRequirePartner();
+</script>
+
+<section class="section">
+  <div class="wrap">
+    <a class="btn ghost" href="academy.html">← Back to Academy</a>
+
+    <div class="card" id="locked" style="padding:22px 18px; margin-top:12px; display:none;">
+      <h2>Certificate Locked</h2>
+      <p class="small">
+        Complete all modules to unlock your Partner Certification.
+      </p>
+      <p class="small" id="lockStatus"></p>
+    </div>
+
+    <div class="card" id="cert" style="padding:26px 18px; margin-top:12px; display:none;">
+      <div style="text-align:center;">
+        <h2 style="margin-bottom:6px;">PanAfric Properties</h2>
+        <p class="small" style="margin:0;">Training & Certification Program</p>
+        <hr style="margin:16px 0; opacity:.2;">
+        <h1 style="margin:0 0 8px;">Certificate of Completion</h1>
+        <p class="small" style="max-width:720px; margin:0 auto;">
+          This certifies that the partner named below has successfully completed all training modules
+          and assessments under the PanAfric Properties Partner Academy.
+        </p>
+
+        <div style="margin-top:18px;">
+          <h2 id="partnerName" style="margin:0;"></h2>
+          <p class="small" id="partnerEmail" style="margin:6px 0 0;"></p>
+          <p class="small" id="certId" style="margin:6px 0 0; opacity:.8;"></p>
+          <p class="small" id="certDate" style="margin:6px 0 0; opacity:.8;"></p>
+        </div>
+
+        <div style="margin-top:18px;">
+          <button class="btn green" onclick="window.print()">Print / Save PDF</button>
+        </div>
+
+        <p class="small" style="margin-top:14px; opacity:.8;">
+          Note: Certification remains active subject to ongoing compliance, ethics, and platform standards.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const { passed } = papPercentComplete(TOTAL_MODULES);
+const allDone = passed === TOTAL_MODULES;
+
+if (!allDone) {
+  document.getElementById("locked").style.display = "block";
+  document.getElementById("lockStatus").innerText = `Progress: ${passed}/${TOTAL_MODULES} modules completed.`;
+} else {
+  document.getElementById("cert").style.display = "block";
+  const name = localStorage.getItem(PAP.keys.partnerName) || "Partner";
+  const email = localStorage.getItem(PAP.keys.partnerEmail) || "";
+  const dateStr = new Date().toLocaleDateString();
+
+  document.getElementById("partnerName").innerText = name;
+  document.getElementById("partnerEmail").innerText = email;
+
+  const id = "PAP-" + (email || "PARTNER").replace(/[^A-Z0-9]/ig, "").toUpperCase().slice(0, 10) + "-" + Date.now().toString().slice(-6);
+  document.getElementById("certId").innerText = `Certificate ID: ${id}`;
+  document.getElementById("certDate").innerText = `Issued on: ${dateStr}`;
+}
+</script>
+
+</body>
+</html>
