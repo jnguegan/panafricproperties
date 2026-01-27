@@ -8,11 +8,16 @@
 </head>
 <body>
 
+<!-- ✅ AUTH0 GUARD (paste right after <body>) -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
+<script>
+  authHandleRedirect(function(){});
+  authRequireLogin();
+</script>
+
 <script src="academy.js"></script>
 <script src="modules.js"></script>
-<script>
-papRequirePartner();
-</script>
 
 <section class="section">
   <div class="wrap">
@@ -20,9 +25,7 @@ papRequirePartner();
 
     <div class="card" id="locked" style="padding:22px 18px; margin-top:12px; display:none;">
       <h2>Certificate Locked</h2>
-      <p class="small">
-        Complete all modules to unlock your Partner Certification.
-      </p>
+      <p class="small">Complete all modules to unlock your Partner Certification.</p>
       <p class="small" id="lockStatus"></p>
     </div>
 
@@ -46,6 +49,7 @@ papRequirePartner();
 
         <div style="margin-top:18px;">
           <button class="btn green" onclick="window.print()">Print / Save PDF</button>
+          <button class="btn ghost" type="button" onclick="authLogout()" style="margin-left:10px;">Log out</button>
         </div>
 
         <p class="small" style="margin-top:14px; opacity:.8;">
@@ -57,26 +61,31 @@ papRequirePartner();
 </section>
 
 <script>
-const { passed } = papPercentComplete(TOTAL_MODULES);
-const allDone = passed === TOTAL_MODULES;
+  const { passed } = papPercentComplete(TOTAL_MODULES);
+  const allDone = passed === TOTAL_MODULES;
 
-if (!allDone) {
-  document.getElementById("locked").style.display = "block";
-  document.getElementById("lockStatus").innerText = `Progress: ${passed}/${TOTAL_MODULES} modules completed.`;
-} else {
-  document.getElementById("cert").style.display = "block";
-  const name = localStorage.getItem(PAP.keys.partnerName) || "Partner";
-  const email = localStorage.getItem(PAP.keys.partnerEmail) || "";
-  const dateStr = new Date().toLocaleDateString();
+  if (!allDone) {
+    document.getElementById("locked").style.display = "block";
+    document.getElementById("lockStatus").innerText = `Progress: ${passed}/${TOTAL_MODULES} modules completed.`;
+  } else {
+    document.getElementById("cert").style.display = "block";
+    const user = authGetUser();
+    const name = user.name || user.nickname || user.email || "Partner";
+    const email = user.email || "";
 
-  document.getElementById("partnerName").innerText = name;
-  document.getElementById("partnerEmail").innerText = email;
+    const dateStr = new Date().toLocaleDateString();
+    const id =
+      "PAP-" +
+      (email || "PARTNER").replace(/[^A-Z0-9]/ig, "").toUpperCase().slice(0, 10) +
+      "-" +
+      Date.now().toString().slice(-6);
 
-  const id = "PAP-" + (email || "PARTNER").replace(/[^A-Z0-9]/ig, "").toUpperCase().slice(0, 10) + "-" + Date.now().toString().slice(-6);
-  document.getElementById("certId").innerText = `Certificate ID: ${id}`;
-  document.getElementById("certDate").innerText = `Issued on: ${dateStr}`;
-}
+    document.getElementById("partnerName").innerText = name;
+    document.getElementById("partnerEmail").innerText = email;
+    document.getElementById("certId").innerText = `Certificate ID: ${id}`;
+    document.getElementById("certDate").innerText = `Issued on: ${dateStr}`;
+  }
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </body>
 </html>
