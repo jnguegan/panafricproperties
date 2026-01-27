@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apply — Franchise Program | PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="brand/primary_logo.png" alt="PanAfric Properties" height="42">
+      </a>
+
+      <nav class="navlinks">
+        <a href="countries.html">Countries</a>
+        <a href="properties.html">Properties</a>
+        <a href="agents.html">Agents</a>
+        <a href="franchise.html">Work With Us</a>
+        <a href="trust.html">Trust</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Franchise Application</span>
+    <h1>Apply to Join Our Franchise Program</h1>
+    <p>
+      This program is for ambitious individuals who want to build a self-employed
+      real estate business in their home city under the PanAfric Properties franchise model.
+      No prior real estate experience is required.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="max-width:760px; margin:auto;">
+      <h2>Partner Application Form</h2>
+
+      <form name="franchise-application" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="franchise-application">
+
+        <p>
+          <label>Full Name<br>
+            <input type="text" name="name" required>
+          </label>
+        </p>
+
+        <p>
+          <label>Email Address<br>
+            <input type="email" name="email" required>
+          </label>
+        </p>
+
+        <p>
+          <label>Phone Number<br>
+            <input type="text" name="phone" required>
+          </label>
+        </p>
+
+        <p>
+          <label>Country of Residence<br>
+            <input type="text" name="country_residence" required>
+          </label>
+        </p>
+
+        <p>
+          <label>City You Want to Operate In<br>
+            <input type="text" name="city_target" required>
+          </label>
+        </p>
+
+        <p>
+          <label>Education Level<br>
+            <select name="education" required>
+              <option value="">Select</option>
+              <option>Non-graduate</option>
+              <option>Graduate</option>
+              <option>Postgraduate</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Employment Status<br>
+            <select name="employment_status" required>
+              <option value="">Select</option>
+              <option>Unemployed</option>
+              <option>Employed</option>
+              <option>Self-employed</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Why do you want to join PanAfric Properties?<br>
+            <textarea name="motivation" rows="4" required></textarea>
+          </label>
+        </p>
+
+        <p>
+          <label>Do you have any real estate experience?<br>
+            <select name="experience">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Can you invest in basic setup costs (marketing, transport, admin)?<br>
+            <select name="basic_capital" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Anything else you would like us to know?<br>
+            <textarea name="notes" rows="3"></textarea>
+          </label>
+        </p>
+
+        <p style="margin-top:14px;">
+          <button type="submit" class="btn green">
+            Submit
