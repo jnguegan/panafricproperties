@@ -8,11 +8,16 @@
 </head>
 <body>
 
+<!-- ✅ AUTH0 GUARD (paste right after <body>) -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
+<script>
+  authHandleRedirect(function(){});
+  authRequireLogin();
+</script>
+
 <script src="academy.js"></script>
 <script src="modules.js"></script>
-<script>
-papRequirePartner();
-</script>
 
 <section class="section">
   <div class="wrap">
@@ -30,68 +35,71 @@ papRequirePartner();
       <form id="quizForm" onsubmit="return submitQuiz()"></form>
 
       <p class="small" id="msg" style="margin-top:12px;"></p>
+
+      <div style="margin-top:14px;">
+        <button class="btn ghost" type="button" onclick="authLogout()">Log out</button>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const moduleId = parseInt(params.get("m") || "1", 10);
-const mod = MODULES.find(x => x.id === moduleId);
+  const params = new URLSearchParams(window.location.search);
+  const moduleId = parseInt(params.get("m") || "1", 10);
+  const mod = MODULES.find(x => x.id === moduleId);
 
-if (!mod) {
-  window.location.href = "academy.html";
-}
+  if (!mod) window.location.href = "academy.html";
 
-document.getElementById("title").innerText = `Module ${mod.id} — ${mod.title}`;
+  document.getElementById("title").innerText = `Module ${mod.id} — ${mod.title}`;
 
-const reading = document.getElementById("reading");
-mod.reading.forEach(p => {
-  const el = document.createElement("p");
-  el.className = "small";
-  el.innerText = p;
-  reading.appendChild(el);
-});
-
-const quizForm = document.getElementById("quizForm");
-mod.quiz.forEach((item, idx) => {
-  const block = document.createElement("div");
-  block.style.marginTop = "12px";
-  block.innerHTML = `
-    <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
-    <select id="q${idx}" required>
-      <option value="">Select</option>
-      ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
-    </select>
-  `;
-  quizForm.appendChild(block);
-});
-
-quizForm.insertAdjacentHTML("beforeend", `
-  <div style="margin-top:14px;">
-    <button class="btn green" type="submit">Submit Test</button>
-  </div>
-`);
-
-function submitQuiz() {
-  let correct = 0;
-  mod.quiz.forEach((item, idx) => {
-    const v = document.getElementById(`q${idx}`).value;
-    if (String(item.answerIndex) === String(v)) correct++;
+  const reading = document.getElementById("reading");
+  mod.reading.forEach(p => {
+    const el = document.createElement("p");
+    el.className = "small";
+    el.innerText = p;
+    reading.appendChild(el);
   });
 
-  if (correct === mod.quiz.length) {
-    papMarkModulePassed(mod.id);
-    document.getElementById("msg").style.color = "green";
-    document.getElementById("msg").innerText = "✅ Test passed. Module completed. Return to Academy to continue.";
-  } else {
-    document.getElementById("msg").style.color = "#b00020";
-    document.getElementById("msg").innerText = `❌ Not yet. You got ${correct}/${mod.quiz.length}. Please review and try again.`;
-  }
+  const quizForm = document.getElementById("quizForm");
+  mod.quiz.forEach((item, idx) => {
+    const block = document.createElement("div");
+    block.style.marginTop = "12px";
+    block.innerHTML = `
+      <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
+      <select id="q${idx}" required>
+        <option value="">Select</option>
+        ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
+      </select>
+    `;
+    quizForm.appendChild(block);
+  });
 
-  return false;
-}
+  quizForm.insertAdjacentHTML("beforeend", `
+    <div style="margin-top:14px;">
+      <button class="btn green" type="submit">Submit Test</button>
+    </div>
+  `);
+
+  function submitQuiz() {
+    let correct = 0;
+    mod.quiz.forEach((item, idx) => {
+      const v = document.getElementById(\`q\${idx}\`).value;
+      if (String(item.answerIndex) === String(v)) correct++;
+    });
+
+    if (correct === mod.quiz.length) {
+      papMarkModulePassed(mod.id);
+      document.getElementById("msg").style.color = "green";
+      document.getElementById("msg").innerText =
+        "✅ Test passed. Module completed. Return to Academy to continue.";
+    } else {
+      document.getElementById("msg").style.color = "#b00020";
+      document.getElementById("msg").innerText =
+        `❌ Not yet. You got ${correct}/${mod.quiz.length}. Please review and try again.`;
+    }
+    return false;
+  }
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </body>
 </html>
