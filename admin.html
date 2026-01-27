@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — Partner Approvals (v1)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="max-width:680px;margin:0 auto;">
+      <h2>Admin — Partner Approvals (v1)</h2>
+      <p class="small">
+        This is a simple local approval panel (MVP). Approved emails are stored in your browser (localStorage).
+        Later we will move approvals to a real database.
+      </p>
+
+      <form onsubmit="return adminLogin()" id="adminLoginForm">
+        <label>Admin Password</label>
+        <input type="password" id="adminPass" required>
+        <div style="margin-top:12px;">
+          <button class="btn green" type="submit">Unlock Admin Panel</button>
+          <a class="btn ghost" style="margin-left:10px;" href="login.html">Back</a>
+        </div>
+      </form>
+
+      <div id="panel" style="display:none; margin-top:18px;">
+        <hr style="margin:18px 0; opacity:.2;">
+        <h3>Approve a Partner</h3>
+
+        <form onsubmit="return addApproved()">
+          <label>Partner Email to Approve</label>
+          <input type="email" id="approveEmail" required>
+
+          <div style="margin-top:12px;">
+            <button class="btn green" type="submit">Approve Email</button>
+            <button class="btn ghost" type="button" onclick="clearApproved()" style="margin-left:10px;">Clear List</button>
+          </div>
+        </form>
+
+        <h3 style="margin-top:18px;">Approved Partners</h3>
+        <div id="list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="academy.js"></script>
+<script>
+const ADMIN_PASS = "ChangeMeNow123"; // CHANGE THIS
+
+function adminLogin() {
+  const pass = document.getElementById("adminPass").value;
+  if (pass !== ADMIN_PASS) {
+    alert("Wrong admin password.");
+    return false;
+  }
+  document.getElementById("adminLoginForm").style.display = "none";
+  document.getElementById("panel").style.display = "block";
+  renderList();
+  return false;
+}
+
+function addApproved() {
+  const email = document.getElementById("approveEmail").value.trim().toLowerCase();
+  const list = papGetApprovedList();
+  if (!list.map(e => e.toLowerCase()).includes(email)) list.push(email);
+  localStorage.setItem(PAP.keys.approved, JSON.stringify(list));
+  document.getElementById("approveEmail").value = "";
+  renderList();
+  return false;
+}
+
+function clearApproved() {
+  if (!confirm("Clear approved list from this browser?")) return;
+  localStorage.setItem(PAP.keys.approved, JSON.stringify([]));
+  renderList();
+}
+
+function renderList() {
+  const list = papGetApprovedList();
+  const box = document.getElementById("list");
+  if (!list.length) {
+    box.innerHTML = `<p class="small">No approved partners yet (in this browser).</p>`;
+    return;
+  }
+  box.innerHTML = list.map(e => `<p class="small">✅ ${e}</p>`).join("");
+}
+</script>
+
+</body>
+</html>
