@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css">
 </head>
-  <script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
-<script src="auth.js"></script>
 
 <body>
 
@@ -16,63 +14,30 @@
     <div class="card" style="max-width:460px;margin:0 auto;">
       <h2>Partner Login</h2>
       <p class="small">
-        Access the PanAfric Properties Training Platform. Login is available to approved applicants only.
+        Access the PanAfric Properties Training Platform.
+        Login is available to approved partners only.
       </p>
 
-      <form onsubmit="return login()">
-        <label>Full Name</label>
-        <input type="text" id="name" required>
+      <div style="margin-top:14px;">
+        <button class="btn green" type="button" onclick="authLogin()">
+          Log in
+        </button>
+        <a class="btn ghost" style="margin-left:10px;" href="training.html">
+          Back
+        </a>
+      </div>
 
-        <label>Email</label>
-        <input type="email" id="email" required>
-
-        <label>Password</label>
-        <input type="password" id="password" required>
-
-        <div style="margin-top:14px;">
-          <button class="btn green" type="submit">Log In</button>
-          <a class="btn ghost" style="margin-left:10px;" href="training.html">Back</a>
-        </div>
-      </form>
-
-      <p class="small" id="loginMsg" style="margin-top:12px; color:#b00020;"></p>
-
-      <hr style="margin:18px 0; opacity:.2;">
-      <p class="small">
-        Admin? <a href="admin.html">Open approval panel</a>
+      <p class="small" style="margin-top:14px;opacity:.8;">
+        Not approved yet?
+        <a href="franchise.html">Apply to join our Partner Program</a>.
       </p>
     </div>
   </div>
 </section>
 
-<script src="academy.js"></script>
-<script>
-function login() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim().toLowerCase();
-  const password = document.getElementById("password").value;
+<!-- ✅ AUTH0 SCRIPTS — BOTH TOGETHER, RIGHT BEFORE </body> -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
 
-  // Basic password check (v1). Replace later with real auth.
-  if (password.length < 4) {
-    document.getElementById("loginMsg").innerText = "Password must be at least 4 characters.";
-    return false;
-  }
-
-  // Allow demo account always
-  const demoOk = (email === "partner@test.com" && password === "1234");
-
-  // Approved list check
-  if (!demoOk && !papIsApproved(email)) {
-    document.getElementById("loginMsg").innerText =
-      "Your account is not approved yet. Please apply via Work With Us and wait for confirmation.";
-    return false;
-  }
-
-  papSetPartnerSession({ email, name });
-  window.location.href = "academy.html";
-  return false;
-}
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 </html>
