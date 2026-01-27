@@ -207,20 +207,75 @@
 
 <section class="section" id="apply">
   <div class="wrap">
-    <div class="card" style="text-align:center; padding:32px 24px;">
-      <h2>Apply to Join Our Franchise Program</h2>
-      <p class="small" style="max-width:720px; margin:12px auto 18px;">
-        If you are ambitious, motivated, and committed to building a credible real estate business
-        in your home city, we invite you to apply to become a PanAfric Properties franchise partner.
+    <div class="card" style="padding:32px 24px;">
+      <h2 style="text-align:center;">Apply to Join Our Franchise Program</h2>
+      <p class="small" style="max-width:720px; margin:12px auto 22px; text-align:center;">
+        Complete the form below to apply as a PanAfric Properties franchise partner.
         No prior real estate experience is required.
       </p>
 
-      <a class="btn green" href="contact.html">
-        Start Your Application
-      </a>
+      <form action="https://formsubmit.co/your@email.com" method="POST">
+
+        <div class="grid">
+          <div>
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+          </div>
+
+          <div>
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+          </div>
+
+          <div>
+            <label>Phone / WhatsApp</label>
+            <input type="text" name="phone" required>
+          </div>
+
+          <div>
+            <label>City & Country</label>
+            <input type="text" name="location" required>
+          </div>
+
+          <div>
+            <label>Education Level</label>
+            <select name="education">
+              <option value="">Select</option>
+              <option>Secondary School</option>
+              <option>Diploma</option>
+              <option>University Degree</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Employment Status</label>
+            <select name="employment">
+              <option value="">Select</option>
+              <option>Unemployed</option>
+              <option>Self-employed</option>
+              <option>Employed</option>
+              <option>Student</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label>Why do you want to join PanAfric Properties?</label>
+          <textarea name="motivation" rows="4"></textarea>
+        </div>
+
+        <div style="margin-top:16px; text-align:center;">
+          <button type="submit" class="btn green">
+            Submit Application
+          </button>
+        </div>
+
+      </form>
     </div>
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="wrap">
