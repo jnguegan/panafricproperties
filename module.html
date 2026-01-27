@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Training Module — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script src="academy.js"></script>
+<script src="modules.js"></script>
+<script>
+papRequirePartner();
+</script>
+
+<section class="section">
+  <div class="wrap">
+    <a class="btn ghost" href="academy.html">← Back to Academy</a>
+
+    <div class="card" style="padding:22px 18px; margin-top:12px;">
+      <h2 id="title"></h2>
+      <div id="reading"></div>
+
+      <hr style="margin:18px 0; opacity:.2;">
+
+      <h3>Quick Test</h3>
+      <p class="small">Answer all questions correctly to complete this module.</p>
+
+      <form id="quizForm" onsubmit="return submitQuiz()"></form>
+
+      <p class="small" id="msg" style="margin-top:12px;"></p>
+    </div>
+  </div>
+</section>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const moduleId = parseInt(params.get("m") || "1", 10);
+const mod = MODULES.find(x => x.id === moduleId);
+
+if (!mod) {
+  window.location.href = "academy.html";
+}
+
+document.getElementById("title").innerText = `Module ${mod.id} — ${mod.title}`;
+
+const reading = document.getElementById("reading");
+mod.reading.forEach(p => {
+  const el = document.createElement("p");
+  el.className = "small";
+  el.innerText = p;
+  reading.appendChild(el);
+});
+
+const quizForm = document.getElementById("quizForm");
+mod.quiz.forEach((item, idx) => {
+  const block = document.createElement("div");
+  block.style.marginTop = "12px";
+  block.innerHTML = `
+    <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
+    <select id="q${idx}" required>
+      <option value="">Select</option>
+      ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
+    </select>
+  `;
+  quizForm.appendChild(block);
+});
+
+quizForm.insertAdjacentHTML("beforeend", `
+  <div style="margin-top:14px;">
+    <button class="btn green" type="submit">Submit Test</button>
+  </div>
+`);
+
+function submitQuiz() {
+  let correct = 0;
+  mod.quiz.forEach((item, idx) => {
+    const v = document.getElementById(`q${idx}`).value;
+    if (String(item.answerIndex) === String(v)) correct++;
+  });
+
+  if (correct === mod.quiz.length) {
+    papMarkModulePassed(mod.id);
+    document.getElementById("msg").style.color = "green";
+    document.getElementById("msg").innerText = "✅ Test passed. Module completed. Return to Academy to continue.";
+  } else {
+    document.getElementById("msg").style.color = "#b00020";
+    document.getElementById("msg").innerText = `❌ Not yet. You got ${correct}/${mod.quiz.length}. Please review and try again.`;
+  }
+
+  return false;
+}
+</script>
+
+</body>
+</html>
