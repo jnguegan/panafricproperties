@@ -8,11 +8,16 @@
 </head>
 <body>
 
+<!-- ✅ AUTH0 GUARD (paste right after <body>) -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
+<script>
+  authHandleRedirect(function(){});
+  authRequireLogin();
+</script>
+
 <script src="academy.js"></script>
 <script src="modules.js"></script>
-<script>
-papRequirePartner();
-</script>
 
 <section class="section">
   <div class="wrap">
@@ -30,57 +35,56 @@ papRequirePartner();
         <div class="card">
           <h3 style="margin:0 0 6px;">Certification</h3>
           <p class="small" id="certStatus"></p>
-          <a class="btn green" id="certBtn" href="certificate.html" style="display:none; margin-top:10px;">View Certificate</a>
+          <a class="btn green" id="certBtn" href="certificate.html" style="display:none; margin-top:10px;">
+            View Certificate
+          </a>
         </div>
 
         <div class="card">
           <h3 style="margin:0 0 6px;">Session</h3>
-          <p class="small"><a href="#" onclick="doLogout(); return false;">Log out</a></p>
+          <button class="btn ghost" type="button" onclick="authLogout()">Log out</button>
         </div>
       </div>
     </div>
 
     <h2 style="margin-top:18px;">Modules</h2>
-
     <div class="grid" id="modulesGrid"></div>
   </div>
 </section>
 
 <script>
-function doLogout() {
-  papLogout();
-  window.location.href = "login.html";
-}
+  // user from Auth0 token payload (stored in auth.js)
+  const user = authGetUser();
+  const name = user.name || user.nickname || user.email || "Partner";
+  const email = user.email || "";
 
-const name = localStorage.getItem(PAP.keys.partnerName) || "Partner";
-const email = localStorage.getItem(PAP.keys.partnerEmail) || "";
-document.getElementById("welcome").innerText = `Welcome, ${name} (${email}).`;
+  document.getElementById("welcome").innerText = `Welcome, ${name}${email ? " (" + email + ")" : ""}.`;
 
-const { passed, pct } = papPercentComplete(TOTAL_MODULES);
-document.getElementById("progressText").innerText = `${passed} / ${TOTAL_MODULES} modules completed (${pct}%).`;
+  const { passed, pct } = papPercentComplete(TOTAL_MODULES);
+  document.getElementById("progressText").innerText = `${passed} / ${TOTAL_MODULES} modules completed (${pct}%).`;
 
-const allDone = passed === TOTAL_MODULES;
-document.getElementById("certStatus").innerText = allDone
-  ? "Unlocked — you have completed all modules."
-  : "Locked — complete all modules to unlock.";
+  const allDone = passed === TOTAL_MODULES;
+  document.getElementById("certStatus").innerText = allDone
+    ? "Unlocked — you have completed all modules."
+    : "Locked — complete all modules to unlock.";
 
-if (allDone) document.getElementById("certBtn").style.display = "inline-block";
+  if (allDone) document.getElementById("certBtn").style.display = "inline-block";
 
-const grid = document.getElementById("modulesGrid");
-MODULES.forEach(m => {
-  const done = papIsModulePassed(m.id);
-  const card = document.createElement("a");
-  card.className = "card";
-  card.href = `module.html?m=${m.id}`;
-  card.style.textDecoration = "none";
-  card.innerHTML = `
-    <h3>Module ${m.id}</h3>
-    <p class="small">${m.title}</p>
-    <p class="small" style="margin-top:8px;"><strong>Status:</strong> ${done ? "Completed ✅" : "Not completed"}</p>
-  `;
-  grid.appendChild(card);
-});
+  const grid = document.getElementById("modulesGrid");
+  MODULES.forEach(m => {
+    const done = papIsModulePassed(m.id);
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = `module.html?m=${m.id}`;
+    card.style.textDecoration = "none";
+    card.innerHTML = `
+      <h3>Module ${m.id}</h3>
+      <p class="small">${m.title}</p>
+      <p class="small" style="margin-top:8px;"><strong>Status:</strong> ${done ? "Completed ✅" : "Not completed"}</p>
+    `;
+    grid.appendChild(card);
+  });
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </body>
 </html>
