@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partner Login — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="max-width:420px;margin:0 auto;">
+      <h2>Partner Login</h2>
+      <p class="small">
+        Access the PanAfric Properties Training Platform.
+      </p>
+
+      <form onsubmit="return login()">
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" required>
+
+        <div style="margin-top:14px;">
+          <button class="btn green" type="submit">Log In</button>
+        </div>
+      </form>
+
+      <p class="small" id="loginMsg" style="color:red;"></p>
+    </div>
+  </div>
+</section>
+
+<script>
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (email === "partner@test.com" && password === "1234") {
+    localStorage.setItem("pap_partner", "true");
+    window.location.href = "academy.html";
+  } else {
+    document.getElementById("loginMsg").innerText = "Invalid login credentials.";
+  }
+
+  return false;
+}
+</script>
+
+</body>
+</html>
 
