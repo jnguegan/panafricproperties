@@ -1,14 +1,52 @@
-/* academy.js — shared helper for login, gating, progress, certificate */
+/* academy.js — shared helper for gating + per-user progress (Auth0-compatible) */
 
 const PAP = {
   keys: {
+    // legacy / MVP keys (still kept so nothing breaks)
     approved: "pap_approved_partners",
     partnerEmail: "pap_partner_email",
     partnerName: "pap_partner_name",
     isPartner: "pap_partner",
-    progress: "pap_progress"
+
+    // NEW: progress is now namespaced per user
+    progressPrefix: "pap_progress__"
   }
 };
+
+/* ---------------------------
+   Utilities
+--------------------------- */
+
+function papSafeEmailKey(email) {
+  return String(email || "anon")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9@._-]/g, "_");
+}
+
+function papCurrentUserEmail() {
+  // Prefer Auth0 user (new system)
+  try {
+    if (typeof authGetUser === "function") {
+      const u = authGetUser();
+      if (u && u.email) return String(u.email).trim().toLowerCase();
+    }
+  } catch (e) {}
+
+  // Fallback: legacy session storage (old system)
+  const legacy = localStorage.getItem(PAP.keys.partnerEmail);
+  if (legacy) return String(legacy).trim().toLowerCase();
+
+  return "anon";
+}
+
+function papProgressKey() {
+  return PAP.keys.progressPrefix + papSafeEmailKey(papCurrentUserEmail());
+}
+
+/* ---------------------------
+   Approved list (legacy helper)
+--------------------------- */
 
 function papGetApprovedList() {
   try {
@@ -23,6 +61,10 @@ function papIsApproved(email) {
   return list.includes((email || "").toLowerCase());
 }
 
+/* ---------------------------
+   Legacy partner session (kept for compatibility)
+--------------------------- */
+
 function papSetPartnerSession({ email, name }) {
   localStorage.setItem(PAP.keys.partnerEmail, email || "");
   localStorage.setItem(PAP.keys.partnerName, name || "");
@@ -35,21 +77,40 @@ function papLogout() {
   localStorage.removeItem(PAP.keys.partnerName);
 }
 
+/* ---------------------------
+   Partner gate (Auth0-friendly)
+--------------------------- */
+
 function papRequirePartner() {
+  // If Auth0 is available, require Auth0 login
+  try {
+    if (typeof authGetUser === "function") {
+      const u = authGetUser();
+      if (u && (u.email || u.name)) return; // logged in
+      window.location.href = "login.html";
+      return;
+    }
+  } catch (e) {}
+
+  // Fallback: legacy session
   const ok = localStorage.getItem(PAP.keys.isPartner) === "true";
   if (!ok) window.location.href = "login.html";
 }
 
+/* ---------------------------
+   Progress (NEW: per user)
+--------------------------- */
+
 function papGetProgress() {
   try {
-    return JSON.parse(localStorage.getItem(PAP.keys.progress) || "{}");
+    return JSON.parse(localStorage.getItem(papProgressKey()) || "{}");
   } catch {
     return {};
   }
 }
 
 function papSetProgress(progressObj) {
-  localStorage.setItem(PAP.keys.progress, JSON.stringify(progressObj || {}));
+  localStorage.setItem(papProgressKey(), JSON.stringify(progressObj || {}));
 }
 
 function papMarkModulePassed(moduleId) {
@@ -70,3 +131,7 @@ function papPercentComplete(totalModules) {
   return { passed, pct };
 }
 
+/* Optional helper: reset progress for the currently logged-in user */
+function papResetMyProgress() {
+  localStorage.removeItem(papProgressKey());
+}
