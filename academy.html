@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- ✅ AUTH0 GUARD (paste right after <body>) -->
+<!-- ✅ AUTH0 GUARD (right after <body>) -->
 <script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
 <script src="auth.js"></script>
 <script>
@@ -21,55 +21,103 @@
 
 <section class="section">
   <div class="wrap">
-    <div class="card" style="padding:18px 18px;">
-      <h2 style="margin-bottom:6px;">Partner Academy</h2>
-      <p class="small" id="welcome"></p>
+
+    <div class="card" style="padding:18px;">
+      <h2 style="margin:0 0 6px;">Partner Academy</h2>
+      <p class="small" id="welcome" style="margin:0;"></p>
 
       <div class="grid" style="margin-top:12px;">
+        <!-- Progress -->
         <div class="card">
           <h3 style="margin:0 0 6px;">Progress</h3>
-          <p class="small" id="progressText"></p>
-          <p class="small" style="opacity:.8;">Complete all modules to unlock certification.</p>
+          <div class="small" id="progressText"></div>
+
+          <div style="height:10px;background:rgba(0,0,0,.08);border-radius:999px;overflow:hidden;margin-top:8px;">
+            <div id="progressBar" style="height:10px;width:0%;background:var(--pap-blue);"></div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <a class="btn green" id="resumeBtn" href="module.html?m=1" style="display:none;">Resume next module</a>
+          </div>
+
+          <p class="small" style="margin-top:10px;opacity:.8;">
+            Complete all modules to unlock certification.
+          </p>
         </div>
 
+        <!-- Certification -->
         <div class="card">
           <h3 style="margin:0 0 6px;">Certification</h3>
-          <p class="small" id="certStatus"></p>
-          <a class="btn green" id="certBtn" href="certificate.html" style="display:none; margin-top:10px;">
-            View Certificate
-          </a>
+          <p class="small" id="certStatus" style="margin:0;"></p>
+
+          <div style="margin-top:12px;">
+            <a class="btn green" id="certBtn" href="certificate.html" style="display:none;">View Certificate</a>
+          </div>
+
+          <p class="small" id="certBadge" style="margin-top:10px;display:none;">
+            ✅ <strong>Certified Partner</strong>
+          </p>
         </div>
 
+        <!-- Session -->
         <div class="card">
           <h3 style="margin:0 0 6px;">Session</h3>
           <button class="btn ghost" type="button" onclick="authLogout()">Log out</button>
+
+          <div id="adminLinkBox" style="margin-top:12px; display:none;">
+            <a class="btn ghost" href="admin.html">Open Admin Panel</a>
+          </div>
         </div>
       </div>
     </div>
 
     <h2 style="margin-top:18px;">Modules</h2>
     <div class="grid" id="modulesGrid"></div>
+
   </div>
 </section>
 
 <script>
-  // user from Auth0 token payload (stored in auth.js)
-  const user = authGetUser();
+  // ---- User display (Auth0) ----
+  const user = authGetUser() || {};
   const name = user.name || user.nickname || user.email || "Partner";
   const email = user.email || "";
-
   document.getElementById("welcome").innerText = `Welcome, ${name}${email ? " (" + email + ")" : ""}.`;
 
-  const { passed, pct } = papPercentComplete(TOTAL_MODULES);
-  document.getElementById("progressText").innerText = `${passed} / ${TOTAL_MODULES} modules completed (${pct}%).`;
+  // ---- Role-based admin link (only if admin role exists in token) ----
+  const roles = user["https://panafricproperties.com/roles"] || [];
+  if (roles.includes("admin")) {
+    document.getElementById("adminLinkBox").style.display = "block";
+  }
 
-  const allDone = passed === TOTAL_MODULES;
+  // ---- Progress calculations ----
+  const result = papPercentComplete(TOTAL_MODULES); // expects { passed, pct }
+  const passed = result.passed;
+  const pct = result.pct;
+
+  document.getElementById("progressText").innerText = `${passed} / ${TOTAL_MODULES} modules completed (${pct}%).`;
+  document.getElementById("progressBar").style.width = pct + "%";
+
+  // Resume = first module not passed
+  const next = MODULES.find(m => !papIsModulePassed(m.id));
+  if (next) {
+    const btn = document.getElementById("resumeBtn");
+    btn.href = `module.html?m=${next.id}`;
+    btn.style.display = "inline-block";
+  }
+
+  // ---- Certification status ----
+  const allDone = (passed === TOTAL_MODULES);
   document.getElementById("certStatus").innerText = allDone
     ? "Unlocked — you have completed all modules."
     : "Locked — complete all modules to unlock.";
 
-  if (allDone) document.getElementById("certBtn").style.display = "inline-block";
+  if (allDone) {
+    document.getElementById("certBtn").style.display = "inline-block";
+    document.getElementById("certBadge").style.display = "block";
+  }
 
+  // ---- Render modules ----
   const grid = document.getElementById("modulesGrid");
   MODULES.forEach(m => {
     const done = papIsModulePassed(m.id);
@@ -78,9 +126,9 @@
     card.href = `module.html?m=${m.id}`;
     card.style.textDecoration = "none";
     card.innerHTML = `
-      <h3>Module ${m.id}</h3>
-      <p class="small">${m.title}</p>
-      <p class="small" style="margin-top:8px;"><strong>Status:</strong> ${done ? "Completed ✅" : "Not completed"}</p>
+      <h3 style="margin:0 0 6px;">Module ${m.id}</h3>
+      <p class="small" style="margin:0;">${m.title}</p>
+      <p class="small" style="margin-top:10px;"><strong>Status:</strong> ${done ? "Completed ✅" : "Not completed"}</p>
     `;
     grid.appendChild(card);
   });
