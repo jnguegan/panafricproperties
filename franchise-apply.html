@@ -26,6 +26,7 @@
         <a href="franchise.html">Work With Us</a>
         <a href="training.html">Training & Certification</a>
         <a href="trust.html">Trust</a>
+        <a href="login.html">Partner Login</a>
         <a href="contact.html" class="btn">Contact</a>
       </nav>
     </div>
@@ -49,8 +50,15 @@
     <div class="card" style="max-width:760px; margin:auto;">
       <h2>Partner Application Form</h2>
 
+      <!-- Netlify Form -->
       <form name="franchise-application" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="franchise-application">
+
+        <!-- ✅ Hidden tracking fields (auto-filled from URL params) -->
+        <input type="hidden" id="track" name="track" value="">
+        <input type="hidden" id="country_campaign" name="country_campaign" value="">
+        <input type="hidden" id="source" name="source" value="">
+        <input type="hidden" id="ref" name="ref" value="">
 
         <p>
           <label>Full Name<br>
@@ -136,5 +144,44 @@
         </p>
 
         <p style="margin-top:14px;">
-          <button type="submit" class="btn green">
-            Submit
+          <button type="submit" class="btn green">Submit Application</button>
+          <a class="btn ghost" href="franchise.html" style="margin-left:10px;">Back</a>
+        </p>
+
+        <p class="small" style="opacity:.8; margin-top:10px;">
+          After review, approved applicants receive invite-only access to the Partner Academy.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="small">© 2026 PanAfric Properties. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ✅ Auto-fill hidden tracking fields from URL parameters -->
+<script>
+  (function () {
+    const p = new URLSearchParams(window.location.search);
+
+    const set = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.value = val || "";
+    };
+
+    set("track", p.get("track"));                 // e.g. launch
+    set("country_campaign", p.get("country"));    // e.g. ghana
+    set("source", p.get("source"));               // e.g. linkedin / facebook / referral
+    set("ref", p.get("ref"));                     // e.g. jp / ambassador code
+
+    // Helpful default: if track is not set, mark as "standard"
+    const trackEl = document.getElementById("track");
+    if (trackEl && !trackEl.value) trackEl.value = "standard";
+  })();
+</script>
+
+</body>
+</html>
