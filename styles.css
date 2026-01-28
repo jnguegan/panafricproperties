@@ -18,6 +18,53 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--pap-bg);co
 .navlinks a{color:var(--pap-blue);text-decoration:none;font-weight:700;font-size:14px}
 .navlinks a:hover{text-decoration:underline}
 
+/* =========================
+   Language dropdown (EN/FR/ES)
+   ========================= */
+
+.lang-switch{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:12px;
+  white-space:nowrap;
+}
+
+.lang-label{
+  font-size:14px;
+  opacity:.85;
+}
+
+/* Pill dropdown */
+.lang-select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  padding:8px 34px 8px 12px;
+  border:1px solid rgba(0,0,0,.15);
+  border-radius:999px;
+  background:transparent;
+  font-weight:700;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* Small dropdown arrow */
+.lang-switch{
+  position:relative;
+}
+.lang-switch::after{
+  content:"▾";
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(2px);
+  pointer-events:none;
+  opacity:.75;
+}
+
+
 .btn{display:inline-block;background:var(--pap-blue);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}
 .btn.green{background:var(--pap-green)}
 .btn.ghost{background:#fff;color:var(--pap-blue);border:1px solid var(--pap-border)}
