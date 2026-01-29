@@ -460,6 +460,61 @@
 
 "countries.cta.browse": "Browse listings",
 "countries.cta.franchise": "Franchise enquiry",
+// properties.html
+"properties.title": "Property Listings",
+"properties.intro": "MVP listings — static for now. Next step: real filters + country pages.",
+
+"properties.filter.country": "Country",
+"properties.filter.type": "Type",
+"properties.filter.budget": "Budget",
+"properties.filter.dd": "Due diligence",
+"properties.filter.all": "All",
+
+"properties.type.land": "Land",
+"properties.type.home": "Home",
+"properties.type.dev": "Development / Off-plan",
+
+"properties.budget.any": "Any",
+"properties.budget.under50": "Under €50k",
+"properties.budget.50to150": "€50k – €150k",
+"properties.budget.150plus": "€150k+",
+
+"properties.dd.any": "Any",
+"properties.dd.verified": "Verified",
+"properties.dd.review": "In Review",
+
+"properties.cta.enquire": "Enquire",
+"properties.cta.how": "How verification works",
+
+"properties.list1.title": "Modern Villa — Accra (Ghana)",
+"properties.list1.desc": "3-bedroom villa • East Legon • Ready to move in",
+"properties.list1.meta": "<b>Status:</b> Verified • <b>Agent:</b> Accra West Partner",
+
+"properties.list2.title": "Residential Land — Douala (Cameroon)",
+"properties.list2.desc": "500 sqm plot • Great access • Suitable for build",
+"properties.list2.meta": "<b>Status:</b> In Review • <b>Agent:</b> Douala Partner",
+
+"properties.list3.title": "Off-plan Apartments — Lekki (Nigeria)",
+"properties.list3.desc": "2-bedroom apartments • Payment plan available",
+"properties.list3.meta": "<b>Status:</b> Verified • <b>Agent:</b> Lagos Partner",
+
+"properties.list4.title": "Residential Plot — Bamako (Mali)",
+"properties.list4.desc": "Titled land • Residential zone • Good access",
+"properties.list4.meta": "<b>Status:</b> In Review • <b>Agent:</b> Bamako Partner",
+
+"properties.list5.title": "Family Home — Harare (Zimbabwe)",
+"properties.list5.desc": "3-bedroom home • Safe neighbourhood",
+"properties.list5.meta": "<b>Status:</b> Verified • <b>Agent:</b> Harare Partner",
+
+"properties.list6.title": "City Apartment — Dakar (Senegal)",
+"properties.list6.desc": "2-bedroom apartment • High rental demand",
+"properties.list6.meta": "<b>Status:</b> In Review • <b>Agent:</b> Dakar Partner",
+
+"properties.card.cta": "Request details",
+
+"properties.promo.title": "Want to Build a Real Estate Business in Your City?",
+"properties.promo.text": "Join PanAfric Properties as a franchise partner. We train and certify local partners to operate real estate brokerage activities and connect them to diaspora buyers worldwide.",
+"properties.promo.cta": "Work With Us",
 
     },
 
@@ -886,6 +941,61 @@
 
 "countries.cta.browse": "Parcourir les annonces",
 "countries.cta.franchise": "Demande franchise",
+// properties.html
+"properties.title": "Annonces immobilières",
+"properties.intro": "Annonces MVP — statiques pour le moment. Prochaine étape : vrais filtres + pages par pays.",
+
+"properties.filter.country": "Pays",
+"properties.filter.type": "Type",
+"properties.filter.budget": "Budget",
+"properties.filter.dd": "Due diligence",
+"properties.filter.all": "Tous",
+
+"properties.type.land": "Terrain",
+"properties.type.home": "Maison",
+"properties.type.dev": "Programme / Vente sur plan",
+
+"properties.budget.any": "Peu importe",
+"properties.budget.under50": "Moins de 50 k€",
+"properties.budget.50to150": "50 k€ – 150 k€",
+"properties.budget.150plus": "150 k€+",
+
+"properties.dd.any": "Peu importe",
+"properties.dd.verified": "Vérifié",
+"properties.dd.review": "En cours d’examen",
+
+"properties.cta.enquire": "Demander",
+"properties.cta.how": "Comment fonctionne la vérification",
+
+"properties.list1.title": "Villa moderne — Accra (Ghana)",
+"properties.list1.desc": "Villa 3 chambres • East Legon • Prête à emménager",
+"properties.list1.meta": "<b>Statut :</b> Vérifié • <b>Agent :</b> Partenaire Accra Ouest",
+
+"properties.list2.title": "Terrain résidentiel — Douala (Cameroun)",
+"properties.list2.desc": "Terrain de 500 m² • Bon accès • Adapté à la construction",
+"properties.list2.meta": "<b>Statut :</b> En cours d’examen • <b>Agent :</b> Partenaire Douala",
+
+"properties.list3.title": "Appartements sur plan — Lekki (Nigéria)",
+"properties.list3.desc": "Appartements 2 chambres • Plan de paiement disponible",
+"properties.list3.meta": "<b>Statut :</b> Vérifié • <b>Agent :</b> Partenaire Lagos",
+
+"properties.list4.title": "Parcelle résidentielle — Bamako (Mali)",
+"properties.list4.desc": "Terrain titré • Zone résidentielle • Bon accès",
+"properties.list4.meta": "<b>Statut :</b> En cours d’examen • <b>Agent :</b> Partenaire Bamako",
+
+"properties.list5.title": "Maison familiale — Harare (Zimbabwe)",
+"properties.list5.desc": "Maison 3 chambres • Quartier sécurisé",
+"properties.list5.meta": "<b>Statut :</b> Vérifié • <b>Agent :</b> Partenaire Harare",
+
+"properties.list6.title": "Appartement en ville — Dakar (Sénégal)",
+"properties.list6.desc": "Appartement 2 chambres • Forte demande locative",
+"properties.list6.meta": "<b>Statut :</b> En cours d’examen • <b>Agent :</b> Partenaire Dakar",
+
+"properties.card.cta": "Demander les détails",
+
+"properties.promo.title": "Vous voulez créer une activité immobilière dans votre ville ?",
+"properties.promo.text": "Rejoignez PanAfric Properties en tant que partenaire franchisé. Nous formons et certifions des partenaires locaux pour exercer des activités de courtage immobilier et les connectons aux acheteurs de la diaspora dans le monde entier.",
+"properties.promo.cta": "Travailler avec nous",
 
 
     },
@@ -1314,7 +1424,63 @@
 
 "countries.cta.browse": "Ver anuncios",
 "countries.cta.franchise": "Consulta de franquicia",
+// properties.html
+"properties.title": "Anuncios de propiedades",
+"properties.intro": "Anuncios MVP — estático por ahora. Siguiente paso: filtros reales + páginas por país.",
 
+"properties.filter.country": "País",
+"properties.filter.type": "Tipo",
+"properties.filter.budget": "Presupuesto",
+"properties.filter.dd": "Diligencia debida",
+"properties.filter.all": "Todos",
+
+"properties.type.land": "Terreno",
+"properties.type.home": "Vivienda",
+"properties.type.dev": "Proyecto / Sobre plano",
+
+"properties.budget.any": "Cualquiera",
+"properties.budget.under50": "Menos de 50.000 €",
+"properties.budget.50to150": "50.000 € – 150.000 €",
+"properties.budget.150plus": "150.000 €+",
+
+"properties.dd.any": "Cualquiera",
+"properties.dd.verified": "Verificado",
+"properties.dd.review": "En revisión",
+
+"properties.cta.enquire": "Consultar",
+"properties.cta.how": "Cómo funciona la verificación",
+
+"properties.list1.title": "Villa moderna — Accra (Ghana)",
+"properties.list1.desc": "Villa de 3 habitaciones • East Legon • Lista para entrar",
+"properties.list1.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Accra Oeste",
+
+"properties.list2.title": "Terreno residencial — Douala (Camerún)",
+"properties.list2.desc": "Parcela de 500 m² • Buen acceso • Ideal para construir",
+"properties.list2.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Douala",
+
+"properties.list3.title": "Apartamentos sobre plano — Lekki (Nigeria)",
+"properties.list3.desc": "Apartamentos de 2 habitaciones • Plan de pagos disponible",
+"properties.list3.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Lagos",
+
+"properties.list4.title": "Parcela residencial — Bamako (Malí)",
+"properties.list4.desc": "Terreno con título • Zona residencial • Buen acceso",
+"properties.list4.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Bamako",
+
+"properties.list5.title": "Casa familiar — Harare (Zimbabue)",
+"properties.list5.desc": "Casa de 3 habitaciones • Barrio seguro",
+"properties.list5.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Harare",
+
+"properties.list6.title": "Apartamento en la ciudad — Dakar (Senegal)",
+"properties.list6.desc": "Apartamento de 2 habitaciones • Alta demanda de alquiler",
+"properties.list6.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Dakar",
+
+"properties.card.cta": "Solicitar detalles",
+
+"properties.promo.title": "¿Quieres crear un negocio inmobiliario en tu ciudad?",
+"properties.promo.text": "Únete a PanAfric Properties como socio franquiciado. Formamos y certificamos a socios locales para operar actividades de corretaje inmobiliario y conectarlos con compradores de la diáspora en todo el mundo.",
+"properties.promo.cta": "Trabaja con nosotros",
+
+      
     }
   };
 
