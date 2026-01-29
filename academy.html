@@ -83,96 +83,19 @@
       </div>
     </div>
 
-    <h2 style="margin-top:18px;" data-i18n="academy.modules">Modules</h2>
+        <h2 style="margin-top:18px;" data-i18n="academy.modules">Modules</h2>
     <div class="grid" id="modulesGrid"></div>
 
   </div>
 </section>
 
-<script>
-  // ---- Safe translation helper (falls back to English / key) ----
-  function papT(key) {
-    try {
-      // Prefer your i18n helper if available
-      if (typeof window.papTranslate === "function") return window.papTranslate(key);
-      if (typeof window.PapLang === "function" && window.PapLang()) {
-        // If you ever expose a getter, we keep this harmless
-      }
-      // Minimal fallback: use DICT if it exists
-      const lang = localStorage.getItem("pap_lang") || "en";
-      const dict = (window.DICT && window.DICT[lang]) ? window.DICT[lang] : null;
-      if (dict && dict[key]) return dict[key];
-    } catch (e) {}
-    return key;
-  }
-
-  // ---- User display (Auth0) ----
-  const user = authGetUser() || {};
-  const name = user.name || user.nickname || user.email || "Partner";
-  const email = user.email || "";
-  document.getElementById("welcome").innerText =
-    papT("academy.welcome")
-      .replace("{name}", name)
-      .replace("{email}", email ? " (" + email + ")" : "");
-
-  // ---- Role-based admin link (only if admin role exists in token) ----
-  const roles = user["https://panafricproperties.com/roles"] || [];
-  if (roles.includes("admin")) {
-    document.getElementById("adminLinkBox").style.display = "block";
-  }
-
-  // ---- Progress calculations ----
-  const result = papPercentComplete(TOTAL_MODULES); // expects { passed, pct }
-  const passed = result.passed;
-  const pct = result.pct;
-
-  document.getElementById("progressText").innerText =
-    papT("academy.progress_text")
-      .replace("{passed}", passed)
-      .replace("{total}", TOTAL_MODULES)
-      .replace("{pct}", pct);
-
-  document.getElementById("progressBar").style.width = pct + "%";
-
-  // Resume = first module not passed
-  const next = MODULES.find(m => !papIsModulePassed(m.id));
-  if (next) {
-    const btn = document.getElementById("resumeBtn");
-    btn.href = `module.html?m=${next.id}`;
-    btn.style.display = "inline-block";
-  }
-
-  // ---- Certification status ----
-  const allDone = (passed === TOTAL_MODULES);
-  document.getElementById("certStatus").innerText = allDone
-    ? papT("academy.unlocked")
-    : papT("academy.locked");
-
-  if (allDone) {
-    document.getElementById("certBtn").style.display = "inline-block";
-    document.getElementById("certBadge").style.display = "block";
-  }
-
-  // ---- Render modules ----
-  const grid = document.getElementById("modulesGrid");
-  MODULES.forEach(m => {
-    const done = papIsModulePassed(m.id);
-    const card = document.createElement("a");
-    card.className = "card";
-    card.href = `module.html?m=${m.id}`;
-    card.style.textDecoration = "none";
-    card.innerHTML = `
-      <h3 style="margin:0 0 6px;">Module ${m.id}</h3>
-      <p class="small" style="margin:0;">${m.title}</p>
-      <p class="small" style="margin-top:10px;"><strong>${papT("academy.status")}:</strong> ${done ? papT("academy.completed") : papT("academy.not_completed")}</p>
-    `;
-       grid.appendChild(card);
-  });
-</script> -->
-
-<!-- ✅ Correct script order (i18n first, then data, then page logic) -->
+<!-- Load translations first -->
 <script src="assets/js/i18n.js"></script>
+
+<!-- Load module data -->
 <script src="modules.js"></script>
+
+<!-- Load academy logic -->
 <script src="academy.js"></script>
 
 </body>
