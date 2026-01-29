@@ -1,16 +1,22 @@
-/* assets/js/i18n.js
-   PanAfric Properties — simple, reliable static i18n (EN/FR/ES)
-*/
+/* =========================================================
+   PanAfric Properties — i18n (EN / FR / ES)
+   Static, reliable, auto-runs on every page load
+   ========================================================= */
 
 (function () {
   const STORAGE_KEY = "pap_lang";
   const DEFAULT_LANG = "en";
 
-  // 1) TRANSLATIONS (keys must match data-i18n exactly)
+  /* ---------------------------------------------------------
+     TRANSLATIONS
+     Keys MUST match data-i18n attributes exactly
+     --------------------------------------------------------- */
   const I18N = {
     en: {
+      /* Language */
       "lang.label": "Language",
 
+      /* Navigation */
       "nav.countries": "Countries",
       "nav.properties": "Properties",
       "nav.agents": "Agents",
@@ -20,6 +26,7 @@
       "nav.login": "Partner Login",
       "nav.contact": "Contact",
 
+      /* Footer */
       "footer.tagline": "Trusted access to verified African real estate opportunities — built for the diaspora.",
       "footer.platform": "Platform",
       "footer.trust": "Trust & Verification",
@@ -31,6 +38,13 @@
       "footer.message": "Message us",
       "footer.rights": "© 2026 PanAfric Properties. All rights reserved.",
 
+      /* Home */
+      "home.hero.t": "Pan-African Real Estate, Built on Trust",
+      "home.hero.p": "Verified assets. Trusted partners. Diaspora-ready.",
+      "home.cta.browse": "Browse Properties",
+      "home.cta.partner": "Become a Partner",
+
+      /* Trust */
       "trust.title": "Trust & Verification",
       "trust.intro":
         "PanAfric Properties operates through a regulated local franchise network to improve transparency, reduce fraud risk, and protect diaspora buyers.",
@@ -61,16 +75,36 @@
         "PanAfric Properties empowers young Africans — graduates, non-graduates, and unemployed professionals — to launch their own self-employed real estate businesses under our franchise model. Training, in-house certification, and diaspora buyer access are provided.",
       "trust.promo.cta": "Apply to Join Our Franchise Program",
 
-      "home.hero.t": "Pan-African Real Estate, Built on Trust",
-      "home.hero.p": "Verified assets. Trusted partners. Diaspora-ready.",
-      "home.cta.browse": "Browse Properties",
-      "home.cta.partner": "Become a Partner",
-
+      /* Training */
       "training.title": "Training & Certification",
       "training.intro": "We train and certify local partners to protect buyers and strengthen trust.",
 
+      "training.card1.t": "Partner Onboarding",
+      "training.card1.p": "Core standards, brand guidelines, ethics, and local compliance fundamentals.",
+
+      "training.card2.t": "Listing Verification",
+      "training.card2.p": "How to validate ownership documents, seller identity, and due diligence status.",
+
+      "training.card3.t": "Buyer Journey",
+      "training.card3.p": "Managing diaspora enquiries, handovers, visit scheduling, and closing support.",
+
+      "training.card4.t": "Professional Conduct",
+      "training.card4.p": "Communication rules, transparency on fees, and dispute prevention.",
+
+      "training.card5.t": "Certification",
+      "training.card5.p": "Earn an internal certification that increases credibility for buyers and developers.",
+
+      "training.card6.t": "Continuous Training",
+      "training.card6.p": "Ongoing learning modules to keep partners aligned with platform standards.",
+
+      "training.cta_box.t": "Want to become certified?",
+      "training.cta_box.p":
+        "Apply to join the franchise network. Once approved, you will get onboarding access to the Partner Academy.",
+
+      /* Franchise */
       "franchise.title": "Franchise Model",
-      "franchise.intro": "Launch PanAfric Properties in your country with training, tools, and diaspora buyer access.",
+      "franchise.intro":
+        "Launch PanAfric Properties in your country with training, tools, and diaspora buyer access.",
       "franchise.cta": "Apply Now"
     },
 
@@ -90,34 +124,46 @@
       "footer.platform": "Plateforme",
       "footer.trust": "Confiance & Vérification",
       "footer.franchise": "Franchise",
-      "footer.franchise_text": "Devenez partenaire local et publiez des opportunités vérifiées dans votre territoire.",
+      "footer.franchise_text":
+        "Devenez partenaire local et publiez des opportunités vérifiées dans votre territoire.",
       "footer.apply": "Candidater / Demander",
       "footer.contact": "Contact",
       "footer.contact_text": "Pour acheteurs, promoteurs et partenaires.",
       "footer.message": "Nous écrire",
       "footer.rights": "© 2026 PanAfric Properties. Tous droits réservés.",
 
+      "home.hero.t": "Immobilier panafricain, fondé sur la confiance",
+      "home.hero.p": "Actifs vérifiés. Partenaires fiables. Pensé pour la diaspora.",
+      "home.cta.browse": "Voir les biens",
+      "home.cta.partner": "Devenir partenaire",
+
       "trust.title": "Confiance & Vérification",
       "trust.intro":
         "PanAfric Properties opère via un réseau de franchises locales encadrées afin d’améliorer la transparence, réduire le risque de fraude et protéger les acheteurs de la diaspora.",
 
       "trust.c1.t": "Partenaires franchisés locaux agréés",
-      "trust.c1.p": "Les annonces sont soumises par des partenaires vérifiés opérant selon les lois locales et les exigences du secteur.",
+      "trust.c1.p":
+        "Les annonces sont soumises par des partenaires vérifiés opérant selon les lois locales et les exigences du secteur.",
 
       "trust.c2.t": "Vérification des titres & propriété",
-      "trust.c2.p": "Lorsque disponible, la documentation est examinée et indiquée : Vérifié / En cours / Non vérifié.",
+      "trust.c2.p":
+        "Lorsque disponible, la documentation est examinée et indiquée : Vérifié / En cours / Non vérifié.",
 
       "trust.c3.t": "Contrôle des promoteurs",
-      "trust.c3.p": "Les promoteurs et vendeurs font l’objet de vérifications de base et de validation de références avant publication.",
+      "trust.c3.p":
+        "Les promoteurs et vendeurs font l’objet de vérifications de base et de validation de références avant publication.",
 
       "trust.c4.t": "Statut de due diligence",
-      "trust.c4.p": "Chaque opportunité affiche clairement son statut de due diligence et les prochaines étapes recommandées.",
+      "trust.c4.p":
+        "Chaque opportunité affiche clairement son statut de due diligence et les prochaines étapes recommandées.",
 
       "trust.c5.t": "Accompagnement acheteur",
-      "trust.c5.p": "Nous guidons l’acheteur et orientons chaque demande vers le bon partenaire local.",
+      "trust.c5.p":
+        "Nous guidons l’acheteur et orientons chaque demande vers le bon partenaire local.",
 
       "trust.c6.t": "Process clair, prix clairs",
-      "trust.c6.p": "Communication transparente sur les frais, les étapes et les délais — pour planifier en confiance.",
+      "trust.c6.p":
+        "Communication transparente sur les frais, les étapes et les délais — pour planifier en confiance.",
 
       "trust.cta.agent": "Parler à un agent local",
       "trust.cta.browse": "Voir les biens",
@@ -127,16 +173,41 @@
         "PanAfric Properties aide les jeunes Africains — diplômés, non diplômés et professionnels en recherche d’emploi — à créer leur activité immobilière en indépendants via notre modèle de franchise. Formation, certification interne et accès à la diaspora inclus.",
       "trust.promo.cta": "Candidater au programme de franchise",
 
-      "home.hero.t": "Immobilier panafricain, fondé sur la confiance",
-      "home.hero.p": "Actifs vérifiés. Partenaires fiables. Pensé pour la diaspora.",
-      "home.cta.browse": "Voir les biens",
-      "home.cta.partner": "Devenir partenaire",
-
       "training.title": "Formation & Certification",
-      "training.intro": "Nous formons et certifions les partenaires locaux pour protéger les acheteurs et renforcer la confiance.",
+      "training.intro":
+        "Nous formons et certifions les partenaires locaux pour protéger les acheteurs et renforcer la confiance.",
+
+      "training.card1.t": "Intégration des partenaires",
+      "training.card1.p":
+        "Normes clés, charte de marque, éthique et bases de conformité locale.",
+
+      "training.card2.t": "Vérification des annonces",
+      "training.card2.p":
+        "Validation des documents de propriété, de l’identité du vendeur et du statut de due diligence.",
+
+      "training.card3.t": "Parcours acheteur",
+      "training.card3.p":
+        "Gestion des demandes diaspora, passations, planification des visites et accompagnement à la clôture.",
+
+      "training.card4.t": "Conduite professionnelle",
+      "training.card4.p":
+        "Règles de communication, transparence des frais et prévention des litiges.",
+
+      "training.card5.t": "Certification",
+      "training.card5.p":
+        "Obtenez une certification interne renforçant la crédibilité auprès des acheteurs et promoteurs.",
+
+      "training.card6.t": "Formation continue",
+      "training.card6.p":
+        "Modules réguliers pour maintenir les partenaires alignés sur les standards de la plateforme.",
+
+      "training.cta_box.t": "Vous souhaitez être certifié ?",
+      "training.cta_box.p":
+        "Postulez pour rejoindre le réseau de franchises. Une fois approuvé, vous aurez accès à l’intégration via la Partner Academy.",
 
       "franchise.title": "Modèle de franchise",
-      "franchise.intro": "Lancez PanAfric Properties dans votre pays avec formation, outils et accès aux acheteurs diaspora.",
+      "franchise.intro":
+        "Lancez PanAfric Properties dans votre pays avec formation, outils et accès aux acheteurs diaspora.",
       "franchise.cta": "Candidater"
     },
 
@@ -152,38 +223,51 @@
       "nav.login": "Acceso Socios",
       "nav.contact": "Contacto",
 
-      "footer.tagline": "Acceso confiable a oportunidades inmobiliarias africanas verificadas — creado para la diáspora.",
+      "footer.tagline":
+        "Acceso confiable a oportunidades inmobiliarias africanas verificadas — creado para la diáspora.",
       "footer.platform": "Plataforma",
       "footer.trust": "Confianza y Verificación",
       "footer.franchise": "Franquicia",
-      "footer.franchise_text": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
+      "footer.franchise_text":
+        "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
       "footer.apply": "Solicitar / Consultar",
       "footer.contact": "Contacto",
       "footer.contact_text": "Para compradores, promotores y socios.",
       "footer.message": "Escríbenos",
       "footer.rights": "© 2026 PanAfric Properties. Todos los derechos reservados.",
 
+      "home.hero.t": "Inmobiliaria panafricana basada en la confianza",
+      "home.hero.p": "Activos verificados. Socios confiables. Lista para la diáspora.",
+      "home.cta.browse": "Ver propiedades",
+      "home.cta.partner": "Ser socio",
+
       "trust.title": "Confianza y Verificación",
       "trust.intro":
         "PanAfric Properties opera mediante una red de franquicias locales reguladas para mejorar la transparencia, reducir el fraude y proteger a los compradores de la diáspora.",
 
       "trust.c1.t": "Socios locales con licencia",
-      "trust.c1.p": "Los anuncios los envían socios verificados que operan bajo leyes locales y requisitos del sector.",
+      "trust.c1.p":
+        "Los anuncios los envían socios verificados que operan bajo leyes locales y requisitos del sector.",
 
       "trust.c2.t": "Comprobación de título y propiedad",
-      "trust.c2.p": "Cuando esté disponible, la documentación se revisa y se marca como Verificado / En revisión / No verificado.",
+      "trust.c2.p":
+        "Cuando está disponible, la documentación se revisa y se marca como Verificado / En revisión / No verificado.",
 
       "trust.c3.t": "Evaluación de promotores",
-      "trust.c3.p": "Promotores y vendedores pasan controles básicos y validación de referencias antes de publicar.",
+      "trust.c3.p":
+        "Promotores y vendedores pasan controles básicos y validación de referencias antes de publicar.",
 
       "trust.c4.t": "Estado de due diligence",
-      "trust.c4.p": "Cada oportunidad muestra claramente su estado de due diligence y los siguientes pasos recomendados.",
+      "trust.c4.p":
+        "Cada oportunidad muestra claramente su estado de due diligence y los siguientes pasos recomendados.",
 
       "trust.c5.t": "Soporte al comprador",
-      "trust.c5.p": "Guiamos al comprador y canalizamos las consultas al socio local correspondiente.",
+      "trust.c5.p":
+        "Guiamos al comprador y canalizamos las consultas al socio local correspondiente.",
 
       "trust.c6.t": "Proceso claro, precios claros",
-      "trust.c6.p": "Comunicación transparente sobre tarifas, pasos y plazos—para que la diáspora planifique con confianza.",
+      "trust.c6.p":
+        "Comunicación transparente sobre tarifas, pasos y plazos — para planificar con confianza.",
 
       "trust.cta.agent": "Hablar con un agente local",
       "trust.cta.browse": "Ver propiedades",
@@ -193,22 +277,65 @@
         "PanAfric Properties impulsa a jóvenes africanos — graduados, no graduados y profesionales desempleados — a lanzar su negocio inmobiliario como autónomos mediante nuestro modelo de franquicia. Incluye formación, certificación interna y acceso a compradores de la diáspora.",
       "trust.promo.cta": "Solicitar el programa de franquicia",
 
-      "home.hero.t": "Inmobiliaria panafricana basada en la confianza",
-      "home.hero.p": "Activos verificados. Socios confiables. Lista para la diáspora.",
-      "home.cta.browse": "Ver propiedades",
-      "home.cta.partner": "Ser socio",
-
       "training.title": "Formación y Certificación",
-      "training.intro": "Formamos y certificamos socios locales para proteger a los compradores y fortalecer la confianza.",
+      "training.intro":
+        "Formamos y certificamos a socios locales para proteger a los compradores y fortalecer la confianza.",
+
+      "training.card1.t": "Incorporación de socios",
+      "training.card1.p":
+        "Estándares clave, guías de marca, ética y fundamentos de cumplimiento local.",
+
+      "training.card2.t": "Verificación de anuncios",
+      "training.card2.p":
+        "Cómo validar documentos de propiedad, identidad del vendedor y estado de due diligence.",
+
+      "training.card3.t": "Recorrido del comprador",
+      "training.card3.p":
+        "Gestión de consultas de la diáspora, traspasos, agenda de visitas y soporte de cierre.",
+
+      "training.card4.t": "Conducta profesional",
+      "training.card4.p":
+        "Normas de comunicación, transparencia en tarifas y prevención de disputas.",
+
+      "training.card5.t": "Certificación",
+      "training.card5.p":
+        "Obtén una certificación interna que aumenta la credibilidad para compradores y promotores.",
+
+      "training.card6.t": "Formación continua",
+      "training.card6.p":
+        "Módulos continuos para mantener a los socios alineados con los estándares de la plataforma.",
+
+      "training.cta_box.t": "¿Quieres certificarte?",
+      "training.cta_box.p":
+        "Solicita unirte a la red de franquicias. Una vez aprobado, tendrás acceso a la Partner Academy.",
 
       "franchise.title": "Modelo de franquicia",
-      "franchise.intro": "Lanza PanAfric Properties en tu país con formación, herramientas y acceso a compradores de la diáspora.",
+      "franchise.intro":
+        "Lanza PanAfric Properties en tu país con formación, herramientas y acceso a compradores de la diáspora.",
       "franchise.cta": "Solicitar"
     }
   };
 
+  /* ---------------------------------------------------------
+     CORE FUNCTIONS
+     --------------------------------------------------------- */
   function getLang() {
     return localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+  }
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || I18N[DEFAULT_LANG];
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+
+    const select = document.querySelector(".lang-select");
+    if (select) select.value = lang;
   }
 
   function setLang(lang) {
@@ -217,35 +344,16 @@
     applyLang(safe);
   }
 
-  function applyLang(lang) {
-    const dict = I18N[lang] || I18N[DEFAULT_LANG];
-
-    document.documentElement.lang = lang;
-
-    // Translate text nodes
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const val = dict[key];
-      if (typeof val === "string") {
-        el.textContent = val;
-      } else {
-        // If missing key, keep existing text (but log to console)
-        // Helps you find missing translations quickly
-        // console.warn("[i18n missing]", lang, key);
-      }
-    });
-
-    // Sync dropdown
-    const sel = document.querySelector(".lang-select");
-    if (sel) sel.value = lang;
-  }
-
-  // Expose globally for onchange handlers
+  /* ---------------------------------------------------------
+     PUBLIC API
+     --------------------------------------------------------- */
   window.papSetLang = setLang;
   window.papApplyLang = applyLang;
   window.papGetLang = getLang;
 
-  // AUTO-RUN ON EVERY PAGE LOAD
+  /* ---------------------------------------------------------
+     AUTO-RUN ON PAGE LOAD
+     --------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", function () {
     applyLang(getLang());
   });
