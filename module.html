@@ -17,7 +17,7 @@
   });
 </script>
 
-<!-- 🌍 Language Dropdown (like your screenshot) -->
+<!-- 🌍 Language Dropdown -->
 <div class="lang-switch">
   <span class="lang-label" data-i18n="lang_label">Language</span>
   <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
@@ -27,12 +27,15 @@
   </select>
 </div>
 
-<script src="academy.js"></script>
+<!-- ✅ i18n (load before we build dynamic strings so papT() is available if you have it) -->
+<script src="assets/js/i18n.js"></script>
+
+<!-- ✅ Module content data -->
 <script src="modules.js"></script>
 
 <section class="section">
   <div class="wrap">
-    <a class="btn ghost" href="academy.html">← Back to Academy</a>
+    <a class="btn ghost" href="academy.html" data-i18n="academy_back">← Back to Academy</a>
 
     <div class="card" style="padding:22px 18px; margin-top:12px;">
       <h2 id="title"></h2>
@@ -40,25 +43,48 @@
 
       <hr style="margin:18px 0; opacity:.2;">
 
-      <h3>Quick Test</h3>
-      <p class="small">Answer all questions correctly to complete this module.</p>
+      <h3 data-i18n="module_quick_test_title">Quick Test</h3>
+      <p class="small" data-i18n="module_quick_test_help">Answer all questions correctly to complete this module.</p>
 
       <form id="quizForm" onsubmit="return submitQuiz()"></form>
 
       <p class="small" id="msg" style="margin-top:12px;"></p>
 
       <div style="margin-top:14px;">
-        <button class="btn ghost" type="button" onclick="authLogout()">Log out</button>
+        <button class="btn ghost" type="button" onclick="authLogout()" data-i18n="logout_btn">Log out</button>
       </div>
     </div>
   </div>
 </section>
 
 <script>
+  // Optional translator helper:
+  // If your i18n.js provides papT(key) or t(key), we’ll use it.
+  // If not, we always fall back to the original English text.
+  function _t(key, fallback) {
+    try {
+      if (typeof window.papT === "function") return window.papT(key) || fallback;
+      if (typeof window.t === "function") return window.t(key) || fallback;
+    } catch (e) {}
+    return fallback;
+  }
+
+  // ✅ Fallback progress marker (only used if academy.js used to define it)
+  if (typeof window.papMarkModulePassed !== "function") {
+    window.papMarkModulePassed = function (moduleId) {
+      try {
+        const key = "pap_modules_passed";
+        const arr = JSON.parse(localStorage.getItem(key) || "[]");
+        if (!arr.includes(moduleId)) arr.push(moduleId);
+        localStorage.setItem(key, JSON.stringify(arr));
+      } catch (e) {}
+    };
+  }
+
   const params = new URLSearchParams(window.location.search);
   const moduleId = parseInt(params.get("m") || "1", 10);
 
-  // Safety: if MODULES isn't available for any reason, go back.
+  // If MODULES isn’t available, go back (prevents blank module page).
   if (!window.MODULES || !Array.isArray(window.MODULES)) {
     window.location.href = "academy.html";
   }
@@ -66,8 +92,11 @@
   const mod = MODULES.find(x => x.id === moduleId);
   if (!mod) window.location.href = "academy.html";
 
-  document.getElementById("title").innerText = `Module ${mod.id} — ${mod.title}`;
+  // Dynamic title with translatable "Module" label (English unchanged as fallback)
+  const moduleWord = _t("module_word", "Module");
+  document.getElementById("title").innerText = `${moduleWord} ${mod.id} — ${mod.title}`;
 
+  // Reading blocks (content stays as authored in MODULES)
   const reading = document.getElementById("reading");
   (mod.reading || []).forEach(p => {
     const el = document.createElement("p");
@@ -76,23 +105,27 @@
     reading.appendChild(el);
   });
 
+  // Quiz
   const quizForm = document.getElementById("quizForm");
+  const selectText = _t("select_option", "Select");
+
   (mod.quiz || []).forEach((item, idx) => {
     const block = document.createElement("div");
     block.style.marginTop = "12px";
     block.innerHTML = `
       <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
       <select id="q${idx}" required>
-        <option value="">Select</option>
+        <option value="">${selectText}</option>
         ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
       </select>
     `;
     quizForm.appendChild(block);
   });
 
+  const submitBtnText = _t("submit_test_btn", "Submit Test");
   quizForm.insertAdjacentHTML("beforeend", `
     <div style="margin-top:14px;">
-      <button class="btn green" type="submit">Submit Test</button>
+      <button class="btn green" type="submit">${submitBtnText}</button>
     </div>
   `);
 
@@ -107,17 +140,16 @@
       papMarkModulePassed(mod.id);
       document.getElementById("msg").style.color = "green";
       document.getElementById("msg").innerText =
-        "✅ Test passed. Module completed. Return to Academy to continue.";
+        _t("module_pass_msg", "✅ Test passed. Module completed. Return to Academy to continue.");
     } else {
       document.getElementById("msg").style.color = "#b00020";
+      const template = _t("module_fail_msg", "❌ Not yet. You got {correct}/{total}. Please review and try again.");
       document.getElementById("msg").innerText =
-        `❌ Not yet. You got ${correct}/${(mod.quiz || []).length}. Please review and try again.`;
+        template.replace("{correct}", String(correct)).replace("{total}", String((mod.quiz || []).length));
     }
     return false;
   }
 </script>
-
-<script src="assets/js/i18n.js"></script>
 
 </body>
 </html>
