@@ -94,7 +94,9 @@
 
   // Dynamic title with translatable "Module" label (English unchanged as fallback)
   const moduleWord = _t("module_word", "Module");
-  document.getElementById("title").innerText = `${moduleWord} ${mod.id} — ${mod.title}`;
+  const moduleTitle = (mod.titleKey ? _t(mod.titleKey, mod.title) : mod.title);
+document.getElementById("title").innerText = `${moduleWord} ${mod.id} — ${moduleTitle}`;
+
 
   // Reading blocks (content stays as authored in MODULES)
   const reading = document.getElementById("reading");
