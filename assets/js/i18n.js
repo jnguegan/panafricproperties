@@ -604,7 +604,7 @@
       "footer.contact.h3": "Contacto",
       "footer.contact.p": "Para compradores, promotores y socios.",
       "footer.contact.link": "Escríbenos",
-      "footer.copyright": "© 2026 PanAfric Properties. Todos los derechos reservados."
+      "footer.copyright": "© 2026 PanAfric Properties. Todos los derechos reservados.",
 
       "index.hero.badge": "Diáspora primero • Confianza primero",
 "index.hero.h1": "PanAfric Properties",
