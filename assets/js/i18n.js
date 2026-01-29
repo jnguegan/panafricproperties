@@ -1153,6 +1153,17 @@
 "cert.meta.id": "ID du certificat : {id}",
 "cert.meta.issued": "Délivré le : {date}",
 
+      // Module titles
+"module.1.title": "Introduction à PanAfric Properties",
+"module.2.title": "Bases de l’immobilier",
+"module.3.title": "Due diligence et vérification",
+"module.4.title": "Gestion client et éthique",
+"module.5.title": "Attentes des acheteurs de la diaspora",
+"module.6.title": "Processus des annonces et de la plateforme",
+"module.7.title": "Notions juridiques (bases)",
+"module.8.title": "Clôture des transactions",
+"module.9.title": "Conformité et reporting",
+
 
     },
 
@@ -1712,6 +1723,16 @@
 
 "cert.meta.id": "ID del certificado: {id}",
 "cert.meta.issued": "Emitido el: {date}",
+// Module titles
+"module.1.title": "Introducción a PanAfric Properties",
+"module.2.title": "Fundamentos inmobiliarios",
+"module.3.title": "Debida diligencia y verificación",
+"module.4.title": "Gestión del cliente y ética",
+"module.5.title": "Expectativas del comprador de la diáspora",
+"module.6.title": "Procesos de anuncios y de la plataforma",
+"module.7.title": "Alfabetización legal (básicos)",
+"module.8.title": "Cierre de transacciones",
+"module.9.title": "Cumplimiento e informes",
 
       
     }
