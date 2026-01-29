@@ -3,6 +3,7 @@
 const MODULES = [
   {
     id: 1,
+    titleKey: "module.1.title",
     title: "Introduction to PanAfric Properties",
     reading: [
       "PanAfric Properties is a diaspora-first marketplace connecting Africans worldwide to verified property opportunities back home.",
@@ -42,6 +43,7 @@ const MODULES = [
 
   {
     id: 2,
+    titleKey: "module.2.title",
     title: "Real Estate Basics",
     reading: [
       "Understand asset types: land, homes, and projects (developments).",
@@ -73,6 +75,7 @@ const MODULES = [
 
   {
     id: 3,
+    titleKey: "module.3.title",
     title: "Due Diligence & Verification",
     reading: [
       "Verification protects buyers and the brand. Always confirm ownership/title chain, documentation authenticity, and seller/developer credibility.",
@@ -100,6 +103,7 @@ const MODULES = [
 
   {
     id: 4,
+    titleKey: "module.4.title",
     title: "Client Handling & Ethics",
     reading: [
       "Your role is to guide and protect the buyer with professionalism, transparency, and accurate information.",
@@ -127,6 +131,7 @@ const MODULES = [
 
   {
     id: 5,
+    titleKey: "module.5.title",
     title: "Diaspora Buyer Expectations",
     reading: [
       "Diaspora buyers value safety, proof, clarity, and predictable steps because they are buying remotely.",
@@ -154,6 +159,7 @@ const MODULES = [
 
   {
     id: 6,
+    titleKey: "module.6.title",
     title: "Listing & Platform Processes",
     reading: [
       "Listings must meet documentation standards and include clear photos, accurate location, and pricing transparency.",
@@ -181,6 +187,7 @@ const MODULES = [
 
   {
     id: 7,
+    titleKey: "module.7.title",
     title: "Legal Literacy (Basics)",
     reading: [
       "Understand basic concepts: contracts, agency relationships, ownership transfer, and the role of legal professionals.",
@@ -208,6 +215,7 @@ const MODULES = [
 
   {
     id: 8,
+    titleKey: "module.8.title",
     title: "Closing Transactions",
     reading: [
       "Closing is the controlled process of completing the sale with verified documents, agreed milestones, and confirmed payments.",
@@ -235,6 +243,7 @@ const MODULES = [
 
   {
     id: 9,
+    titleKey: "module.9.title",
     title: "Compliance & Reporting",
     reading: [
       "Compliance maintains platform integrity: follow verification rules, ethical standards, and reporting requirements.",
@@ -264,5 +273,3 @@ const MODULES = [
 const TOTAL_MODULES = MODULES.length;
 window.MODULES = MODULES;
 window.TOTAL_MODULES = TOTAL_MODULES;
-
-
