@@ -411,7 +411,42 @@
 "contact.links.p1": "Browse properties",
 "contact.links.p2": "Trust & verification",
 "contact.links.p3": "Franchise partners",
-    
+
+      // agents.html
+"agents.title": "Local Franchise Partners",
+"agents.intro": "Each territory is represented by a PanAfric Properties Franchise Partner — trained, certified, and governed under our trust and verification framework. Licensed real estate professionals are welcome and may be fast-tracked, but licensing is not required to apply.",
+
+"agents.card1.title": "Accra West — Ghana",
+"agents.card1.coverage": "<b>Coverage:</b> East Legon, Airport, Cantonments",
+"agents.card1.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card2.title": "Lagos — Nigeria",
+"agents.card2.coverage": "<b>Coverage:</b> Lekki, Victoria Island",
+"agents.card2.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card3.title": "Douala — Cameroon",
+"agents.card3.coverage": "<b>Coverage:</b> Bonapriso, Akwa",
+"agents.card3.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card4.title": "Dakar — Senegal",
+"agents.card4.coverage": "<b>Coverage:</b> Almadies, Plateau",
+"agents.card4.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card5.title": "Bamako — Mali",
+"agents.card5.coverage": "<b>Coverage:</b> ACI 2000, Hippodrome",
+"agents.card5.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card6.title": "Harare — Zimbabwe",
+"agents.card6.coverage": "<b>Coverage:</b> Borrowdale, Avondale",
+"agents.card6.status": "<b>Status:</b> Franchise Partner (Certified)",
+
+"agents.card.cta": "Contact this partner",
+
+"agents.join.title": "Become a Franchise Partner",
+"agents.join.text": "You don’t need prior real estate experience — we provide training, in-house certification, and a trusted framework. Licensed agents and property professionals are also welcome to apply and may be fast-tracked depending on the territory.",
+"agents.join.cta.apply": "Apply to Join Our Partner Program",
+"agents.join.cta.training": "View Training",
+
     },
 
     fr: {
@@ -789,6 +824,40 @@
 "contact.links.p1": "Parcourir les biens",
 "contact.links.p2": "Confiance & vérification",
 "contact.links.p3": "Partenaires franchise",
+// agents.html
+"agents.title": "Partenaires franchisés locaux",
+"agents.intro": "Chaque territoire est représenté par un partenaire franchisé PanAfric Properties — formé, certifié et encadré par notre cadre de confiance et de vérification. Les professionnels agréés de l’immobilier sont les bienvenus et peuvent être accélérés, mais l’agrément n’est pas obligatoire pour postuler.",
+
+"agents.card1.title": "Accra Ouest — Ghana",
+"agents.card1.coverage": "<b>Couverture :</b> East Legon, Airport, Cantonments",
+"agents.card1.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card2.title": "Lagos — Nigéria",
+"agents.card2.coverage": "<b>Couverture :</b> Lekki, Victoria Island",
+"agents.card2.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card3.title": "Douala — Cameroun",
+"agents.card3.coverage": "<b>Couverture :</b> Bonapriso, Akwa",
+"agents.card3.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card4.title": "Dakar — Sénégal",
+"agents.card4.coverage": "<b>Couverture :</b> Almadies, Plateau",
+"agents.card4.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card5.title": "Bamako — Mali",
+"agents.card5.coverage": "<b>Couverture :</b> ACI 2000, Hippodrome",
+"agents.card5.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card6.title": "Harare — Zimbabwe",
+"agents.card6.coverage": "<b>Couverture :</b> Borrowdale, Avondale",
+"agents.card6.status": "<b>Statut :</b> Partenaire franchisé (certifié)",
+
+"agents.card.cta": "Contacter ce partenaire",
+
+"agents.join.title": "Devenir partenaire franchisé",
+"agents.join.text": "Vous n’avez pas besoin d’expérience préalable dans l’immobilier — nous fournissons la formation, une certification interne et un cadre de confiance. Les agents agréés et les professionnels de l’immobilier sont également invités à postuler et peuvent être accélérés selon le territoire.",
+"agents.join.cta.apply": "Postuler pour rejoindre notre programme partenaires",
+"agents.join.cta.training": "Voir la formation",
 
 
     },
@@ -1169,6 +1238,40 @@
 "contact.links.p1": "Ver propiedades",
 "contact.links.p2": "Confianza y verificación",
 "contact.links.p3": "Socios franquiciados",
+// agents.html
+"agents.title": "Socios franquiciados locales",
+"agents.intro": "Cada territorio está representado por un Socio Franquiciado de PanAfric Properties — formado, certificado y supervisado bajo nuestro marco de confianza y verificación. Los profesionales inmobiliarios con licencia son bienvenidos y pueden ser acelerados, pero no se requiere licencia para postular.",
+
+"agents.card1.title": "Accra Oeste — Ghana",
+"agents.card1.coverage": "<b>Cobertura:</b> East Legon, Airport, Cantonments",
+"agents.card1.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card2.title": "Lagos — Nigeria",
+"agents.card2.coverage": "<b>Cobertura:</b> Lekki, Victoria Island",
+"agents.card2.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card3.title": "Douala — Camerún",
+"agents.card3.coverage": "<b>Cobertura:</b> Bonapriso, Akwa",
+"agents.card3.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card4.title": "Dakar — Senegal",
+"agents.card4.coverage": "<b>Cobertura:</b> Almadies, Plateau",
+"agents.card4.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card5.title": "Bamako — Malí",
+"agents.card5.coverage": "<b>Cobertura:</b> ACI 2000, Hippodrome",
+"agents.card5.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card6.title": "Harare — Zimbabue",
+"agents.card6.coverage": "<b>Cobertura:</b> Borrowdale, Avondale",
+"agents.card6.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card.cta": "Contactar a este socio",
+
+"agents.join.title": "Conviértete en socio franquiciado",
+"agents.join.text": "No necesitas experiencia previa en bienes raíces — ofrecemos formación, certificación interna y un marco de confianza. Los agentes con licencia y profesionales del sector también pueden postular y pueden ser acelerados según el territorio.",
+"agents.join.cta.apply": "Solicitar unirse a nuestro programa de socios",
+"agents.join.cta.training": "Ver formación",
 
     }
   };
