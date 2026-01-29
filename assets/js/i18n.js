@@ -388,7 +388,7 @@
       "footer.contact.h3": "Contact",
       "footer.contact.p": "Pour les acheteurs, promoteurs et partenaires.",
       "footer.contact.link": "Nous écrire",
-      "footer.copyright": "© 2026 PanAfric Properties. Tous droits réservés."
+      "footer.copyright": "© 2026 PanAfric Properties. Tous droits réservés.",
 
     "index.hero.badge": "Diaspora d’abord • Confiance d’abord",
 "index.hero.h1": "PanAfric Properties",
