@@ -5,33 +5,32 @@
   <title>Training & Certification — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header class="header">
   <div class="wrap">
     <div class="navbar">
       <a href="index.html">
-        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
+        <img src="brand/primary_logo.png" alt="PanAfric Properties" height="42">
       </a>
 
       <nav class="navlinks">
         <a href="countries.html" data-i18n="nav.countries">Countries</a>
         <a href="properties.html" data-i18n="nav.properties">Properties</a>
         <a href="agents.html" data-i18n="nav.agents">Agents</a>
-        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
+        <a href="franchise.html" data-i18n="nav.franchise">Work With Us</a>
         <a href="training.html" data-i18n="nav.training">Training & Certification</a>
         <a href="trust.html" data-i18n="nav.trust">Trust</a>
         <a href="login.html" data-i18n="nav.login">Partner Login</a>
 
+        <!-- 🌍 Language Dropdown (like your screenshot) -->
         <div class="lang-switch">
-          <span class="lang-label" data-i18n="lang.label">Language</span>
+          <span class="lang-label" data-i18n="lang_label">Language</span>
           <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
             <option value="en">EN</option>
             <option value="fr">FR</option>
@@ -45,73 +44,341 @@
   </div>
 </header>
 
-<section class="section">
-  <div class="wrap">
-    <h1 style="color:var(--pap-blue); margin:0 0 8px;" data-i18n="training.title">
-      Training & Certification
-    </h1>
+<div class="card" style="margin-top:12px;">
+  <p class="small" style="margin:0;" data-i18n="training.top.approved">
+    Already approved? <a href="login.html"><strong data-i18n="training.top.login_strong">Partner Login</strong></a>
+  </p>
+</div>
 
-    <p class="small" style="margin:0 0 16px; max-width:900px;" data-i18n="training.intro">
-      We train and certify local partners to protect buyers and strengthen trust.
+<section class="hero">
+  <div class="wrap">
+    <span class="badge" data-i18n="training.hero.badge">Partner Academy • Certification • Trust</span>
+    <h1 data-i18n="training.hero.h1">PanAfric Properties Training & Certification</h1>
+    <p data-i18n="training.hero.p">
+      All approved franchise applicants complete our internal online training and certification program
+      before operating under the PanAfric Properties brand.
     </p>
 
-    <div class="grid" style="margin-top:12px;">
+    <div style="margin-top:14px;">
+      <a class="btn green" href="franchise.html" data-i18n="training.hero.cta_apply">Apply to Join Our Franchise Program</a>
+      <a class="btn ghost" href="login.html" style="margin-left:10px;" data-i18n="training.hero.cta_login">Partner Login</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.standards.h2">Professional Standards. Trust. Compliance.</h2>
+    <p class="small" data-i18n="training.standards.p1">
+      PanAfric Properties operates a trusted real estate marketplace serving diaspora and international buyers.
+      To protect clients, maintain platform credibility, and ensure professional conduct, all franchise partners
+      must complete our internal training and certification program before onboarding.
+    </p>
+
+    <p class="small" data-i18n="training.standards.p2">
+      Our Training & Certification Program ensures that every partner:
+    </p>
+
+    <div class="grid">
       <div class="card">
-        <h3 data-i18n="training.card1.t">Partner Onboarding</h3>
-        <p class="small" data-i18n="training.card1.p">
-          Core standards, brand guidelines, ethics, and local compliance fundamentals.
+        <h3 data-i18n="training.standards.card1.h3">Understands Real Estate Fundamentals</h3>
+        <p class="small" data-i18n="training.standards.card1.p">
+          Learn the basics of property markets, valuation, and transaction processes.
         </p>
       </div>
 
       <div class="card">
-        <h3 data-i18n="training.card2.t">Listing Verification</h3>
-        <p class="small" data-i18n="training.card2.p">
-          How to validate ownership documents, seller identity, and due diligence status.
+        <h3 data-i18n="training.standards.card2.h3">Follows Due Diligence Standards</h3>
+        <p class="small" data-i18n="training.standards.card2.p">
+          Understand verification procedures, fraud prevention, and documentation checks.
         </p>
       </div>
 
       <div class="card">
-        <h3 data-i18n="training.card3.t">Buyer Journey</h3>
-        <p class="small" data-i18n="training.card3.p">
-          Managing diaspora enquiries, handovers, visit scheduling, and closing support.
+        <h3 data-i18n="training.standards.card3.h3">Operates Ethically</h3>
+        <p class="small" data-i18n="training.standards.card3.p">
+          Adhere to transparency, professionalism, and client protection principles.
         </p>
       </div>
 
       <div class="card">
-        <h3 data-i18n="training.card4.t">Professional Conduct</h3>
-        <p class="small" data-i18n="training.card4.p">
-          Communication rules, transparency on fees, and dispute prevention.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="training.card5.t">Certification</h3>
-        <p class="small" data-i18n="training.card5.p">
-          Earn an internal certification that increases credibility for buyers and developers.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="training.card6.t">Continuous Training</h3>
-        <p class="small" data-i18n="training.card6.p">
-          Ongoing learning modules to keep partners aligned with platform standards.
+        <h3 data-i18n="training.standards.card4.h3">Complies With Platform Governance</h3>
+        <p class="small" data-i18n="training.standards.card4.p">
+          Follow reporting, compliance, and marketplace rules.
         </p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="section" style="padding-top:18px;">
-      <a class="btn green" href="login.html" data-i18n="nav.login">Partner Login</a>
-      <a class="btn" href="contact.html" style="margin-left:10px;" data-i18n="nav.contact">Contact</a>
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.access.h2">Who Can Access the Training Program</h2>
+    <p class="small" data-i18n="training.access.p">
+      The PanAfric Properties Training & Certification Program is available exclusively to approved franchise applicants.
+      You do not need prior real estate experience to qualify.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="training.access.card1.h3">Graduates & Young Professionals</h3>
+        <p class="small" data-i18n="training.access.card1.p">
+          Seeking a structured, income-generating business opportunity in your home city.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.access.card2.h3">Non-Graduates With Ambition</h3>
+        <p class="small" data-i18n="training.access.card2.p">
+          We provide training, structure, and certification to help you operate professionally.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.access.card3.h3">Unemployed Professionals</h3>
+        <p class="small" data-i18n="training.access.card3.p">
+          Become self-employed in a growing sector with real demand.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.access.card4.h3">Diaspora Returnees</h3>
+        <p class="small" data-i18n="training.access.card4.p">
+          Build a credible business using an established brand and buyer pipeline.
+        </p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card" style="margin-top:18px;">
-      <h3 style="margin-top:0;" data-i18n="training.cta_box.t">Want to become certified?</h3>
-      <p class="small" style="margin:0;" data-i18n="training.cta_box.p">
-        Apply to join the franchise network. Once approved, you will get onboarding access to the Partner Academy.
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.academy.h2">How the Partner Academy Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="training.academy.step1.h3">1) Apply & Get Accepted</h3>
+        <p class="small" data-i18n="training.academy.step1.p">
+          Submit your franchise application. Approved candidates receive access to the Training Platform.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.academy.step2.h3">2) Log In to the Training Platform</h3>
+        <p class="small" data-i18n="training.academy.step2.p">
+          Access our internal online learning system using your personal login credentials.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.academy.step3.h3">3) Study the Training Modules</h3>
+        <p class="small" data-i18n="training.academy.step3.p">
+          Read structured modules covering real estate basics, due diligence, ethics, and platform processes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.academy.step4.h3">4) Complete Short Tests</h3>
+        <p class="small" data-i18n="training.academy.step4.p">
+          Each module includes a short assessment to verify understanding.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.academy.step5.h3">5) Earn Your Certification</h3>
+        <p class="small" data-i18n="training.academy.step5.p">
+          Once all modules and tests are passed, you receive Partner Certification.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.curriculum.h2">Training Curriculum</h2>
+    <p class="small" style="opacity:.85;" data-i18n="training.curriculum.p">
+      This is a public overview. Full modules and tests are accessible only inside the Partner Academy.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m1.h3">Module 1 — Introduction to PanAfric Properties</h3>
+        <p class="small" data-i18n="training.curriculum.m1.p">
+          Platform vision, franchise model, partner responsibilities, governance framework.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m2.h3">Module 2 — Real Estate Basics</h3>
+        <p class="small" data-i18n="training.curriculum.m2.p">
+          Property types, valuation fundamentals, local market dynamics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m3.h3">Module 3 — Due Diligence & Verification</h3>
+        <p class="small" data-i18n="training.curriculum.m3.p">
+          Ownership checks, title documentation, fraud prevention, red flags.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m4.h3">Module 4 — Client Handling & Ethics</h3>
+        <p class="small" data-i18n="training.curriculum.m4.p">
+          Professional conduct, transparency, communication, conflicts of interest.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m5.h3">Module 5 — Diaspora Buyer Expectations</h3>
+        <p class="small" data-i18n="training.curriculum.m5.p">
+          Investor psychology, trust concerns, remote transaction handling.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m6.h3">Module 6 — Listing & Platform Processes</h3>
+        <p class="small" data-i18n="training.curriculum.m6.p">
+          Property onboarding, documentation standards, marketplace rules.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m7.h3">Module 7 — Legal Literacy (Basics)</h3>
+        <p class="small" data-i18n="training.curriculum.m7.p">
+          Contracts, agency relationships, escrow concepts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m8.h3">Module 8 — Closing Transactions</h3>
+        <p class="small" data-i18n="training.curriculum.m8.p">
+          Buyer onboarding, milestones, payment principles.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.curriculum.m9.h3">Module 9 — Compliance & Reporting</h3>
+        <p class="small" data-i18n="training.curriculum.m9.p">
+          Reporting obligations, monitoring, dispute handling.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.cert.h2">Partner Certification</h2>
+    <p class="small" data-i18n="training.cert.p">
+      PanAfric Properties Partner Certification confirms that you have successfully completed
+      the Training & Certification Program and met our operational standards.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="training.cert.card1.h3">Brand Authorization</h3>
+        <p class="small" data-i18n="training.cert.card1.p">
+          Operate under the PanAfric Properties brand.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.cert.card2.h3">Marketplace Access</h3>
+        <p class="small" data-i18n="training.cert.card2.p">
+          List verified opportunities and receive diaspora buyer enquiries.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.cert.card3.h3">Official Recognition</h3>
+        <p class="small" data-i18n="training.cert.card3.p">
+          Certified franchise partner status.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.cert.card4.h3">Ongoing Compliance</h3>
+        <p class="small" data-i18n="training.cert.card4.p">
+          Certification maintained through ethical conduct and performance standards.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="training.eligibility.h2">Access & Eligibility</h2>
+    <p class="small" data-i18n="training.eligibility.p">
+      The Training & Certification Program is not publicly accessible.
+      Access is granted only to approved franchise applicants.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="training.eligibility.step1.h3">Step 1</h3>
+        <p class="small" data-i18n="training.eligibility.step1.p">
+          Apply to join the Franchise Program.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.eligibility.step2.h3">Step 2</h3>
+        <p class="small" data-i18n="training.eligibility.step2.p">
+          Receive application review outcome.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.eligibility.step3.h3">Step 3</h3>
+        <p class="small" data-i18n="training.eligibility.step3.p">
+          Get login access to the Training Platform.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.eligibility.step4.h3">Step 4</h3>
+        <p class="small" data-i18n="training.eligibility.step4.p">
+          Complete modules and tests.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="training.eligibility.step5.h3">Step 5</h3>
+        <p class="small" data-i18n="training.eligibility.step5.p">
+          Earn certification.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="background:#f7f9fc;">
+      <h3 data-i18n="training.clarification.h3">Important Clarification</h3>
+      <p class="small" data-i18n="training.clarification.p">
+        PanAfric Properties is not offering salaried employment or traditional jobs.
+        This program is a franchise-based entrepreneurship opportunity.
+        Successful applicants operate as independent, self-employed business owners
+        under the PanAfric Properties brand and trust framework.
       </p>
-      <div style="margin-top:14px;">
-        <a class="btn" href="franchise.html" data-i18n="franchise.cta">Apply Now</a>
-      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="text-align:center; padding:32px 24px;">
+      <h2 data-i18n="training.journey.h2">Start Your Training Journey</h2>
+      <p class="small" style="max-width:720px; margin:12px auto 18px;" data-i18n="training.journey.p">
+        Apply to become a PanAfric Properties franchise partner and begin your
+        training and certification journey.
+      </p>
+
+      <a class="btn green" href="franchise.html" data-i18n="training.journey.cta">
+        Apply to Join Our Franchise Program
+      </a>
     </div>
   </div>
 </section>
@@ -120,36 +387,37 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <img src="brand/icon.png" alt="PanAfric Properties" height="34">
         <p class="small" style="margin:10px 0 0;" data-i18n="footer.tagline">
           Trusted access to verified African real estate opportunities — built for the diaspora.
         </p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform">Platform</h3>
-        <p><a href="countries.html" data-i18n="nav.countries">Countries</a></p>
-        <p><a href="properties.html" data-i18n="nav.properties">Properties</a></p>
-        <p><a href="trust.html" data-i18n="footer.trust">Trust & Verification</a></p>
-        <p><a href="login.html" data-i18n="nav.login">Partner Login</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform.h3">Platform</h3>
+        <p><a href="countries.html" data-i18n="footer.platform.countries">Countries</a></p>
+        <p><a href="properties.html" data-i18n="footer.platform.properties">Properties</a></p>
+        <p><a href="trust.html" data-i18n="footer.platform.trust">Trust & Verification</a></p>
+        <p><a href="login.html" data-i18n="footer.platform.login">Partner Login</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.franchise">Franchise</h3>
-        <p class="small" data-i18n="footer.franchise_text">
-          Become a local partner and list verified opportunities in your territory.
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.work.h3">Work With Us</h3>
+        <p class="small" data-i18n="footer.work.p">
+          Launch your own real estate business with training,
+          certification, and diaspora buyer access.
         </p>
-        <p><a href="contact.html" data-i18n="footer.apply">Apply / Enquire</a></p>
+        <p><a href="franchise.html" data-i18n="footer.work.apply">Apply to Join</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact">Contact</h3>
-        <p class="small" data-i18n="footer.contact_text">For buyers, developers, and partners.</p>
-        <p><a href="contact.html" data-i18n="footer.message">Message us</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact.h3">Contact</h3>
+        <p class="small" data-i18n="footer.contact.p">For buyers, developers, and partners.</p>
+        <p><a href="contact.html" data-i18n="footer.contact.link">Message us</a></p>
       </div>
     </div>
 
-    <p class="small" style="margin-top:18px;" data-i18n="footer.rights">
+    <p class="small" style="margin-top:18px;" data-i18n="footer.copyright">
       © 2026 PanAfric Properties. All rights reserved.
     </p>
   </div>
