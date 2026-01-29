@@ -2,470 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Work With Us — PanAfric Properties</title>
+  <title>Franchise — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <header class="header">
   <div class="wrap">
     <div class="navbar">
       <a href="index.html">
-        <img src="brand/primary_logo.png" alt="PanAfric Properties" height="42">
+        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
       </a>
 
       <nav class="navlinks">
-        <a href="countries.html">Countries</a>
-        <a href="properties.html">Properties</a>
-        <a href="agents.html">Agents</a>
-        <a href="franchise.html">Work With Us</a>
-        <a href="training.html">Training & Certification</a>
-        <a href="trust.html">Trust</a>
-        <a href="login.html">Partner Login</a>
-        <!-- 🌍 Language Dropdown (like your screenshot) -->
-<div class="lang-switch">
-  <span class="lang-label" data-i18n="lang_label">Language</span>
-  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
-    <option value="en">EN</option>
-    <option value="fr">FR</option>
-    <option value="es">ES</option>
-  </select>
-</div>
+        <a href="countries.html" data-i18n="nav.countries">Countries</a>
+        <a href="properties.html" data-i18n="nav.properties">Properties</a>
+        <a href="agents.html" data-i18n="nav.agents">Agents</a>
+        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
+        <a href="training.html" data-i18n="nav.training">Training & Certification</a>
+        <a href="trust.html" data-i18n="nav.trust">Trust</a>
+        <a href="login.html" data-i18n="nav.login">Partner Login</a>
 
-        <a href="contact.html" class="btn">Contact</a>
+        <div class="lang-switch">
+          <span class="lang-label" data-i18n="lang.label">Language</span>
+          <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <a href="contact.html" class="btn" data-i18n="nav.contact">Contact</a>
       </nav>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="badge">Entrepreneurship • Franchise • Social Impact</span>
-    <h1>From Graduate to Real Estate Entrepreneur</h1>
-    <p>
-      We empower young Africans, graduates, non-graduates, and unemployed professionals,
-      to launch their own self-employed real estate businesses in their home cities under our franchise model.
-      PanAfric Properties provides training, in-house certification, and access to diaspora buyers
-      through our trusted marketplace platform.
-    </p>
 <section class="section">
   <div class="wrap">
-    <h2>Training & Certification</h2>
-    <p class="small">
-      All approved franchise applicants complete our internal online Training & Certification Program
-      before operating under the PanAfric Properties brand.
+    <h1 style="color:var(--pap-blue); margin:0 0 8px;" data-i18n="franchise.title">
+      Franchise Model
+    </h1>
+
+    <p class="small" style="max-width:900px; margin:0 0 18px;" data-i18n="franchise.intro">
+      Launch PanAfric Properties in your country with training, tools, and diaspora buyer access.
     </p>
 
     <div class="grid">
       <div class="card">
-        <h3>Online Partner Academy</h3>
+        <h3>Exclusive Territory</h3>
         <p class="small">
-          Access structured training modules covering real estate basics,
-          due diligence, ethics, and platform processes.
+          Operate PanAfric Properties in your assigned country or region under an exclusive franchise mandate.
         </p>
       </div>
 
       <div class="card">
-        <h3>Short Tests</h3>
+        <h3>Training & Certification</h3>
         <p class="small">
-          Each module includes a short assessment to verify understanding.
+          Receive onboarding, verification training, and internal certification to build buyer trust.
         </p>
       </div>
 
       <div class="card">
-        <h3>In-House Certification</h3>
+        <h3>Platform & Brand</h3>
         <p class="small">
-          Receive PanAfric Properties Partner Certification upon completion.
+          Use our platform, systems, and brand to list properties and serve diaspora clients professionally.
         </p>
       </div>
 
       <div class="card">
-        <h3>Marketplace Activation</h3>
+        <h3>Revenue Model</h3>
         <p class="small">
-          Only certified partners may list properties and handle buyers.
+          Earn income through listings, buyer introductions, transaction support, and local partnerships.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Ongoing Support</h3>
+        <p class="small">
+          Continuous training, platform updates, and operational guidance from the central team.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Long-Term Growth</h3>
+        <p class="small">
+          Build a scalable real estate business aligned with diaspora demand and long-term credibility.
         </p>
       </div>
     </div>
 
-    <div style="margin-top:14px;">
-      <a class="btn ghost" href="training.html">
-        View Training & Certification Program
+    <div class="section" style="padding-top:20px;">
+      <a class="btn green" href="contact.html" data-i18n="franchise.cta">
+        Apply Now
+      </a>
+      <a class="btn" href="training.html" style="margin-left:10px;" data-i18n="nav.training">
+        Training & Certification
       </a>
     </div>
   </div>
 </section>
 
-    <div style="margin-top:14px;">
-      <a class="btn green" href="#apply">Apply to Join Our Franchise Program</a>
-      <a class="btn ghost" href="trust.html" style="margin-left:10px;">How We Build Trust</a>
-    </div>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="wrap">
-    <div class="card" style="background:#f7f9fc;">
-      <h3>Important Clarification</h3>
-      <p class="small">
-        PanAfric Properties is not offering salaried employment or traditional jobs.
-        This program is a franchise-based entrepreneurship opportunity.
-        Successful applicants operate as independent, self-employed business owners
-        under the PanAfric Properties brand and trust framework.
-      </p>
-    </div>
-  </div>
-</section>
-
-  
-<section class="section">
-  <div class="wrap">
-    <h2>Who This Is For</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Graduates & Young Professionals</h3>
-        <p class="small">
-          If you have completed university or vocational training and are seeking a practical,
-          income-generating business opportunity in your home city.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Non-Graduates With Ambition</h3>
-        <p class="small">
-          You do not need a formal degree to succeed. We provide training, structure,
-          and certification to help you operate professionally.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Unemployed Professionals</h3>
-        <p class="small">
-          If you are currently unemployed or underemployed and want to become self-employed
-          in a growing sector with real demand.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Diaspora Returnees</h3>
-        <p class="small">
-          If you are returning to Africa and want to build a credible, structured business
-          using an established brand and diaspora buyer pipeline.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <h2>What We Provide</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Training & Onboarding</h3>
-        <p class="small">
-          Structured onboarding covering real estate basics, client handling,
-          due diligence procedures, platform processes, and ethics.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>In-House Certification</h3>
-        <p class="small">
-          All partners complete certification to operate under the PanAfric Properties
-          brand and trust framework.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Brand & Marketplace Access</h3>
-        <p class="small">
-          Use our brand, platform, and marketplace infrastructure to list verified
-          opportunities and reach diaspora buyers worldwide.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Buyer Leads</h3>
-        <p class="small">
-          Receive qualified enquiries from diaspora and international buyers
-          routed through our marketplace.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <h2>How the Franchise Model Works</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Territory-Based</h3>
-        <p class="small">
-          You operate in a defined city or territory as a PanAfric Properties partner.
-          Exclusive or semi-exclusive rights may apply depending on market size.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Commission-Based Earnings</h3>
-        <p class="small">
-          Earn commissions on successful property transactions and client referrals
-          completed through the platform.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Independent but Structured</h3>
-        <p class="small">
-          You run your own self-employed business while operating under our standards,
-          trust framework, and compliance processes.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Growth Path</h3>
-        <p class="small">
-          Top-performing partners may grow into multi-city operators,
-          territory managers, or regional franchise leads.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <h2>Partner Economics</h2>
-    <p class="small" style="opacity:.9; max-width:900px;">
-      PanAfric Properties partners operate as independent, self-employed business owners. Your income is driven by
-      completed transactions — supported by our training, verification framework, and diaspora buyer pipeline.
-    </p>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="card">
-        <h3>Typical Investment (Illustrative)</h3>
-        <p class="small" style="margin:0 0 10px;">
-          A simple, transparent starting structure:
-        </p>
-        <p class="small" style="margin:0;">• Training & Certification (one-off): <strong>€250</strong></p>
-        <p class="small" style="margin:6px 0 0;">• Territory Activation / Franchise Setup (one-off): <strong>€750</strong></p>
-        <p class="small" style="margin:10px 0 0;">
-          Total initial investment: <strong>€1,000</strong>
-        </p>
-        <p class="small" style="margin-top:10px; opacity:.8;">
-          (Final pricing may vary by territory and rollout phase.)
-        </p>
-        <p class="small" style="margin-top:8px; opacity:.85;">
-  During early launch phases, PanAfric Properties may selectively waive or reduce certain fees for
-  outstanding candidates or strategic territories, at its discretion.
-</p>
-
-      </div>
-
-      <div class="card">
-        <h3>How You Earn</h3>
-        <p class="small" style="margin:0 0 10px;">
-          Partners earn a share of transaction commissions on completed deals.
-        </p>
-        <p class="small" style="margin:0;">Typical commission range: <strong>3%–5%</strong></p>
-        <p class="small" style="margin:6px 0 0;">Typical partner share: <strong>50%–70%</strong></p>
-        <p class="small" style="margin:10px 0 0; opacity:.85;">
-          Exact structures may differ by market, property type, and developer agreements.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Illustrative Income Per Deal</h3>
-        <p class="small" style="margin:0 0 10px;">
-          Examples to help you understand the model:
-        </p>
-
-        <div class="small" style="margin-top:10px;">
-          <p class="small" style="margin:0;"><strong>Conservative</strong>: €30,000 × 3% × 50% = <strong>€450</strong></p>
-          <p class="small" style="margin:8px 0 0;"><strong>Base</strong>: €50,000 × 4% × 60% = <strong>€1,200</strong></p>
-          <p class="small" style="margin:8px 0 0;"><strong>Strong</strong>: €80,000 × 5% × 70% = <strong>€2,800</strong></p>
-        </div>
-
-        <p class="small" style="margin-top:10px; opacity:.8;">
-          Many partners recover their initial investment within the first 1–3 completed transactions,
-          depending on deal size and local commission norms.
-        </p>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:12px; background:#f7f9fc;">
-      <h3 style="margin-top:0;">Important note (Transparency)</h3>
-      <p class="small" style="margin:0; opacity:.9;">
-        Figures shown above are illustrative examples to explain the business model. Earnings are not guaranteed and
-        depend on your activity, market conditions, pricing, and successful transaction completion.
-      </p>
-    </div>
-
-    <div style="margin-top:14px;">
-      <a class="btn green" href="contact.html">Speak to the team</a>
-      <a class="btn" href="franchise.html" style="margin-left:10px;">Apply to Join Our Partner Program</a>
-      <a class="btn ghost" href="training.html" style="margin-left:10px;">View Training & Certification</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <h2>Trust, Ethics & Compliance</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Verification Standards</h3>
-        <p class="small">
-          All listings must pass basic legal, ownership, and documentation checks
-          before being published on the platform.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Code of Conduct</h3>
-        <p class="small">
-          All partners operate under a professional code of ethics covering
-          transparency, client protection, and fair dealing.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Ongoing Monitoring</h3>
-        <p class="small">
-          We monitor partner performance and compliance to maintain marketplace trust
-          and diaspora confidence.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Platform Governance</h3>
-        <p class="small">
-          Partners operate within our marketplace governance framework
-          to protect buyers, sellers, and the PanAfric Properties brand.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="apply">
-  <div class="wrap">
-    <div class="card" style="padding:32px 24px;">
-      <h2 style="text-align:center;">Apply to Join Our Franchise Program</h2>
-      <p class="small" style="max-width:720px; margin:12px auto 22px; text-align:center;">
-        If you are ambitious, motivated, and committed to building a credible real estate business
-        in your home city, we invite you to complete the form below to apply to become a PanAfric Properties franchise partner.
-        No prior real estate experience is required.
-      </p>
-
-      <form action="https://formsubmit.co/your@email.com" method="POST">
-
-        <div class="grid">
-          <div>
-            <label>Full Name</label>
-            <input type="text" name="name" required>
-          </div>
-
-          <div>
-            <label>Email Address</label>
-            <input type="email" name="email" required>
-          </div>
-
-          <div>
-            <label>Phone / WhatsApp</label>
-            <input type="text" name="phone" required>
-          </div>
-
-          <div>
-            <label>City & Country</label>
-            <input type="text" name="location" required>
-          </div>
-
-          <div>
-            <label>Education Level</label>
-            <select name="education">
-              <option value="">Select</option>
-              <option>Secondary School</option>
-              <option>Diploma</option>
-              <option>University Degree</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Employment Status</label>
-            <select name="employment">
-              <option value="">Select</option>
-              <option>Unemployed</option>
-              <option>Self-employed</option>
-              <option>Employed</option>
-              <option>Student</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <label>Why do you want to join PanAfric Properties?</label>
-          <textarea name="motivation" rows="4"></textarea>
-        </div>
-
-        <div style="margin-top:16px; text-align:center;">
-          <button type="submit" class="btn green">
-            Submit Application
-          </button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</section>
-
-
 <footer class="footer">
   <div class="wrap">
     <div class="cols">
       <div>
-        <img src="brand/icon.png" alt="PanAfric Properties" height="34">
-        <p class="small" style="margin:10px 0 0;">
+        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <p class="small" style="margin:10px 0 0;" data-i18n="footer.tagline">
           Trusted access to verified African real estate opportunities — built for the diaspora.
         </p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Platform</h3>
-        <p><a href="countries.html">Countries</a></p>
-        <p><a href="properties.html">Properties</a></p>
-        <p><a href="trust.html">Trust & Verification</a></p>
-         <p><a href="login.html">Partner Login</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform">Platform</h3>
+        <p><a href="countries.html" data-i18n="nav.countries">Countries</a></p>
+        <p><a href="properties.html" data-i18n="nav.properties">Properties</a></p>
+        <p><a href="trust.html" data-i18n="footer.trust">Trust & Verification</a></p>
+        <p><a href="login.html" data-i18n="nav.login">Partner Login</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Work With Us</h3>
-        <p class="small">
-          Launch your own real estate business with training,
-          certification, and diaspora buyer access.
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.franchise">Franchise</h3>
+        <p class="small" data-i18n="footer.franchise_text">
+          Become a local partner and list verified opportunities in your territory.
         </p>
-        <p><a href="franchise.html">Apply to Join</a></p>
+        <p><a href="contact.html" data-i18n="footer.apply">Apply / Enquire</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);">Contact</h3>
-        <p class="small">For buyers, developers, and partners.</p>
-        <p><a href="contact.html">Message us</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact">Contact</h3>
+        <p class="small" data-i18n="footer.contact_text">For buyers, developers, and partners.</p>
+        <p><a href="contact.html" data-i18n="footer.message">Message us</a></p>
       </div>
     </div>
 
-    <p class="small" style="margin-top:18px;">
+    <p class="small" style="margin-top:18px;" data-i18n="footer.rights">
       © 2026 PanAfric Properties. All rights reserved.
     </p>
   </div>
 </footer>
-<script src="assets/js/i18n.js"></script>
 
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
