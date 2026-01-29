@@ -16,9 +16,9 @@
   authRequireLogin();
 </script>
 
-  <!-- 🌍 Language Dropdown (like your screenshot) -->
+<!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
-  <span class="lang-label" data-i18n="lang_label">Language</span>
+  <span class="lang-label" data-i18n="lang.label">Language</span>
   <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
     <option value="en">EN</option>
     <option value="fr">FR</option>
@@ -33,13 +33,13 @@
   <div class="wrap">
 
     <div class="card" style="padding:18px;">
-      <h2 style="margin:0 0 6px;">Partner Academy</h2>
+      <h2 style="margin:0 0 6px;" data-i18n="academy.title">Partner Academy</h2>
       <p class="small" id="welcome" style="margin:0;"></p>
 
       <div class="grid" style="margin-top:12px;">
         <!-- Progress -->
         <div class="card">
-          <h3 style="margin:0 0 6px;">Progress</h3>
+          <h3 style="margin:0 0 6px;" data-i18n="academy.progress">Progress</h3>
           <div class="small" id="progressText"></div>
 
           <div style="height:10px;background:rgba(0,0,0,.08);border-radius:999px;overflow:hidden;margin-top:8px;">
@@ -47,52 +47,71 @@
           </div>
 
           <div style="margin-top:12px;">
-            <a class="btn green" id="resumeBtn" href="module.html?m=1" style="display:none;">Resume next module</a>
+            <a class="btn green" id="resumeBtn" href="module.html?m=1" style="display:none;" data-i18n="academy.resume">Resume next module</a>
           </div>
 
-          <p class="small" style="margin-top:10px;opacity:.8;">
+          <p class="small" style="margin-top:10px;opacity:.8;" data-i18n="academy.complete_note">
             Complete all modules to unlock certification.
           </p>
         </div>
 
         <!-- Certification -->
         <div class="card">
-          <h3 style="margin:0 0 6px;">Certification</h3>
+          <h3 style="margin:0 0 6px;" data-i18n="academy.cert">Certification</h3>
           <p class="small" id="certStatus" style="margin:0;"></p>
 
           <div style="margin-top:12px;">
-            <a class="btn green" id="certBtn" href="certificate.html" style="display:none;">View Certificate</a>
+            <a class="btn green" id="certBtn" href="certificate.html" style="display:none;" data-i18n="academy.view_cert">View Certificate</a>
           </div>
 
           <p class="small" id="certBadge" style="margin-top:10px;display:none;">
-            ✅ <strong>Certified Partner</strong>
+            ✅ <strong data-i18n="academy.badge">Certified Partner</strong>
           </p>
         </div>
 
         <!-- Session -->
         <div class="card">
-          <h3 style="margin:0 0 6px;">Session</h3>
-          <button class="btn ghost" type="button" onclick="authLogout()">Log out</button>
+          <h3 style="margin:0 0 6px;" data-i18n="academy.session">Session</h3>
+          <button class="btn ghost" type="button" onclick="authLogout()" data-i18n="academy.logout">Log out</button>
 
           <div id="adminLinkBox" style="margin-top:12px; display:none;">
-            <a class="btn ghost" href="admin.html">Open Admin Panel</a>
+            <a class="btn ghost" href="admin.html" data-i18n="academy.admin">Open Admin Panel</a>
           </div>
         </div>
       </div>
     </div>
 
-    <h2 style="margin-top:18px;">Modules</h2>
+    <h2 style="margin-top:18px;" data-i18n="academy.modules">Modules</h2>
     <div class="grid" id="modulesGrid"></div>
 
   </div>
 </section>
 
 <script>
+  // ---- Safe translation helper (falls back to English / key) ----
+  function papT(key) {
+    try {
+      // Prefer your i18n helper if available
+      if (typeof window.papTranslate === "function") return window.papTranslate(key);
+      if (typeof window.PapLang === "function" && window.PapLang()) {
+        // If you ever expose a getter, we keep this harmless
+      }
+      // Minimal fallback: use DICT if it exists
+      const lang = localStorage.getItem("pap_lang") || "en";
+      const dict = (window.DICT && window.DICT[lang]) ? window.DICT[lang] : null;
+      if (dict && dict[key]) return dict[key];
+    } catch (e) {}
+    return key;
+  }
+
   // ---- User display (Auth0) ----
   const user = authGetUser() || {};
   const name = user.name || user.nickname || user.email || "Partner";
   const email = user.email || "";
-  document.getElementById("welcome").innerText = `Welcome, ${name}${email ? " (" + email + ")" : ""}.`;
+  document.getElementById("welcome").innerText =
+    papT("academy.welcome")
+      .replace("{name}", name)
+      .replace("{email}", email ? " (" + email + ")" : "");
 
   // ---- Role-based admin link (only if admin role exists in token) ----
   const roles = user["https://panafricproperties.com/roles"] || [];
@@ -105,7 +124,12 @@
   const passed = result.passed;
   const pct = result.pct;
 
-  document.getElementById("progressText").innerText = `${passed} / ${TOTAL_MODULES} modules completed (${pct}%).`;
+  document.getElementById("progressText").innerText =
+    papT("academy.progress_text")
+      .replace("{passed}", passed)
+      .replace("{total}", TOTAL_MODULES)
+      .replace("{pct}", pct);
+
   document.getElementById("progressBar").style.width = pct + "%";
 
   // Resume = first module not passed
@@ -119,8 +143,8 @@
   // ---- Certification status ----
   const allDone = (passed === TOTAL_MODULES);
   document.getElementById("certStatus").innerText = allDone
-    ? "Unlocked — you have completed all modules."
-    : "Locked — complete all modules to unlock.";
+    ? papT("academy.unlocked")
+    : papT("academy.locked");
 
   if (allDone) {
     document.getElementById("certBtn").style.display = "inline-block";
@@ -138,13 +162,13 @@
     card.innerHTML = `
       <h3 style="margin:0 0 6px;">Module ${m.id}</h3>
       <p class="small" style="margin:0;">${m.title}</p>
-      <p class="small" style="margin-top:10px;"><strong>Status:</strong> ${done ? "Completed ✅" : "Not completed"}</p>
+      <p class="small" style="margin-top:10px;"><strong>${papT("academy.status")}:</strong> ${done ? papT("academy.completed") : papT("academy.not_completed")}</p>
     `;
     grid.appendChild(card);
   });
 </script>
 
- <script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n.js"></script>
 
 </body>
 </html>
