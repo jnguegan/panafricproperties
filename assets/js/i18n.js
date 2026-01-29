@@ -173,7 +173,7 @@
       "footer.contact.h3": "Contact",
       "footer.contact.p": "For buyers, developers, and partners.",
       "footer.contact.link": "Message us",
-      "footer.copyright": "© 2026 PanAfric Properties. All rights reserved."
+      "footer.copyright": "© 2026 PanAfric Properties. All rights reserved.",
 
       "index.hero.badge": "Diaspora-first • Trust-first",
 "index.hero.h1": "PanAfric Properties",
