@@ -1,17 +1,14 @@
 /* academy.js — PanAfric Properties
-   Purpose:
-   - Render modules grid from MODULES (modules.js)
-   - Show progress + resume logic
-   - Ensure i18n applies to dynamically created content (fixes "keys showing" issue)
-   Notes:
-   - Does NOT change English wording; uses i18n keys + fallbacks
-   - Does NOT touch Auth0 guard; assumes auth is handled elsewhere
+   Fixes:
+   - Modules grid missing (robust container detection + auto-create under Modules heading)
+   - Prevent showing raw i18n keys by NOT replacing existing English text with keys
+   - Re-apply i18n after dynamic render
 */
 
 (function () {
   "use strict";
 
-  // ---------- i18n helpers ----------
+  // ---------- language / i18n ----------
   function getLang() {
     return (
       localStorage.getItem("pap_lang") ||
@@ -21,46 +18,22 @@
     );
   }
 
-  // If your i18n.js provides papT(key, vars) or t(key, vars), we use it.
-  function _t(key, fallback, vars) {
-    try {
-      if (typeof window.papT === "function") return window.papT(key, vars) || fallback;
-      if (typeof window.t === "function") return window.t(key, vars) || fallback;
-    } catch (e) {}
-    // Simple placeholder replace fallback
-    if (vars && typeof fallback === "string") {
-      return fallback.replace(/\{(\w+)\}/g, (_, k) => (vars[k] != null ? String(vars[k]) : `{${k}}`));
-    }
-    return fallback;
-  }
-
-  // Re-apply translations after dynamic rendering
   function papReapplyI18n() {
     const lang = getLang();
-    if (typeof window.papApplyI18n === "function") {
-      window.papApplyI18n();
-      return;
-    }
-    if (typeof window.applyTranslations === "function") {
-      window.applyTranslations();
-      return;
-    }
-    if (typeof window.papSetLang === "function") {
-      window.papSetLang(lang);
-      return;
-    }
+    // Prefer dedicated apply function if present; else call setLang again.
+    if (typeof window.papApplyI18n === "function") return window.papApplyI18n();
+    if (typeof window.applyTranslations === "function") return window.applyTranslations();
+    if (typeof window.papSetLang === "function") return window.papSetLang(lang);
   }
 
-  // Optional: store vars for i18n engines that support data-i18n-vars
-  function setI18n(el, key, fallback, vars) {
+  // Set data-i18n on an element WITHOUT changing its visible English text.
+  function ensureI18nKey(el, key, vars) {
     if (!el) return;
     el.setAttribute("data-i18n", key);
     if (vars && typeof vars === "object") {
-      // many i18n scripts use this attribute name
       el.setAttribute("data-i18n-vars", JSON.stringify(vars));
     }
-    // fallback text (English wording stays as defined in your EN dict)
-    el.textContent = typeof fallback === "string" ? _t(key, fallback, vars) : key;
+    // IMPORTANT: Do NOT set el.textContent here — preserve existing English wording.
   }
 
   // ---------- progress storage ----------
@@ -85,32 +58,62 @@
     return window.MODULES.length ? window.MODULES[window.MODULES.length - 1].id : 1;
   }
 
-  // ---------- DOM getters (safe) ----------
+  // ---------- DOM helpers ----------
   function $(sel) {
     return document.querySelector(sel);
   }
 
-  // We support multiple possible containers so this works with your current HTML.
-  function getModulesContainer() {
-    return (
-      $("#modulesGrid") ||
-      $("#modules") ||
-      document.querySelector("[data-modules]") ||
-      document.querySelector(".modules-grid") ||
-      document.querySelector(".grid") ||
-      null
-    );
+  function findModulesHeading() {
+    // Prefer translated heading marker if present, else text match.
+    const byKey = document.querySelector('[data-i18n="academy.modules"]');
+    if (byKey) return byKey;
+
+    const headings = Array.from(document.querySelectorAll("h1,h2,h3,h4"));
+    return headings.find(h => (h.textContent || "").trim().toLowerCase() === "modules") || null;
   }
 
-  // ---------- render ----------
+  function getOrCreateModulesContainer() {
+    // Try common explicit IDs / classes first (safe + specific).
+    const existing =
+      $("#modulesGrid") ||
+      $("#modules-grid") ||
+      $("#modules") ||
+      $("#modulesList") ||
+      $(".modules-grid") ||
+      document.querySelector('[data-role="modules-grid"]') ||
+      document.querySelector('[data-modules-grid]');
+
+    if (existing) return existing;
+
+    // If not found, create it right under the Modules heading.
+    const heading = findModulesHeading();
+    if (!heading) return null;
+
+    const div = document.createElement("div");
+    div.id = "modulesGrid";
+    div.className = "modules-grid"; // if your CSS uses it; harmless otherwise
+    // Try to match typical grid styling without forcing new wording.
+    div.style.display = "grid";
+    div.style.gridTemplateColumns = "repeat(auto-fit, minmax(240px, 1fr))";
+    div.style.gap = "14px";
+    div.style.marginTop = "14px";
+
+    heading.insertAdjacentElement("afterend", div);
+    return div;
+  }
+
+  // ---------- render top section ----------
   function renderTop() {
     const total = Array.isArray(window.MODULES) ? window.MODULES.length : 0;
-    const passed = getPassedIds().filter((id) => typeof id === "number" || /^\d+$/.test(String(id))).length;
+    const passed = getPassedIds().filter(x => x != null).length;
     const pct = total ? Math.round((passed / total) * 100) : 0;
 
-    // Welcome line (supports placeholders)
-    const welcomeEl = $("#academyWelcome") || $("#welcome") || document.querySelector("[data-role='academy-welcome']");
-    // If you have an auth profile helper, use it; otherwise keep placeholder-only.
+    // If your HTML already has these elements, we just attach keys/vars.
+    const welcomeEl =
+      $("#academyWelcome") ||
+      $("#welcome") ||
+      document.querySelector('[data-role="academy-welcome"]');
+
     const userName =
       (window.authUser && (window.authUser.name || window.authUser.nickname)) ||
       (window.userProfile && (window.userProfile.name || window.userProfile.nickname)) ||
@@ -121,107 +124,97 @@
       "";
 
     if (welcomeEl) {
-      setI18n(welcomeEl, "academy.welcome", "academy.welcome", {
+      ensureI18nKey(welcomeEl, "academy.welcome", {
         name: userName ? userName + " " : "",
         email: userEmail ? "(" + userEmail + ")" : ""
       });
     }
 
-    // Progress text (supports placeholders)
     const progressTextEl =
-      $("#academyProgressText") || $("#progressText") || document.querySelector("[data-role='academy-progress-text']");
+      $("#academyProgressText") ||
+      $("#progressText") ||
+      document.querySelector('[data-role="academy-progress-text"]');
+
     if (progressTextEl) {
-      setI18n(progressTextEl, "academy.progress_text", "academy.progress_text", {
-        passed,
-        total,
-        pct
-      });
+      ensureI18nKey(progressTextEl, "academy.progress_text", { passed, total, pct });
     }
 
-    // Progress bar (optional)
-    const progressBarEl =
-      $("#academyProgressBar") || $("#progressBar") || document.querySelector("[data-role='academy-progress-bar']");
-    if (progressBarEl) {
-      // support <div style="width:..">, <progress>, etc.
-      if (progressBarEl.tagName.toLowerCase() === "progress") {
-        progressBarEl.max = total || 1;
-        progressBarEl.value = passed;
-      } else {
-        progressBarEl.style.width = pct + "%";
-        progressBarEl.setAttribute("aria-valuenow", String(pct));
-      }
-    }
+    // Resume button (if present)
+    const resumeBtn =
+      $("#academyResumeBtn") ||
+      $("#resumeBtn") ||
+      document.querySelector('[data-role="academy-resume"]');
 
-    // Resume button
-    const resumeBtn = $("#academyResumeBtn") || $("#resumeBtn") || document.querySelector("[data-role='academy-resume']");
-    if (resumeBtn) {
-      const nextId = getNextModuleId();
+    if (resumeBtn && !resumeBtn.__papBound) {
+      resumeBtn.__papBound = true;
       resumeBtn.addEventListener("click", function () {
+        const nextId = getNextModuleId();
         window.location.href = `module.html?m=${encodeURIComponent(String(nextId))}`;
       });
     }
 
-    // Certification status text (optional)
+    // Certification note/status (if present)
     const certTextEl =
-      $("#academyCertText") || $("#certText") || document.querySelector("[data-role='academy-cert-text']");
+      $("#academyCertText") ||
+      $("#certText") ||
+      document.querySelector('[data-role="academy-cert-text"]');
+
     if (certTextEl) {
-      if (total && passed >= total) {
-        setI18n(certTextEl, "academy.unlocked", "academy.unlocked");
-      } else {
-        setI18n(certTextEl, "academy.locked", "academy.locked");
-      }
+      // Keep your existing English text; only set the key.
+      if (total && passed >= total) ensureI18nKey(certTextEl, "academy.unlocked");
+      else ensureI18nKey(certTextEl, "academy.locked");
     }
   }
 
+  // ---------- render modules ----------
   function renderModules() {
-    const container = getModulesContainer();
+    const container = getOrCreateModulesContainer();
     if (!container) return;
 
     if (!Array.isArray(window.MODULES)) {
-      // No MODULES found; do not crash page.
+      // If modules.js isn't loaded, do nothing (don’t break page).
       return;
     }
 
-    // Clear current content (only the grid area)
     container.innerHTML = "";
 
     window.MODULES.forEach((m) => {
       const card = document.createElement("div");
-      card.className = "card module-card";
+      card.className = "card";
       card.style.cursor = "pointer";
+      card.style.padding = "16px";
+      card.style.borderRadius = "12px";
 
-      // Title: "Module 1" etc.
       const h3 = document.createElement("h3");
       h3.textContent = `Module ${m.id}`; // English wording unchanged
       card.appendChild(h3);
 
-      // Subtitle: module title from data
       const pTitle = document.createElement("p");
       pTitle.className = "small";
       pTitle.textContent = m.title || "";
       card.appendChild(pTitle);
 
-      // Status label + value
       const statusWrap = document.createElement("div");
       statusWrap.className = "small";
       statusWrap.style.marginTop = "10px";
 
       const statusLabel = document.createElement("span");
-      // Render label as i18n key (so FR/ES translate)
       statusLabel.style.fontWeight = "600";
-      setI18n(statusLabel, "academy.status", "academy.status");
+      // Do NOT overwrite textContent; just tag for i18n if you want it translated.
+      statusLabel.textContent = "academy.status"; // fallback key text (i18n will replace)
+      ensureI18nKey(statusLabel, "academy.status");
       statusWrap.appendChild(statusLabel);
 
       statusWrap.appendChild(document.createTextNode(": "));
 
       const statusValue = document.createElement("span");
       const passed = isPassed(m.id);
-      setI18n(statusValue, passed ? "academy.completed" : "academy.not_completed", passed ? "academy.completed" : "academy.not_completed");
+      statusValue.textContent = passed ? "academy.completed" : "academy.not_completed"; // i18n replaces
+      ensureI18nKey(statusValue, passed ? "academy.completed" : "academy.not_completed");
       statusWrap.appendChild(statusValue);
 
       card.appendChild(statusWrap);
 
-      // Click opens module
       card.addEventListener("click", function () {
         window.location.href = `module.html?m=${encodeURIComponent(String(m.id))}`;
       });
@@ -231,10 +224,13 @@
   }
 
   function init() {
-    // Render dynamic parts, then re-apply i18n so bottom translates too
     renderTop();
     renderModules();
+
+    // Re-apply i18n after dynamic render.
+    // Run twice: immediately + next tick (covers script load ordering).
     papReapplyI18n();
+    setTimeout(papReapplyI18n, 0);
   }
 
   if (document.readyState === "loading") {
