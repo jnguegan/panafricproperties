@@ -5,13 +5,11 @@
   <title>PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header class="header">
@@ -25,13 +23,14 @@
         <a href="countries.html" data-i18n="nav.countries">Countries</a>
         <a href="properties.html" data-i18n="nav.properties">Properties</a>
         <a href="agents.html" data-i18n="nav.agents">Agents</a>
-        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
+        <a href="franchise.html" data-i18n="nav.franchise">Work With Us</a>
         <a href="training.html" data-i18n="nav.training">Training & Certification</a>
         <a href="trust.html" data-i18n="nav.trust">Trust</a>
         <a href="login.html" data-i18n="nav.login">Partner Login</a>
 
+        <!-- 🌍 Language Dropdown -->
         <div class="lang-switch">
-          <span class="lang-label" data-i18n="lang.label">Language</span>
+          <span class="lang-label" data-i18n="lang_label">Language</span>
           <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
             <option value="en">EN</option>
             <option value="fr">FR</option>
@@ -45,45 +44,105 @@
   </div>
 </header>
 
-<section class="section">
-  <div class="wrap" style="text-align:center;">
-    <h1 style="color:var(--pap-blue); margin:0 0 10px;" data-i18n="home.hero.t">
-      Pan-African Real Estate, Built on Trust
-    </h1>
-
-    <p class="small" style="max-width:780px; margin:0 auto 18px;" data-i18n="home.hero.p">
-      Verified assets. Trusted partners. Diaspora-ready.
+<section class="hero">
+  <div class="wrap">
+    <span class="badge" data-i18n="index.hero.badge">Diaspora-first • Trust-first</span>
+    <h1 data-i18n="index.hero.h1">PanAfric Properties</h1>
+    <p data-i18n="index.hero.p">
+      Your trusted gateway to African real estate — connecting Africans worldwide to verified
+      property opportunities back home through a regulated local franchise network.
     </p>
 
     <div style="margin-top:14px;">
-      <a class="btn green" href="properties.html" data-i18n="home.cta.browse">Browse Properties</a>
-      <a class="btn" href="franchise.html" style="margin-left:10px;" data-i18n="home.cta.partner">Become a Partner</a>
+      <a class="btn" href="properties.html" data-i18n="index.hero.cta1">Explore Properties</a>
+      <a class="btn green" href="contact.html" style="margin-left:10px;" data-i18n="index.hero.cta2">Talk to a Local Agent</a>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="t" data-i18n="index.kpi1.t">Markets launching</div>
+        <div class="v">7</div>
+      </div>
+      <div class="kpi">
+        <div class="t" data-i18n="index.kpi2.t">Listing types</div>
+        <div class="v" data-i18n="index.kpi2.v">Land • Homes • Projects</div>
+      </div>
+      <div class="kpi">
+        <div class="t" data-i18n="index.kpi3.t">Model</div>
+        <div class="v" data-i18n="index.kpi3.v">Franchise network</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="grid" style="margin-top:12px;">
+    <h2 data-i18n="index.how.h2">How it works</h2>
+    <div class="grid">
       <div class="card">
-        <h3 data-i18n="trust.c1.t">Licensed Local Franchise Partners</h3>
-        <p class="small" data-i18n="trust.c1.p">Listings are submitted by verified partners operating under local laws and industry requirements.</p>
+        <h3 data-i18n="index.how.card1.h3">1) Browse verified opportunities</h3>
+        <p class="small" data-i18n="index.how.card1.p">Explore land, homes, and projects listed by licensed franchise partners in each territory.</p>
       </div>
-
       <div class="card">
-        <h3 data-i18n="trust.c2.t">Title & Ownership Checks</h3>
-        <p class="small" data-i18n="trust.c2.p">Where available, title documentation is reviewed and flagged as Verified / In Review / Not Verified.</p>
+        <h3 data-i18n="index.how.card2.h3">2) Get matched to a local agent</h3>
+        <p class="small" data-i18n="index.how.card2.p">Your enquiry is routed to the right on-the-ground professional to guide and protect you.</p>
       </div>
-
       <div class="card">
-        <h3 data-i18n="trust.c5.t">Buyer Support</h3>
-        <p class="small" data-i18n="trust.c5.p">We guide buyers through the process and route enquiries to the correct in-country partner.</p>
+        <h3 data-i18n="index.how.card3.h3">3) Buy with clarity & support</h3>
+        <p class="small" data-i18n="index.how.card3.p">We highlight due diligence status and provide transparent steps to complete safely.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="section" style="padding-top:18px; text-align:center;">
-      <a class="btn" href="trust.html" data-i18n="footer.trust">Trust & Verification</a>
-      <a class="btn green" href="training.html" style="margin-left:10px;" data-i18n="nav.training">Training & Certification</a>
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="text-align:center; padding:32px 24px;">
+      <h2 data-i18n="index.franchise.h2">From Graduate to Real Estate Entrepreneur</h2>
+      <p class="small" style="max-width:720px; margin:12px auto 18px;" data-i18n="index.franchise.p">
+        We empower young Africans, graduates, non-graduates, and unemployed professionals, to launch their own self-employed real estate businesses in their home cities under our franchise model.
+        PanAfric Properties provides training, in-house certification, and access to diaspora buyers through our trusted marketplace platform.
+      </p>
+
+      <a class="btn green" href="contact.html" data-i18n="index.franchise.cta">
+        Apply to Join Our Franchise Program
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 data-i18n="index.countries.h2">Start with countries</h2>
+    <p class="small" data-i18n="index.countries.p">Choose a market to view opportunities and the local franchise partner network.</p>
+
+    <div class="grid" style="margin-top:12px;">
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Ghana</h3><p class="small" data-i18n="index.country.ghana">Accra • Kumasi • Tema</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Nigeria</h3><p class="small" data-i18n="index.country.nigeria">Lagos • Abuja</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Cameroon</h3><p class="small" data-i18n="index.country.cameroon">Douala • Yaoundé</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Senegal</h3><p class="small" data-i18n="index.country.senegal">Dakar • Thiès</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Ivory Coast</h3><p class="small" data-i18n="index.country.ivory">Abidjan • Bouaké</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Mali</h3><p class="small" data-i18n="index.country.mali">Bamako</p>
+      </a>
+      <a class="card" href="properties.html" style="text-decoration:none;">
+        <h3>Zimbabwe</h3><p class="small" data-i18n="index.country.zimbabwe">Harare • Bulawayo</p>
+      </a>
+    </div>
+
+    <div style="margin-top:14px;">
+      <a class="btn ghost" href="countries.html" data-i18n="index.countries.cta1">View all countries</a>
+      <a class="btn" href="trust.html" style="margin-left:10px;" data-i18n="index.countries.cta2">How we build trust</a>
     </div>
   </div>
 </section>
@@ -99,34 +158,33 @@
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform">Platform</h3>
-        <p><a href="countries.html" data-i18n="nav.countries">Countries</a></p>
-        <p><a href="properties.html" data-i18n="nav.properties">Properties</a></p>
-        <p><a href="trust.html" data-i18n="footer.trust">Trust & Verification</a></p>
-        <p><a href="login.html" data-i18n="nav.login">Partner Login</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform.h3">Platform</h3>
+        <p><a href="countries.html" data-i18n="footer.platform.countries">Countries</a></p>
+        <p><a href="properties.html" data-i18n="footer.platform.properties">Properties</a></p>
+        <p><a href="trust.html" data-i18n="footer.platform.trust">Trust & Verification</a></p>
+        <p><a href="login.html" data-i18n="footer.platform.login">Partner Login</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.franchise">Franchise</h3>
-        <p class="small" data-i18n="footer.franchise_text">
-          Become a local partner and list verified opportunities in your territory.
-        </p>
-        <p><a href="contact.html" data-i18n="footer.apply">Apply / Enquire</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.work.h3">Franchise</h3>
+        <p class="small" data-i18n="index.footer.franchise.p">Become a local partner and list verified opportunities in your territory.</p>
+        <p><a href="contact.html" data-i18n="index.footer.franchise.link">Apply / Enquire</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact">Contact</h3>
-        <p class="small" data-i18n="footer.contact_text">For buyers, developers, and partners.</p>
-        <p><a href="contact.html" data-i18n="footer.message">Message us</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact.h3">Contact</h3>
+        <p class="small" data-i18n="footer.contact.p">For buyers, developers, and partners.</p>
+        <p><a href="contact.html" data-i18n="footer.contact.link">Message us</a></p>
       </div>
     </div>
 
-    <p class="small" style="margin-top:18px;" data-i18n="footer.rights">
+    <p class="small" style="margin-top:18px;" data-i18n="footer.copyright">
       © 2026 PanAfric Properties. All rights reserved.
     </p>
   </div>
 </footer>
 
+<!-- i18n -->
 <script src="assets/js/i18n.js"></script>
 
 </body>
