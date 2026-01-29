@@ -1,7 +1,7 @@
 // auth.js — Auth0 SPA auth for PanAfric Properties (static Netlify site)
 
-const AUTH0_DOMAIN = "panafricproperties.eu.auth0.com";
-const AUTH0_CLIENT_ID = "mUe1q5G16VBN1Od6OKsaqUYmHbwIeCGS";
+const AUTH0_DOMAIN = "panafricpropertiesauth.eu.auth0.com";
+const AUTH0_CLIENT_ID = "8JObnvGRcyTZSikDbUKCoKyIAXDwwX77";
 
 // Where Auth0 should send users back after login
 const AUTH0_REDIRECT = window.location.origin + "/academy.html";
