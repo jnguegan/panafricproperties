@@ -186,8 +186,12 @@
       card.style.borderRadius = "12px";
 
       const h3 = document.createElement("h3");
-      h3.textContent = `Module ${m.id}`; // English wording unchanged
-      card.appendChild(h3);
+const moduleTitle = (m.titleKey && typeof papT === "function")
+  ? papT(m.titleKey)
+  : m.title;
+h3.textContent = `Module ${m.id} — ${moduleTitle}`;
+card.appendChild(h3);
+
 
       const pTitle = document.createElement("p");
       pTitle.className = "small";
