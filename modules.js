@@ -262,4 +262,7 @@ const MODULES = [
 ];
 
 const TOTAL_MODULES = MODULES.length;
+window.MODULES = MODULES;
+window.TOTAL_MODULES = TOTAL_MODULES;
+
 
