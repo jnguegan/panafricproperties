@@ -217,6 +217,113 @@
 "index.footer.franchise.p": "Become a local partner and list verified opportunities in your territory.",
 "index.footer.franchise.link": "Apply / Enquire",
 
+// ===== TRAINING =====
+"training.top.approved": `Already approved? <a href="login.html"><strong>Partner Login</strong></a>`,
+"training.top.login_strong": "Partner Login",
+
+"training.hero.badge": "Partner Academy • Certification • Trust",
+"training.hero.h1": "PanAfric Properties Training & Certification",
+"training.hero.p": `All approved franchise applicants complete our internal online training and certification program
+      before operating under the PanAfric Properties brand.`,
+"training.hero.cta_apply": "Apply to Join Our Franchise Program",
+"training.hero.cta_login": "Partner Login",
+
+"training.standards.h2": "Professional Standards. Trust. Compliance.",
+"training.standards.p1": `PanAfric Properties operates a trusted real estate marketplace serving diaspora and international buyers.
+      To protect clients, maintain platform credibility, and ensure professional conduct, all franchise partners
+      must complete our internal training and certification program before onboarding.`,
+"training.standards.p2": "Our Training & Certification Program ensures that every partner:",
+
+"training.standards.card1.h3": "Understands Real Estate Fundamentals",
+"training.standards.card1.p": "Learn the basics of property markets, valuation, and transaction processes.",
+"training.standards.card2.h3": "Follows Due Diligence Standards",
+"training.standards.card2.p": "Understand verification procedures, fraud prevention, and documentation checks.",
+"training.standards.card3.h3": "Operates Ethically",
+"training.standards.card3.p": "Adhere to transparency, professionalism, and client protection principles.",
+"training.standards.card4.h3": "Complies With Platform Governance",
+"training.standards.card4.p": "Follow reporting, compliance, and marketplace rules.",
+
+"training.access.h2": "Who Can Access the Training Program",
+"training.access.p": `The PanAfric Properties Training & Certification Program is available exclusively to approved franchise applicants.
+      You do not need prior real estate experience to qualify.`,
+"training.access.card1.h3": "Graduates & Young Professionals",
+"training.access.card1.p": "Seeking a structured, income-generating business opportunity in your home city.",
+"training.access.card2.h3": "Non-Graduates With Ambition",
+"training.access.card2.p": "We provide training, structure, and certification to help you operate professionally.",
+"training.access.card3.h3": "Unemployed Professionals",
+"training.access.card3.p": "Become self-employed in a growing sector with real demand.",
+"training.access.card4.h3": "Diaspora Returnees",
+"training.access.card4.p": "Build a credible business using an established brand and buyer pipeline.",
+
+"training.academy.h2": "How the Partner Academy Works",
+"training.academy.step1.h3": "1) Apply & Get Accepted",
+"training.academy.step1.p": "Submit your franchise application. Approved candidates receive access to the Training Platform.",
+"training.academy.step2.h3": "2) Log In to the Training Platform",
+"training.academy.step2.p": "Access our internal online learning system using your personal login credentials.",
+"training.academy.step3.h3": "3) Study the Training Modules",
+"training.academy.step3.p": "Read structured modules covering real estate basics, due diligence, ethics, and platform processes.",
+"training.academy.step4.h3": "4) Complete Short Tests",
+"training.academy.step4.p": "Each module includes a short assessment to verify understanding.",
+"training.academy.step5.h3": "5) Earn Your Certification",
+"training.academy.step5.p": "Once all modules and tests are passed, you receive Partner Certification.",
+
+"training.curriculum.h2": "Training Curriculum",
+"training.curriculum.p": "This is a public overview. Full modules and tests are accessible only inside the Partner Academy.",
+"training.curriculum.m1.h3": "Module 1 — Introduction to PanAfric Properties",
+"training.curriculum.m1.p": "Platform vision, franchise model, partner responsibilities, governance framework.",
+"training.curriculum.m2.h3": "Module 2 — Real Estate Basics",
+"training.curriculum.m2.p": "Property types, valuation fundamentals, local market dynamics.",
+"training.curriculum.m3.h3": "Module 3 — Due Diligence & Verification",
+"training.curriculum.m3.p": "Ownership checks, title documentation, fraud prevention, red flags.",
+"training.curriculum.m4.h3": "Module 4 — Client Handling & Ethics",
+"training.curriculum.m4.p": "Professional conduct, transparency, communication, conflicts of interest.",
+"training.curriculum.m5.h3": "Module 5 — Diaspora Buyer Expectations",
+"training.curriculum.m5.p": "Investor psychology, trust concerns, remote transaction handling.",
+"training.curriculum.m6.h3": "Module 6 — Listing & Platform Processes",
+"training.curriculum.m6.p": "Property onboarding, documentation standards, marketplace rules.",
+"training.curriculum.m7.h3": "Module 7 — Legal Literacy (Basics)",
+"training.curriculum.m7.p": "Contracts, agency relationships, escrow concepts.",
+"training.curriculum.m8.h3": "Module 8 — Closing Transactions",
+"training.curriculum.m8.p": "Buyer onboarding, milestones, payment principles.",
+"training.curriculum.m9.h3": "Module 9 — Compliance & Reporting",
+"training.curriculum.m9.p": "Reporting obligations, monitoring, dispute handling.",
+
+"training.cert.h2": "Partner Certification",
+"training.cert.p": `PanAfric Properties Partner Certification confirms that you have successfully completed
+      the Training & Certification Program and met our operational standards.`,
+"training.cert.card1.h3": "Brand Authorization",
+"training.cert.card1.p": "Operate under the PanAfric Properties brand.",
+"training.cert.card2.h3": "Marketplace Access",
+"training.cert.card2.p": "List verified opportunities and receive diaspora buyer enquiries.",
+"training.cert.card3.h3": "Official Recognition",
+"training.cert.card3.p": "Certified franchise partner status.",
+"training.cert.card4.h3": "Ongoing Compliance",
+"training.cert.card4.p": "Certification maintained through ethical conduct and performance standards.",
+
+"training.eligibility.h2": "Access & Eligibility",
+"training.eligibility.p": `The Training & Certification Program is not publicly accessible.
+      Access is granted only to approved franchise applicants.`,
+"training.eligibility.step1.h3": "Step 1",
+"training.eligibility.step1.p": "Apply to join the Franchise Program.",
+"training.eligibility.step2.h3": "Step 2",
+"training.eligibility.step2.p": "Receive application review outcome.",
+"training.eligibility.step3.h3": "Step 3",
+"training.eligibility.step3.p": "Get login access to the Training Platform.",
+"training.eligibility.step4.h3": "Step 4",
+"training.eligibility.step4.p": "Complete modules and tests.",
+"training.eligibility.step5.h3": "Step 5",
+"training.eligibility.step5.p": "Earn certification.",
+
+"training.clarification.h3": "Important Clarification",
+"training.clarification.p": `PanAfric Properties is not offering salaried employment or traditional jobs.
+      This program is a franchise-based entrepreneurship opportunity.
+      Successful applicants operate as independent, self-employed business owners
+      under the PanAfric Properties brand and trust framework.`,
+
+"training.journey.h2": "Start Your Training Journey",
+"training.journey.p": `Apply to become a PanAfric Properties franchise partner and begin your
+      training and certification journey.`,
+"training.journey.cta": "Apply to Join Our Franchise Program",
       
     },
 
@@ -431,6 +538,113 @@
 
 "index.footer.franchise.p": "Devenez partenaire local et publiez des opportunités vérifiées dans votre territoire.",
 "index.footer.franchise.link": "Candidater / Demander",
+// ===== TRAINING =====
+"training.top.approved": `Déjà approuvé ? <a href="login.html"><strong>Connexion Partenaire</strong></a>`,
+"training.top.login_strong": "Connexion Partenaire",
+
+"training.hero.badge": "Académie Partenaire • Certification • Confiance",
+"training.hero.h1": "Formation & Certification PanAfric Properties",
+"training.hero.p": `Tous les candidats franchisés approuvés suivent notre programme interne en ligne de formation et certification
+      avant d’opérer sous la marque PanAfric Properties.`,
+"training.hero.cta_apply": "Candidater à notre programme de franchise",
+"training.hero.cta_login": "Connexion Partenaire",
+
+"training.standards.h2": "Standards professionnels. Confiance. Conformité.",
+"training.standards.p1": `PanAfric Properties exploite une marketplace immobilière de confiance au service de la diaspora et des acheteurs internationaux.
+      Pour protéger les clients, préserver la crédibilité de la plateforme et garantir une conduite professionnelle, tous les partenaires franchisés
+      doivent suivre notre programme interne de formation et certification avant l’onboarding.`,
+"training.standards.p2": "Notre programme de formation & certification garantit que chaque partenaire :", 
+
+"training.standards.card1.h3": "Maîtrise les fondamentaux de l’immobilier",
+"training.standards.card1.p": "Apprenez les bases des marchés immobiliers, de l’évaluation et des processus de transaction.",
+"training.standards.card2.h3": "Suit des standards de due diligence",
+"training.standards.card2.p": "Comprenez les procédures de vérification, la prévention de la fraude et les contrôles documentaires.",
+"training.standards.card3.h3": "Opère de manière éthique",
+"training.standards.card3.p": "Respectez la transparence, le professionnalisme et la protection des clients.",
+"training.standards.card4.h3": "Respecte la gouvernance de la plateforme",
+"training.standards.card4.p": "Suivez les règles de reporting, de conformité et de marketplace.",
+
+"training.access.h2": "Qui peut accéder au programme de formation",
+"training.access.p": `Le programme de Formation & Certification PanAfric Properties est disponible exclusivement pour les candidats franchisés approuvés.
+      Aucune expérience immobilière préalable n’est requise.`,
+"training.access.card1.h3": "Diplômés & jeunes professionnels",
+"training.access.card1.p": "À la recherche d’une opportunité structurée et génératrice de revenus dans votre ville.",
+"training.access.card2.h3": "Non-diplômés ambitieux",
+"training.access.card2.p": "Nous fournissons formation, structure et certification pour opérer professionnellement.",
+"training.access.card3.h3": "Professionnels sans emploi",
+"training.access.card3.p": "Devenez indépendant dans un secteur en croissance et à forte demande.",
+"training.access.card4.h3": "Retours de la diaspora",
+"training.access.card4.p": "Bâtissez une activité crédible avec une marque établie et un pipeline d’acheteurs.",
+
+"training.academy.h2": "Comment fonctionne l’Académie Partenaire",
+"training.academy.step1.h3": "1) Candidater & être accepté",
+"training.academy.step1.p": "Soumettez votre candidature. Les profils approuvés reçoivent l’accès à la plateforme de formation.",
+"training.academy.step2.h3": "2) Se connecter à la plateforme de formation",
+"training.academy.step2.p": "Accédez à notre système d’apprentissage en ligne avec vos identifiants personnels.",
+"training.academy.step3.h3": "3) Étudier les modules de formation",
+"training.academy.step3.p": "Consultez des modules structurés couvrant bases, due diligence, éthique et processus de plateforme.",
+"training.academy.step4.h3": "4) Passer de courts tests",
+"training.academy.step4.p": "Chaque module comprend une courte évaluation pour vérifier la compréhension.",
+"training.academy.step5.h3": "5) Obtenir votre certification",
+"training.academy.step5.p": "Une fois les modules et tests validés, vous recevez la Certification Partenaire.",
+
+"training.curriculum.h2": "Programme de formation",
+"training.curriculum.p": "Ceci est un aperçu public. Les modules complets et tests sont accessibles uniquement dans l’Académie Partenaire.",
+"training.curriculum.m1.h3": "Module 1 — Introduction à PanAfric Properties",
+"training.curriculum.m1.p": "Vision de la plateforme, modèle de franchise, responsabilités, cadre de gouvernance.",
+"training.curriculum.m2.h3": "Module 2 — Bases de l’immobilier",
+"training.curriculum.m2.p": "Types de biens, fondamentaux de valorisation, dynamique du marché local.",
+"training.curriculum.m3.h3": "Module 3 — Due diligence & vérification",
+"training.curriculum.m3.p": "Contrôles de propriété, titres, prévention de la fraude, signaux d’alerte.",
+"training.curriculum.m4.h3": "Module 4 — Relation client & éthique",
+"training.curriculum.m4.p": "Conduite professionnelle, transparence, communication, conflits d’intérêts.",
+"training.curriculum.m5.h3": "Module 5 — Attentes des acheteurs diaspora",
+"training.curriculum.m5.p": "Psychologie investisseur, enjeux de confiance, transactions à distance.",
+"training.curriculum.m6.h3": "Module 6 — Annonces & processus plateforme",
+"training.curriculum.m6.p": "Onboarding des biens, standards documentaires, règles de marketplace.",
+"training.curriculum.m7.h3": "Module 7 — Culture juridique (bases)",
+"training.curriculum.m7.p": "Contrats, relations d’agence, notions d’escrow.",
+"training.curriculum.m8.h3": "Module 8 — Clôture des transactions",
+"training.curriculum.m8.p": "Onboarding acheteur, jalons, principes de paiement.",
+"training.curriculum.m9.h3": "Module 9 — Conformité & reporting",
+"training.curriculum.m9.p": "Obligations de reporting, suivi, gestion des litiges.",
+
+"training.cert.h2": "Certification Partenaire",
+"training.cert.p": `La Certification Partenaire PanAfric Properties confirme que vous avez validé avec succès
+      le programme de Formation & Certification et respecté nos standards opérationnels.`,
+"training.cert.card1.h3": "Autorisation de marque",
+"training.cert.card1.p": "Opérez sous la marque PanAfric Properties.",
+"training.cert.card2.h3": "Accès marketplace",
+"training.cert.card2.p": "Publiez des opportunités vérifiées et recevez des demandes d’acheteurs diaspora.",
+"training.cert.card3.h3": "Reconnaissance officielle",
+"training.cert.card3.p": "Statut de partenaire franchisé certifié.",
+"training.cert.card4.h3": "Conformité continue",
+"training.cert.card4.p": "Certification maintenue via conduite éthique et standards de performance.",
+
+"training.eligibility.h2": "Accès & éligibilité",
+"training.eligibility.p": `Le programme de Formation & Certification n’est pas accessible au public.
+      L’accès est accordé uniquement aux candidats franchisés approuvés.`,
+"training.eligibility.step1.h3": "Étape 1",
+"training.eligibility.step1.p": "Candidater au programme de franchise.",
+"training.eligibility.step2.h3": "Étape 2",
+"training.eligibility.step2.p": "Recevoir le résultat de l’examen de la candidature.",
+"training.eligibility.step3.h3": "Étape 3",
+"training.eligibility.step3.p": "Obtenir un accès de connexion à la plateforme de formation.",
+"training.eligibility.step4.h3": "Étape 4",
+"training.eligibility.step4.p": "Terminer les modules et tests.",
+"training.eligibility.step5.h3": "Étape 5",
+"training.eligibility.step5.p": "Obtenir la certification.",
+
+"training.clarification.h3": "Clarification importante",
+"training.clarification.p": `PanAfric Properties ne propose pas d’emploi salarié ni de postes traditionnels.
+      Ce programme est une opportunité d’entrepreneuriat basée sur la franchise.
+      Les candidats retenus opèrent en tant qu’entrepreneurs indépendants, à leur compte,
+      sous la marque PanAfric Properties et son cadre de confiance.`,
+
+"training.journey.h2": "Commencez votre parcours de formation",
+"training.journey.p": `Candidater pour devenir partenaire franchisé PanAfric Properties et démarrer votre
+      parcours de formation et certification.`,
+"training.journey.cta": "Candidater à notre programme de franchise",
 
 
     },
@@ -647,6 +861,113 @@
 
 "index.footer.franchise.p": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
 "index.footer.franchise.link": "Solicitar / Consultar",
+// ===== TRAINING =====
+"training.top.approved": `¿Ya estás aprobado? <a href="login.html"><strong>Acceso de socios</strong></a>`,
+"training.top.login_strong": "Acceso de socios",
+
+"training.hero.badge": "Academia de socios • Certificación • Confianza",
+"training.hero.h1": "Formación y certificación de PanAfric Properties",
+"training.hero.p": `Todos los solicitantes de franquicia aprobados completan nuestro programa interno online de formación y certificación
+      antes de operar bajo la marca PanAfric Properties.`,
+"training.hero.cta_apply": "Solicitar el programa de franquicia",
+"training.hero.cta_login": "Acceso de socios",
+
+"training.standards.h2": "Estándares profesionales. Confianza. Cumplimiento.",
+"training.standards.p1": `PanAfric Properties opera un marketplace inmobiliario de confianza para la diáspora y compradores internacionales.
+      Para proteger a los clientes, mantener la credibilidad de la plataforma y asegurar una conducta profesional, todos los socios franquiciados
+      deben completar nuestro programa interno de formación y certificación antes de la incorporación.`,
+"training.standards.p2": "Nuestro programa de formación y certificación garantiza que cada socio:",
+
+"training.standards.card1.h3": "Comprende los fundamentos inmobiliarios",
+"training.standards.card1.p": "Aprende lo básico de mercados, valoración y procesos de transacción.",
+"training.standards.card2.h3": "Sigue estándares de due diligence",
+"training.standards.card2.p": "Comprende procedimientos de verificación, prevención de fraude y controles documentales.",
+"training.standards.card3.h3": "Opera éticamente",
+"training.standards.card3.p": "Respeta principios de transparencia, profesionalidad y protección al cliente.",
+"training.standards.card4.h3": "Cumple la gobernanza de la plataforma",
+"training.standards.card4.p": "Sigue reglas de reporting, cumplimiento y marketplace.",
+
+"training.access.h2": "Quién puede acceder al programa de formación",
+"training.access.p": `El programa de Formación y Certificación de PanAfric Properties está disponible exclusivamente para solicitantes de franquicia aprobados.
+      No necesitas experiencia previa en el sector para calificar.`,
+"training.access.card1.h3": "Graduados y jóvenes profesionales",
+"training.access.card1.p": "Buscando una oportunidad estructurada y generadora de ingresos en tu ciudad.",
+"training.access.card2.h3": "No graduados con ambición",
+"training.access.card2.p": "Ofrecemos formación, estructura y certificación para operar con profesionalidad.",
+"training.access.card3.h3": "Profesionales desempleados",
+"training.access.card3.p": "Hazte autónomo en un sector en crecimiento con demanda real.",
+"training.access.card4.h3": "Regreso de la diáspora",
+"training.access.card4.p": "Construye un negocio creíble con una marca establecida y un flujo de compradores.",
+
+"training.academy.h2": "Cómo funciona la academia de socios",
+"training.academy.step1.h3": "1) Solicitar y ser aceptado",
+"training.academy.step1.p": "Envía tu solicitud. Los candidatos aprobados reciben acceso a la plataforma de formación.",
+"training.academy.step2.h3": "2) Iniciar sesión en la plataforma de formación",
+"training.academy.step2.p": "Accede a nuestro sistema interno de aprendizaje online con tus credenciales personales.",
+"training.academy.step3.h3": "3) Estudiar los módulos",
+"training.academy.step3.p": "Lee módulos estructurados sobre fundamentos, due diligence, ética y procesos de plataforma.",
+"training.academy.step4.h3": "4) Completar pruebas cortas",
+"training.academy.step4.p": "Cada módulo incluye una evaluación breve para verificar la comprensión.",
+"training.academy.step5.h3": "5) Obtener tu certificación",
+"training.academy.step5.p": "Cuando apruebas módulos y pruebas, recibes la certificación de socio.",
+
+"training.curriculum.h2": "Plan de estudios",
+"training.curriculum.p": "Este es un resumen público. Los módulos completos y pruebas solo están disponibles dentro de la academia de socios.",
+"training.curriculum.m1.h3": "Módulo 1 — Introducción a PanAfric Properties",
+"training.curriculum.m1.p": "Visión de la plataforma, modelo de franquicia, responsabilidades, marco de gobernanza.",
+"training.curriculum.m2.h3": "Módulo 2 — Fundamentos inmobiliarios",
+"training.curriculum.m2.p": "Tipos de propiedad, fundamentos de valoración, dinámica del mercado local.",
+"training.curriculum.m3.h3": "Módulo 3 — Due diligence y verificación",
+"training.curriculum.m3.p": "Comprobación de propiedad, documentación de título, prevención de fraude, señales de alerta.",
+"training.curriculum.m4.h3": "Módulo 4 — Atención al cliente y ética",
+"training.curriculum.m4.p": "Conducta profesional, transparencia, comunicación, conflictos de interés.",
+"training.curriculum.m5.h3": "Módulo 5 — Expectativas del comprador diáspora",
+"training.curriculum.m5.p": "Psicología del inversor, preocupaciones de confianza, gestión de transacciones a distancia.",
+"training.curriculum.m6.h3": "Módulo 6 — Publicaciones y procesos de plataforma",
+"training.curriculum.m6.p": "Incorporación de propiedades, estándares documentales, reglas del marketplace.",
+"training.curriculum.m7.h3": "Módulo 7 — Alfabetización legal (básica)",
+"training.curriculum.m7.p": "Contratos, relaciones de agencia, conceptos de escrow.",
+"training.curriculum.m8.h3": "Módulo 8 — Cierre de transacciones",
+"training.curriculum.m8.p": "Incorporación del comprador, hitos, principios de pago.",
+"training.curriculum.m9.h3": "Módulo 9 — Cumplimiento y reporting",
+"training.curriculum.m9.p": "Obligaciones de reporting, monitoreo, gestión de disputas.",
+
+"training.cert.h2": "Certificación de socio",
+"training.cert.p": `La certificación de socio de PanAfric Properties confirma que has completado con éxito
+      el programa de formación y certificación y has cumplido nuestros estándares operativos.`,
+"training.cert.card1.h3": "Autorización de marca",
+"training.cert.card1.p": "Opera bajo la marca PanAfric Properties.",
+"training.cert.card2.h3": "Acceso al marketplace",
+"training.cert.card2.p": "Publica oportunidades verificadas y recibe consultas de compradores de la diáspora.",
+"training.cert.card3.h3": "Reconocimiento oficial",
+"training.cert.card3.p": "Estatus de socio franquiciado certificado.",
+"training.cert.card4.h3": "Cumplimiento continuo",
+"training.cert.card4.p": "Certificación mantenida mediante conducta ética y estándares de desempeño.",
+
+"training.eligibility.h2": "Acceso y elegibilidad",
+"training.eligibility.p": `El programa de formación y certificación no es accesible públicamente.
+      El acceso se concede solo a solicitantes de franquicia aprobados.`,
+"training.eligibility.step1.h3": "Paso 1",
+"training.eligibility.step1.p": "Solicitar el programa de franquicia.",
+"training.eligibility.step2.h3": "Paso 2",
+"training.eligibility.step2.p": "Recibir el resultado de la revisión.",
+"training.eligibility.step3.h3": "Paso 3",
+"training.eligibility.step3.p": "Obtener acceso de inicio de sesión a la plataforma de formación.",
+"training.eligibility.step4.h3": "Paso 4",
+"training.eligibility.step4.p": "Completar módulos y pruebas.",
+"training.eligibility.step5.h3": "Paso 5",
+"training.eligibility.step5.p": "Obtener certificación.",
+
+"training.clarification.h3": "Aclaración importante",
+"training.clarification.p": `PanAfric Properties no ofrece empleo asalariado ni puestos tradicionales.
+      Este programa es una oportunidad de emprendimiento basada en franquicia.
+      Los solicitantes seleccionados operan como autónomos y propietarios de su negocio
+      bajo la marca PanAfric Properties y su marco de confianza.`,
+
+"training.journey.h2": "Inicia tu camino de formación",
+"training.journey.p": `Solicita convertirte en socio franquiciado de PanAfric Properties y comienza tu
+      camino de formación y certificación.`,
+"training.journey.cta": "Solicitar el programa de franquicia",
 
     }
   };
