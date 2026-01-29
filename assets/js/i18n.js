@@ -515,6 +515,13 @@
 "properties.promo.title": "Want to Build a Real Estate Business in Your City?",
 "properties.promo.text": "Join PanAfric Properties as a franchise partner. We train and certify local partners to operate real estate brokerage activities and connect them to diaspora buyers worldwide.",
 "properties.promo.cta": "Work With Us",
+// login.html
+"login.title": "Partner Login",
+"login.intro": "Access the PanAfric Properties Training Platform. Login is available to approved partners only.",
+"login.cta.login": "Log in",
+"login.cta.back": "Back",
+"login.note.q": "Not approved yet?",
+"login.note.link": "Apply to join our Partner Program",
 
     },
 
@@ -996,6 +1003,13 @@
 "properties.promo.title": "Vous voulez créer une activité immobilière dans votre ville ?",
 "properties.promo.text": "Rejoignez PanAfric Properties en tant que partenaire franchisé. Nous formons et certifions des partenaires locaux pour exercer des activités de courtage immobilier et les connectons aux acheteurs de la diaspora dans le monde entier.",
 "properties.promo.cta": "Travailler avec nous",
+// login.html
+"login.title": "Connexion partenaire",
+"login.intro": "Accédez à la plateforme de formation PanAfric Properties. La connexion est réservée aux partenaires approuvés.",
+"login.cta.login": "Se connecter",
+"login.cta.back": "Retour",
+"login.note.q": "Pas encore approuvé ?",
+"login.note.link": "Postuler pour rejoindre notre programme partenaires",
 
 
     },
@@ -1479,6 +1493,13 @@
 "properties.promo.title": "¿Quieres crear un negocio inmobiliario en tu ciudad?",
 "properties.promo.text": "Únete a PanAfric Properties como socio franquiciado. Formamos y certificamos a socios locales para operar actividades de corretaje inmobiliario y conectarlos con compradores de la diáspora en todo el mundo.",
 "properties.promo.cta": "Trabaja con nosotros",
+// login.html
+"login.title": "Acceso de socios",
+"login.intro": "Accede a la plataforma de formación de PanAfric Properties. El acceso está disponible solo para socios aprobados.",
+"login.cta.login": "Iniciar sesión",
+"login.cta.back": "Volver",
+"login.note.q": "¿Aún no estás aprobado?",
+"login.note.link": "Solicitar unirse a nuestro programa de socios",
 
       
     }
