@@ -166,10 +166,11 @@
       <p class="small" style="margin:0;">${m.title}</p>
       <p class="small" style="margin-top:10px;"><strong>${papT("academy.status")}:</strong> ${done ? papT("academy.completed") : papT("academy.not_completed")}</p>
     `;
-    grid.appendChild(card);
+       grid.appendChild(card);
   });
-</script>
+</script> -->
 
+<!-- ✅ Correct script order (i18n first, then data, then page logic) -->
 <script src="assets/js/i18n.js"></script>
 <script src="modules.js"></script>
 <script src="academy.js"></script>
