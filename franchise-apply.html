@@ -20,16 +20,16 @@
       </a>
 
       <nav class="navlinks">
-        <a href="countries.html">Countries</a>
-        <a href="properties.html">Properties</a>
-        <a href="agents.html">Agents</a>
-        <a href="franchise.html">Work With Us</a>
-        <a href="training.html">Training & Certification</a>
-        <a href="trust.html">Trust</a>
-        <a href="login.html">Partner Login</a>
+        <a href="countries.html" data-i18n="nav.countries">Countries</a>
+        <a href="properties.html" data-i18n="nav.properties">Properties</a>
+        <a href="agents.html" data-i18n="nav.agents">Agents</a>
+        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
+        <a href="training.html" data-i18n="nav.training">Training & Certification</a>
+        <a href="trust.html" data-i18n="nav.trust">Trust</a>
+        <a href="login.html" data-i18n="nav.login">Partner Login</a>
         <!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
-  <span class="lang-label" data-i18n="lang_label">Language</span>
+  <span class="lang-label" data-i18n="lang.label">Language</span>
   <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
     <option value="en">EN</option>
     <option value="fr">FR</option>
@@ -37,7 +37,7 @@
   </select>
 </div>
 
-        <a href="contact.html" class="btn">Contact</a>
+        <a href="contact.html" class="btn" data-i18n="nav.contact">Contact</a>
       </nav>
     </div>
   </div>
@@ -45,9 +45,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="badge">Franchise Application</span>
-    <h1>Apply to Join Our Franchise Program</h1>
-    <p>
+    <span class="badge" data-i18n="apply.badge">Franchise Application</span>
+    <h1 data-i18n="apply.title">Apply to Join Our Franchise Program</h1>
+    <p data-i18n="apply.intro">
       This program is for ambitious individuals who want to build a self-employed
       real estate business in their home city under the PanAfric Properties franchise model.
       No prior real estate experience is required.
@@ -58,7 +58,7 @@
 <section class="section">
   <div class="wrap">
     <div class="card" style="max-width:760px; margin:auto;">
-      <h2>Partner Application Form</h2>
+      <h2 data-i18n="apply.form.title">Partner Application Form</h2>
 
       <!-- Netlify Form -->
       <form name="franchise-application" method="POST" data-netlify="true">
@@ -71,94 +71,94 @@
         <input type="hidden" id="ref" name="ref" value="">
 
         <p>
-          <label>Full Name<br>
+          <label><span data-i18n="apply.f.name">Full Name</span><br>
             <input type="text" name="name" required>
           </label>
         </p>
 
         <p>
-          <label>Email Address<br>
+          <label><span data-i18n="apply.f.email">Email Address</span><br>
             <input type="email" name="email" required>
           </label>
         </p>
 
         <p>
-          <label>Phone Number<br>
+          <label><span data-i18n="apply.f.phone">Phone Number</span><br>
             <input type="text" name="phone" required>
           </label>
         </p>
 
         <p>
-          <label>Country of Residence<br>
+          <label><span data-i18n="apply.f.residence">Country of Residence</span><br>
             <input type="text" name="country_residence" required>
           </label>
         </p>
 
         <p>
-          <label>City You Want to Operate In<br>
+          <label><span data-i18n="apply.f.city">City You Want to Operate In</span><br>
             <input type="text" name="city_target" required>
           </label>
         </p>
 
         <p>
-          <label>Education Level<br>
+          <label><span data-i18n="apply.f.education">Education Level</span><br>
             <select name="education" required>
-              <option value="">Select</option>
-              <option>Non-graduate</option>
-              <option>Graduate</option>
-              <option>Postgraduate</option>
+              <option value="" data-i18n="apply.opt.select">Select</option>
+              <option data-i18n="apply.opt.nongrad">Non-graduate</option>
+              <option data-i18n="apply.opt.grad">Graduate</option>
+              <option data-i18n="apply.opt.postgrad">Postgraduate</option>
             </select>
           </label>
         </p>
 
         <p>
-          <label>Employment Status<br>
+          <label><span data-i18n="apply.f.employment">Employment Status</span><br>
             <select name="employment_status" required>
-              <option value="">Select</option>
-              <option>Unemployed</option>
-              <option>Employed</option>
-              <option>Self-employed</option>
+              <option value="" data-i18n="apply.opt.select">Select</option>
+              <option data-i18n="apply.opt.unemployed">Unemployed</option>
+              <option data-i18n="apply.opt.employed">Employed</option>
+              <option data-i18n="apply.opt.selfemployed">Self-employed</option>
             </select>
           </label>
         </p>
 
         <p>
-          <label>Why do you want to join PanAfric Properties?<br>
+          <label><span data-i18n="apply.f.why">Why do you want to join PanAfric Properties?</span><br>
             <textarea name="motivation" rows="4" required></textarea>
           </label>
         </p>
 
         <p>
-          <label>Do you have any real estate experience?<br>
+          <label><span data-i18n="apply.f.experience">Do you have any real estate experience?</span><br>
             <select name="experience">
-              <option>No</option>
-              <option>Yes</option>
+              <option data-i18n="apply.opt.no">No</option>
+              <option data-i18n="apply.opt.yes">Yes</option>
             </select>
           </label>
         </p>
 
         <p>
-          <label>Can you invest in basic setup costs (marketing, transport, admin)?<br>
+          <label><span data-i18n="apply.f.capital">Can you invest in basic setup costs (marketing, transport, admin)?</span><br>
             <select name="basic_capital" required>
-              <option value="">Select</option>
-              <option>Yes</option>
-              <option>No</option>
+              <option value="" data-i18n="apply.opt.select">Select</option>
+              <option data-i18n="apply.opt.yes">Yes</option>
+              <option data-i18n="apply.opt.no">No</option>
             </select>
           </label>
         </p>
 
         <p>
-          <label>Anything else you would like us to know?<br>
+          <label><span data-i18n="apply.f.notes">Anything else you would like us to know?</span><br>
             <textarea name="notes" rows="3"></textarea>
           </label>
         </p>
 
         <p style="margin-top:14px;">
-          <button type="submit" class="btn green">Submit Application</button>
-          <a class="btn ghost" href="franchise.html" style="margin-left:10px;">Back</a>
+          <button type="submit" class="btn green" data-i18n="apply.cta.submit">Submit Application</button>
+          <a class="btn ghost" href="franchise.html" style="margin-left:10px;" data-i18n="apply.cta.back">Back</a>
         </p>
 
-        <p class="small" style="opacity:.8; margin-top:10px;">
+        <p class="small" style="opacity:.8; margin-top:10px;" data-i18n="apply.note">
           After review, approved applicants receive invite-only access to the Partner Academy.
         </p>
       </form>
@@ -168,7 +168,7 @@
 
 <footer class="footer">
   <div class="wrap">
-    <p class="small">© 2026 PanAfric Properties. All rights reserved.</p>
+    <p class="small" data-i18n="footer.rights">© 2026 PanAfric Properties. All rights reserved.</p>
   </div>
 </footer>
 
