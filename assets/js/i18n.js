@@ -446,6 +446,20 @@
 "agents.join.text": "You don’t need prior real estate experience — we provide training, in-house certification, and a trusted framework. Licensed agents and property professionals are also welcome to apply and may be fast-tracked depending on the territory.",
 "agents.join.cta.apply": "Apply to Join Our Partner Program",
 "agents.join.cta.training": "View Training",
+// countries.html
+"countries.title": "Explore Countries",
+"countries.intro": "Choose a market to view verified opportunities and local franchise partners.",
+
+"countries.ghana.cities": "Accra • Kumasi • Tema",
+"countries.nigeria.cities": "Lagos • Abuja",
+"countries.cameroon.cities": "Douala • Yaoundé",
+"countries.senegal.cities": "Dakar • Thiès",
+"countries.ivorycoast.cities": "Abidjan • Bouaké",
+"countries.mali.cities": "Bamako",
+"countries.zimbabwe.cities": "Harare • Bulawayo",
+
+"countries.cta.browse": "Browse listings",
+"countries.cta.franchise": "Franchise enquiry",
 
     },
 
@@ -858,6 +872,20 @@
 "agents.join.text": "Vous n’avez pas besoin d’expérience préalable dans l’immobilier — nous fournissons la formation, une certification interne et un cadre de confiance. Les agents agréés et les professionnels de l’immobilier sont également invités à postuler et peuvent être accélérés selon le territoire.",
 "agents.join.cta.apply": "Postuler pour rejoindre notre programme partenaires",
 "agents.join.cta.training": "Voir la formation",
+// countries.html
+"countries.title": "Explorer les pays",
+"countries.intro": "Choisissez un marché pour voir les opportunités vérifiées et les partenaires franchisés locaux.",
+
+"countries.ghana.cities": "Accra • Kumasi • Tema",
+"countries.nigeria.cities": "Lagos • Abuja",
+"countries.cameroon.cities": "Douala • Yaoundé",
+"countries.senegal.cities": "Dakar • Thiès",
+"countries.ivorycoast.cities": "Abidjan • Bouaké",
+"countries.mali.cities": "Bamako",
+"countries.zimbabwe.cities": "Harare • Bulawayo",
+
+"countries.cta.browse": "Parcourir les annonces",
+"countries.cta.franchise": "Demande franchise",
 
 
     },
@@ -1272,6 +1300,20 @@
 "agents.join.text": "No necesitas experiencia previa en bienes raíces — ofrecemos formación, certificación interna y un marco de confianza. Los agentes con licencia y profesionales del sector también pueden postular y pueden ser acelerados según el territorio.",
 "agents.join.cta.apply": "Solicitar unirse a nuestro programa de socios",
 "agents.join.cta.training": "Ver formación",
+// countries.html
+"countries.title": "Explorar países",
+"countries.intro": "Elige un mercado para ver oportunidades verificadas y socios franquiciados locales.",
+
+"countries.ghana.cities": "Accra • Kumasi • Tema",
+"countries.nigeria.cities": "Lagos • Abuja",
+"countries.cameroon.cities": "Douala • Yaundé",
+"countries.senegal.cities": "Dakar • Thiès",
+"countries.ivorycoast.cities": "Abidjan • Bouaké",
+"countries.mali.cities": "Bamako",
+"countries.zimbabwe.cities": "Harare • Bulawayo",
+
+"countries.cta.browse": "Ver anuncios",
+"countries.cta.franchise": "Consulta de franquicia",
 
     }
   };
