@@ -382,6 +382,35 @@
 "trust.footer.contact.text": "For buyers, developers, and partners.",
 "trust.footer.contact.cta": "Message us",
 "trust.footer.rights": "© 2026 PanAfric Properties. All rights reserved.",
+// contact.html
+"contact.title": "Contact Us",
+"contact.intro": "Property enquiries, franchise applications, developer partnerships — send us a message.",
+
+"contact.form.title": "Enquiry Form",
+"contact.form.name.label": "Your name",
+"contact.form.name.ph": "Full name",
+"contact.form.email.label": "Email",
+"contact.form.email.ph": "name@email.com",
+"contact.form.role.label": "I am a…",
+"contact.form.role.opt1": "Diaspora buyer",
+"contact.form.role.opt2": "Local buyer",
+"contact.form.role.opt3": "Developer / seller",
+"contact.form.role.opt4": "Agent / franchise candidate",
+"contact.form.role.opt5": "Partner / investor",
+"contact.form.country.label": "Country of interest",
+"contact.form.msg.label": "Your message",
+"contact.form.msg.ph": "Tell us what you want to buy/build or how you want to partner.",
+"contact.form.submit": "Send message",
+
+"contact.next.title": "What happens next?",
+"contact.next.s1": "<b>1)</b> We review your enquiry.",
+"contact.next.s2": "<b>2)</b> We match you with the right local partner.",
+"contact.next.s3": "<b>3)</b> You receive a clear action plan and next steps.",
+
+"contact.links.title": "Quick links",
+"contact.links.p1": "Browse properties",
+"contact.links.p2": "Trust & verification",
+"contact.links.p3": "Franchise partners",
     
     },
 
@@ -731,6 +760,35 @@
 "trust.promo.t": "Construisez une activité immobilière avec nous",
 "trust.promo.p": "PanAfric Properties permet à de jeunes Africains — diplômés, non diplômés et professionnels sans emploi — de lancer leur propre activité immobilière indépendante via notre modèle de franchise. Formation, certification interne et accès aux acheteurs de la diaspora sont fournis.",
 "trust.promo.cta": "Postuler à notre programme de franchise",
+// contact.html
+"contact.title": "Nous contacter",
+"contact.intro": "Demandes immobilières, candidatures franchise, partenariats promoteurs — envoyez-nous un message.",
+
+"contact.form.title": "Formulaire de demande",
+"contact.form.name.label": "Votre nom",
+"contact.form.name.ph": "Nom complet",
+"contact.form.email.label": "E-mail",
+"contact.form.email.ph": "nom@email.com",
+"contact.form.role.label": "Je suis…",
+"contact.form.role.opt1": "Acheteur diaspora",
+"contact.form.role.opt2": "Acheteur local",
+"contact.form.role.opt3": "Promoteur / vendeur",
+"contact.form.role.opt4": "Agent / candidat franchise",
+"contact.form.role.opt5": "Partenaire / investisseur",
+"contact.form.country.label": "Pays d’intérêt",
+"contact.form.msg.label": "Votre message",
+"contact.form.msg.ph": "Dites-nous ce que vous souhaitez acheter/construire ou comment vous souhaitez collaborer.",
+"contact.form.submit": "Envoyer le message",
+
+"contact.next.title": "Et ensuite ?",
+"contact.next.s1": "<b>1)</b> Nous examinons votre demande.",
+"contact.next.s2": "<b>2)</b> Nous vous mettons en relation avec le bon partenaire local.",
+"contact.next.s3": "<b>3)</b> Vous recevez un plan d’action clair et mentionnant les prochaines étapes.",
+
+"contact.links.title": "Liens rapides",
+"contact.links.p1": "Parcourir les biens",
+"contact.links.p2": "Confiance & vérification",
+"contact.links.p3": "Partenaires franchise",
 
 
     },
@@ -1082,6 +1140,35 @@
 "trust.promo.t": "Construye un negocio inmobiliario con nosotros",
 "trust.promo.p": "PanAfric Properties impulsa a jóvenes africanos — graduados, no graduados y profesionales desempleados — a lanzar sus propios negocios inmobiliarios por cuenta propia bajo nuestro modelo de franquicia. Se ofrece formación, certificación interna y acceso a compradores de la diáspora.",
 "trust.promo.cta": "Solicitar unirse a nuestro programa de franquicia",
+// contact.html
+"contact.title": "Contáctanos",
+"contact.intro": "Consultas inmobiliarias, solicitudes de franquicia, alianzas con promotores — envíanos un mensaje.",
+
+"contact.form.title": "Formulario de consulta",
+"contact.form.name.label": "Tu nombre",
+"contact.form.name.ph": "Nombre completo",
+"contact.form.email.label": "Correo",
+"contact.form.email.ph": "nombre@email.com",
+"contact.form.role.label": "Soy…",
+"contact.form.role.opt1": "Comprador de la diáspora",
+"contact.form.role.opt2": "Comprador local",
+"contact.form.role.opt3": "Promotor / vendedor",
+"contact.form.role.opt4": "Agente / candidato a franquicia",
+"contact.form.role.opt5": "Socio / inversor",
+"contact.form.country.label": "País de interés",
+"contact.form.msg.label": "Tu mensaje",
+"contact.form.msg.ph": "Cuéntanos qué quieres comprar/construir o cómo quieres colaborar.",
+"contact.form.submit": "Enviar mensaje",
+
+"contact.next.title": "¿Qué pasa después?",
+"contact.next.s1": "<b>1)</b> Revisamos tu consulta.",
+"contact.next.s2": "<b>2)</b> Te conectamos con el socio local adecuado.",
+"contact.next.s3": "<b>3)</b> Recibes un plan de acción claro y los siguientes pasos.",
+
+"contact.links.title": "Enlaces rápidos",
+"contact.links.p1": "Ver propiedades",
+"contact.links.p2": "Confianza y verificación",
+"contact.links.p3": "Socios franquiciados",
 
     }
   };
