@@ -12,9 +12,11 @@
 <script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
 <script src="auth.js"></script>
 <script>
-  authHandleRedirect(function(){});
-  authRequireLogin();
+  authHandleRedirect(function () {
+    authRequireLogin();
+  });
 </script>
+
 <!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
   <span class="lang-label" data-i18n="lang_label">Language</span>
