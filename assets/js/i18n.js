@@ -182,7 +182,7 @@
       "nav.countries": "Pays",
       "nav.properties": "Biens",
       "nav.agents": "Agents",
-      "nav.franchise": "Work With Us",
+      "nav.franchise": "Travaillez avec nous",
       "nav.training": "Formation & Certification",
       "nav.trust": "Confiance",
       "nav.login": "Connexion Partenaire",
