@@ -237,10 +237,13 @@
     renderTop();
     renderModules();
 
-    // Re-apply i18n after dynamic render
-    papReapplyI18n();
-    setTimeout(papReapplyI18n, 0);
-  }
+    // Apply i18n first, then render dynamic strings (so placeholders are replaced)
+papReapplyI18n();
+setTimeout(() => {
+  renderTopDynamic();
+  renderModules();
+}, 50);
+
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
