@@ -15,9 +15,10 @@
   authHandleRedirect(function(){});
   authRequireLogin();
 </script>
+
 <!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
-  <span class="lang-label" data-i18n="lang_label">Language</span>
+  <span class="lang-label" data-i18n="lang.label">Language</span>
   <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
     <option value="en">EN</option>
     <option value="fr">FR</option>
@@ -30,21 +31,21 @@
 
 <section class="section">
   <div class="wrap">
-    <a class="btn ghost" href="academy.html">← Back to Academy</a>
+    <a class="btn ghost" href="academy.html" data-i18n="cert.back">← Back to Academy</a>
 
     <div class="card" id="locked" style="padding:22px 18px; margin-top:12px; display:none;">
-      <h2>Certificate Locked</h2>
-      <p class="small">Complete all modules to unlock your Partner Certification.</p>
+      <h2 data-i18n="cert.locked.title">Certificate Locked</h2>
+      <p class="small" data-i18n="cert.locked.text">Complete all modules to unlock your Partner Certification.</p>
       <p class="small" id="lockStatus" style="opacity:.85;"></p>
     </div>
 
     <div class="card" id="cert" style="padding:26px 18px; margin-top:12px; display:none;">
       <div style="text-align:center;">
-        <h2 style="margin-bottom:6px;">PanAfric Properties</h2>
-        <p class="small" style="margin:0;">Training & Certification Program</p>
+        <h2 style="margin-bottom:6px;" data-i18n="cert.brand">PanAfric Properties</h2>
+        <p class="small" style="margin:0;" data-i18n="cert.program">Training & Certification Program</p>
         <hr style="margin:16px 0; opacity:.2;">
-        <h1 style="margin:0 0 8px;">Certificate of Completion</h1>
-        <p class="small" style="max-width:720px; margin:0 auto;">
+        <h1 style="margin:0 0 8px;" data-i18n="cert.title">Certificate of Completion</h1>
+        <p class="small" style="max-width:720px; margin:0 auto;" data-i18n="cert.desc">
           This certifies that the partner named below has successfully completed all training modules
           and assessments under the PanAfric Properties Partner Academy.
         </p>
@@ -57,11 +58,11 @@
         </div>
 
         <div style="margin-top:18px;">
-          <button class="btn green" onclick="window.print()">Print / Save PDF</button>
-          <button class="btn ghost" type="button" onclick="authLogout()" style="margin-left:10px;">Log out</button>
+          <button class="btn green" onclick="window.print()" data-i18n="cert.cta.print">Print / Save PDF</button>
+          <button class="btn ghost" type="button" onclick="authLogout()" style="margin-left:10px;" data-i18n="cert.cta.logout">Log out</button>
         </div>
 
-        <p class="small" style="margin-top:14px; opacity:.8;">
+        <p class="small" style="margin-top:14px; opacity:.8;" data-i18n="cert.note">
           Certification remains active subject to ongoing compliance, ethics, and platform standards.
         </p>
       </div>
@@ -70,12 +71,26 @@
 </section>
 
 <script>
+  // ---- Safe translation helper (same approach as academy) ----
+  function papT(key) {
+    try {
+      if (typeof window.papTranslate === "function") return window.papTranslate(key);
+      const lang = localStorage.getItem("pap_lang") || "en";
+      const dict = (window.DICT && window.DICT[lang]) ? window.DICT[lang] : null;
+      if (dict && dict[key]) return dict[key];
+    } catch (e) {}
+    return key;
+  }
+
   const { passed } = papPercentComplete(TOTAL_MODULES);
   const allDone = (passed === TOTAL_MODULES);
 
   if (!allDone) {
     document.getElementById("locked").style.display = "block";
-    document.getElementById("lockStatus").innerText = `Progress: ${passed}/${TOTAL_MODULES} modules completed.`;
+    document.getElementById("lockStatus").innerText =
+      papT("cert.locked.progress")
+        .replace("{passed}", passed)
+        .replace("{total}", TOTAL_MODULES);
   } else {
     document.getElementById("cert").style.display = "block";
 
@@ -99,8 +114,10 @@
 
     document.getElementById("partnerName").innerText = name;
     document.getElementById("partnerEmail").innerText = email;
-    document.getElementById("certId").innerText = `Certificate ID: ${certId}`;
-    document.getElementById("certDate").innerText = `Issued on: ${dateStr}`;
+    document.getElementById("certId").innerText =
+      papT("cert.meta.id").replace("{id}", certId);
+    document.getElementById("certDate").innerText =
+      papT("cert.meta.issued").replace("{date}", dateStr);
   }
 </script>
 <script src="assets/js/i18n.js"></script>
