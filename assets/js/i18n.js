@@ -174,6 +174,50 @@
       "footer.contact.p": "For buyers, developers, and partners.",
       "footer.contact.link": "Message us",
       "footer.copyright": "© 2026 PanAfric Properties. All rights reserved."
+
+      "index.hero.badge": "Diaspora-first • Trust-first",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": `Your trusted gateway to African real estate — connecting Africans worldwide to verified
+      property opportunities back home through a regulated local franchise network.`,
+"index.hero.cta1": "Explore Properties",
+"index.hero.cta2": "Talk to a Local Agent",
+
+"index.kpi1.t": "Markets launching",
+"index.kpi2.t": "Listing types",
+"index.kpi2.v": "Land • Homes • Projects",
+"index.kpi3.t": "Model",
+"index.kpi3.v": "Franchise network",
+
+"index.how.h2": "How it works",
+"index.how.card1.h3": "1) Browse verified opportunities",
+"index.how.card1.p": "Explore land, homes, and projects listed by licensed franchise partners in each territory.",
+"index.how.card2.h3": "2) Get matched to a local agent",
+"index.how.card2.p": "Your enquiry is routed to the right on-the-ground professional to guide and protect you.",
+"index.how.card3.h3": "3) Buy with clarity & support",
+"index.how.card3.p": "We highlight due diligence status and provide transparent steps to complete safely.",
+
+"index.franchise.h2": "From Graduate to Real Estate Entrepreneur",
+"index.franchise.p": `We empower young Africans, graduates, non-graduates, and unemployed professionals, to launch their own self-employed real estate businesses in their home cities under our franchise model.
+        PanAfric Properties provides training, in-house certification, and access to diaspora buyers through our trusted marketplace platform.`,
+"index.franchise.cta": "Apply to Join Our Franchise Program",
+
+"index.countries.h2": "Start with countries",
+"index.countries.p": "Choose a market to view opportunities and the local franchise partner network.",
+"index.countries.cta1": "View all countries",
+"index.countries.cta2": "How we build trust",
+
+"index.country.ghana": "Accra • Kumasi • Tema",
+"index.country.nigeria": "Lagos • Abuja",
+"index.country.cameroon": "Douala • Yaoundé",
+"index.country.senegal": "Dakar • Thiès",
+"index.country.ivory": "Abidjan • Bouaké",
+"index.country.mali": "Bamako",
+"index.country.zimbabwe": "Harare • Bulawayo",
+
+"index.footer.franchise.p": "Become a local partner and list verified opportunities in your territory.",
+"index.footer.franchise.link": "Apply / Enquire",
+
+      
     },
 
     fr: {
@@ -345,6 +389,50 @@
       "footer.contact.p": "Pour les acheteurs, promoteurs et partenaires.",
       "footer.contact.link": "Nous écrire",
       "footer.copyright": "© 2026 PanAfric Properties. Tous droits réservés."
+
+    "index.hero.badge": "Diaspora d’abord • Confiance d’abord",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": `Votre passerelle de confiance vers l’immobilier africain — reliant les Africains du monde entier à des
+      opportunités immobilières vérifiées au pays via un réseau local de franchises régulé.`,
+"index.hero.cta1": "Explorer les biens",
+"index.hero.cta2": "Parler à un agent local",
+
+"index.kpi1.t": "Marchés en lancement",
+"index.kpi2.t": "Types d’annonces",
+"index.kpi2.v": "Terrains • Maisons • Projets",
+"index.kpi3.t": "Modèle",
+"index.kpi3.v": "Réseau de franchises",
+
+"index.how.h2": "Comment ça marche",
+"index.how.card1.h3": "1) Parcourir des opportunités vérifiées",
+"index.how.card1.p": "Explorez des terrains, maisons et projets publiés par des partenaires franchisés agréés dans chaque territoire.",
+"index.how.card2.h3": "2) Être mis en relation avec un agent local",
+"index.how.card2.p": "Votre demande est transmise au bon professionnel sur le terrain pour vous guider et vous protéger.",
+"index.how.card3.h3": "3) Acheter avec clarté et accompagnement",
+"index.how.card3.p": "Nous indiquons l’état de la due diligence et des étapes transparentes pour finaliser en toute sécurité.",
+
+"index.franchise.h2": "De diplômé à entrepreneur immobilier",
+"index.franchise.p": `Nous accompagnons les jeunes Africains, diplômés, non-diplômés et professionnels au chômage, pour lancer leur propre activité immobilière indépendante dans leur ville grâce à notre modèle de franchise.
+        PanAfric Properties fournit une formation, une certification interne et un accès aux acheteurs de la diaspora via notre marketplace de confiance.`,
+"index.franchise.cta": "Candidater à notre programme de franchise",
+
+"index.countries.h2": "Commencez par les pays",
+"index.countries.p": "Choisissez un marché pour voir les opportunités et le réseau local de partenaires franchisés.",
+"index.countries.cta1": "Voir tous les pays",
+"index.countries.cta2": "Comment nous construisons la confiance",
+
+"index.country.ghana": "Accra • Kumasi • Tema",
+"index.country.nigeria": "Lagos • Abuja",
+"index.country.cameroon": "Douala • Yaoundé",
+"index.country.senegal": "Dakar • Thiès",
+"index.country.ivory": "Abidjan • Bouaké",
+"index.country.mali": "Bamako",
+"index.country.zimbabwe": "Harare • Bulawayo",
+
+"index.footer.franchise.p": "Devenez partenaire local et publiez des opportunités vérifiées dans votre territoire.",
+"index.footer.franchise.link": "Candidater / Demander",
+
+
     },
 
     es: {
@@ -517,6 +605,49 @@
       "footer.contact.p": "Para compradores, promotores y socios.",
       "footer.contact.link": "Escríbenos",
       "footer.copyright": "© 2026 PanAfric Properties. Todos los derechos reservados."
+
+      "index.hero.badge": "Diáspora primero • Confianza primero",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": `Tu puerta de entrada de confianza al inmobiliario africano — conectando a africanos de todo el mundo con
+      oportunidades verificadas en su país mediante una red local de franquicias regulada.`,
+"index.hero.cta1": "Explorar propiedades",
+"index.hero.cta2": "Hablar con un agente local",
+
+"index.kpi1.t": "Mercados en lanzamiento",
+"index.kpi2.t": "Tipos de anuncios",
+"index.kpi2.v": "Terrenos • Viviendas • Proyectos",
+"index.kpi3.t": "Modelo",
+"index.kpi3.v": "Red de franquicias",
+
+"index.how.h2": "Cómo funciona",
+"index.how.card1.h3": "1) Explora oportunidades verificadas",
+"index.how.card1.p": "Explora terrenos, viviendas y proyectos listados por socios franquiciados autorizados en cada territorio.",
+"index.how.card2.h3": "2) Te conectamos con un agente local",
+"index.how.card2.p": "Tu consulta se canaliza al profesional adecuado sobre el terreno para guiarte y protegerte.",
+"index.how.card3.h3": "3) Compra con claridad y apoyo",
+"index.how.card3.p": "Mostramos el estado de la due diligence y pasos transparentes para completar con seguridad.",
+
+"index.franchise.h2": "De graduado a emprendedor inmobiliario",
+"index.franchise.p": `Empoderamos a jóvenes africanos, graduados, no graduados y profesionales desempleados para lanzar su propio negocio inmobiliario como autónomos en sus ciudades bajo nuestro modelo de franquicia.
+        PanAfric Properties ofrece formación, certificación interna y acceso a compradores de la diáspora mediante nuestro marketplace de confianza.`,
+"index.franchise.cta": "Solicitar el programa de franquicia",
+
+"index.countries.h2": "Empieza por países",
+"index.countries.p": "Elige un mercado para ver oportunidades y la red local de socios franquiciados.",
+"index.countries.cta1": "Ver todos los países",
+"index.countries.cta2": "Cómo construimos confianza",
+
+"index.country.ghana": "Accra • Kumasi • Tema",
+"index.country.nigeria": "Lagos • Abuja",
+"index.country.cameroon": "Douala • Yaundé",
+"index.country.senegal": "Dakar • Thiès",
+"index.country.ivory": "Abiyán • Bouaké",
+"index.country.mali": "Bamako",
+"index.country.zimbabwe": "Harare • Bulawayo",
+
+"index.footer.franchise.p": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
+"index.footer.franchise.link": "Solicitar / Consultar",
+
     }
   };
 
