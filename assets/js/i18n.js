@@ -554,7 +554,28 @@
 "apply.cta.submit": "Submit Application",
 "apply.cta.back": "Back",
 "apply.note": "After review, approved applicants receive invite-only access to the Partner Academy.",
+// academy.html
+"academy.title": "Partner Academy",
+"academy.progress": "Progress",
+"academy.resume": "Resume next module",
+"academy.complete_note": "Complete all modules to unlock certification.",
+"academy.cert": "Certification",
+"academy.view_cert": "View Certificate",
+"academy.badge": "Certified Partner",
+"academy.session": "Session",
+"academy.logout": "Log out",
+"academy.admin": "Open Admin Panel",
+"academy.modules": "Modules",
+"academy.welcome": "Welcome, {name}{email}.",
+"academy.progress_text": "{passed} / {total} modules completed ({pct}%).",
+"academy.unlocked": "Unlocked — you have completed all modules.",
+"academy.locked": "Locked — complete all modules to unlock.",
+"academy.status": "Status",
+"academy.completed": "Completed ✅",
+"academy.not_completed": "Not completed",
 
+
+      
     },
 
     fr: {
@@ -1074,6 +1095,25 @@
 "apply.cta.submit": "Envoyer la candidature",
 "apply.cta.back": "Retour",
 "apply.note": "Après examen, les candidats approuvés reçoivent un accès sur invitation à la Partner Academy.",
+// academy.html
+"academy.title": "Académie Partenaire",
+"academy.progress": "Progression",
+"academy.resume": "Reprendre le module suivant",
+"academy.complete_note": "Complétez tous les modules pour débloquer la certification.",
+"academy.cert": "Certification",
+"academy.view_cert": "Voir le certificat",
+"academy.badge": "Partenaire certifié",
+"academy.session": "Session",
+"academy.logout": "Se déconnecter",
+"academy.admin": "Ouvrir le panneau admin",
+"academy.modules": "Modules",
+"academy.welcome": "Bienvenue, {name}{email}.",
+"academy.progress_text": "{passed} / {total} modules terminés ({pct}%).",
+"academy.unlocked": "Débloqué — vous avez terminé tous les modules.",
+"academy.locked": "Verrouillé — terminez tous les modules pour débloquer.",
+"academy.status": "Statut",
+"academy.completed": "Terminé ✅",
+"academy.not_completed": "Non terminé",
 
 
     },
@@ -1596,6 +1636,25 @@
 "apply.cta.submit": "Enviar solicitud",
 "apply.cta.back": "Volver",
 "apply.note": "Tras la revisión, los solicitantes aprobados reciben acceso por invitación a la Partner Academy.",
+// academy.html
+"academy.title": "Academia de Socios",
+"academy.progress": "Progreso",
+"academy.resume": "Continuar siguiente módulo",
+"academy.complete_note": "Completa todos los módulos para desbloquear la certificación.",
+"academy.cert": "Certificación",
+"academy.view_cert": "Ver certificado",
+"academy.badge": "Socio certificado",
+"academy.session": "Sesión",
+"academy.logout": "Cerrar sesión",
+"academy.admin": "Abrir panel admin",
+"academy.modules": "Módulos",
+"academy.welcome": "Bienvenido, {name}{email}.",
+"academy.progress_text": "{passed} / {total} módulos completados ({pct}%).",
+"academy.unlocked": "Desbloqueado — has completado todos los módulos.",
+"academy.locked": "Bloqueado — completa todos los módulos para desbloquear.",
+"academy.status": "Estado",
+"academy.completed": "Completado ✅",
+"academy.not_completed": "No completado",
 
       
     }
