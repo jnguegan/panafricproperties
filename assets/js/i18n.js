@@ -522,6 +522,38 @@
 "login.cta.back": "Back",
 "login.note.q": "Not approved yet?",
 "login.note.link": "Apply to join our Partner Program",
+// franchise-apply.html
+"apply.badge": "Franchise Application",
+"apply.title": "Apply to Join Our Franchise Program",
+"apply.intro": "This program is for ambitious individuals who want to build a self-employed real estate business in their home city under the PanAfric Properties franchise model. No prior real estate experience is required.",
+
+"apply.form.title": "Partner Application Form",
+
+"apply.f.name": "Full Name",
+"apply.f.email": "Email Address",
+"apply.f.phone": "Phone Number",
+"apply.f.residence": "Country of Residence",
+"apply.f.city": "City You Want to Operate In",
+"apply.f.education": "Education Level",
+"apply.f.employment": "Employment Status",
+"apply.f.why": "Why do you want to join PanAfric Properties?",
+"apply.f.experience": "Do you have any real estate experience?",
+"apply.f.capital": "Can you invest in basic setup costs (marketing, transport, admin)?",
+"apply.f.notes": "Anything else you would like us to know?",
+
+"apply.opt.select": "Select",
+"apply.opt.nongrad": "Non-graduate",
+"apply.opt.grad": "Graduate",
+"apply.opt.postgrad": "Postgraduate",
+"apply.opt.unemployed": "Unemployed",
+"apply.opt.employed": "Employed",
+"apply.opt.selfemployed": "Self-employed",
+"apply.opt.no": "No",
+"apply.opt.yes": "Yes",
+
+"apply.cta.submit": "Submit Application",
+"apply.cta.back": "Back",
+"apply.note": "After review, approved applicants receive invite-only access to the Partner Academy.",
 
     },
 
@@ -1010,6 +1042,38 @@
 "login.cta.back": "Retour",
 "login.note.q": "Pas encore approuvé ?",
 "login.note.link": "Postuler pour rejoindre notre programme partenaires",
+// franchise-apply.html
+"apply.badge": "Candidature franchise",
+"apply.title": "Postuler à notre programme de franchise",
+"apply.intro": "Ce programme s’adresse aux personnes ambitieuses qui souhaitent créer une activité immobilière indépendante dans leur ville d’origine, sous le modèle de franchise PanAfric Properties. Aucune expérience préalable en immobilier n’est requise.",
+
+"apply.form.title": "Formulaire de candidature partenaire",
+
+"apply.f.name": "Nom complet",
+"apply.f.email": "Adresse e-mail",
+"apply.f.phone": "Numéro de téléphone",
+"apply.f.residence": "Pays de résidence",
+"apply.f.city": "Ville dans laquelle vous souhaitez opérer",
+"apply.f.education": "Niveau d’études",
+"apply.f.employment": "Situation professionnelle",
+"apply.f.why": "Pourquoi souhaitez-vous rejoindre PanAfric Properties ?",
+"apply.f.experience": "Avez-vous une expérience en immobilier ?",
+"apply.f.capital": "Pouvez-vous investir dans des coûts de démarrage de base (marketing, transport, administratif) ?",
+"apply.f.notes": "Autre information que vous souhaitez partager ?",
+
+"apply.opt.select": "Sélectionner",
+"apply.opt.nongrad": "Non diplômé",
+"apply.opt.grad": "Diplômé",
+"apply.opt.postgrad": "Postgraduate",
+"apply.opt.unemployed": "Sans emploi",
+"apply.opt.employed": "Employé",
+"apply.opt.selfemployed": "Indépendant",
+"apply.opt.no": "Non",
+"apply.opt.yes": "Oui",
+
+"apply.cta.submit": "Envoyer la candidature",
+"apply.cta.back": "Retour",
+"apply.note": "Après examen, les candidats approuvés reçoivent un accès sur invitation à la Partner Academy.",
 
 
     },
@@ -1500,6 +1564,38 @@
 "login.cta.back": "Volver",
 "login.note.q": "¿Aún no estás aprobado?",
 "login.note.link": "Solicitar unirse a nuestro programa de socios",
+// franchise-apply.html
+"apply.badge": "Solicitud de franquicia",
+"apply.title": "Solicita unirte a nuestro programa de franquicia",
+"apply.intro": "Este programa está pensado para personas ambiciosas que quieren crear un negocio inmobiliario por cuenta propia en su ciudad de origen, bajo el modelo de franquicia de PanAfric Properties. No se requiere experiencia previa en bienes raíces.",
+
+"apply.form.title": "Formulario de solicitud de socio",
+
+"apply.f.name": "Nombre completo",
+"apply.f.email": "Correo electrónico",
+"apply.f.phone": "Número de teléfono",
+"apply.f.residence": "País de residencia",
+"apply.f.city": "Ciudad en la que quieres operar",
+"apply.f.education": "Nivel educativo",
+"apply.f.employment": "Situación laboral",
+"apply.f.why": "¿Por qué quieres unirte a PanAfric Properties?",
+"apply.f.experience": "¿Tienes experiencia en bienes raíces?",
+"apply.f.capital": "¿Puedes invertir en costos básicos de puesta en marcha (marketing, transporte, administración)?",
+"apply.f.notes": "¿Algo más que te gustaría que supiéramos?",
+
+"apply.opt.select": "Seleccionar",
+"apply.opt.nongrad": "Sin estudios universitarios",
+"apply.opt.grad": "Graduado",
+"apply.opt.postgrad": "Posgrado",
+"apply.opt.unemployed": "Desempleado",
+"apply.opt.employed": "Empleado",
+"apply.opt.selfemployed": "Autónomo",
+"apply.opt.no": "No",
+"apply.opt.yes": "Sí",
+
+"apply.cta.submit": "Enviar solicitud",
+"apply.cta.back": "Volver",
+"apply.note": "Tras la revisión, los solicitantes aprobados reciben acceso por invitación a la Partner Academy.",
 
       
     }
