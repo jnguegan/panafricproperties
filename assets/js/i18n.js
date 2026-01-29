@@ -573,6 +573,25 @@
 "academy.status": "Status",
 "academy.completed": "Completed ✅",
 "academy.not_completed": "Not completed",
+// certificate.html
+"cert.back": "← Back to Academy",
+
+"cert.locked.title": "Certificate Locked",
+"cert.locked.text": "Complete all modules to unlock your Partner Certification.",
+"cert.locked.progress": "Progress: {passed}/{total} modules completed.",
+
+"cert.brand": "PanAfric Properties",
+"cert.program": "Training & Certification Program",
+"cert.title": "Certificate of Completion",
+"cert.desc": "This certifies that the partner named below has successfully completed all training modules and assessments under the PanAfric Properties Partner Academy.",
+
+"cert.cta.print": "Print / Save PDF",
+"cert.cta.logout": "Log out",
+
+"cert.note": "Certification remains active subject to ongoing compliance, ethics, and platform standards.",
+
+"cert.meta.id": "Certificate ID: {id}",
+"cert.meta.issued": "Issued on: {date}",
 
 
       
@@ -1114,6 +1133,25 @@
 "academy.status": "Statut",
 "academy.completed": "Terminé ✅",
 "academy.not_completed": "Non terminé",
+// certificate.html
+"cert.back": "← Retour à l’Académie",
+
+"cert.locked.title": "Certificat verrouillé",
+"cert.locked.text": "Complétez tous les modules pour débloquer votre certification partenaire.",
+"cert.locked.progress": "Progression : {passed}/{total} modules terminés.",
+
+"cert.brand": "PanAfric Properties",
+"cert.program": "Programme de formation et certification",
+"cert.title": "Certificat de réussite",
+"cert.desc": "Certifie que le partenaire nommé ci-dessous a terminé avec succès tous les modules de formation et les évaluations au sein de la Partner Academy de PanAfric Properties.",
+
+"cert.cta.print": "Imprimer / Enregistrer en PDF",
+"cert.cta.logout": "Se déconnecter",
+
+"cert.note": "La certification reste active sous réserve du respect continu de la conformité, de l’éthique et des standards de la plateforme.",
+
+"cert.meta.id": "ID du certificat : {id}",
+"cert.meta.issued": "Délivré le : {date}",
 
 
     },
@@ -1655,6 +1693,25 @@
 "academy.status": "Estado",
 "academy.completed": "Completado ✅",
 "academy.not_completed": "No completado",
+// certificate.html
+"cert.back": "← Volver a la Academia",
+
+"cert.locked.title": "Certificado bloqueado",
+"cert.locked.text": "Completa todos los módulos para desbloquear tu certificación de socio.",
+"cert.locked.progress": "Progreso: {passed}/{total} módulos completados.",
+
+"cert.brand": "PanAfric Properties",
+"cert.program": "Programa de formación y certificación",
+"cert.title": "Certificado de finalización",
+"cert.desc": "Certifica que el socio nombrado a continuación ha completado con éxito todos los módulos de formación y evaluaciones de la Academia de Socios de PanAfric Properties.",
+
+"cert.cta.print": "Imprimir / Guardar PDF",
+"cert.cta.logout": "Cerrar sesión",
+
+"cert.note": "La certificación se mantiene activa sujeta al cumplimiento continuo, la ética y los estándares de la plataforma.",
+
+"cert.meta.id": "ID del certificado: {id}",
+"cert.meta.issued": "Emitido el: {date}",
 
       
     }
