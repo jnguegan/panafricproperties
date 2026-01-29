@@ -27,7 +27,6 @@
   </select>
 </div>
 
-  
 <script src="academy.js"></script>
 <script src="modules.js"></script>
 
@@ -58,14 +57,19 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const moduleId = parseInt(params.get("m") || "1", 10);
-  const mod = MODULES.find(x => x.id === moduleId);
 
+  // Safety: if MODULES isn't available for any reason, go back.
+  if (!window.MODULES || !Array.isArray(window.MODULES)) {
+    window.location.href = "academy.html";
+  }
+
+  const mod = MODULES.find(x => x.id === moduleId);
   if (!mod) window.location.href = "academy.html";
 
   document.getElementById("title").innerText = `Module ${mod.id} — ${mod.title}`;
 
   const reading = document.getElementById("reading");
-  mod.reading.forEach(p => {
+  (mod.reading || []).forEach(p => {
     const el = document.createElement("p");
     el.className = "small";
     el.innerText = p;
@@ -73,7 +77,7 @@
   });
 
   const quizForm = document.getElementById("quizForm");
-  mod.quiz.forEach((item, idx) => {
+  (mod.quiz || []).forEach((item, idx) => {
     const block = document.createElement("div");
     block.style.marginTop = "12px";
     block.innerHTML = `
@@ -94,12 +98,12 @@
 
   function submitQuiz() {
     let correct = 0;
-    mod.quiz.forEach((item, idx) => {
-      const v = document.getElementById(\`q\${idx}\`).value;
+    (mod.quiz || []).forEach((item, idx) => {
+      const v = document.getElementById(`q${idx}`).value;
       if (String(item.answerIndex) === String(v)) correct++;
     });
 
-    if (correct === mod.quiz.length) {
+    if (correct === (mod.quiz || []).length) {
       papMarkModulePassed(mod.id);
       document.getElementById("msg").style.color = "green";
       document.getElementById("msg").innerText =
@@ -107,11 +111,12 @@
     } else {
       document.getElementById("msg").style.color = "#b00020";
       document.getElementById("msg").innerText =
-        `❌ Not yet. You got ${correct}/${mod.quiz.length}. Please review and try again.`;
+        `❌ Not yet. You got ${correct}/${(mod.quiz || []).length}. Please review and try again.`;
     }
     return false;
   }
 </script>
+
 <script src="assets/js/i18n.js"></script>
 
 </body>
