@@ -122,22 +122,23 @@ reading.innerHTML = "";
   reading.appendChild(el);
 });
 
-  // Quiz
-  const quizForm = document.getElementById("quizForm");
-  const selectText = _t("select_option", "Select");
+// Quiz
+const quizForm = document.getElementById("quizForm");
+const selectText = _t("select_option", "Select");
 
-  (mod.quiz || []).forEach((item, idx) => {
-    const block = document.createElement("div");
-    block.style.marginTop = "12px";
-    block.innerHTML = `
-      <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
-      <select id="q${idx}" required>
-        <option value="">${selectText}</option>
-        ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
-      </select>
-    `;
-    quizForm.appendChild(block);
-  });
+(mod.quiz || []).forEach((item, idx) => {
+  const block = document.createElement("div");
+  block.style.marginTop = "12px";
+  block.innerHTML = `
+    <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
+    <select id="q${idx}" required>
+      <option value="">${selectText}</option>
+      ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
+    </select>
+  `;
+  quizForm.appendChild(block);
+});
+
 
   const submitBtnText = _t("submit_test_btn", "Submit Test");
   quizForm.insertAdjacentHTML("beforeend", `
