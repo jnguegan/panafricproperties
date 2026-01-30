@@ -130,12 +130,19 @@ const selectText = _t("select_option", "Select");
   const block = document.createElement("div");
   block.style.marginTop = "12px";
   block.innerHTML = `
-    <label style="display:block; margin-bottom:6px;">${idx + 1}. ${item.q}</label>
-    <select id="q${idx}" required>
-      <option value="">${selectText}</option>
-      ${item.options.map((opt, i) => `<option value="${i}">${opt}</option>`).join("")}
-    </select>
-  `;
+  <label style="display:block; margin-bottom:6px;">
+    ${idx + 1}. ${(item.qKey ? _t(item.qKey, item.q) : item.q)}
+  </label>
+  <select id="q${idx}" required>
+    <option value="">${selectText}</option>
+    ${(item.options || []).map((opt, i) => {
+      const ok = (item.optionKeys && item.optionKeys[i]) ? item.optionKeys[i] : null;
+      const optText = ok ? _t(ok, opt) : opt;
+      return `<option value="${i}">${optText}</option>`;
+    }).join("")}
+  </select>
+`;
+
   quizForm.appendChild(block);
 });
 
