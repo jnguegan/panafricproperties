@@ -1996,6 +1996,48 @@
 "module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
 "module.1.q3.o3": "Solo una cuenta de redes sociales",
 
+      "sponsor.hero.title": "Patrocina a un futuro socio",
+"sponsor.hero.lead": "Ayuda a un familiar o a un joven profesional a convertirse en Socio certificado de PanAfric Properties y a generar ingresos localmente mediante el emprendimiento (no es caridad y no hay garantías de ingresos).",
+"sponsor.hero.ctaPrimary": "Patrocinar a un candidato",
+"sponsor.hero.ctaSecondary": "Ver el programa de Socios",
+"sponsor.hero.note": "Esta página no aparece en la navegación principal. Compártela directamente con tu comunidad de la diáspora.",
+
+"sponsor.how.title": "Cómo funciona",
+"sponsor.how.step1Title": "1) Elige un candidato",
+"sponsor.how.step1Text": "Patrocinas a un familiar o a una persona joven motivada (18+) que quiera construir un camino profesional en el sector inmobiliario.",
+"sponsor.how.step2Title": "2) Financia la activación del socio",
+"sponsor.how.step2Text": "El patrocinio es de 1.000 € e incluye formación y el proceso de onboarding y activación dentro del ecosistema PanAfric.",
+"sponsor.how.step3Title": "3) Se certifica",
+"sponsor.how.step3Text": "Tras completar los módulos y el onboarding, podrá operar como Socio bajo nuestros estándares y normas de cumplimiento.",
+
+"sponsor.cost.title": "Qué cubren los 1.000 €",
+"sponsor.cost.trainingTitle": "Formación — 250 €",
+"sponsor.cost.trainingItem1": "Acceso a módulos y cuestionarios de la Academia de Socios",
+"sponsor.cost.trainingItem2": "Guiones prácticos, plantillas y flujo de trabajo de operaciones",
+"sponsor.cost.trainingItem3": "Certificación al completar",
+"sponsor.cost.onboardingTitle": "Onboarding y Activación — 750 €",
+"sponsor.cost.onboardingItem1": "Configuración del perfil del Socio y pasos de verificación",
+"sponsor.cost.onboardingItem2": "Orientación sobre herramientas: anuncios, leads y registro de clientes",
+"sponsor.cost.onboardingItem3": "Apoyo de lanzamiento: primeros anuncios y primer pipeline de clientes",
+"sponsor.cost.noteTitle": "Importante:",
+"sponsor.cost.noteText": "Este es un programa de empoderamiento. No es una donación y no prometemos ingresos ni resultados.",
+
+"sponsor.who.title": "¿Para quién es?",
+"sponsor.who.card1Title": "Patrocinadores de la diáspora",
+"sponsor.who.card1Text": "Quieres empoderar a alguien en su país con un camino real de habilidades.",
+"sponsor.who.card2Title": "Candidatos motivados",
+"sponsor.who.card2Text": "Jóvenes profesionales que puedan aprender y seguir un proceso.",
+"sponsor.who.card3Title": "Grupos comunitarios",
+"sponsor.who.card3Text": "Asociaciones que quieran crear actividad económica estructurada.",
+
+"sponsor.form.title": "Solicitud de patrocinio",
+"sponsor.form.lead": "Envía este formulario para iniciar el proceso.",
+"sponsor.form.sponsorName": "Nombre completo del patrocinador",
+"sponsor.form.sponsorEmail": "Correo electrónico del patrocinador",
+"sponsor.form.submit": "Enviar solicitud",
+"sponsor.form.backHome": "Volver al inicio",
+"sponsor.form.afterSubmit": "Tras el envío, nuestro equipo responderá con los siguientes pasos."
+
       
     }
   };
