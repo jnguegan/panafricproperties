@@ -1437,7 +1437,7 @@
 "sponsor.cta.title": "Parrainage d'un Future Partenaire",
 "sponsor.cta.body": "Parrainez un proche ou un jeune entrepreneur avec 1 000 € pour couvrir formation + onboarding et l’aider à devenir partenaire certifié PanAfric Properties.",
 "sponsor.cta.button": "Démarrer la demande",
-"sponsor.cta.note": "Pas de charité, aucune garantie de revenu — cela finance des compétences et l’activation."
+"sponsor.cta.note": "Pas de charité, aucune garantie de revenu — cela finance des compétences et l’activation.",
 
 sponsor: {
   hero: {
