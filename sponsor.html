@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title data-i18n="sponsor.pageTitle">Sponsor a Future Partner — PanAfric Properties</title>
+  <title>Sponsor a Future Partner — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sponsor a relative or young entrepreneur to become a certified PanAfric Properties Partner. €1,000 covers training and onboarding." />
 
-  <!-- Favicons (keep simple + reliable) -->
+  <!-- Favicons (match existing pages) -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -16,10 +15,11 @@
 
 <body>
 
+<!-- HEADER (match your existing pages) -->
 <header class="header">
   <div class="wrap">
     <div class="navbar">
-      <a href="index.html">
+      <a href="index.html" class="brand">
         <img src="brand/primary_logo.png" alt="PanAfric Properties" height="42">
       </a>
 
@@ -28,21 +28,24 @@
         <a href="properties.html" data-i18n="nav.properties">Properties</a>
         <a href="agents.html" data-i18n="nav.agents">Agents</a>
         <a href="franchise.html" data-i18n="nav.workWithUs">Work With Us</a>
-        <a href="training.html" data-i18n="nav.training">Training</a>
-        <a href="trust.html" data-i18n="nav.trust">Trust</a>
-        <a href="academy.html" data-i18n="nav.academy">Partner Academy</a>
-        <a class="btn" href="login.html" data-i18n="nav.login">Login</a>
+        <a href="academy.html" data-i18n="nav.academy">Academy</a>
       </nav>
 
-      <!-- Language switch (already working across site) -->
-      <div class="lang-switch">
-        <button class="lang-btn" type="button" aria-label="Language">🌐</button>
-        <div class="lang-menu">
-          <button type="button" onclick="papSetLang('en')">EN</button>
-          <button type="button" onclick="papSetLang('fr')">FR</button>
-          <button type="button" onclick="papSetLang('es')">ES</button>
+      <div class="nav-actions">
+        <!-- Language switch (keep SAME markup + classes as other pages) -->
+        <div class="lang-switch">
+          <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="lang-label" data-i18n="lang.label">Language</span>
+            <span class="lang-current" id="papLangCurrent">EN</span>
+          </button>
+          <div class="lang-menu" role="listbox" aria-label="Language">
+            <button type="button" class="lang-item" onclick="papSetLang('en')">EN</button>
+            <button type="button" class="lang-item" onclick="papSetLang('fr')">FR</button>
+            <button type="button" class="lang-item" onclick="papSetLang('es')">ES</button>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </header>
@@ -50,351 +53,259 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="grid two">
-        <div class="card">
-          <div class="badge" data-i18n="sponsor.hero.badge">Diaspora Empowerment</div>
-          <h1 data-i18n="sponsor.hero.title">Sponsor a Future Partner</h1>
-          <p class="lead" data-i18n="sponsor.hero.subtitle">
-            Help a relative or a young person access professional training, onboarding and activation to become a certified PanAfric Properties Partner — and start building local income through real services.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn" href="#apply" data-i18n="sponsor.hero.primaryCta">Sponsor a candidate</a>
-            <a class="btn outline" href="#how" data-i18n="sponsor.hero.secondaryCta">How it works</a>
-          </div>
-
-          <p class="fineprint" data-i18n="sponsor.hero.disclaimer">
-            This is not charity and does not promise income. It is an investment in skills, tools and activation.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="sponsor.summary.title">What your €1,000 covers</h2>
-
-          <div class="grid two tight">
-            <div class="mini-card">
-              <div class="kpi">€250</div>
-              <div class="label" data-i18n="sponsor.summary.trainingLabel">Training</div>
-              <div class="muted" data-i18n="sponsor.summary.trainingDesc">Partner Academy access + certification path</div>
-            </div>
-
-            <div class="mini-card">
-              <div class="kpi">€750</div>
-              <div class="label" data-i18n="sponsor.summary.onboardingLabel">Onboarding + activation</div>
-              <div class="muted" data-i18n="sponsor.summary.onboardingDesc">Setup, tools, first missions, and support to go live</div>
-            </div>
-          </div>
-
-          <div class="hr"></div>
-
-          <ul class="checklist">
-            <li data-i18n="sponsor.summary.bul1">Access to modules, quizzes and certification</li>
-            <li data-i18n="sponsor.summary.bul2">Partner profile setup and activation plan</li>
-            <li data-i18n="sponsor.summary.bul3">Operational templates, scripts and workflows</li>
-            <li data-i18n="sponsor.summary.bul4">Support for first practical tasks and deal hygiene</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how">
-    <div class="wrap">
-      <div class="section-title">
-        <h2 data-i18n="sponsor.how.title">How the Sponsorship Works</h2>
-        <p class="muted" data-i18n="sponsor.how.subtitle">
-          A clear process that turns motivation into capability, and capability into real activity — without “handouts.”
-        </p>
-      </div>
-
-      <div class="grid three">
-        <div class="card">
-          <div class="step">1</div>
-          <h3 data-i18n="sponsor.how.step1.title">Choose a candidate</h3>
-          <p data-i18n="sponsor.how.step1.desc">
-            Sponsor someone you trust — a relative or young entrepreneur who can commit time weekly and follow structured training.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="step">2</div>
-          <h3 data-i18n="sponsor.how.step2.title">We onboard & activate</h3>
-          <p data-i18n="sponsor.how.step2.desc">
-            We set them up with a partner profile, playbook, and a practical activation plan so they start doing real partner tasks.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="step">3</div>
-          <h3 data-i18n="sponsor.how.step3.title">Certified partner pathway</h3>
-          <p data-i18n="sponsor.how.step3.desc">
-            They complete modules + quizzes, follow compliance basics, and earn certification to represent PanAfric Properties professionally.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUE / POSITIONING -->
-  <section class="section alt">
-    <div class="wrap">
-      <div class="grid two">
-        <div class="card">
-          <h2 data-i18n="sponsor.positioning.title">Empowerment, not charity</h2>
-          <p data-i18n="sponsor.positioning.p1">
-            Sponsorship funds training and activation — the same way a company funds onboarding for a new team member. The goal is to unlock skills, structure, and real activity.
-          </p>
-          <p class="muted" data-i18n="sponsor.positioning.p2">
-            There are no income guarantees. Outcomes depend on effort, local market reality, and consistency — like any entrepreneurship journey.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="sponsor.ideal.title">Who is a great candidate?</h2>
-          <ul class="checklist">
-            <li data-i18n="sponsor.ideal.b1">Motivated, reliable, and coachable</li>
-            <li data-i18n="sponsor.ideal.b2">Comfortable using WhatsApp / email and basic web tools</li>
-            <li data-i18n="sponsor.ideal.b3">Can follow a weekly schedule and complete modules</li>
-            <li data-i18n="sponsor.ideal.b4">Able to communicate respectfully with clients and partners</li>
-            <li data-i18n="sponsor.ideal.b5">Ready to learn trust, verification and deal hygiene</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
   <section class="section">
     <div class="wrap">
-      <div class="section-title">
-        <h2 data-i18n="sponsor.timeline.title">Typical Timeline</h2>
-        <p class="muted" data-i18n="sponsor.timeline.subtitle">
-          We keep it structured and practical — learning + doing.
-        </p>
-      </div>
+      <div class="hero">
+        <div class="hero-content">
+          <h1 data-i18n="sponsor.hero.title">Sponsor a Future Partner</h1>
+          <p class="lead" data-i18n="sponsor.hero.lead">
+            Help a relative or a young professional become a certified PanAfric Properties Partner — and build income locally through entrepreneurship (not charity, and no income guarantees).
+          </p>
 
-      <div class="grid three">
-        <div class="card">
-          <h3 data-i18n="sponsor.timeline.w1.title">Week 1</h3>
-          <p data-i18n="sponsor.timeline.w1.desc">Onboarding, partner profile setup, activation plan, and first assignments.</p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="sponsor.timeline.w2.title">Weeks 2–4</h3>
-          <p data-i18n="sponsor.timeline.w2.desc">Training modules, quizzes, scripts, and guided practice tasks.</p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="sponsor.timeline.w3.title">Weeks 4–8</h3>
-          <p data-i18n="sponsor.timeline.w3.desc">Certification completion + supported activity: listings, leads, referrals, and trust workflow.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="#apply" data-i18n="sponsor.hero.ctaPrimary">Sponsor a Candidate</a>
+            <a class="btn" href="franchise.html" data-i18n="sponsor.hero.ctaSecondary">See Partner Program</a>
+          </div>
+
+          <p class="muted" data-i18n="sponsor.hero.note">
+            This page is not listed in the main navigation. Share it directly with your diaspora community.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section alt">
+  <!-- HOW IT WORKS (horizontal cards / grid) -->
+  <section class="section">
     <div class="wrap">
-      <div class="section-title">
-        <h2 data-i18n="sponsor.faq.title">FAQ</h2>
-        <p class="muted" data-i18n="sponsor.faq.subtitle">Straight answers to the most common questions.</p>
-      </div>
+      <h2 data-i18n="sponsor.how.title">How it works</h2>
 
-      <div class="grid two">
+      <div class="grid cards-3">
         <div class="card">
-          <h3 data-i18n="sponsor.faq.q1">Is this a donation?</h3>
-          <p data-i18n="sponsor.faq.a1">
-            No. It is sponsorship for training and activation. Think of it like funding professional onboarding and tools to help someone launch structured work.
+          <h3 data-i18n="sponsor.how.step1Title">1) Choose a candidate</h3>
+          <p data-i18n="sponsor.how.step1Text">
+            You sponsor a relative or motivated young person (18+) who wants to build a professional pathway in property.
           </p>
         </div>
 
         <div class="card">
-          <h3 data-i18n="sponsor.faq.q2">Do you guarantee income?</h3>
-          <p data-i18n="sponsor.faq.a2">
-            No. We provide skills, structure and support. Results depend on effort, consistency, communication, and local market conditions.
+          <h3 data-i18n="sponsor.how.step2Title">2) Fund the partner activation</h3>
+          <p data-i18n="sponsor.how.step2Text">
+            The sponsorship is €1,000 and covers training plus onboarding and activation into the PanAfric ecosystem.
           </p>
         </div>
 
         <div class="card">
-          <h3 data-i18n="sponsor.faq.q3">Can I sponsor someone outside my country?</h3>
-          <p data-i18n="sponsor.faq.a3">
-            Yes. The sponsor can be anywhere. The candidate operates locally in their own market, with online training and remote support.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="sponsor.faq.q4">What happens after I apply?</h3>
-          <p data-i18n="sponsor.faq.a4">
-            We review the application, confirm the candidate’s readiness, and reply with the next steps. No payment is collected through this form.
+          <h3 data-i18n="sponsor.how.step3Title">3) They become certified</h3>
+          <p data-i18n="sponsor.how.step3Text">
+            After completing modules and onboarding, they can operate as a Partner under our standards and compliance rules.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- APPLICATION FORM -->
+  <!-- COST BREAKDOWN -->
+  <section class="section">
+    <div class="wrap">
+      <h2 data-i18n="sponsor.cost.title">What the €1,000 covers</h2>
+
+      <div class="grid cards-2">
+        <div class="card">
+          <h3 data-i18n="sponsor.cost.trainingTitle">Training — €250</h3>
+          <ul class="list">
+            <li data-i18n="sponsor.cost.trainingItem1">Access to Partner Academy modules + quizzes</li>
+            <li data-i18n="sponsor.cost.trainingItem2">Practical scripts, templates, and deal workflow</li>
+            <li data-i18n="sponsor.cost.trainingItem3">Certification after completion</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="sponsor.cost.onboardingTitle">Onboarding + Activation — €750</h3>
+          <ul class="list">
+            <li data-i18n="sponsor.cost.onboardingItem1">Partner profile setup + verification steps</li>
+            <li data-i18n="sponsor.cost.onboardingItem2">Tools orientation: listings, leads, and client onboarding</li>
+            <li data-i18n="sponsor.cost.onboardingItem3">Launch support: first listings + first client pipeline</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong data-i18n="sponsor.cost.noteTitle">Important:</strong>
+        <span data-i18n="sponsor.cost.noteText">
+          This is an empowerment program. It is not a donation, and we do not promise income or results. Performance depends on the partner’s effort and market conditions.
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="wrap">
+      <h2 data-i18n="sponsor.who.title">Who this is for</h2>
+
+      <div class="grid cards-3">
+        <div class="card">
+          <h3 data-i18n="sponsor.who.card1Title">Diaspora sponsors</h3>
+          <p data-i18n="sponsor.who.card1Text">
+            You want to empower someone back home with a real skill path, not short-term support.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="sponsor.who.card2Title">Motivated candidates</h3>
+          <p data-i18n="sponsor.who.card2Text">
+            Young professionals who can learn, follow a process, and grow their local network ethically.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="sponsor.who.card3Title">Community groups</h3>
+          <p data-i18n="sponsor.who.card3Text">
+            Associations that want to create structured economic activity through property services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM (Netlify Forms) -->
   <section class="section" id="apply">
     <div class="wrap">
-      <div class="section-title">
-        <h2 data-i18n="sponsor.form.title">Sponsor Application</h2>
-        <p class="muted" data-i18n="sponsor.form.subtitle">
-          Fill this in to sponsor a candidate. We’ll reply with the next steps. No payment is collected here.
-        </p>
-      </div>
+      <h2 data-i18n="sponsor.form.title">Sponsor Application</h2>
+      <p class="lead" data-i18n="sponsor.form.lead">
+        Submit this form to start the sponsorship process. No payment is collected here.
+      </p>
 
-      <div class="grid two">
-        <div class="card">
-          <form name="sponsor-application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="sponsor-application" />
-            <p class="hidden">
-              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-            </p>
+      <div class="card form-card">
+        <form name="sponsor-application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="sponsor-application">
 
-            <h3 data-i18n="sponsor.form.sponsorSection">Sponsor details</h3>
-
-            <div class="field">
-              <label for="sponsor_name" data-i18n="sponsor.form.sponsorName">Full name</label>
-              <input id="sponsor_name" name="sponsor_name" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="sponsor_email" data-i18n="sponsor.form.sponsorEmail">Email</label>
-              <input id="sponsor_email" name="sponsor_email" type="email" required>
-            </div>
-
-            <div class="field">
-              <label for="sponsor_phone" data-i18n="sponsor.form.sponsorPhone">Phone (optional)</label>
-              <input id="sponsor_phone" name="sponsor_phone" type="text">
-            </div>
-
-            <div class="field">
-              <label for="sponsor_country" data-i18n="sponsor.form.sponsorCountry">Country / city</label>
-              <input id="sponsor_country" name="sponsor_country" type="text" required>
-            </div>
-
-            <div class="hr"></div>
-
-            <h3 data-i18n="sponsor.form.candidateSection">Candidate details</h3>
-
-            <div class="field">
-              <label for="candidate_name" data-i18n="sponsor.form.candidateName">Candidate full name</label>
-              <input id="candidate_name" name="candidate_name" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="relationship" data-i18n="sponsor.form.relationship">Relationship</label>
-              <input id="relationship" name="relationship" type="text" placeholder="e.g., cousin, nephew, family friend" required>
-            </div>
-
-            <div class="field">
-              <label for="candidate_location" data-i18n="sponsor.form.candidateLocation">Candidate country / city</label>
-              <input id="candidate_location" name="candidate_location" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="candidate_email" data-i18n="sponsor.form.candidateEmail">Candidate email (recommended)</label>
-              <input id="candidate_email" name="candidate_email" type="email">
-            </div>
-
-            <div class="field">
-              <label for="candidate_phone" data-i18n="sponsor.form.candidatePhone">Candidate phone / WhatsApp</label>
-              <input id="candidate_phone" name="candidate_phone" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="preferred_lang" data-i18n="sponsor.form.preferredLang">Preferred language</label>
-              <select id="preferred_lang" name="preferred_lang" required>
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="es">Español</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="motivation" data-i18n="sponsor.form.motivation">Why are you sponsoring this candidate?</label>
-              <textarea id="motivation" name="motivation" rows="4" required></textarea>
-            </div>
-
-            <div class="field checkbox">
-              <input id="confirm_no_guarantee" name="confirm_no_guarantee" type="checkbox" required>
-              <label for="confirm_no_guarantee" data-i18n="sponsor.form.confirmNoGuarantee">
-                I understand there are no income guarantees and success depends on effort and market realities.
-              </label>
-            </div>
-
-            <div class="field checkbox">
-              <input id="confirm_non_charity" name="confirm_non_charity" type="checkbox" required>
-              <label for="confirm_non_charity" data-i18n="sponsor.form.confirmNonCharity">
-                I understand this sponsorship covers training + activation and is not a charitable donation.
-              </label>
-            </div>
-
-            <button class="btn" type="submit" data-i18n="sponsor.form.submit">Submit application</button>
-
-            <p class="fineprint" data-i18n="sponsor.form.note">
-              Note: this form does not collect payment. We will contact you with next steps after review.
-            </p>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="sponsor.side.title">What happens next?</h3>
-          <ol class="steps">
-            <li data-i18n="sponsor.side.s1">We review the application and confirm candidate readiness.</li>
-            <li data-i18n="sponsor.side.s2">We reply with the next steps and onboarding plan.</li>
-            <li data-i18n="sponsor.side.s3">After activation, the candidate follows modules + practical tasks to reach certification.</li>
-          </ol>
-
-          <div class="hr"></div>
-
-          <h3 data-i18n="sponsor.side.reminderTitle">Reminder</h3>
-          <p class="muted" data-i18n="sponsor.side.reminderBody">
-            The objective is capability: skills, tools, structured activity, and professional standards — so your candidate can build a real path over time.
+          <p class="hidden">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
           </p>
 
-          <div class="cta-box">
-            <h4 data-i18n="sponsor.cta.title">Ready to sponsor?</h4>
-            <p data-i18n="sponsor.cta.body">Submit the application and we’ll reply with the next steps.</p>
-            <a class="btn" href="#apply" data-i18n="sponsor.cta.button">Start the sponsor application</a>
+          <div class="grid form-grid">
+            <div class="field">
+              <label for="sponsorName" data-i18n="sponsor.form.sponsorName">Sponsor full name</label>
+              <input id="sponsorName" name="sponsorName" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="sponsorEmail" data-i18n="sponsor.form.sponsorEmail">Sponsor email</label>
+              <input id="sponsorEmail" name="sponsorEmail" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="sponsorCountry" data-i18n="sponsor.form.sponsorCountry">Sponsor country</label>
+              <input id="sponsorCountry" name="sponsorCountry" type="text">
+            </div>
+
+            <div class="field">
+              <label for="sponsorPhone" data-i18n="sponsor.form.sponsorPhone">Sponsor phone (optional)</label>
+              <input id="sponsorPhone" name="sponsorPhone" type="text">
+            </div>
           </div>
-        </div>
+
+          <hr class="sep">
+
+          <h3 data-i18n="sponsor.form.candidateTitle">Candidate details</h3>
+
+          <div class="grid form-grid">
+            <div class="field">
+              <label for="candidateName" data-i18n="sponsor.form.candidateName">Candidate full name</label>
+              <input id="candidateName" name="candidateName" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="candidateEmail" data-i18n="sponsor.form.candidateEmail">Candidate email (if available)</label>
+              <input id="candidateEmail" name="candidateEmail" type="email">
+            </div>
+
+            <div class="field">
+              <label for="candidateCountry" data-i18n="sponsor.form.candidateCountry">Candidate country</label>
+              <input id="candidateCountry" name="candidateCountry" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="candidateCity" data-i18n="sponsor.form.candidateCity">Candidate city</label>
+              <input id="candidateCity" name="candidateCity" type="text">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="candidateMotivation" data-i18n="sponsor.form.motivation">Why is this candidate a good fit?</label>
+            <textarea id="candidateMotivation" name="candidateMotivation" rows="5" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="candidateAvailability" data-i18n="sponsor.form.availability">Availability (hours/week)</label>
+            <select id="candidateAvailability" name="candidateAvailability">
+              <option value="" selected data-i18n="sponsor.form.selectOne">Select one</option>
+              <option value="5-10">5–10</option>
+              <option value="10-20">10–20</option>
+              <option value="20+">20+</option>
+            </select>
+          </div>
+
+          <div class="check">
+            <input id="noGuarantee" name="noGuarantee" type="checkbox" required>
+            <label for="noGuarantee" data-i18n="sponsor.form.noGuarantee">
+              I understand this program is entrepreneurship support and does not guarantee income or results.
+            </label>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn primary" type="submit" data-i18n="sponsor.form.submit">Submit application</button>
+            <a class="btn" href="index.html" data-i18n="sponsor.form.backHome">Back to home</a>
+          </div>
+
+          <p class="muted" data-i18n="sponsor.form.afterSubmit">
+            After submission, our team will respond with next steps for verification and sponsorship processing.
+          </p>
+        </form>
       </div>
+
     </div>
   </section>
 
 </main>
 
+<!-- FOOTER (match your existing pages) -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="brand/primary_logo.png" alt="PanAfric Properties" height="38">
-        <p class="muted" data-i18n="footer.tagline">A trusted marketplace connecting diaspora and local opportunity.</p>
+        <img src="brand/primary_logo.png" alt="PanAfric Properties" height="34">
+        <p class="muted" data-i18n="footer.tagline">Trusted real-estate access for Africa & diaspora.</p>
       </div>
+
       <div>
-        <h4 data-i18n="footer.links">Links</h4>
-        <a href="trust.html" data-i18n="nav.trust">Trust</a><br>
-        <a href="training.html" data-i18n="nav.training">Training</a><br>
-        <a href="franchise.html" data-i18n="nav.workWithUs">Work With Us</a>
+        <h4 data-i18n="footer.company">Company</h4>
+        <a href="trust.html" data-i18n="footer.trust">Trust & Verification</a><br>
+        <a href="training.html" data-i18n="footer.training">Training</a><br>
+        <a href="franchise.html" data-i18n="footer.franchise">Work With Us</a>
       </div>
+
       <div>
         <h4 data-i18n="footer.contact">Contact</h4>
-        <p class="muted">info@panafricproperties.com</p>
+        <p class="muted">
+          <span data-i18n="footer.email">Email</span>: info@panafricproperties.com
+        </p>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span class="muted">© <span id="year"></span> PanAfric Properties</span>
+      <p class="muted">© <span id="papYear"></span> PanAfric Properties</p>
     </div>
   </div>
 </footer>
 
-<!-- i18n -->
+<!-- Scripts (match your existing pages) -->
 <script src="assets/js/i18n.js"></script>
 <script>
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Footer year (kept tiny + consistent)
+  document.getElementById("papYear").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
