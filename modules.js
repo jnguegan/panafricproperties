@@ -1,165 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Training Module — PanAfric Properties</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* modules.js — PanAfric Properties
+   IMPORTANT:
+   - This file MUST be JavaScript (not HTML)
+   - Loaded before academy.js
+   - Defines window.MODULES
+*/
 
-<!-- ✅ AUTH0 GUARD (paste right after <body>) -->
-<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
-<script src="auth.js"></script>
-<script>
-  authHandleRedirect(function () {
-    authRequireLogin();
-  });
-</script>
+window.MODULES = [
 
-<!-- 🌍 Language Dropdown -->
-<div class="lang-switch">
-  <span class="lang-label" data-i18n="lang_label">Language</span>
-  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
-    <option value="en">EN</option>
-    <option value="fr">FR</option>
-    <option value="es">ES</option>
-  </select>
-</div>
+  {
+    id: 1,
 
-<!-- ✅ i18n (load before we build dynamic strings) -->
-<script src="assets/js/i18n.js"></script>
+    // English text (never removed)
+    title: "Introduction to PanAfric Properties",
+    titleKey: "academy.m1.title",
 
-<!-- ✅ Module content data -->
-<script src="modules.js"></script>
+    reading: [
+      "Welcome to the PanAfric Properties Partner Academy.",
+      "This module introduces the mission, values, and expectations for partners using the platform.",
+      "Understanding these fundamentals ensures consistency, trust, and professionalism across all listings."
+    ],
+    readingKeys: [
+      "academy.m1.r1",
+      "academy.m1.r2",
+      "academy.m1.r3"
+    ],
 
-<section class="section">
-  <div class="wrap">
-    <a class="btn ghost" href="academy.html" data-i18n="academy_back">← Back to Academy</a>
+    quiz: [
+      {
+        q: "What is the goal of PanAfric Properties?",
+        qKey: "academy.m1.q1",
+        options: [
+          "To promote verified real estate opportunities across Africa",
+          "To allow any unverified property to be listed",
+          "To replace traditional agents entirely"
+        ],
+        optionKeys: [
+          "academy.m1.q1.a",
+          "academy.m1.q1.b",
+          "academy.m1.q1.c"
+        ],
+        answerIndex: 0
+      }
+    ]
+  },
 
-    <div class="card" style="padding:22px 18px; margin-top:12px;">
-      <h2 id="title"></h2>
-      <div id="reading"></div>
+  {
+    id: 2,
 
-      <hr style="margin:18px 0; opacity:.2;">
+    title: "Trust & Verification Standards",
+    titleKey: "academy.m2.title",
 
-      <h3 data-i18n="module_quick_test_title">Quick Test</h3>
-      <p class="small" data-i18n="module_quick_test_help">Answer all questions correctly to complete this module.</p>
+    reading: [
+      "Trust is the foundation of successful property transactions.",
+      "Partners must verify listings before publishing them on the platform.",
+      "Providing accurate and transparent information protects both buyers and sellers."
+    ],
+    readingKeys: [
+      "academy.m2.r1",
+      "academy.m2.r2",
+      "academy.m2.r3"
+    ],
 
-      <form id="quizForm" onsubmit="return submitQuiz()"></form>
+    quiz: [
+      {
+        q: "Why is verification important?",
+        qKey: "academy.m2.q1",
+        options: [
+          "It increases trust and protects all parties",
+          "It slows down the listing process unnecessarily",
+          "It is optional and not recommended"
+        ],
+        optionKeys: [
+          "academy.m2.q1.a",
+          "academy.m2.q1.b",
+          "academy.m2.q1.c"
+        ],
+        answerIndex: 0
+      }
+    ]
+  },
 
-      <p class="small" id="msg" style="margin-top:12px;"></p>
+  {
+    id: 3,
 
-      <div style="margin-top:14px;">
-        <button class="btn ghost" type="button" onclick="authLogout()" data-i18n="logout_btn">Log out</button>
-      </div>
-    </div>
-  </div>
-</section>
+    title: "Professional Conduct & Ethics",
+    titleKey: "academy.m3.title",
 
-<script>
-  // ✅ Translator helper with fallback
-  function _t(key, fallback) {
-    try {
-      if (typeof window.papT === "function") return window.papT(key) || fallback;
-      if (typeof window.papTranslate === "function") return window.papTranslate(key) || fallback;
-      if (typeof window.t === "function") return window.t(key) || fallback;
-    } catch (e) {}
-    return fallback;
+    reading: [
+      "Professionalism is essential when interacting with clients and partners.",
+      "All communication should be clear, respectful, and honest.",
+      "Maintaining ethical standards strengthens the PanAfric Properties network."
+    ],
+    readingKeys: [
+      "academy.m3.r1",
+      "academy.m3.r2",
+      "academy.m3.r3"
+    ],
+
+    quiz: [
+      {
+        q: "What is a key principle of professional conduct?",
+        qKey: "academy.m3.q1",
+        options: [
+          "Transparency and honesty",
+          "Hiding important information",
+          "Prioritising speed over accuracy"
+        ],
+        optionKeys: [
+          "academy.m3.q1.a",
+          "academy.m3.q1.b",
+          "academy.m3.q1.c"
+        ],
+        answerIndex: 0
+      }
+    ]
   }
 
-  // ✅ Fallback progress marker (only used if not defined elsewhere)
-  if (typeof window.papMarkModulePassed !== "function") {
-    window.papMarkModulePassed = function (moduleId) {
-      try {
-        const key = "pap_modules_passed";
-        const arr = JSON.parse(localStorage.getItem(key) || "[]");
-        if (!arr.includes(moduleId)) arr.push(moduleId);
-        localStorage.setItem(key, JSON.stringify(arr));
-      } catch (e) {}
-    };
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  const moduleId = parseInt(params.get("m") || "1", 10);
-
-  // If MODULES isn’t available, go back
-  if (!window.MODULES || !Array.isArray(window.MODULES)) {
-    window.location.href = "academy.html";
-  }
-
-  const mod = window.MODULES.find(x => x.id === moduleId);
-  if (!mod) window.location.href = "academy.html";
-
-  // ✅ Dynamic title using titleKey + fallback to English
-  const moduleWord = _t("module_word", "Module");
-  const moduleTitle = (mod.titleKey ? _t(mod.titleKey, mod.title) : mod.title);
-  document.getElementById("title").innerText = `${moduleWord} ${mod.id} — ${moduleTitle}`;
-
-  // ✅ Reading blocks using readingKeys + fallback to English
-  const reading = document.getElementById("reading");
-  (mod.reading || []).forEach((p, idx) => {
-    const el = document.createElement("p");
-    el.className = "small";
-    const key = (mod.readingKeys && mod.readingKeys[idx]) ? mod.readingKeys[idx] : null;
-    el.innerText = key ? _t(key, p) : p;
-    reading.appendChild(el);
-  });
-
-  // ✅ Quiz using qKey + optionKeys + fallback to English
-  const quizForm = document.getElementById("quizForm");
-  const selectText = _t("select_option", "Select");
-
-  (mod.quiz || []).forEach((item, idx) => {
-    const block = document.createElement("div");
-    block.style.marginTop = "12px";
-
-    const qText = item.qKey ? _t(item.qKey, item.q) : item.q;
-
-    const optionsHtml = (item.options || []).map((opt, i) => {
-      const ok = (item.optionKeys && item.optionKeys[i]) ? item.optionKeys[i] : null;
-      const optText = ok ? _t(ok, opt) : opt;
-      return `<option value="${i}">${optText}</option>`;
-    }).join("");
-
-    block.innerHTML = `
-      <label style="display:block; margin-bottom:6px;">${idx + 1}. ${qText}</label>
-      <select id="q${idx}" required>
-        <option value="">${selectText}</option>
-        ${optionsHtml}
-      </select>
-    `;
-    quizForm.appendChild(block);
-  });
-
-  const submitBtnText = _t("submit_test_btn", "Submit Test");
-  quizForm.insertAdjacentHTML("beforeend", `
-    <div style="margin-top:14px;">
-      <button class="btn green" type="submit">${submitBtnText}</button>
-    </div>
-  `);
-
-  function submitQuiz() {
-    let correct = 0;
-    (mod.quiz || []).forEach((item, idx) => {
-      const v = document.getElementById(`q${idx}`).value;
-      if (String(item.answerIndex) === String(v)) correct++;
-    });
-
-    if (correct === (mod.quiz || []).length) {
-      window.papMarkModulePassed(mod.id);
-      document.getElementById("msg").style.color = "green";
-      document.getElementById("msg").innerText =
-        _t("module_pass_msg", "✅ Test passed. Module completed. Return to Academy to continue.");
-    } else {
-      document.getElementById("msg").style.color = "#b00020";
-      const template = _t("module_fail_msg", "❌ Not yet. You got {correct}/{total}. Please review and try again.");
-      document.getElementById("msg").innerText =
-        template.replace("{correct}", String(correct)).replace("{total}", String((mod.quiz || []).length));
-    }
-    return false;
-  }
-</script>
-
-</body>
-</html>
+];
