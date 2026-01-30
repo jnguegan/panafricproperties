@@ -8,51 +8,59 @@
 
 const MODULES = [
   {
-    id: 1,
-    titleKey: "module.1.title",
-    title: "Introduction to PanAfric Properties",
-    readingKeys: ["module.1.p1", "module.1.p2", "module.1.p3"],
-    reading: [
-      "PanAfric Properties is a diaspora-first marketplace connecting Africans worldwide to verified property opportunities back home.",
-      "Our model scales through local franchise partners trained, certified, and governed under a trust & compliance framework.",
-      "Partners protect buyers by following verification standards, ethical conduct, and platform processes."
-    ],
-    quiz: [
-      {
-        qKey: "module.1.q1",
-        q: "What is the core purpose of PanAfric Properties?",
-        optionKeys: ["module.1.q1.o1", "module.1.q1.o2", "module.1.q1.o3"],
-        options: [
-          "Selling random properties with no checks",
-          "Connecting diaspora buyers to verified African real estate opportunities",
-          "Only listing properties from one country"
-        ],
-        answerIndex: 1
-      },
-      {
-        qKey: "module.1.q2",
-        q: "Who can apply to become a partner?",
-        optionKeys: ["module.1.q2.o1", "module.1.q2.o2", "module.1.q2.o3"],
-        options: [
-          "Only licensed real estate agents",
-          "Only people with university degrees",
-          "Graduates, non-graduates, and unemployed professionals with ambition"
-        ],
-        answerIndex: 2
-      },
-      {
-        qKey: "module.1.q3",
-        q: "What is required before a partner operates under the brand?",
-        optionKeys: ["module.1.q3.o1", "module.1.q3.o2", "module.1.q3.o3"],
-        options: [
-          "Nothing, they can start immediately",
-          "Training, in-house certification, and compliance onboarding",
-          "Only a social media account"
-        ],
-        answerIndex: 1
-      }
-    ]
-  },
+  id: 1,
+  titleKey: "module.1.title",
+  title: "Introduction to PanAfric Properties",
+
+  // ✅ MUST exist
+  readingKeys: ["module.1.p1", "module.1.p2", "module.1.p3"],
+  reading: [
+    "PanAfric Properties is a diaspora-first marketplace connecting Africans worldwide to verified property opportunities back home.",
+    "Our model scales through local franchise partners trained, certified, and governed under a trust & compliance framework.",
+    "Partners protect buyers by following verification standards, ethical conduct, and platform processes."
+  ],
+
+  quiz: [
+    {
+      // ✅ MUST exist
+      qKey: "module.1.q1",
+      q: "What is the core purpose of PanAfric Properties?",
+
+      optionKeys: ["module.1.q1.o1", "module.1.q1.o2", "module.1.q1.o3"],
+      options: [
+        "Selling random properties with no checks",
+        "Connecting diaspora buyers to verified African real estate opportunities",
+        "Only listing properties from one country"
+      ],
+      answerIndex: 1
+    },
+    {
+      qKey: "module.1.q2",
+      q: "Who can apply to become a partner?",
+
+      optionKeys: ["module.1.q2.o1", "module.1.q2.o2", "module.1.q2.o3"],
+      options: [
+        "Only licensed real estate agents",
+        "Only people with university degrees",
+        "Graduates, non-graduates, and unemployed professionals with ambition"
+      ],
+      answerIndex: 2
+    },
+    {
+      qKey: "module.1.q3",
+      q: "What is required before a partner operates under the brand?",
+
+      optionKeys: ["module.1.q3.o1", "module.1.q3.o2", "module.1.q3.o3"],
+      options: [
+        "Nothing, they can start immediately",
+        "Training, in-house certification, and compliance onboarding",
+        "Only a social media account"
+      ],
+      answerIndex: 1
+    }
+  ]
+},
+
 
   {
     id: 2,
