@@ -1944,6 +1944,16 @@
     syncSelect(safe);
     applyLang(safe);
   }
+  // ✅ Export translator for dynamic strings (modules, quizzes, etc.)
+  // This allows academy.js and module.html to translate titleKey / readingKeys / qKey / optionKeys
+  window.papT = function (key) {
+    try {
+      const lang = getLang();
+      const table = (I18N && I18N[lang]) ? I18N[lang] : null;
+      if (table && Object.prototype.hasOwnProperty.call(table, key)) return table[key];
+    } catch (e) {}
+    return "";
+  };
 
   window.papSetLang = setLang;
   window.papGetLang = getLang;
