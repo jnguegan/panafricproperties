@@ -1930,6 +1930,26 @@
 "module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
 "module.1.q3.o3": "Solo una cuenta de redes sociales",
 
+      // Module 1 — Spanish
+"module.1.p1": "PanAfric Properties es un marketplace centrado en la diáspora que conecta a africanos de todo el mundo con oportunidades inmobiliarias verificadas en su país.",
+"module.1.p2": "Nuestro modelo escala mediante socios franquiciados locales capacitados, certificados y gestionados bajo un marco de confianza y cumplimiento.",
+"module.1.p3": "Los socios protegen a los compradores siguiendo estándares de verificación, conducta ética y procesos de la plataforma.",
+
+"module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?",
+"module.1.q1.o1": "Vender propiedades al azar sin controles",
+"module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas",
+"module.1.q1.o3": "Publicar solo propiedades de un país",
+
+"module.1.q2": "¿Quién puede solicitar ser socio?",
+"module.1.q2.o1": "Solo agentes inmobiliarios con licencia",
+"module.1.q2.o2": "Solo personas con títulos universitarios",
+"module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición",
+
+"module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?",
+"module.1.q3.o1": "Nada, puede empezar inmediatamente",
+"module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
+"module.1.q3.o3": "Solo una cuenta de redes sociales",
+
       
     }
   };
