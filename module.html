@@ -32,7 +32,17 @@
 
 <!-- ✅ Module content data -->
 <script src="modules.js"></script>
+<script>
+  function waitForLangReady(cb) {
+    if (typeof window.papT === "function" && typeof window.papGetLang === "function") {
+      cb();
+    } else {
+      setTimeout(() => waitForLangReady(cb), 50);
+    }
+  }
+</script>
 
+  
 <section class="section">
   <div class="wrap">
     <a class="btn ghost" href="academy.html" data-i18n="academy_back">← Back to Academy</a>
@@ -98,14 +108,19 @@
 document.getElementById("title").innerText = `${moduleWord} ${mod.id} — ${moduleTitle}`;
 
 
-  // Reading blocks (content stays as authored in MODULES)
-  const reading = document.getElementById("reading");
-  (mod.reading || []).forEach(p => {
-    const el = document.createElement("p");
-    el.className = "small";
-    el.innerText = p;
-    reading.appendChild(el);
-  });
+// Reading blocks (use readingKeys for translation, fallback to English)
+const reading = document.getElementById("reading");
+reading.innerHTML = "";
+
+(mod.reading || []).forEach((p, idx) => {
+  const el = document.createElement("p");
+  el.className = "small";
+
+  const key = (mod.readingKeys && mod.readingKeys[idx]) ? mod.readingKeys[idx] : null;
+  el.innerText = key ? _t(key, p) : p;
+
+  reading.appendChild(el);
+});
 
   // Quiz
   const quizForm = document.getElementById("quizForm");
