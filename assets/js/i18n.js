@@ -2390,15 +2390,65 @@ sponsor: {
     noGuarantee: "Entiendo que este programa es apoyo al emprendimiento y no garantiza ingresos ni resultados.",
     submit: "Enviar solicitud",
     backHome: "Volver al inicio",
-    afterSubmit: "Tras enviar, nuestro equipo responderá con los siguientes pasos de verificación y del proceso de patrocinio."
-  }
-},
+    afterSubmit: "Tras enviar, nuestro equipo responderá con los siguientes pasos de verificación y del proceso de patrocinio.",
 
-      
-    }
+          "sponsor.hero.title": "Patrocina a un futuro socio",
+      "sponsor.hero.lead": "Ayuda a un familiar o a un joven profesional a convertirse en Socio certificado de PanAfric Properties — y a generar ingresos localmente mediante el emprendimiento (no es caridad y no hay garantías de ingresos).",
+      "sponsor.hero.ctaPrimary": "Patrocinar a un candidato",
+      "sponsor.hero.ctaSecondary": "Ver el programa de Socios",
+      "sponsor.hero.note": "Esta página no aparece en la navegación principal. Compártela directamente con tu comunidad de la diáspora.",
 
+      "sponsor.how.title": "Cómo funciona",
+      "sponsor.how.step1Title": "1) Elige un candidato",
+      "sponsor.how.step1Text": "Patrocinas a un familiar o a una persona joven motivada (18+) que quiera construir un camino profesional en el sector inmobiliario.",
+      "sponsor.how.step2Title": "2) Financia la activación del socio",
+      "sponsor.how.step2Text": "El patrocinio es de 1.000 € e incluye formación y el proceso de onboarding y activación dentro del ecosistema PanAfric.",
+      "sponsor.how.step3Title": "3) Se certifica",
+      "sponsor.how.step3Text": "Tras completar los módulos y el onboarding, podrá operar como Socio bajo nuestros estándares y normas de cumplimiento.",
 
+      "sponsor.cost.title": "Qué cubren los 1.000 €",
+      "sponsor.cost.trainingTitle": "Formación — 250 €",
+      "sponsor.cost.trainingItem1": "Acceso a módulos + cuestionarios de la Academia de Socios",
+      "sponsor.cost.trainingItem2": "Guiones prácticos, plantillas y flujo de trabajo de operaciones",
+      "sponsor.cost.trainingItem3": "Certificación al completar",
+      "sponsor.cost.onboardingTitle": "Onboarding + Activación — 750 €",
+      "sponsor.cost.onboardingItem1": "Configuración del perfil del Socio + pasos de verificación",
+      "sponsor.cost.onboardingItem2": "Orientación de herramientas: anuncios, leads y alta de clientes",
+      "sponsor.cost.onboardingItem3": "Apoyo de lanzamiento: primeros anuncios + primer pipeline de clientes",
+      "sponsor.cost.noteTitle": "Importante:",
+      "sponsor.cost.noteText": "Este es un programa de empoderamiento. No es una donación y no prometemos ingresos ni resultados. El rendimiento depende del esfuerzo del socio y de las condiciones del mercado.",
+
+      "sponsor.who.title": "¿Para quién es?",
+      "sponsor.who.card1Title": "Patrocinadores de la diáspora",
+      "sponsor.who.card1Text": "Quieres empoderar a alguien en su país con un camino real de habilidades, no apoyo a corto plazo.",
+      "sponsor.who.card2Title": "Candidatos motivados",
+      "sponsor.who.card2Text": "Jóvenes profesionales que puedan aprender, seguir un proceso y crecer su red local de forma ética.",
+      "sponsor.who.card3Title": "Grupos comunitarios",
+      "sponsor.who.card3Text": "Asociaciones que quieran crear actividad económica estructurada mediante servicios inmobiliarios.",
+
+      "sponsor.form.title": "Solicitud de patrocinio",
+      "sponsor.form.lead": "Envía este formulario para iniciar el proceso. No se recoge ningún pago aquí.",
+      "sponsor.form.sponsorName": "Nombre completo del patrocinador",
+      "sponsor.form.sponsorEmail": "Email del patrocinador",
+      "sponsor.form.sponsorCountry": "País del patrocinador",
+      "sponsor.form.sponsorPhone": "Teléfono del patrocinador (opcional)",
+      "sponsor.form.candidateTitle": "Datos del candidato",
+      "sponsor.form.candidateName": "Nombre completo del candidato",
+      "sponsor.form.candidateEmail": "Email del candidato (si existe)",
+      "sponsor.form.candidateCountry": "País del candidato",
+      "sponsor.form.candidateCity": "Ciudad del candidato",
+      "sponsor.form.motivation": "¿Por qué este candidato encaja bien?",
+      "sponsor.form.availability": "Disponibilidad (horas/semana)",
+      "sponsor.form.selectOne": "Selecciona una opción",
+      "sponsor.form.noGuarantee": "Entiendo que este programa es apoyo al emprendimiento y no garantiza ingresos ni resultados.",
+      "sponsor.form.submit": "Enviar solicitud",
+      "sponsor.form.backHome": "Volver al inicio",
+      "sponsor.form.afterSubmit": "Tras el envío, nuestro equipo responderá con los siguientes pasos de verificación y del proceso de patrocinio."
+
+  
+}
 };
+    
 
   function getLang() {
     const saved = localStorage.getItem(STORAGE_KEY);
