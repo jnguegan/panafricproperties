@@ -1253,6 +1253,10 @@
 "module_fail_msg": "❌ Pas encore. Vous avez {correct}/{total}. Veuillez revoir et réessayer.",
 "module_quick_test_title": "Test rapide",
 "module_quick_test_help": "Répondez correctement à toutes les questions pour terminer ce module.",
+// Module 1 — Reading (FR)
+"module.1.p1": "PanAfric Properties est une place de marché axée sur la diaspora, reliant les Africains du monde entier à des opportunités immobilières vérifiées au pays.",
+"module.1.p2": "Notre modèle se développe grâce à des partenaires franchisés locaux formés, certifiés et encadrés sous un cadre de confiance et de conformité.",
+"module.1.p3": "Les partenaires protègent les acheteurs en respectant des standards de vérification, une conduite éthique et les processus de la plateforme.",
 
 
     },
