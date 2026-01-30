@@ -1290,7 +1290,7 @@
 "sponsor.who.card2Title": "Candidats motivés",
 "sponsor.who.card2Text": "Jeunes professionnels capables d’apprendre et de suivre un processus.",
 "sponsor.who.card3Title": "Groupes communautaires",
-"sponsor.who.card3Text": "Associations voulant créer une activité économique structurée.",
+"sponsor.who.card3Text": "Associations voulant créer une activité économique structurée."
 
 "sponsor.form.title": "Demande de sponsoring",
 "sponsor.form.lead": "Soumettez ce formulaire pour démarrer le processus.",
