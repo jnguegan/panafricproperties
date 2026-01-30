@@ -309,11 +309,9 @@
   </div>
 </footer>
 
-<!-- Scripts (match your existing pages) -->
-<script src="assets/js/i18n.js"></script>
 <script>
-  // Footer year (kept tiny + consistent)
-  document.getElementById("papYear").textContent = new Date().getFullYear();
+  const y = document.getElementById("papYear");
+  if (y) y.textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
