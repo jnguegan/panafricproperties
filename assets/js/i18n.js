@@ -1434,12 +1434,77 @@
 "sponsor.side.reminderTitle": "Rappel",
 "sponsor.side.reminderBody": "L’objectif est la capacité : compétences, outils, activité structurée et standards professionnels — pour construire un vrai parcours dans le temps.",
 
-"sponsor.cta.title": "Prêt à parrainer ?",
+"sponsor.cta.title": "Parrainage d'un Future Partenaire",
 "sponsor.cta.body": "Parrainez un proche ou un jeune entrepreneur avec 1 000 € pour couvrir formation + onboarding et l’aider à devenir partenaire certifié PanAfric Properties.",
 "sponsor.cta.button": "Démarrer la demande",
 "sponsor.cta.note": "Pas de charité, aucune garantie de revenu — cela finance des compétences et l’activation."
 
+sponsor: {
+  hero: {
+    title: "Sponsoriser un futur partenaire",
+    lead: "Aidez un proche ou un jeune professionnel à devenir Partenaire certifié PanAfric Properties — et à développer des revenus localement via l’entrepreneuriat (pas de charité, et aucune garantie de revenus).",
+    ctaPrimary: "Sponsoriser un candidat",
+    ctaSecondary: "Voir le programme Partenaire",
+    note: "Cette page n’apparaît pas dans la navigation principale. Partagez-la directement avec votre communauté diaspora."
+  },
 
+  how: {
+    title: "Comment ça fonctionne",
+    step1Title: "1) Choisir un candidat",
+    step1Text: "Vous sponsorisez un proche ou un jeune motivé (18+) qui souhaite construire un parcours professionnel dans l’immobilier.",
+    step2Title: "2) Financer l’activation partenaire",
+    step2Text: "Le sponsoring est de 1 000 € et couvre la formation ainsi que l’onboarding et l’activation dans l’écosystème PanAfric.",
+    step3Title: "3) Certification",
+    step3Text: "Après les modules et l’onboarding, la personne peut opérer comme Partenaire selon nos standards et règles de conformité."
+  },
+
+  cost: {
+    title: "Ce que couvre le forfait de 1 000 €",
+    trainingTitle: "Formation — 250 €",
+    trainingItem1: "Accès aux modules + quiz de l’Académie Partenaire",
+    trainingItem2: "Scripts pratiques, modèles et workflow de transaction",
+    trainingItem3: "Certification après validation",
+    onboardingTitle: "Onboarding + Activation — 750 €",
+    onboardingItem1: "Création du profil Partenaire + étapes de vérification",
+    onboardingItem2: "Prise en main des outils : annonces, leads et onboarding clients",
+    onboardingItem3: "Support de lancement : premières annonces + premier pipeline clients",
+    noteTitle: "Important :",
+    noteText: "C’est un programme d’autonomisation. Ce n’est pas un don, et nous ne promettons aucun revenu ni résultat. Les performances dépendent des efforts du partenaire et des conditions du marché."
+  },
+
+  who: {
+    title: "Pour qui ?",
+    card1Title: "Sponsors diaspora",
+    card1Text: "Vous souhaitez autonomiser quelqu’un au pays avec un vrai parcours de compétences, pas une aide ponctuelle.",
+    card2Title: "Candidats motivés",
+    card2Text: "Jeunes professionnels capables d’apprendre, de suivre un processus et de développer un réseau local de manière éthique.",
+    card3Title: "Groupes communautaires",
+    card3Text: "Associations voulant créer une activité économique structurée via des services immobiliers."
+  },
+
+  form: {
+    title: "Demande de sponsoring",
+    lead: "Soumettez ce formulaire pour démarrer le processus. Aucun paiement n’est collecté ici.",
+    sponsorName: "Nom complet du sponsor",
+    sponsorEmail: "Email du sponsor",
+    sponsorCountry: "Pays du sponsor",
+    sponsorPhone: "Téléphone du sponsor (optionnel)",
+    candidateTitle: "Informations sur le candidat",
+    candidateName: "Nom complet du candidat",
+    candidateEmail: "Email du candidat (si disponible)",
+    candidateCountry: "Pays du candidat",
+    candidateCity: "Ville du candidat",
+    motivation: "Pourquoi ce candidat est-il un bon profil ?",
+    availability: "Disponibilité (heures/semaine)",
+    selectOne: "Sélectionnez une option",
+    noGuarantee: "Je comprends que ce programme est un soutien à l’entrepreneuriat et ne garantit ni revenu ni résultats.",
+    submit: "Envoyer la demande",
+    backHome: "Retour à l’accueil",
+    afterSubmit: "Après l’envoi, notre équipe répondra avec les prochaines étapes de vérification et de traitement du sponsoring."
+  }
+    },  
+
+  
     },
 
     es: {
@@ -2197,7 +2262,7 @@
 "sponsor.form.subtitle": "Rellena esto para patrocinar a un candidato. Te responderemos con los siguientes pasos. Aquí no se recoge ningún pago.",
 "sponsor.form.sponsorSection": "Datos del sponsor",
 "sponsor.form.sponsorName": "Nombre completo",
-"sponsor.form.sponsorEmail": "Email",
+"sponsor.form.sponsorEmail": "Email",  
 "sponsor.form.sponsorPhone": "Teléfono (opcional)",
 "sponsor.form.sponsorCountry": "País / ciudad",
 "sponsor.form.candidateSection": "Datos del candidato",
@@ -2213,11 +2278,76 @@
 "sponsor.form.submit": "Enviar solicitud",
 "sponsor.form.note": "Nota: este formulario no recoge pago. Te contactaremos tras la revisión con los siguientes pasos.",
 
-"sponsor.side.title
+sponsor: {
+  hero: {
+    title: "Patrocina a un futuro socio",
+    lead: "Ayuda a un familiar o a un joven profesional a convertirse en Socio certificado de PanAfric Properties — y a generar ingresos localmente mediante el emprendimiento (no es caridad y no hay garantías de ingresos).",
+    ctaPrimary: "Patrocinar a un candidato",
+    ctaSecondary: "Ver el programa de Socios",
+    note: "Esta página no aparece en la navegación principal. Compártela directamente con tu comunidad de la diáspora."
+  },
+
+  how: {
+    title: "Cómo funciona",
+    step1Title: "1) Elige un candidato",
+    step1Text: "Patrocinas a un familiar o a una persona joven motivada (18+) que quiera construir un camino profesional en el sector inmobiliario.",
+    step2Title: "2) Financia la activación del socio",
+    step2Text: "El patrocinio es de 1.000 € e incluye formación y el proceso de onboarding y activación dentro del ecosistema PanAfric.",
+    step3Title: "3) Se certifica",
+    step3Text: "Tras completar módulos y onboarding, podrá operar como Socio bajo nuestros estándares y normas de cumplimiento."
+  },
+
+  cost: {
+    title: "Qué cubren los 1.000 €",
+    trainingTitle: "Formación — 250 €",
+    trainingItem1: "Acceso a módulos + cuestionarios de la Academia de Socios",
+    trainingItem2: "Guiones prácticos, plantillas y flujo de trabajo de operaciones",
+    trainingItem3: "Certificación al completar",
+    onboardingTitle: "Onboarding + Activación — 750 €",
+    onboardingItem1: "Configuración del perfil del Socio + pasos de verificación",
+    onboardingItem2: "Orientación de herramientas: anuncios, leads y alta de clientes",
+    onboardingItem3: "Apoyo de lanzamiento: primeros anuncios + primer pipeline de clientes",
+    noteTitle: "Importante:",
+    noteText: "Esto es un programa de empoderamiento. No es una donación y no prometemos ingresos ni resultados. El rendimiento depende del esfuerzo del socio y de las condiciones del mercado."
+  },
+
+  who: {
+    title: "¿Para quién es?",
+    card1Title: "Patrocinadores de la diáspora",
+    card1Text: "Quieres empoderar a alguien en su país con un camino real de habilidades, no apoyo a corto plazo.",
+    card2Title: "Candidatos motivados",
+    card2Text: "Jóvenes profesionales que puedan aprender, seguir un proceso y crecer su red local de forma ética.",
+    card3Title: "Grupos comunitarios",
+    card3Text: "Asociaciones que quieran crear actividad económica estructurada mediante servicios inmobiliarios."
+  },
+
+  form: {
+    title: "Solicitud de patrocinio",
+    lead: "Envía este formulario para iniciar el proceso. No se recoge ningún pago aquí.",
+    sponsorName: "Nombre completo del patrocinador",
+    sponsorEmail: "Email del patrocinador",
+    sponsorCountry: "País del patrocinador",
+    sponsorPhone: "Teléfono del patrocinador (opcional)",
+    candidateTitle: "Datos del candidato",
+    candidateName: "Nombre completo del candidato",
+    candidateEmail: "Email del candidato (si existe)",
+    candidateCountry: "País del candidato",
+    candidateCity: "Ciudad del candidato",
+    motivation: "¿Por qué este candidato encaja bien?",
+    availability: "Disponibilidad (horas/semana)",
+    selectOne: "Selecciona una opción",
+    noGuarantee: "Entiendo que este programa es apoyo al emprendimiento y no garantiza ingresos ni resultados.",
+    submit: "Enviar solicitud",
+    backHome: "Volver al inicio",
+    afterSubmit: "Tras enviar, nuestro equipo responderá con los siguientes pasos de verificación y del proceso de patrocinio."
+  }
+},
 
       
     }
-  };
+
+
+};
 
   function getLang() {
     const saved = localStorage.getItem(STORAGE_KEY);
