@@ -1246,6 +1246,14 @@
 "module.9.q1.o2": "Protéger la confiance",
 "module.9.q1.o3": "Éviter la transparence",
 
+"module_word": "Module",
+"select_option": "Sélectionner",
+"submit_test_btn": "Soumettre le test",
+"module_pass_msg": "✅ Test réussi. Module terminé. Retournez à l’Académie pour continuer.",
+"module_fail_msg": "❌ Pas encore. Vous avez {correct}/{total}. Veuillez revoir et réessayer.",
+"module_quick_test_title": "Test rapide",
+"module_quick_test_help": "Répondez correctement à toutes les questions pour terminer ce module.",
+
 
     },
 
@@ -1897,6 +1905,30 @@
 "module.9.q1.o1": "Reducir crecimiento",
 "module.9.q1.o2": "Proteger confianza",
 "module.9.q1.o3": "Evitar transparencia",
+      
+"module_word": "Módulo",
+"select_option": "Seleccionar",
+"submit_test_btn": "Enviar test",
+"module_pass_msg": "✅ Test aprobado. Módulo completado. Vuelve a la Academia para continuar.",
+"module_fail_msg": "❌ Aún no. Tienes {correct}/{total}. Revisa y vuelve a intentarlo.",
+"module_quick_test_title": "Test rápido",
+"module_quick_test_help": "Responde correctamente a todas las preguntas para completar este módulo.",
+
+      // Module 1 — Quiz (ES)
+"module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?",
+"module.1.q1.o1": "Vender propiedades al azar sin controles",
+"module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas",
+"module.1.q1.o3": "Publicar solo propiedades de un país",
+
+"module.1.q2": "¿Quién puede solicitar ser socio?",
+"module.1.q2.o1": "Solo agentes inmobiliarios con licencia",
+"module.1.q2.o2": "Solo personas con títulos universitarios",
+"module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición",
+
+"module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?",
+"module.1.q3.o1": "Nada, puede empezar inmediatamente",
+"module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
+"module.1.q3.o3": "Solo una cuenta de redes sociales",
 
       
     }
