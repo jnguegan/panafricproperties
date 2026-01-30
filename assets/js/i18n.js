@@ -1258,6 +1258,48 @@
 "module.1.p2": "Notre modèle se développe grâce à des partenaires franchisés locaux formés, certifiés et encadrés sous un cadre de confiance et de conformité.",
 "module.1.p3": "Les partenaires protègent les acheteurs en respectant des standards de vérification, une conduite éthique et les processus de la plateforme.",
 
+"sponsor.hero.title": "Sponsoriser un futur partenaire",
+"sponsor.hero.lead": "Aidez un proche ou un jeune professionnel à devenir Partenaire certifié PanAfric Properties — et à développer des revenus localement via l’entrepreneuriat (pas de charité, et aucune garantie de revenus).",
+"sponsor.hero.ctaPrimary": "Sponsoriser un candidat",
+"sponsor.hero.ctaSecondary": "Voir le programme Partenaire",
+"sponsor.hero.note": "Cette page n’apparaît pas dans la navigation principale. Partagez-la directement avec votre communauté diaspora.",
+
+"sponsor.how.title": "Comment ça fonctionne",
+"sponsor.how.step1Title": "1) Choisir un candidat",
+"sponsor.how.step1Text": "Vous sponsorisez un proche ou un jeune motivé (18+) qui souhaite construire un parcours professionnel dans l’immobilier.",
+"sponsor.how.step2Title": "2) Financer l’activation partenaire",
+"sponsor.how.step2Text": "Le sponsoring est de 1 000 € et couvre la formation ainsi que l’onboarding et l’activation dans l’écosystème PanAfric.",
+"sponsor.how.step3Title": "3) Certification",
+"sponsor.how.step3Text": "Après les modules et l’onboarding, la personne peut opérer comme Partenaire selon nos standards et règles de conformité.",
+
+"sponsor.cost.title": "Ce que couvre le forfait de 1 000 €",
+"sponsor.cost.trainingTitle": "Formation — 250 €",
+"sponsor.cost.trainingItem1": "Accès aux modules + quiz de l’Académie Partenaire",
+"sponsor.cost.trainingItem2": "Scripts pratiques, modèles et workflow de transaction",
+"sponsor.cost.trainingItem3": "Certification après validation",
+"sponsor.cost.onboardingTitle": "Onboarding + Activation — 750 €",
+"sponsor.cost.onboardingItem1": "Création du profil Partenaire + étapes de vérification",
+"sponsor.cost.onboardingItem2": "Prise en main des outils : annonces, leads et onboarding clients",
+"sponsor.cost.onboardingItem3": "Support de lancement : premières annonces + premier pipeline clients",
+"sponsor.cost.noteTitle": "Important :",
+"sponsor.cost.noteText": "C’est un programme d’autonomisation. Ce n’est pas un don, et nous ne promettons aucun revenu ni résultat.",
+
+"sponsor.who.title": "Pour qui ?",
+"sponsor.who.card1Title": "Sponsors diaspora",
+"sponsor.who.card1Text": "Vous souhaitez autonomiser quelqu’un au pays avec un vrai parcours de compétences.",
+"sponsor.who.card2Title": "Candidats motivés",
+"sponsor.who.card2Text": "Jeunes professionnels capables d’apprendre et de suivre un processus.",
+"sponsor.who.card3Title": "Groupes communautaires",
+"sponsor.who.card3Text": "Associations voulant créer une activité économique structurée.",
+
+"sponsor.form.title": "Demande de sponsoring",
+"sponsor.form.lead": "Soumettez ce formulaire pour démarrer le processus.",
+"sponsor.form.sponsorName": "Nom complet du sponsor",
+"sponsor.form.sponsorEmail": "Email du sponsor",
+"sponsor.form.submit": "Envoyer la demande",
+"sponsor.form.backHome": "Retour à l’accueil",
+"sponsor.form.afterSubmit": "Après l’envoi, notre équipe répondra avec les prochaines étapes."
+
 
     },
 
