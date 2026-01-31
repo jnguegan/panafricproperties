@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Properties Map — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+// Initialize map (center Africa for now)
+const map = L.map('map').setView([7, 2], 3);
+
+// Tile layer (OpenStreetMap free)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Sample property data (later we move this to JSON)
+const properties = [
+  {
+    title: "2BR Apartment — Tenerife",
+    price: "€248,000",
+    lat: 28.4636,
+    lng: -16.2518,
+    link: "#"
+  },
+  {
+    title: "Villa — Dakar",
+    price: "€320,000",
+    lat: 14.7167,
+    lng: -17.4677,
+    link: "#"
+  },
+  {
+    title: "Studio — Nairobi",
+    price: "€75,000",
+    lat: -1.286389,
+    lng: 36.817223,
+    link: "#"
+  }
+];
+
+// Add markers
+properties.forEach(p => {
+  const marker = L.marker([p.lat, p.lng]).addTo(map);
+  marker.bindPopup(`
+    <strong>${p.title}</strong><br>
+    ${p.price}<br>
+    <a href="${p.link}">View Property</a>
+  `);
+});
+</script>
+
+</body>
+</html>
