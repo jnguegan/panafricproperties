@@ -54,13 +54,22 @@
     return getPassedIds().includes(id);
   }
 
+  // ✅ UPDATED: Only adds missing UI toggles (resume/cert CTA/badge/progress bar)
+  // Everything else remains unchanged.
   function renderTop() {
     const welcomeEl = document.getElementById("welcome");
     const progressEl = document.getElementById("progressText");
     const certEl = document.getElementById("certStatus"); // optional if exists
 
+    // NEW: UI elements that exist in academy.html (were previously never toggled)
+    const progressBar = document.getElementById("progressBar");
+    const resumeBtn = document.getElementById("resumeBtn");
+    const certBtn = document.getElementById("certBtn");
+    const certBadge = document.getElementById("certBadge");
+
     const total = Array.isArray(window.MODULES) ? window.MODULES.length : 0;
-    const passed = getPassedIds().length;
+    const passedIds = getPassedIds();
+    const passed = passedIds.length;
     const pct = total ? Math.round((passed / total) * 100) : 0;
 
     const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
@@ -85,12 +94,40 @@
       );
     }
 
+    // NEW: update progress bar width (was always 0%)
+    if (progressBar) {
+      progressBar.style.width = `${pct}%`;
+    }
+
+    const allDone = total && passed >= total;
+
     if (certEl) {
       certEl.removeAttribute("data-i18n");
-      const allDone = total && passed >= total;
       certEl.innerText = allDone
         ? tr("academy.unlocked", "Unlocked — you have completed all modules.")
         : tr("academy.locked", "Locked — complete all modules to unlock.");
+    }
+
+    // NEW: toggle certificate CTA + badge + shared completion flag for certificate.html
+    if (allDone) {
+      localStorage.setItem("papAcademyCompleted", "1");
+      if (certBtn) certBtn.style.display = "inline-flex";
+      if (certBadge) certBadge.style.display = "block";
+    } else {
+      localStorage.removeItem("papAcademyCompleted");
+      if (certBtn) certBtn.style.display = "none";
+      if (certBadge) certBadge.style.display = "none";
+    }
+
+    // NEW: toggle resume CTA to next incomplete module
+    if (resumeBtn && Array.isArray(window.MODULES) && window.MODULES.length) {
+      if (allDone) {
+        resumeBtn.style.display = "none";
+      } else {
+        const next = window.MODULES.find((m) => !isPassed(m.id)) || window.MODULES[0];
+        resumeBtn.href = `module.html?m=${encodeURIComponent(String(next.id))}`;
+        resumeBtn.style.display = "inline-flex";
+      }
     }
   }
 
