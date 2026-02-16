@@ -17,7 +17,7 @@
   });
 </script>
 
-<!-- 🌍 Language Dropdown (like your screenshot) -->
+<!-- 🌍 Language Dropdown -->
 <div class="lang-switch">
   <span class="lang-label" data-i18n="lang.label">Language</span>
   <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
@@ -39,15 +39,18 @@
 
     <div class="card" id="cert" style="padding:26px 18px; margin-top:12px; display:none;">
       <div style="text-align:center;">
+
+        <!-- ✅ Logo + Brand -->
         <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:6px;">
-  <img
-    src="assets/images/logo.png"
-    alt="PanAfric Properties"
-    style="width:72px; height:72px; object-fit:contain;"
-    onerror="this.style.display='none'"
-  >
-  <h2 style="margin:0;" data-i18n="cert.brand">PanAfric Properties</h2>
-</div>
+          <img
+            id="papLogo"
+            src="assets/images/logo.png"
+            alt="PanAfric Properties"
+            style="width:78px; height:78px; object-fit:contain;"
+          >
+          <h2 style="margin:0;" data-i18n="cert.brand">PanAfric Properties</h2>
+        </div>
+
         <p class="small" style="margin:0;" data-i18n="cert.program">Training & Certification Program</p>
         <hr style="margin:16px 0; opacity:.2;">
         <h1 style="margin:0 0 8px;" data-i18n="cert.title">Certificate of Completion</h1>
@@ -76,52 +79,82 @@
   </div>
 </section>
 
-<!-- ✅ Load translations BEFORE the inline logic -->
+<!-- ✅ Load translations BEFORE script -->
 <script src="assets/js/i18n.js"></script>
 
 <script>
-  // ---- Safe translation helper (same approach as academy) ----
-  function papT(key) {
+  // ---- Translation helper with fallback (so keys never show) ----
+  function tr(key, fallback, vars) {
+    let s = fallback;
+
     try {
-      if (typeof window.papTranslate === "function") return window.papTranslate(key);
-      const lang = localStorage.getItem("pap_lang") || "en";
-      const dict = (window.DICT && window.DICT[lang]) ? window.DICT[lang] : null;
-      if (dict && dict[key]) return dict[key];
+      if (typeof window.papT === "function") s = window.papT(key) || fallback;
+      else if (typeof window.t === "function") s = window.t(key) || fallback;
+      else if (typeof window.papTranslate === "function") s = window.papTranslate(key) || fallback;
+      else {
+        const lang = localStorage.getItem("pap_lang") || "en";
+        const dict = (window.DICT && window.DICT[lang]) ? window.DICT[lang] : null;
+        if (dict && dict[key]) s = dict[key];
+      }
     } catch (e) {}
-    return key;
+
+    if (vars && typeof s === "string") {
+      Object.keys(vars).forEach((k) => {
+        const val = vars[k] == null ? "" : String(vars[k]);
+        s = s.split(`{${k}}`).join(val);
+      });
+    }
+    return s;
   }
 
-  // ✅ Safe read of passed modules
-  function getPassedIds() {
+  function getPassedCount() {
     try {
       const arr = JSON.parse(localStorage.getItem("pap_modules_passed") || "[]");
-      return Array.isArray(arr) ? arr : [];
+      return Array.isArray(arr) ? arr.length : 0;
     } catch (e) {
-      return [];
+      return 0;
     }
   }
 
-  const passed = getPassedIds().length;
+  // ✅ Fix logo path if needed (fallback to root logo.png)
+  (function () {
+    const img = document.getElementById("papLogo");
+    if (!img) return;
+    img.onerror = function () {
+      if (img.dataset.fallbackDone) {
+        img.style.display = "none";
+        return;
+      }
+      img.dataset.fallbackDone = "1";
+      img.src = "logo.png";
+    };
+  })();
 
-  // ✅ Primary unlock signal (set by academy.js when all modules complete)
-  // Fallback: if for any reason the flag isn't present, we still show progress.
-  const allDone = (localStorage.getItem("papAcademyCompleted") === "1");
-
-  // Optional total for display only (won't break if unknown)
+  const passed = getPassedCount();
   const totalGuess = parseInt(localStorage.getItem("pap_total_modules") || "0", 10) || 0;
+
+  // ✅ Primary unlock signal (set by academy.js)
+  const allDone = (localStorage.getItem("papAcademyCompleted") === "1");
 
   if (!allDone) {
     document.getElementById("locked").style.display = "block";
     document.getElementById("lockStatus").innerText =
-      papT("cert.locked.progress")
-        .replace("{passed}", passed)
-        .replace("{total}", totalGuess ? String(totalGuess) : "?");
+      tr("cert.locked.progress", "Progress: {passed} / {total} modules completed.", {
+        passed,
+        total: totalGuess ? totalGuess : "?"
+      });
   } else {
     document.getElementById("cert").style.display = "block";
 
-    const user = authGetUser() || {};
+    const user = (typeof authGetUser === "function" ? authGetUser() : null) || {};
     const email = (user.email || "").toLowerCase().trim();
-    const name = user.name || user.nickname || user.email || "Partner";
+
+    // ✅ Full name priority
+    const fullName =
+      (user.name && String(user.name).trim()) ||
+      [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
+      (user.nickname && String(user.nickname).trim()) ||
+      "Partner";
 
     // Stable-ish reference from email (no secrets)
     function refFromEmail(e) {
@@ -133,16 +166,27 @@
       return String(Math.abs(h)).slice(0, 8).padStart(8, "0");
     }
 
-    // ISO date (YYYY-MM-DD)
     const dateStr = new Date().toISOString().slice(0, 10);
     const certId = `PAP-${dateStr.replaceAll("-","")}-${refFromEmail(email || "partner")}`;
 
-    document.getElementById("partnerName").innerText = name;
-    document.getElementById("partnerEmail").innerText = email;
+    document.getElementById("partnerName").innerText = fullName;
+
+    // ✅ Avoid duplicate email line if name is already the email
+    const emailEl = document.getElementById("partnerEmail");
+    if (emailEl) {
+      if (email && fullName.toLowerCase() !== email) {
+        emailEl.style.display = "block";
+        emailEl.innerText = email;
+      } else {
+        emailEl.style.display = "none";
+      }
+    }
+
     document.getElementById("certId").innerText =
-      papT("cert.meta.id").replace("{id}", certId);
+      tr("cert.meta.id", "Certificate ID: {id}", { id: certId });
+
     document.getElementById("certDate").innerText =
-      papT("cert.meta.issued").replace("{date}", dateStr);
+      tr("cert.meta.issued", "Issued on: {date}", { date: dateStr });
   }
 </script>
 
