@@ -17,7 +17,6 @@
   });
 </script>
 
-
 <!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
   <span class="lang-label" data-i18n="lang.label">Language</span>
@@ -27,9 +26,6 @@
     <option value="es">ES</option>
   </select>
 </div>
-
-<script src="academy.js"></script>
-<script src="modules.js"></script>
 
 <section class="section">
   <div class="wrap">
@@ -72,6 +68,9 @@
   </div>
 </section>
 
+<!-- ✅ Load translations BEFORE the inline logic -->
+<script src="assets/js/i18n.js"></script>
+
 <script>
   // ---- Safe translation helper (same approach as academy) ----
   function papT(key) {
@@ -84,15 +83,31 @@
     return key;
   }
 
-  const { passed } = papPercentComplete(TOTAL_MODULES);
-  const allDone = (passed === TOTAL_MODULES);
+  // ✅ Safe read of passed modules
+  function getPassedIds() {
+    try {
+      const arr = JSON.parse(localStorage.getItem("pap_modules_passed") || "[]");
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  const passed = getPassedIds().length;
+
+  // ✅ Primary unlock signal (set by academy.js when all modules complete)
+  // Fallback: if for any reason the flag isn't present, we still show progress.
+  const allDone = (localStorage.getItem("papAcademyCompleted") === "1");
+
+  // Optional total for display only (won't break if unknown)
+  const totalGuess = parseInt(localStorage.getItem("pap_total_modules") || "0", 10) || 0;
 
   if (!allDone) {
     document.getElementById("locked").style.display = "block";
     document.getElementById("lockStatus").innerText =
       papT("cert.locked.progress")
         .replace("{passed}", passed)
-        .replace("{total}", TOTAL_MODULES);
+        .replace("{total}", totalGuess ? String(totalGuess) : "?");
   } else {
     document.getElementById("cert").style.display = "block";
 
@@ -122,7 +137,6 @@
       papT("cert.meta.issued").replace("{date}", dateStr);
   }
 </script>
-<script src="assets/js/i18n.js"></script>
 
 </body>
 </html>
