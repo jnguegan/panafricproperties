@@ -129,17 +129,17 @@
       // ✅ Show "Edit Certificate Name" button when completed
       if (editNameBox) editNameBox.style.display = "block";
 
-      if (editNameBtn && !editNameBtn.__papBound) {
-        editNameBtn.onclick = function () {
-          const current = (localStorage.getItem("pap_partner_fullname") || "").trim();
-          const input = prompt("Edit your certificate full name:", current);
-          if (input && input.trim().length >= 3) {
-            localStorage.setItem("pap_partner_fullname", input.trim());
-            alert("Certificate name updated.");
-          }
-        };
-        editNameBtn.__papBound = true;
-      }
+      if (editNameBtn) {
+  editNameBtn.onclick = function () {
+    const current = (localStorage.getItem("pap_partner_fullname") || "").trim();
+    const input = prompt("Edit your certificate full name:", current);
+    if (input && input.trim().length >= 3) {
+      localStorage.setItem("pap_partner_fullname", input.trim());
+      alert("Certificate name updated.");
+    }
+  };
+}
+
 
       if (certBtn) certBtn.style.display = "inline-flex";
       if (certBadge) certBadge.style.display = "block";
