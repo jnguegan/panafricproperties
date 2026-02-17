@@ -641,6 +641,7 @@
 "submit.cta.submit": "Submit for review",
 "submit.cta.cancel": "Cancel",
 "submit.footer_note": "After submission, our team will review and contact you if clarifications are needed."
+"academy.go_dashboard": "Go to Partner Dashboard",
 
 
 
@@ -1389,6 +1390,7 @@
 "submit.cta.submit": "Soumettre pour validation",
 "submit.cta.cancel": "Annuler",
 "submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires."
+"academy.go_dashboard": "Aller au tableau de bord partenaire",
 
 
 },
@@ -2167,6 +2169,7 @@
 "submit.cta.submit": "Enviar para revisión",
 "submit.cta.cancel": "Cancelar",
 "submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones."
+"academy.go_dashboard": "Ir al panel del socio",
 
       
     }
