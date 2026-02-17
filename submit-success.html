@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submission Received — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="lang-switch">
+  <span class="lang-label" data-i18n="lang.label">Language</span>
+  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
+    <option value="en">EN</option>
+    <option value="fr">FR</option>
+    <option value="es">ES</option>
+  </select>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card" style="padding:22px; text-align:center;">
+      <h2 style="margin:0 0 10px;" data-i18n="submit_success.title">Property Submitted Successfully</h2>
+      <p class="small" style="margin:0; opacity:.85;" data-i18n="submit_success.text">
+        Thank you. Your property has been submitted for review. Our team will contact you if we need clarification.
+      </p>
+
+      <div style="margin-top:16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn green" href="partner-dashboard.html" data-i18n="submit_success.back_dash">Back to Dashboard</a>
+        <a class="btn ghost" href="submit-property.html" data-i18n="submit_success.submit_another">Submit Another Property</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/i18n.js"></script>
+<script>
+  if (typeof window.papApplyI18n === "function") window.papApplyI18n();
+</script>
+
+</body>
+</html>
