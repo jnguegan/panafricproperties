@@ -1,37 +1,31 @@
 {
-  "version": 1,
-  "lastUpdated": "2026-02-17T00:00:00Z",
   "listings": [
     {
       "id": "pap-0001",
-      "status": "approved",
-      "title": "Modern 2-bedroom apartment with ocean view",
-      "price": 185000,
-      "currency": "EUR",
+      "title": "Agrotourism Land for Sale — Tenerife (Canary Islands)",
+      "propertyType": "Land",
       "category": "sale",
-      "propertyType": "apartment",
-      "country": "Spain",
-      "city": "Santa Cruz de Tenerife",
-      "areaLabel": "Tenerife",
-      "address": "Near city center (address shared after serious enquiry)",
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "sizeM2": 78,
-      "yearBuilt": 2018,
-      "features": ["Balcony", "Elevator", "Parking", "Sea view"],
-      "description": "Bright and well-maintained apartment featuring an open-plan living space, modern kitchen, and a balcony with sea views. Ideal for residence or investment.",
-      "images": [
-        "assets/images/properties/sample-1.jpg",
-        "assets/images/properties/sample-2.jpg"
+      "city": "Tenerife",
+      "country": "Spain (Canary Islands)",
+      "price": 250000,
+      "currency": "EUR",
+      "sizeM2": 10000,
+      "description": "Exceptional opportunity to acquire a strategic plot of land in Tenerife, ideal for an agrotourism and eco-luxury development project. Suitable for eco-lodge, glamping, wellness retreat, organic farming experience, subject to local regulations.",
+      "features": [
+        "Agrotourism development potential",
+        "Mountain and sea views (depending on plot location)",
+        "Suitable for eco-lodge / glamping project",
+        "Ideal for organic farming activities",
+        "Tourism investment opportunity"
       ],
+      "images": [],
+      "status": "approved",
       "contact": {
         "name": "PanAfric Properties",
-        "email": "info@panafricproperties.com",
+        "email": "contact@panafricproperties.com",
         "phone": "+34 600 000 000",
         "whatsapp": "+34 600 000 000"
-      },
-      "publishedAt": "2026-02-10T10:00:00Z",
-      "updatedAt": "2026-02-10T10:00:00Z"
+      }
     }
   ]
 }
