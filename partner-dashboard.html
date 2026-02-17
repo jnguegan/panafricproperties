@@ -12,6 +12,9 @@
 <script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
 <script src="auth.js"></script>
 <script>
+  // ✅ If login is required, remember we want to come back here after login
+  localStorage.setItem("pap_after_login", "partner-dashboard.html");
+
   authHandleRedirect(function () {
     authRequireLogin();
   });
@@ -95,7 +98,6 @@
 
 <script>
   (function(){
-    // Small translation helper with fallback
     function tr(key, fallback, vars){
       let s = fallback;
       try {
@@ -109,7 +111,6 @@
     }
 
     function init(){
-      // Apply static i18n
       if (typeof window.papApplyI18n === "function") window.papApplyI18n();
 
       const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
@@ -145,13 +146,16 @@
       if (certState) {
         certState.removeAttribute("data-i18n");
         certState.innerText = certified
-          ? tr("partner_dash.status.certified", "Certified ✅", {})
-          : tr("partner_dash.status.not_certified", "Not certified", {});
+          ? tr("partner_dash.status.certified", "Certified ✅")
+          : tr("partner_dash.status.not_certified", "Not certified");
       }
 
       if (notCertifiedBox) notCertifiedBox.style.display = certified ? "none" : "block";
       if (certifiedBox) certifiedBox.style.display = certified ? "block" : "none";
       if (addBtn2) addBtn2.style.display = certified ? "inline-flex" : "none";
+
+      // ✅ Once logged in and loaded here, clear the after-login target
+      localStorage.removeItem("pap_after_login");
     }
 
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
