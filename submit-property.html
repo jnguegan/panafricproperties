@@ -53,7 +53,7 @@
         method="POST"
         data-netlify="true"
         enctype="multipart/form-data"
-        action="/submit-success.html"
+        action="/submit-success"
         style="margin-top:14px;"
         id="propertyForm"
       >
@@ -183,7 +183,6 @@
   </div>
 </section>
 
-<!-- Translations -->
 <script src="assets/js/i18n.js"></script>
 
 <script>
@@ -202,20 +201,4 @@
 
     const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
     const email = (user.email || "").trim();
-    const storedName = (localStorage.getItem("pap_partner_fullname") || "").trim();
-    const fullName =
-      storedName ||
-      (user.name && String(user.name).trim()) ||
-      [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
-      (user.nickname && String(user.nickname).trim()) ||
-      "Partner";
-
-    const nameEl = document.getElementById("partner_name");
-    const emailEl = document.getElementById("partner_email");
-    if (nameEl) nameEl.value = fullName;
-    if (emailEl) emailEl.value = email;
-  })();
-</script>
-
-</body>
-</html>
+    const storedName = (localStorage.getItem("pap_partner_ful
