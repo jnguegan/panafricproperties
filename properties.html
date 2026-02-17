@@ -1,208 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Properties — PanAfric Properties</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="properties.pageTitle">Properties — PanAfric Properties</title>
+  <meta name="description" content="Browse approved property listings." />
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<header class="header">
-  <div class="wrap">
-    <div class="navbar">
-      <a href="index.html">
-        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
-      </a>
+<body data-page="properties">
+  <!-- Header (kept intentionally simple + compatible with your existing styling) -->
+  <header class="header">
+    <div class="wrap">
+      <div class="navbar">
+        <a class="brand" href="index.html" style="text-decoration:none;">
+          <strong>PanAfric Properties</strong>
+        </a>
 
-      <nav class="navlinks">
-        <a href="countries.html" data-i18n="nav.countries">Countries</a>
-        <a href="properties.html" data-i18n="nav.properties">Properties</a>
-        <a href="agents.html" data-i18n="nav.agents">Agents</a>
-        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
-        <a href="training.html" data-i18n="nav.training">Training & Certification</a>
-        <a href="trust.html" data-i18n="nav.trust">Trust</a>
-        <a href="login.html" data-i18n="nav.login">Partner Login</a>
-        <!-- 🌍 Language Dropdown (like your screenshot) -->
-  <div class="lang-switch">
-  <span class="lang-label" data-i18n="lang.label">Language</span>
-  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
-    <option value="en">EN</option>
-    <option value="fr">FR</option>
-    <option value="es">ES</option>
-  </select>
-</div>
-
-        <a href="contact.html" class="btn" data-i18n="nav.contact">Contact</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<section class="section">
-  <div class="wrap">
-    <h1 style="color:var(--pap-blue);margin:0 0 8px;" data-i18n="properties.title">Property Listings</h1>
-    <p class="small" data-i18n="properties.intro">MVP listings — static for now. Next step: real filters + country pages.</p>
-
-    <!-- Filter bar (visual only for MVP) -->
-    <div class="card" style="margin-top:12px;">
-      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;">
-        <div>
-          <label data-i18n="properties.filter.country">Country</label>
-          <select>
-            <option data-i18n="properties.filter.all">All</option>
-            <option data-i18n="country.ghana">Ghana</option><option data-i18n="country.nigeria">Nigeria</option><option data-i18n="country.cameroon">Cameroon</option>
-            <option data-i18n="country.senegal">Senegal</option><option data-i18n="country.ivorycoast">Ivory Coast</option><option data-i18n="country.mali">Mali</option><option data-i18n="country.zimbabwe">Zimbabwe</option>
-          </select>
-        </div>
-
-        <div>
-          <label data-i18n="properties.filter.type">Type</label>
-          <select>
-            <option data-i18n="properties.filter.all">All</option>
-            <option data-i18n="properties.type.land">Land</option>
-            <option data-i18n="properties.type.home">Home</option>
-            <option data-i18n="properties.type.dev">Development / Off-plan</option>
-          </select>
-        </div>
-
-        <div>
-          <label data-i18n="properties.filter.budget">Budget</label>
-          <select>
-            <option data-i18n="properties.budget.any">Any</option>
-            <option data-i18n="properties.budget.under50">Under €50k</option>
-            <option data-i18n="properties.budget.50to150">€50k – €150k</option>
-            <option data-i18n="properties.budget.150plus">€150k+</option>
-          </select>
-        </div>
-
-        <div>
-          <label data-i18n="properties.filter.dd">Due diligence</label>
-          <select>
-            <option data-i18n="properties.dd.any">Any</option>
-            <option data-i18n="properties.dd.verified">Verified</option>
-            <option data-i18n="properties.dd.review">In Review</option>
+        <!-- If you already have a language dropdown component globally, keep it.
+             This minimal one won’t break your existing i18n.js if it’s present. -->
+        <div class="lang" style="display:flex; gap:10px; align-items:center;">
+          <label for="langSelect" class="small" data-i18n="lang_label">Language</label>
+          <select id="langSelect" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
           </select>
         </div>
       </div>
-
-      <div style="margin-top:14px;">
-        <a class="btn" href="contact.html" data-i18n="properties.cta.enquire">Enquire</a>
-        <a class="btn ghost" href="trust.html" style="margin-left:10px;" data-i18n="properties.cta.how">How verification works</a>
-      </div>
     </div>
+  </header>
 
-    <!-- Listings -->
-    <div class="grid" style="margin-top:14px;">
-      <div class="card">
-        <h3 data-i18n="properties.list1.title">Modern Villa — Accra (Ghana)</h3>
-        <p class="small" data-i18n="properties.list1.desc">3-bedroom villa • East Legon • Ready to move in</p>
-        <p class="price">€180,000</p>
-        <p class="small" data-i18n="properties.list1.meta"><b>Status:</b> Verified • <b>Agent:</b> Accra West Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="properties.list2.title">Residential Land — Douala (Cameroon)</h3>
-        <p class="small" data-i18n="properties.list2.desc">500 sqm plot • Great access • Suitable for build</p>
-        <p class="price">€35,000</p>
-        <p class="small" data-i18n="properties.list2.meta"><b>Status:</b> In Review • <b>Agent:</b> Douala Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="properties.list3.title">Off-plan Apartments — Lekki (Nigeria)</h3>
-        <p class="small" data-i18n="properties.list3.desc">2-bedroom apartments • Payment plan available</p>
-        <p class="price">€95,000</p>
-        <p class="small" data-i18n="properties.list3.meta"><b>Status:</b> Verified • <b>Agent:</b> Lagos Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="properties.list4.title">Residential Plot — Bamako (Mali)</h3>
-        <p class="small" data-i18n="properties.list4.desc">Titled land • Residential zone • Good access</p>
-        <p class="price">€22,000</p>
-        <p class="small" data-i18n="properties.list4.meta"><b>Status:</b> In Review • <b>Agent:</b> Bamako Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="properties.list5.title">Family Home — Harare (Zimbabwe)</h3>
-        <p class="small" data-i18n="properties.list5.desc">3-bedroom home • Safe neighbourhood</p>
-        <p class="price">€78,000</p>
-        <p class="small" data-i18n="properties.list5.meta"><b>Status:</b> Verified • <b>Agent:</b> Harare Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="properties.list6.title">City Apartment — Dakar (Senegal)</h3>
-        <p class="small" data-i18n="properties.list6.desc">2-bedroom apartment • High rental demand</p>
-        <p class="price">€120,000</p>
-        <p class="small" data-i18n="properties.list6.meta"><b>Status:</b> In Review • <b>Agent:</b> Dakar Partner</p>
-        <a class="btn ghost" href="contact.html" data-i18n="properties.card.cta">Request details</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="section">
-  <div class="wrap">
-    <div class="card" style="text-align:center; padding:28px 22px;">
-      <h2 data-i18n="properties.promo.title">Want to Build a Real Estate Business in Your City?</h2>
-      <p class="small" style="max-width:720px; margin:12px auto 18px;" data-i18n="properties.promo.text">
-        Join PanAfric Properties as a franchise partner.
-        We train and certify local partners to operate real estate brokerage activities
-        and connect them to diaspora buyers worldwide.
-      </p>
-
-      <a class="btn green" href="franchise.html" data-i18n="properties.promo.cta">
-        Work With Us
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
-        <p class="small" style="margin:10px 0 0;" data-i18n="footer.tagline">
-          Trusted access to verified African real estate opportunities — built for the diaspora.
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h1 data-i18n="properties.h1">Approved Property Listings</h1>
+        <p class="small" data-i18n="properties.intro">
+          Browse approved listings. Each property is reviewed before publication.
         </p>
-      </div>
 
-      <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform">Platform</h3>
-        <p><a href="countries.html" data-i18n="nav.countries">Countries</a></p>
-        <p><a href="properties.html" data-i18n="nav.properties">Properties</a></p>
-        <p><a href="trust.html" data-i18n="footer.trust">Trust & Verification</a></p>
-         <p><a href="login.html" data-i18n="nav.login">Partner Login</a></p>
-      </div>
+        <div class="card" style="padding:16px; margin-top:16px;">
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+            <input id="searchInput" type="search" class="input" style="flex:1; min-width:240px;"
+                   placeholder="Search by city, country, or keyword" data-i18n-placeholder="properties.searchPlaceholder" />
 
-      <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.franchise">Franchise</h3>
-        <p class="small" data-i18n="footer.franchise_text">Become a local partner and list verified opportunities in your territory.</p>
-        <p><a href="contact.html" data-i18n="footer.apply">Apply / Enquire</a></p>
-      </div>
+            <select id="categoryFilter" class="input" style="min-width:180px;">
+              <option value="" data-i18n="properties.filterAll">All categories</option>
+              <option value="sale" data-i18n="properties.filterSale">For sale</option>
+              <option value="rent" data-i18n="properties.filterRent">For rent</option>
+            </select>
 
-      <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact">Contact</h3>
-        <p class="small" data-i18n="footer.contact_text">For buyers, developers, and partners.</p>
-        <p><a href="contact.html" data-i18n="footer.message">Message us</a></p>
+            <select id="typeFilter" class="input" style="min-width:180px;">
+              <option value="" data-i18n="properties.typeAll">All types</option>
+              <option value="apartment" data-i18n="properties.typeApartment">Apartment</option>
+              <option value="house" data-i18n="properties.typeHouse">House</option>
+              <option value="land" data-i18n="properties.typeLand">Land</option>
+              <option value="commercial" data-i18n="properties.typeCommercial">Commercial</option>
+            </select>
+          </div>
+
+          <div class="small" id="resultsMeta" style="margin-top:10px;"></div>
+        </div>
+
+        <div id="listingsGrid" class="grid" style="margin-top:16px;"></div>
+
+        <div id="emptyState" class="card" style="padding:18px; margin-top:16px; display:none;">
+          <h3 style="margin:0 0 6px;" data-i18n="properties.emptyTitle">No approved listings yet</h3>
+          <p class="small" style="margin:0;" data-i18n="properties.emptyText">
+            Please check back soon. New listings are published after admin approval.
+          </p>
+        </div>
+
+        <div id="errorState" class="card" style="padding:18px; margin-top:16px; display:none;">
+          <h3 style="margin:0 0 6px;" data-i18n="properties.errorTitle">Unable to load listings</h3>
+          <p class="small" style="margin:0;" data-i18n="properties.errorText">
+            Please try again later.
+          </p>
+        </div>
+
       </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap small">
+      <span>© <span id="year"></span> PanAfric Properties</span>
     </div>
+  </footer>
 
-    <p class="small" style="margin-top:18px;" data-i18n="footer.rights">
-      © 2026 PanAfric Properties. All rights reserved.
-    </p>
-  </div>
-</footer>
-<script src="assets/js/i18n.js"></script>
+  <!-- i18n + page logic -->
+  <script src="assets/js/i18n.js"></script>
+  <script>
+    (function(){
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
 
+      // Hook into your existing language system safely
+      const langSelect = document.getElementById('langSelect');
+      const saved = (localStorage.getItem('pap_lang') || localStorage.getItem('lang') || 'en').toLowerCase();
+      if (['en','fr','es'].includes(saved)) langSelect.value = saved;
+
+      function applyLang(lang){
+        try {
+          if (typeof papSetLang === 'function') papSetLang(lang);
+          else localStorage.setItem('pap_lang', lang);
+        } catch(e) {}
+      }
+
+      langSelect.addEventListener('change', () => applyLang(langSelect.value));
+      applyLang(langSelect.value);
+    })();
+  </script>
+
+  <script>
+    (function(){
+      const grid = document.getElementById('listingsGrid');
+      const emptyState = document.getElementById('emptyState');
+      const errorState = document.getElementById('errorState');
+      const resultsMeta = document.getElementById('resultsMeta');
+
+      const searchInput = document.getElementById('searchInput');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const typeFilter = document.getElementById('typeFilter');
+
+      let all = [];
+
+      function escapeHtml(str){
+        return String(str ?? '').replace(/[&<>"']/g, s => ({
+          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+        }[s]));
+      }
+
+      function money(price, currency){
+        const v = Number(price);
+        if (!Number.isFinite(v)) return '';
+        const c = (currency || 'EUR').toUpperCase();
+        try {
+          return new Intl.NumberFormat(undefined, { style:'currency', currency:c, maximumFractionDigits:0 }).format(v);
+        } catch(e){
+          return `${v.toLocaleString()} ${c}`;
+        }
+      }
+
+      function normalize(s){ return String(s ?? '').toLowerCase().trim(); }
+
+      function buildCard(item){
+        const img = (item.images && item.images.length) ? item.images[0] : '';
+        const title = escapeHtml(item.title || '');
+        const loc = [item.city, item.country].filter(Boolean).join(', ');
+        const price = money(item.price, item.currency);
+
+        const bed = Number.isFinite(Number(item.bedrooms)) ? `${item.bedrooms} bd` : '';
+        const bath = Number.isFinite(Number(item.bathrooms)) ? `${item.bathrooms} ba` : '';
+        const size = Number.isFinite(Number(item.sizeM2)) ? `${item.sizeM2} m²` : '';
+        const metaBits = [bed, bath, size].filter(Boolean).join(' · ');
+
+        const link = `property.html?id=${encodeURIComponent(item.id)}`;
+
+        const badge = escapeHtml((item.category || '').toLowerCase());
+        const badgeLabel = badge === 'rent'
+          ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
+          : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
+
+        return `
+          <article class="card" style="overflow:hidden;">
+            ${img ? `
+              <a href="${link}" style="display:block;">
+                <img src="${escapeHtml(img)}" alt="${title}" style="width:100%; height:200px; object-fit:cover; display:block;">
+              </a>
+            ` : ''}
+            <div style="padding:14px;">
+              <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+                <h3 style="margin:0;">
+                  <a href="${link}" style="text-decoration:none;">${title}</a>
+                </h3>
+                <span class="small" style="white-space:nowrap; opacity:.9;">${escapeHtml(badgeLabel)}</span>
+              </div>
+
+              <p class="small" style="margin:6px 0 0;">${escapeHtml(loc)}</p>
+
+              <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; margin-top:10px;">
+                <strong>${escapeHtml(price)}</strong>
+                <span class="small">${escapeHtml(metaBits)}</span>
+              </div>
+
+              <div style="margin-top:12px;">
+                <a class="btn" href="${link}" data-i18n="properties.viewBtn">View details</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function render(list){
+        grid.innerHTML = '';
+        errorState.style.display = 'none';
+
+        if (!list.length){
+          emptyState.style.display = 'block';
+          resultsMeta.textContent = '';
+          return;
+        }
+        emptyState.style.display = 'none';
+
+        grid.innerHTML = list.map(buildCard).join('');
+        resultsMeta.textContent = `${list.length} / ${all.length}`;
+      }
+
+      function applyFilters(){
+        const q = normalize(searchInput.value);
+        const cat = normalize(categoryFilter.value);
+        const type = normalize(typeFilter.value);
+
+        const filtered = all.filter(p => {
+          if ((p.status || '').toLowerCase() !== 'approved') return false;
+          if (cat && normalize(p.category) !== cat) return false;
+          if (type && normalize(p.propertyType) !== type) return false;
+
+          if (!q) return true;
+          const hay = [
+            p.title, p.description, p.country, p.city, p.areaLabel, p.address,
+            (p.features || []).join(' ')
+          ].join(' ');
+          return normalize(hay).includes(q);
+        });
+
+        render(filtered);
+      }
+
+      async function load(){
+        try{
+          const res = await fetch('listings.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          all = Array.isArray(data.listings) ? data.listings : [];
+          applyFilters();
+        } catch(e){
+          grid.innerHTML = '';
+          emptyState.style.display = 'none';
+          errorState.style.display = 'block';
+          resultsMeta.textContent = '';
+        }
+      }
+
+      // Wire events
+      searchInput.addEventListener('input', applyFilters);
+      categoryFilter.addEventListener('change', applyFilters);
+      typeFilter.addEventListener('change', applyFilters);
+
+      load();
+    })();
+  </script>
 </body>
 </html>
