@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="property.pageTitle">Property — PanAfric Properties</title>
+  <meta name="description" content="Property details." />
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="property">
+  <header class="header">
+    <div class="wrap">
+      <div class="navbar">
+        <a class="brand" href="index.html" style="text-decoration:none;">
+          <strong>PanAfric Properties</strong>
+        </a>
+
+        <div class="lang" style="display:flex; gap:10px; align-items:center;">
+          <label for="langSelect" class="small" data-i18n="lang_label">Language</label>
+          <select id="langSelect" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <a href="properties.html" class="small" style="text-decoration:none;" data-i18n="property.backLink">← Back to listings</a>
+
+        <div id="errorState" class="card" style="padding:18px; margin-top:14px; display:none;">
+          <h3 style="margin:0 0 6px;" data-i18n="property.notFoundTitle">Property not found</h3>
+          <p class="small" style="margin:0;" data-i18n="property.notFoundText">
+            This listing may have been removed or is not approved.
+          </p>
+        </div>
+
+        <div id="content" style="display:none;">
+          <div class="card" style="padding:18px; margin-top:14px;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:flex-start;">
+              <div style="min-width:260px; flex:1;">
+                <h1 id="title" style="margin:0;"></h1>
+                <p id="location" class="small" style="margin:6px 0 0;"></p>
+              </div>
+              <div style="text-align:right;">
+                <div id="price" style="font-size:1.2rem; font-weight:700;"></div>
+                <div id="badge" class="small" style="opacity:.9; margin-top:4px;"></div>
+              </div>
+            </div>
+
+            <div id="gallery" style="margin-top:14px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;"></div>
+          </div>
+
+          <div class="grid" style="margin-top:16px;">
+            <div class="card" style="padding:18px;">
+              <h3 style="margin:0 0 10px;" data-i18n="property.detailsTitle">Details</h3>
+              <ul class="list" id="detailsList" style="margin:0;"></ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3 style="margin:0 0 10px;" data-i18n="property.descriptionTitle">Description</h3>
+              <p class="small" id="description" style="margin:0;"></p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3 style="margin:0 0 10px;" data-i18n="property.featuresTitle">Features</h3>
+              <ul class="list" id="featuresList" style="margin:0;"></ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3 style="margin:0 0 10px;" data-i18n="property.contactTitle">Contact</h3>
+              <div class="small" id="contactBox"></div>
+              <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
+                <a id="emailBtn" class="btn" href="#" data-i18n="property.emailBtn">Email</a>
+                <a id="waBtn" class="btn" href="#" target="_blank" rel="noopener" data-i18n="property.whatsappBtn">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap small">
+      <span>© <span id="year"></span> PanAfric Properties</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script>
+    (function(){
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const langSelect = document.getElementById('langSelect');
+      const saved = (localStorage.getItem('pap_lang') || localStorage.getItem('lang') || 'en').toLowerCase();
+      if (['en','fr','es'].includes(saved)) langSelect.value = saved;
+
+      function applyLang(lang){
+        try {
+          if (typeof papSetLang === 'function') papSetLang(lang);
+          else localStorage.setItem('pap_lang', lang);
+        } catch(e) {}
+      }
+      langSelect.addEventListener('change', () => applyLang(langSelect.value));
+      applyLang(langSelect.value);
+    })();
+  </script>
+
+  <script>
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+
+      const errorState = document.getElementById('errorState');
+      const content = document.getElementById('content');
+
+      function escapeHtml(str){
+        return String(str ?? '').replace(/[&<>"']/g, s => ({
+          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+        }[s]));
+      }
+
+      function money(price, currency){
+        const v = Number(price);
+        if (!Number.isFinite(v)) return '';
+        const c = (currency || 'EUR').toUpperCase();
+        try {
+          return new Intl.NumberFormat(undefined, { style:'currency', currency:c, maximumFractionDigits:0 }).format(v);
+        } catch(e){
+          return `${v.toLocaleString()} ${c}`;
+        }
+      }
+
+      function li(labelKey, value){
+        if (value === undefined || value === null || value === '') return '';
+        const label = document.querySelector(`[data-i18n="${labelKey}"]`)?.textContent || labelKey;
+        return `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`;
+      }
+
+      async function load(){
+        try{
+          const res = await fetch('listings.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          const list = Array.isArray(data.listings) ? data.listings : [];
+
+          const item = list.find(x => String(x.id) === String(id) && String(x.status).toLowerCase() === 'approved');
+          if (!item){
+            errorState.style.display = 'block';
+            content.style.display = 'none';
+            return;
+          }
+
+          // Title + location + price
+          document.getElementById('title').textContent = item.title || '';
+          document.getElementById('location').textContent = [item.city, item.country].filter(Boolean).join(', ');
+          document.getElementById('price').textContent = money(item.price, item.currency);
+
+          const badge = (item.category || '').toLowerCase();
+          const badgeLabel = badge === 'rent'
+            ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
+            : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
+          document.getElementById('badge').textContent = badgeLabel;
+
+          // Gallery
+          const gallery = document.getElementById('gallery');
+          const imgs = Array.isArray(item.images) ? item.images : [];
+          gallery.innerHTML = imgs.length
+            ? imgs.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(item.title || '')}" style="width:100%; height:220px; object-fit:cover; border-radius:14px; display:block;">`).join('')
+            : `<div class="small" data-i18n="property.noImages">No images available</div>`;
+
+          // Details list
+          const details = document.getElementById('detailsList');
+          details.innerHTML = [
+            li('property.details.id', item.id),
+            li('property.details.type', item.propertyType),
+            li('property.details.category', item.category),
+            li('property.details.bedrooms', item.bedrooms),
+            li('property.details.bathrooms', item.bathrooms),
+            li('property.details.size', item.sizeM2 ? `${item.sizeM2} m²` : ''),
+            li('property.details.yearBuilt', item.yearBuilt),
+            li('property.details.city', item.city),
+            li('property.details.country', item.country)
+          ].filter(Boolean).join('');
+
+          // Description + features
+          document.getElementById('description').textContent = item.description || '';
+          const features = document.getElementById('featuresList');
+          const feats = Array.isArray(item.features) ? item.features : [];
+          features.innerHTML = feats.length ? feats.map(f => `<li>${escapeHtml(f)}</li>`).join('') : `<li data-i18n="property.noFeatures">No features listed</li>`;
+
+          // Contact
+          const c = item.contact || {};
+          const contactBox = document.getElementById('contactBox');
+          contactBox.innerHTML = `
+            <div><strong>${escapeHtml(c.name || 'PanAfric Properties')}</strong></div>
+            ${c.email ? `<div>${escapeHtml(c.email)}</div>` : ''}
+            ${c.phone ? `<div>${escapeHtml(c.phone)}</div>` : ''}
+          `;
+
+          const emailBtn = document.getElementById('emailBtn');
+          emailBtn.href = c.email
+            ? `mailto:${encodeURIComponent(c.email)}?subject=${encodeURIComponent('Property enquiry: ' + (item.title || item.id))}`
+            : '#';
+          emailBtn.style.pointerEvents = c.email ? 'auto' : 'none';
+          emailBtn.style.opacity = c.email ? '1' : '.5';
+
+          const waBtn = document.getElementById('waBtn');
+          const wa = String(c.whatsapp || '').replace(/[^\d+]/g,'');
+          waBtn.href = wa
+            ? `https://wa.me/${encodeURIComponent(wa.replace('+',''))}?text=${encodeURIComponent('Hello, I am interested in: ' + (item.title || item.id))}`
+            : '#';
+          waBtn.style.pointerEvents = wa ? 'auto' : 'none';
+          waBtn.style.opacity = wa ? '1' : '.5';
+
+          // Show content
+          errorState.style.display = 'none';
+          content.style.display = 'block';
+
+          // If your i18n needs re-apply after dynamic render, call it if it exists
+          if (typeof papReapplyI18n === 'function') {
+            papReapplyI18n();
+            setTimeout(papReapplyI18n, 0);
+          }
+
+        } catch(e){
+          errorState.style.display = 'block';
+          content.style.display = 'none';
+        }
+      }
+
+      if (!id){
+        errorState.style.display = 'block';
+        content.style.display = 'none';
+      } else {
+        load();
+      }
+    })();
+  </script>
+</body>
+</html>
