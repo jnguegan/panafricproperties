@@ -47,18 +47,11 @@
         </div>
       </div>
 
-      <!-- ✅ Netlify Form -->
+      <!-- ✅ SUBMIT TO NETLIFY FUNCTION (Supabase live publish) -->
       <form
-        name="partner-property"
-        method="POST"
-        data-netlify="true"
-        enctype="multipart/form-data"
-        action="/submit-success"
         style="margin-top:14px;"
         id="propertyForm"
       >
-        <input type="hidden" name="form-name" value="partner-property" />
-
         <!-- Partner identity (auto-filled) -->
         <div class="grid" style="margin-top:10px;">
           <div class="card" style="padding:14px;">
@@ -129,7 +122,8 @@
         <div class="grid" style="margin-top:10px;">
           <div class="card" style="padding:14px;">
             <label class="small" data-i18n="submit.photos">Photos (up to 10)</label>
-            <input class="input" type="file" name="photos" accept="image/*" multiple>
+            <!-- IMPORTANT: Netlify function expects "photos" field name -->
+            <input class="input" type="file" name="photos" id="photos" accept="image/*" multiple>
             <p class="small" style="margin:8px 0 0; opacity:.75;" data-i18n="submit.photos_note">
               JPG/PNG recommended. Clear exterior + interior + land boundaries.
             </p>
@@ -137,7 +131,8 @@
 
           <div class="card" style="padding:14px;">
             <label class="small" data-i18n="submit.docs">Ownership documents (optional)</label>
-            <input class="input" type="file" name="documents" multiple>
+            <!-- We'll still send these to the function (it may ignore if not implemented server-side yet) -->
+            <input class="input" type="file" name="documents" id="documents" multiple>
             <p class="small" style="margin:8px 0 0; opacity:.75;" data-i18n="submit.docs_note">
               Title deed, land certificate, or any proof of authority to list.
             </p>
@@ -168,10 +163,14 @@
         </div>
 
         <!-- Submit -->
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
           <button class="btn green" type="submit" id="submitBtn" data-i18n="submit.cta.submit">Submit for review</button>
           <a class="btn ghost" href="partner-dashboard.html" data-i18n="submit.cta.cancel">Cancel</a>
+          <span id="submitSpinner" class="small" style="display:none; opacity:.8;">Submitting…</span>
         </div>
+
+        <div id="msgOk" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
+        <div id="msgErr" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
 
         <p class="small" style="margin-top:10px; opacity:.75;" data-i18n="submit.footer_note">
           After submission, our team will review and contact you if clarifications are needed.
@@ -187,8 +186,10 @@
 
 <script>
   (function(){
+    // ✅ keep your i18n system intact
     if (typeof window.papApplyI18n === "function") window.papApplyI18n();
 
+    // ✅ academy guard intact
     const certified = (localStorage.getItem("papAcademyCompleted") === "1");
     const form = document.getElementById("propertyForm");
     const blocked = document.getElementById("blockedBox");
@@ -199,6 +200,102 @@
       return;
     }
 
+    // ✅ autofill identity from Auth0 + localStorage
     const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
     const email = (user.email || "").trim();
-    const storedName = (localStorage.getItem("pap_partner_ful
+
+    const storedName =
+      (localStorage.getItem("pap_partner_fullname") || "").trim() ||
+      (user.name || "").trim() ||
+      (user.nickname || "").trim();
+
+    const nameInput = document.getElementById("partner_name");
+    const emailInput = document.getElementById("partner_email");
+
+    if (nameInput && storedName) nameInput.value = storedName;
+    if (emailInput && email) emailInput.value = email;
+
+    // ✅ submit to Netlify Function -> Supabase live publish
+    const submitBtn = document.getElementById("submitBtn");
+    const spinner = document.getElementById("submitSpinner");
+    const okBox = document.getElementById("msgOk");
+    const errBox = document.getElementById("msgErr");
+
+    function showOk(html){
+      if (errBox) errBox.style.display = "none";
+      if (okBox){
+        okBox.style.display = "block";
+        okBox.innerHTML = html;
+      }
+    }
+    function showErr(text){
+      if (okBox) okBox.style.display = "none";
+      if (errBox){
+        errBox.style.display = "block";
+        errBox.textContent = text || "Something went wrong.";
+      }
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (okBox) okBox.style.display = "none";
+      if (errBox) errBox.style.display = "none";
+
+      // Browser validation
+      if (!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      if (spinner) spinner.style.display = "inline";
+
+      try{
+        const fd = new FormData(form);
+
+        // Ensure we are not sending Netlify form fields; function expects raw fields + files
+        fd.delete("form-name");
+
+        // Send to Netlify Function
+        const res = await fetch("/.netlify/functions/submitProperty", {
+          method: "POST",
+          body: fd
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok || data.ok === false){
+          throw new Error(data.error || `Submit failed (${res.status})`);
+        }
+
+        // Expected function response:
+        // { ok:true, id:"<uuid>", url:"/properties/<id>" }
+        const id = data.id;
+        const url = data.url || (id ? `/properties/${encodeURIComponent(id)}` : "properties.html");
+
+        // Reset non-identity fields (keep partner identity)
+        const keepName = nameInput ? nameInput.value : "";
+        const keepEmail = emailInput ? emailInput.value : "";
+        form.reset();
+        if (nameInput) nameInput.value = keepName;
+        if (emailInput) emailInput.value = keepEmail;
+
+        showOk(
+          `<strong>Published ✅</strong><br><br>
+           <a class="btn green" href="${url}">View listing</a>
+           <a class="btn ghost" style="margin-left:8px" href="properties.html">Go to Properties</a>`
+        );
+
+      }catch(err){
+        showErr(err && err.message ? err.message : "Submit failed.");
+      }finally{
+        submitBtn.disabled = false;
+        if (spinner) spinner.style.display = "none";
+      }
+    });
+
+  })();
+</script>
+
+</body>
+</html>
