@@ -17,7 +17,6 @@
   });
 </script>
 
-
 <!-- 🌍 Language Dropdown (like your screenshot) -->
 <div class="lang-switch">
   <span class="lang-label" data-i18n="lang.label">Language</span>
@@ -27,8 +26,6 @@
     <option value="es">ES</option>
   </select>
 </div>
-
-<script src="academy.js"></script>
 
 <section class="section">
   <div class="wrap">
@@ -61,20 +58,20 @@
           <h3 style="margin:0 0 6px;" data-i18n="academy.cert">Certification</h3>
           <p class="small" id="certStatus" style="margin:0;"></p>
 
-         <div style="margin-top:12px;">
-  <a class="btn green" id="certBtn" href="/certificate.html" style="display:none;" data-i18n="academy.view_cert">View Certificate</a>
-</div>
+          <div style="margin-top:12px;">
+            <a class="btn green" id="certBtn" href="/certificate.html" style="display:none;" data-i18n="academy.view_cert">View Certificate</a>
+          </div>
 
-<p class="small" id="certBadge" style="margin-top:10px;display:none;">
-  ✅ <strong data-i18n="academy.badge">Certified Partner</strong>
-</p>
+          <p class="small" id="certBadge" style="margin-top:10px;display:none;">
+            ✅ <strong data-i18n="academy.badge">Certified Partner</strong>
+          </p>
 
-<div style="margin-top:10px; display:none;" id="editNameBox">
-  <button class="btn ghost" id="editNameBtn" type="button">
-    Edit Certificate Name
-  </button>
-</div>
-
+          <div style="margin-top:10px; display:none;" id="editNameBox">
+            <button class="btn ghost" id="editNameBtn" type="button">
+              Edit Certificate Name
+            </button>
+          </div>
+        </div>
 
         <!-- Session -->
         <div class="card">
@@ -88,7 +85,7 @@
       </div>
     </div>
 
-        <h2 style="margin-top:18px;" data-i18n="academy.modules">Modules</h2>
+    <h2 style="margin-top:18px;" data-i18n="academy.modules">Modules</h2>
     <div class="grid" id="modulesGrid"></div>
 
   </div>
@@ -100,16 +97,16 @@
 <!-- Load module data -->
 <script src="modules.js"></script>
 
-<!-- Load academy logic -->
+<!-- Load academy logic (ONLY ONCE) -->
 <script src="academy.js"></script>
 
-  <!-- TEMP DEBUG (remove after) -->
+<!-- TEMP DEBUG (remove after) -->
 <script>
   console.log("DEBUG modulesGrid:", document.getElementById("modulesGrid"));
   console.log("DEBUG MODULES:", window.MODULES, "len:", (window.MODULES || []).length);
   console.log("DEBUG papIsModulePassed:", typeof window.papIsModulePassed);
   console.log("DEBUG academy.js loaded");
 </script>
-  
+
 </body>
 </html>
