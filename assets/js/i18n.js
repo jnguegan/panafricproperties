@@ -3,7 +3,7 @@
 (function () {
   const STORAGE_KEY = "pap_lang";
   const SUPPORTED = ["en", "fr", "es"];
-
+ 
   const I18N = {
     en: {
       "lang_label": "Language",
@@ -642,6 +642,48 @@
 "submit.cta.cancel": "Cancel",
 "submit.footer_note": "After submission, our team will review and contact you if clarifications are needed."
 "academy.go_dashboard": "Go to Partner Dashboard",
+"properties.pageTitle": "Properties — PanAfric Properties",
+"properties.h1": "Approved Property Listings",
+"properties.intro": "Browse approved listings. Each property is reviewed before publication.",
+"properties.searchPlaceholder": "Search by city, country, or keyword",
+"properties.filterAll": "All categories",
+"properties.filterSale": "For sale",
+"properties.filterRent": "For rent",
+"properties.typeAll": "All types",
+"properties.typeApartment": "Apartment",
+"properties.typeHouse": "House",
+"properties.typeLand": "Land",
+"properties.typeCommercial": "Commercial",
+"properties.viewBtn": "View details",
+"properties.emptyTitle": "No approved listings yet",
+"properties.emptyText": "Please check back soon. New listings are published after admin approval.",
+"properties.errorTitle": "Unable to load listings",
+"properties.errorText": "Please try again later.",
+"properties.badgeSale": "For sale",
+"properties.badgeRent": "For rent",
+
+"property.pageTitle": "Property — PanAfric Properties",
+"property.backLink": "← Back to listings",
+"property.notFoundTitle": "Property not found",
+"property.notFoundText": "This listing may have been removed or is not approved.",
+"property.detailsTitle": "Details",
+"property.descriptionTitle": "Description",
+"property.featuresTitle": "Features",
+"property.contactTitle": "Contact",
+"property.emailBtn": "Email",
+"property.whatsappBtn": "WhatsApp",
+"property.noImages": "No images available",
+"property.noFeatures": "No features listed",
+
+"property.details.id": "ID",
+"property.details.type": "Type",
+"property.details.category": "Category",
+"property.details.bedrooms": "Bedrooms",
+"property.details.bathrooms": "Bathrooms",
+"property.details.size": "Size",
+"property.details.yearBuilt": "Year built",
+"property.details.city": "City",
+"property.details.country": "Country"
 
 
 
@@ -1391,6 +1433,48 @@
 "submit.cta.cancel": "Annuler",
 "submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires."
 "academy.go_dashboard": "Aller au tableau de bord partenaire",
+"properties.pageTitle": "Biens — PanAfric Properties",
+"properties.h1": "Annonces approuvées",
+"properties.intro": "Parcourez les annonces approuvées. Chaque bien est vérifié avant publication.",
+"properties.searchPlaceholder": "Rechercher par ville, pays ou mot-clé",
+"properties.filterAll": "Toutes les catégories",
+"properties.filterSale": "À vendre",
+"properties.filterRent": "À louer",
+"properties.typeAll": "Tous les types",
+"properties.typeApartment": "Appartement",
+"properties.typeHouse": "Maison",
+"properties.typeLand": "Terrain",
+"properties.typeCommercial": "Commercial",
+"properties.viewBtn": "Voir les détails",
+"properties.emptyTitle": "Aucune annonce approuvée pour le moment",
+"properties.emptyText": "Revenez bientôt. Les annonces sont publiées après validation admin.",
+"properties.errorTitle": "Impossible de charger les annonces",
+"properties.errorText": "Veuillez réessayer plus tard.",
+"properties.badgeSale": "À vendre",
+"properties.badgeRent": "À louer",
+
+"property.pageTitle": "Bien — PanAfric Properties",
+"property.backLink": "← Retour aux annonces",
+"property.notFoundTitle": "Bien introuvable",
+"property.notFoundText": "Cette annonce a peut-être été supprimée ou n’est pas approuvée.",
+"property.detailsTitle": "Détails",
+"property.descriptionTitle": "Description",
+"property.featuresTitle": "Caractéristiques",
+"property.contactTitle": "Contact",
+"property.emailBtn": "Email",
+"property.whatsappBtn": "WhatsApp",
+"property.noImages": "Aucune image disponible",
+"property.noFeatures": "Aucune caractéristique indiquée",
+
+"property.details.id": "ID",
+"property.details.type": "Type",
+"property.details.category": "Catégorie",
+"property.details.bedrooms": "Chambres",
+"property.details.bathrooms": "Salles de bain",
+"property.details.size": "Surface",
+"property.details.yearBuilt": "Année de construction",
+"property.details.city": "Ville",
+"property.details.country": "Pays"
 
 
 },
@@ -2170,6 +2254,48 @@
 "submit.cta.cancel": "Cancelar",
 "submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones."
 "academy.go_dashboard": "Ir al panel del socio",
+"properties.pageTitle": "Propiedades — PanAfric Properties",
+"properties.h1": "Listado de propiedades aprobadas",
+"properties.intro": "Explora los anuncios aprobados. Cada propiedad se revisa antes de publicarse.",
+"properties.searchPlaceholder": "Buscar por ciudad, país o palabra clave",
+"properties.filterAll": "Todas las categorías",
+"properties.filterSale": "En venta",
+"properties.filterRent": "En alquiler",
+"properties.typeAll": "Todos los tipos",
+"properties.typeApartment": "Apartamento",
+"properties.typeHouse": "Casa",
+"properties.typeLand": "Terreno",
+"properties.typeCommercial": "Comercial",
+"properties.viewBtn": "Ver detalles",
+"properties.emptyTitle": "Aún no hay anuncios aprobados",
+"properties.emptyText": "Vuelve pronto. Los anuncios se publican tras aprobación del admin.",
+"properties.errorTitle": "No se pudieron cargar los anuncios",
+"properties.errorText": "Inténtalo de nuevo más tarde.",
+"properties.badgeSale": "En venta",
+"properties.badgeRent": "En alquiler",
+
+"property.pageTitle": "Propiedad — PanAfric Properties",
+"property.backLink": "← Volver al listado",
+"property.notFoundTitle": "Propiedad no encontrada",
+"property.notFoundText": "Este anuncio puede haber sido eliminado o no está aprobado.",
+"property.detailsTitle": "Detalles",
+"property.descriptionTitle": "Descripción",
+"property.featuresTitle": "Características",
+"property.contactTitle": "Contacto",
+"property.emailBtn": "Email",
+"property.whatsappBtn": "WhatsApp",
+"property.noImages": "No hay imágenes disponibles",
+"property.noFeatures": "No hay características",
+
+"property.details.id": "ID",
+"property.details.type": "Tipo",
+"property.details.category": "Categoría",
+"property.details.bedrooms": "Habitaciones",
+"property.details.bathrooms": "Baños",
+"property.details.size": "Superficie",
+"property.details.yearBuilt": "Año de construcción",
+"property.details.city": "Ciudad",
+"property.details.country": "País"
 
       
     }
