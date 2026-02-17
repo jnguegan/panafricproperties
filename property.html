@@ -216,12 +216,23 @@
           emailBtn.style.opacity = c.email ? '1' : '.5';
 
           const waBtn = document.getElementById('waBtn');
-          const wa = String(c.whatsapp || '').replace(/[^\d+]/g,'');
-          waBtn.href = wa
-            ? `https://wa.me/${encodeURIComponent(wa.replace('+',''))}?text=${encodeURIComponent('Hello, I am interested in: ' + (item.title || item.id))}`
-            : '#';
-          waBtn.style.pointerEvents = wa ? 'auto' : 'none';
-          waBtn.style.opacity = wa ? '1' : '.5';
+
+// Prefer whatsapp, fallback to phone if whatsapp missing
+const waRaw = String(c.whatsapp || c.phone || '').trim();
+
+// Keep only digits and + sign
+let wa = waRaw.replace(/[^\d+]/g, '');
+
+// Remove ONLY the leading +
+const waDigits = wa.replace(/^\+/, '');
+
+waBtn.href = waDigits
+  ? `https://wa.me/${encodeURIComponent(waDigits)}?text=${encodeURIComponent('Hello, I am interested in: ' + (item.title || item.id))}`
+  : '#';
+
+waBtn.style.pointerEvents = waDigits ? 'auto' : 'none';
+waBtn.style.opacity = waDigits ? '1' : '.5';
+
 
           // Show content
           errorState.style.display = 'none';
