@@ -53,7 +53,7 @@
         method="POST"
         data-netlify="true"
         enctype="multipart/form-data"
-        action="submit-success.html"
+        action="/submit-success.html"
         style="margin-top:14px;"
         id="propertyForm"
       >
@@ -188,7 +188,6 @@
 
 <script>
   (function(){
-    // Apply static i18n
     if (typeof window.papApplyI18n === "function") window.papApplyI18n();
 
     const certified = (localStorage.getItem("papAcademyCompleted") === "1");
@@ -201,7 +200,6 @@
       return;
     }
 
-    // Auto-fill partner identity
     const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
     const email = (user.email || "").trim();
     const storedName = (localStorage.getItem("pap_partner_fullname") || "").trim();
@@ -216,8 +214,6 @@
     const emailEl = document.getElementById("partner_email");
     if (nameEl) nameEl.value = fullName;
     if (emailEl) emailEl.value = email;
-
-    // If user edits, keep it (do not lock fields)
   })();
 </script>
 
