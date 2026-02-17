@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partner Dashboard — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ✅ AUTH0 GUARD -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
+<script>
+  authHandleRedirect(function () {
+    authRequireLogin();
+  });
+</script>
+
+<!-- 🌍 Language Dropdown -->
+<div class="lang-switch">
+  <span class="lang-label" data-i18n="lang.label">Language</span>
+  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
+    <option value="en">EN</option>
+    <option value="fr">FR</option>
+    <option value="es">ES</option>
+  </select>
+</div>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="card" style="padding:18px;">
+      <h2 style="margin:0 0 6px;" data-i18n="partner_dash.title">Partner Dashboard</h2>
+      <p class="small" id="welcomeDash" style="margin:0;"></p>
+
+      <div class="grid" style="margin-top:12px;">
+        <!-- Status -->
+        <div class="card">
+          <h3 style="margin:0 0 6px;" data-i18n="partner_dash.status.title">Status</h3>
+          <p class="small" id="certState" style="margin:0;"></p>
+
+          <div id="notCertifiedBox" style="margin-top:12px; display:none;">
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="partner_dash.status.not_certified_note">
+              You must complete the Partner Academy to list properties.
+            </p>
+            <div style="margin-top:12px;">
+              <a class="btn green" href="academy.html" data-i18n="partner_dash.cta.go_academy">Go to Academy</a>
+            </div>
+          </div>
+
+          <div id="certifiedBox" style="margin-top:12px; display:none;">
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="partner_dash.status.certified_note">
+              You are certified and can submit properties for review.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn green" href="submit-property.html" data-i18n="partner_dash.cta.add_property">Add New Property</a>
+              <a class="btn ghost" href="certificate.html" data-i18n="partner_dash.cta.view_certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+          <h3 style="margin:0 0 6px;" data-i18n="partner_dash.actions.title">Quick actions</h3>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn ghost" href="submit-property.html" id="addBtn2" data-i18n="partner_dash.cta.add_property">Add New Property</a>
+            <a class="btn ghost" href="academy.html" data-i18n="partner_dash.cta.back_academy">Back to Academy</a>
+          </div>
+
+          <p class="small" style="margin-top:12px; opacity:.85;" data-i18n="partner_dash.actions.note">
+            Property submissions are reviewed by PanAfric Properties before publication.
+          </p>
+        </div>
+
+        <!-- Account -->
+        <div class="card">
+          <h3 style="margin:0 0 6px;" data-i18n="partner_dash.account.title">Account</h3>
+
+          <div class="small" id="accountInfo" style="margin-top:10px;"></div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn ghost" type="button" onclick="authLogout()" data-i18n="partner_dash.cta.logout">Log out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Translations -->
+<script src="assets/js/i18n.js"></script>
+
+<script>
+  (function(){
+    // Small translation helper with fallback
+    function tr(key, fallback, vars){
+      let s = fallback;
+      try {
+        if (typeof window.papT === "function") s = window.papT(key) || fallback;
+        else if (typeof window.t === "function") s = window.t(key) || fallback;
+      } catch(e) {}
+      if (vars && typeof s === "string") {
+        Object.keys(vars).forEach(k => s = s.split(`{${k}}`).join(String(vars[k] ?? "")));
+      }
+      return s;
+    }
+
+    function init(){
+      // Apply static i18n
+      if (typeof window.papApplyI18n === "function") window.papApplyI18n();
+
+      const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
+      const email = (user.email || "").trim();
+      const storedName = (localStorage.getItem("pap_partner_fullname") || "").trim();
+      const fullName =
+        storedName ||
+        (user.name && String(user.name).trim()) ||
+        [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
+        (user.nickname && String(user.nickname).trim()) ||
+        (email || "Partner");
+
+      const welcomeDash = document.getElementById("welcomeDash");
+      if (welcomeDash) {
+        welcomeDash.removeAttribute("data-i18n");
+        welcomeDash.innerText = tr("partner_dash.welcome", "Welcome, {name}.", { name: fullName });
+      }
+
+      const accountInfo = document.getElementById("accountInfo");
+      if (accountInfo) {
+        accountInfo.innerHTML = `
+          <div><strong>${tr("partner_dash.account.name","Name")}:</strong> ${fullName}</div>
+          <div style="margin-top:6px;"><strong>${tr("partner_dash.account.email","Email")}:</strong> ${email || "-"}</div>
+        `;
+      }
+
+      const certified = (localStorage.getItem("papAcademyCompleted") === "1");
+      const certState = document.getElementById("certState");
+      const notCertifiedBox = document.getElementById("notCertifiedBox");
+      const certifiedBox = document.getElementById("certifiedBox");
+      const addBtn2 = document.getElementById("addBtn2");
+
+      if (certState) {
+        certState.removeAttribute("data-i18n");
+        certState.innerText = certified
+          ? tr("partner_dash.status.certified", "Certified ✅", {})
+          : tr("partner_dash.status.not_certified", "Not certified", {});
+      }
+
+      if (notCertifiedBox) notCertifiedBox.style.display = certified ? "none" : "block";
+      if (certifiedBox) certifiedBox.style.display = certified ? "block" : "none";
+      if (addBtn2) addBtn2.style.display = certified ? "inline-flex" : "none";
+    }
+
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+    else init();
+  })();
+</script>
+
+</body>
+</html>
