@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Property — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ✅ AUTH0 GUARD -->
+<script src="https://cdn.auth0.com/js/auth0/9.23/auth0.min.js"></script>
+<script src="auth.js"></script>
+<script>
+  authHandleRedirect(function () {
+    authRequireLogin();
+  });
+</script>
+
+<!-- 🌍 Language Dropdown -->
+<div class="lang-switch">
+  <span class="lang-label" data-i18n="lang.label">Language</span>
+  <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
+    <option value="en">EN</option>
+    <option value="fr">FR</option>
+    <option value="es">ES</option>
+  </select>
+</div>
+
+<section class="section">
+  <div class="wrap">
+
+    <a class="btn ghost" href="partner-dashboard.html" data-i18n="submit.back">← Back to Dashboard</a>
+
+    <div class="card" style="padding:18px; margin-top:12px;">
+      <h2 style="margin:0 0 6px;" data-i18n="submit.title">Submit a Property</h2>
+      <p class="small" style="margin:0; opacity:.85;" data-i18n="submit.subtitle">
+        Submit a property for review. Once approved, it can be published on PanAfric Properties.
+      </p>
+
+      <div class="card" id="blockedBox" style="margin-top:14px; padding:16px; display:none;">
+        <p class="small" style="margin:0;" data-i18n="submit.blocked">
+          You must complete the Partner Academy to submit properties.
+        </p>
+        <div style="margin-top:12px;">
+          <a class="btn green" href="academy.html" data-i18n="submit.go_academy">Go to Academy</a>
+        </div>
+      </div>
+
+      <!-- ✅ Netlify Form -->
+      <form
+        name="partner-property"
+        method="POST"
+        data-netlify="true"
+        enctype="multipart/form-data"
+        style="margin-top:14px;"
+        id="propertyForm"
+      >
+        <input type="hidden" name="form-name" value="partner-property" />
+
+        <!-- Partner identity (auto-filled) -->
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.partner_name">Partner full name</label>
+            <input class="input" type="text" name="partner_name" id="partner_name" required>
+          </div>
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.partner_email">Partner email</label>
+            <input class="input" type="email" name="partner_email" id="partner_email" required>
+          </div>
+        </div>
+
+        <!-- Core fields -->
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.listing_title">Listing title</label>
+            <input class="input" type="text" name="listing_title" required>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.property_type">Property type</label>
+            <select class="input" name="property_type" required>
+              <option value="" data-i18n="submit.select">Select…</option>
+              <option value="land" data-i18n="submit.type.land">Land</option>
+              <option value="house" data-i18n="submit.type.house">House</option>
+              <option value="apartment" data-i18n="submit.type.apartment">Apartment</option>
+              <option value="commercial" data-i18n="submit.type.commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.country">Country</label>
+            <input class="input" type="text" name="country" required>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.city">City / Area</label>
+            <input class="input" type="text" name="city_area" required>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.price">Price</label>
+            <input class="input" type="number" name="price" min="0" step="0.01" required>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.currency">Currency</label>
+            <select class="input" name="currency" required>
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="XOF">XOF</option>
+              <option value="XAF">XAF</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="card" style="padding:14px; margin-top:10px;">
+          <label class="small" data-i18n="submit.description">Description</label>
+          <textarea class="input" name="description" rows="7" required></textarea>
+          <p class="small" style="margin:8px 0 0; opacity:.75;" data-i18n="submit.description_note">
+            Include size, condition, ownership status, nearby landmarks, and any restrictions.
+          </p>
+        </div>
+
+        <!-- Media uploads -->
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.photos">Photos (up to 10)</label>
+            <input class="input" type="file" name="photos" accept="image/*" multiple>
+            <p class="small" style="margin:8px 0 0; opacity:.75;" data-i18n="submit.photos_note">
+              JPG/PNG recommended. Clear exterior + interior + land boundaries.
+            </p>
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.docs">Ownership documents (optional)</label>
+            <input class="input" type="file" name="documents" multiple>
+            <p class="small" style="margin:8px 0 0; opacity:.75;" data-i18n="submit.docs_note">
+              Title deed, land certificate, or any proof of authority to list.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.contact_phone">Contact phone (optional)</label>
+            <input class="input" type="text" name="contact_phone">
+          </div>
+
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.contact_whatsapp">WhatsApp (optional)</label>
+            <input class="input" type="text" name="contact_whatsapp">
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <div class="card" style="padding:14px; margin-top:10px;">
+          <label style="display:flex; gap:10px; align-items:flex-start;">
+            <input type="checkbox" name="consent" required style="margin-top:4px;">
+            <span class="small" data-i18n="submit.consent">
+              I confirm I have the right to submit this property and the information is accurate.
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn green" type="submit" id="submitBtn" data-i18n="submit.cta.submit">Submit for review</button>
+          <a class="btn ghost" href="partner-dashboard.html" data-i18n="submit.cta.cancel">Cancel</a>
+        </div>
+
+        <p class="small" style="margin-top:10px; opacity:.75;" data-i18n="submit.footer_note">
+          After submission, our team will review and contact you if clarifications are needed.
+        </p>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Translations -->
+<script src="assets/js/i18n.js"></script>
+
+<script>
+  (function(){
+    // Apply static i18n
+    if (typeof window.papApplyI18n === "function") window.papApplyI18n();
+
+    const certified = (localStorage.getItem("papAcademyCompleted") === "1");
+    const form = document.getElementById("propertyForm");
+    const blocked = document.getElementById("blockedBox");
+
+    if (!certified) {
+      if (blocked) blocked.style.display = "block";
+      if (form) form.style.display = "none";
+      return;
+    }
+
+    // Auto-fill partner identity
+    const user = (typeof window.authGetUser === "function" ? window.authGetUser() : null) || {};
+    const email = (user.email || "").trim();
+    const storedName = (localStorage.getItem("pap_partner_fullname") || "").trim();
+    const fullName =
+      storedName ||
+      (user.name && String(user.name).trim()) ||
+      [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
+      (user.nickname && String(user.nickname).trim()) ||
+      "Partner";
+
+    const nameEl = document.getElementById("partner_name");
+    const emailEl = document.getElementById("partner_email");
+    if (nameEl) nameEl.value = fullName;
+    if (emailEl) emailEl.value = email;
+
+    // If user edits, keep it (do not lock fields)
+  })();
+</script>
+
+</body>
+</html>
