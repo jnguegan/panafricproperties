@@ -1,2 +1,5 @@
-/certificate   /certificate.html   200
-/certificate/  /certificate.html   200
+/certificate    /certificate.html    200
+/academy        /academy.html        200
+/partner-dashboard  /partner-dashboard.html  200
+/submit-property    /submit-property.html    200
+/submit-success     /submit-success.html     200
