@@ -110,28 +110,27 @@
 
     // NEW: toggle certificate CTA + badge + shared completion flag for certificate.html
     if (allDone) {
-   if (allDone) {
-  localStorage.setItem("papAcademyCompleted", "1");
+      localStorage.setItem("papAcademyCompleted", "1");
 
-  // Ask for full name once (used on certificate)
-  const existingName = (localStorage.getItem("pap_partner_fullname") || "").trim();
-  if (!existingName) {
-    const input = prompt(
-      "Congratulations! Please enter your full name for the certificate (First name + Surname):",
-      ""
-    );
-    if (input && input.trim().length >= 3) {
-      localStorage.setItem("pap_partner_fullname", input.trim());
+      // Ask for full name once (used on certificate)
+      const existingName = (localStorage.getItem("pap_partner_fullname") || "").trim();
+      if (!existingName) {
+        const input = prompt(
+          "Congratulations! Please enter your full name for the certificate (First name + Surname):",
+          ""
+        );
+        if (input && input.trim().length >= 3) {
+          localStorage.setItem("pap_partner_fullname", input.trim());
+        }
+      }
+
+      if (certBtn) certBtn.style.display = "inline-flex";
+      if (certBadge) certBadge.style.display = "block";
+    } else {
+      localStorage.removeItem("papAcademyCompleted");
+      if (certBtn) certBtn.style.display = "none";
+      if (certBadge) certBadge.style.display = "none";
     }
-  }
-
-  if (certBtn) certBtn.style.display = "inline-flex";
-  if (certBadge) certBadge.style.display = "block";
-} else {
-  localStorage.removeItem("papAcademyCompleted");
-  if (certBtn) certBtn.style.display = "none";
-  if (certBadge) certBadge.style.display = "none";
-}
 
     // NEW: toggle resume CTA to next incomplete module
     if (resumeBtn && Array.isArray(window.MODULES) && window.MODULES.length) {
