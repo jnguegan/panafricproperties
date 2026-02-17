@@ -149,12 +149,15 @@
     const user = (typeof authGetUser === "function" ? authGetUser() : null) || {};
     const email = (user.email || "").toLowerCase().trim();
 
-    // ✅ Full name priority
-    const fullName =
-      (user.name && String(user.name).trim()) ||
-      [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
-      (user.nickname && String(user.nickname).trim()) ||
-      "Partner";
+    // ✅ Full name priority (use stored course name first)
+const storedName = (localStorage.getItem("pap_partner_fullname") || "").trim();
+
+const fullName =
+  storedName ||
+  (user.name && String(user.name).trim()) ||
+  [user.given_name, user.family_name].filter(Boolean).join(" ").trim() ||
+  (user.nickname && String(user.nickname).trim()) ||
+  "Partner";
 
     // Stable-ish reference from email (no secrets)
     function refFromEmail(e) {
