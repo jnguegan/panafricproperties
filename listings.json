@@ -1,0 +1,17 @@
+[
+  {
+    "id": "pap-0001",
+    "title": "Agrotourism Land for Sale — Tenerife (Canary Islands)",
+    "type": "land",
+    "country": "Spain (Canary Islands)",
+    "city_area": "Tenerife",
+    "price": 250000,
+    "currency": "EUR",
+    "description": "Exceptional opportunity to acquire a strategic plot of land in Tenerife, ideal for an agrotourism and eco-luxury development project. Suitable for eco-lodge, glamping, wellness retreat, or organic farm experience, subject to local regulations.",
+    "images": [],
+    "partner_name": "Owner Test",
+    "partner_email": "owner@example.com",
+    "status": "published",
+    "created_at": "2026-02-17"
+  }
+]
