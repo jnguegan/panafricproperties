@@ -54,18 +54,17 @@
     return getPassedIds().includes(id);
   }
 
-  // ✅ UPDATED: Only adds missing UI toggles (resume/cert CTA/badge/progress bar)
-  // Everything else remains unchanged.
   function renderTop() {
     const welcomeEl = document.getElementById("welcome");
     const progressEl = document.getElementById("progressText");
-    const certEl = document.getElementById("certStatus"); // optional if exists
+    const certEl = document.getElementById("certStatus");
 
-    // NEW: UI elements that exist in academy.html (were previously never toggled)
+    // UI elements
     const progressBar = document.getElementById("progressBar");
     const resumeBtn = document.getElementById("resumeBtn");
     const certBtn = document.getElementById("certBtn");
     const certBadge = document.getElementById("certBadge");
+    const dashBtn = document.getElementById("dashBtn");
     const editNameBox = document.getElementById("editNameBox");
     const editNameBtn = document.getElementById("editNameBtn");
 
@@ -79,7 +78,6 @@
     const email = user.email || "";
 
     if (welcomeEl) {
-      // IMPORTANT: do not keep data-i18n here, i18n engines often don’t inject vars
       welcomeEl.removeAttribute("data-i18n");
       welcomeEl.innerText = tr("academy.welcome", "Welcome, {name}{email}.", {
         name: name ? name : "",
@@ -96,10 +94,7 @@
       );
     }
 
-    // NEW: update progress bar width (was always 0%)
-    if (progressBar) {
-      progressBar.style.width = `${pct}%`;
-    }
+    if (progressBar) progressBar.style.width = `${pct}%`;
 
     const allDone = total && passed >= total;
 
@@ -110,7 +105,7 @@
         : tr("academy.locked", "Locked — complete all modules to unlock.");
     }
 
-    // NEW: toggle certificate CTA + badge + shared completion flag for certificate.html
+    // Certification toggles
     if (allDone) {
       localStorage.setItem("papAcademyCompleted", "1");
 
@@ -126,34 +121,33 @@
         }
       }
 
-      // ✅ Show "Edit Certificate Name" button when completed
-      if (editNameBox) editNameBox.style.display = "block";
-
-      if (editNameBtn) {
-  editNameBtn.onclick = function () {
-    const current = (localStorage.getItem("pap_partner_fullname") || "").trim();
-    const input = prompt("Edit your certificate full name:", current);
-    if (input && input.trim().length >= 3) {
-      localStorage.setItem("pap_partner_fullname", input.trim());
-      alert("Certificate name updated.");
-    }
-  };
-}
-
-
+      // Show CTAs
       if (certBtn) certBtn.style.display = "inline-flex";
+      if (dashBtn) dashBtn.style.display = "inline-flex";
       if (certBadge) certBadge.style.display = "block";
+
+      // Show Edit Name button
+      if (editNameBox) editNameBox.style.display = "block";
+      if (editNameBtn) {
+        editNameBtn.onclick = function () {
+          const current = (localStorage.getItem("pap_partner_fullname") || "").trim();
+          const input = prompt("Edit your certificate full name:", current);
+          if (input && input.trim().length >= 3) {
+            localStorage.setItem("pap_partner_fullname", input.trim());
+            alert("Certificate name updated.");
+          }
+        };
+      }
     } else {
       localStorage.removeItem("papAcademyCompleted");
 
       if (certBtn) certBtn.style.display = "none";
+      if (dashBtn) dashBtn.style.display = "none";
       if (certBadge) certBadge.style.display = "none";
-
-      // Hide Edit Name button until completion
       if (editNameBox) editNameBox.style.display = "none";
     }
 
-    // NEW: toggle resume CTA to next incomplete module
+    // Resume CTA
     if (resumeBtn && Array.isArray(window.MODULES) && window.MODULES.length) {
       if (allDone) {
         resumeBtn.style.display = "none";
@@ -208,10 +202,7 @@
   }
 
   function renderAll() {
-    // 1) Apply i18n to static content
     applyI18nOnly();
-
-    // 2) Then render dynamic content AFTER i18n (so placeholders are replaced)
     setTimeout(() => {
       renderTop();
       renderModules();
@@ -223,7 +214,6 @@
       const original = window.papSetLang;
       window.papSetLang = function (lang) {
         const r = original(lang);
-        // Re-render dynamic strings after language change
         setTimeout(() => {
           renderTop();
           renderModules();
