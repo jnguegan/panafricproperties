@@ -230,25 +230,29 @@
         const link = listingUrl(item.id);
 
         const st = statusLabel(item.status);
-        const cat = categoryLabel(item.category);
+const cat = categoryLabel(item.category);
+const isSpecial = normalize(item.status) === 'sold' || normalize(item.status) === 'under_offer';
 
-        return `
-          <article class="card" style="overflow:hidden;">
-            ${img ? `
-              <a href="${link}" style="display:block;">
-                <img class="papCardMedia" src="${escapeHtml(img)}" alt="${safeTitle}" loading="lazy">
-              </a>
-            ` : ''}
-            <div style="padding:14px;">
-              <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
-                <h3 class="papTitleClamp" style="margin:0;">
-                  <a href="${link}" style="text-decoration:none;">${safeTitle}</a>
-                </h3>
-                <div class="papBadges small" style="opacity:.95;">
-                  ${st ? `<span class="papPill">${escapeHtml(st)}</span>` : ``}
-                  <span class="papPill">${escapeHtml(cat)}</span>
-                </div>
-              </div>
+return `
+  <article class="card" style="overflow:hidden;">
+    ${img ? `
+      <a href="${link}" style="display:block;">
+        <img class="papCardMedia" src="${escapeHtml(img)}" alt="${safeTitle}" loading="lazy">
+      </a>
+    ` : ''}
+    <div style="padding:14px;">
+      <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
+        <h3 class="papTitleClamp" style="margin:0;">
+          <a href="${link}" style="text-decoration:none;">${safeTitle}</a>
+        </h3>
+
+        <div class="papBadges small" style="opacity:.95;">
+          ${st ? `<span class="papPill">${escapeHtml(st)}</span>` : ``}
+          ${isSpecial ? `` : `<span class="papPill">${escapeHtml(cat)}</span>`}
+        </div>
+
+      </div>
+
 
               <p class="small" style="margin:6px 0 0;">${escapeHtml(loc)}</p>
 
