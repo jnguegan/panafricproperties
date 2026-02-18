@@ -20,8 +20,6 @@
           <strong>PanAfric Properties</strong>
         </a>
 
-        <!-- If you already have a language dropdown component globally, keep it.
-             This minimal one won’t break your existing i18n.js if it’s present. -->
         <div class="lang" style="display:flex; gap:10px; align-items:center;">
           <label for="langSelect" class="small" data-i18n="lang_label">Language</label>
           <select id="langSelect" aria-label="Language">
@@ -126,6 +124,16 @@
       const categoryFilter = document.getElementById('categoryFilter');
       const typeFilter = document.getElementById('typeFilter');
 
+      // ✅ Supabase public config (anon only; never use service role in browser)
+      const SUPABASE_URL = "https://ogyhfjdrqcupwesnjoly.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9neWhmamRycWN1cHdlc25qb2x5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMzk3MzcsImV4cCI6MjA4NjkxNTczN30.rMf9nGeN2DxjSjzUAC4agcXEnsliiZWnTMOoV6qMsAo";
+
+      const REST = `${SUPABASE_URL}/rest/v1/listings`;
+      const headers = {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+      };
+
       let all = [];
 
       function escapeHtml(str){
@@ -147,9 +155,29 @@
 
       function normalize(s){ return String(s ?? '').toLowerCase().trim(); }
 
+      function parseImages(item){
+        // Supports: images as array, JSON string array, or single URL string
+        const v = item.images;
+        if (Array.isArray(v)) return v;
+        if (typeof v === 'string' && v.trim()){
+          try {
+            const arr = JSON.parse(v);
+            if (Array.isArray(arr)) return arr;
+          } catch(e){}
+          return [v];
+        }
+        return [];
+      }
+
+      function listingUrl(id){
+        // ✅ clean URL; requires Netlify redirect: /properties/* /property.html 200
+        return `/properties/${encodeURIComponent(id)}`;
+      }
+
       function buildCard(item){
-        const img = (item.images && item.images.length) ? item.images[0] : '';
-        const title = escapeHtml(item.title || '');
+        const imgs = parseImages(item);
+        const img = item.cover_url || (imgs.length ? imgs[0] : '');
+        const title = escapeHtml(item.title || item.listing_title || '');
         const loc = [item.city, item.country].filter(Boolean).join(', ');
         const price = money(item.price, item.currency);
 
@@ -158,7 +186,7 @@
         const size = Number.isFinite(Number(item.sizeM2)) ? `${item.sizeM2} m²` : '';
         const metaBits = [bed, bath, size].filter(Boolean).join(' · ');
 
-        const link = `property.html?id=${encodeURIComponent(item.id)}`;
+        const link = listingUrl(item.id);
 
         const badge = escapeHtml((item.category || '').toLowerCase());
         const badgeLabel = badge === 'rent'
@@ -208,6 +236,9 @@
 
         grid.innerHTML = list.map(buildCard).join('');
         resultsMeta.textContent = `${list.length} / ${all.length}`;
+
+        // Re-apply i18n if your system needs it after injecting HTML
+        try { if (typeof papApplyI18n === 'function') papApplyI18n(); } catch(e){}
       }
 
       function applyFilters(){
@@ -216,14 +247,21 @@
         const type = normalize(typeFilter.value);
 
         const filtered = all.filter(p => {
-          if ((p.status || '').toLowerCase() !== 'approved') return false;
+          // ✅ only show published/approved rows
+          const st = normalize(p.status);
+          const ok = (st === 'approved' || st === 'published' || st === 'live' || st === '');
+          if (!ok) return false;
+
           if (cat && normalize(p.category) !== cat) return false;
-          if (type && normalize(p.propertyType) !== type) return false;
+
+          // Support both "propertyType" and "property_type" and "type"
+          const pt = normalize(p.propertyType || p.property_type || p.type);
+          if (type && pt !== type) return false;
 
           if (!q) return true;
           const hay = [
-            p.title, p.description, p.country, p.city, p.areaLabel, p.address,
-            (p.features || []).join(' ')
+            p.title, p.listing_title, p.description, p.country, p.city, p.areaLabel, p.address,
+            (Array.isArray(p.features) ? p.features : []).join(' ')
           ].join(' ');
           return normalize(hay).includes(q);
         });
@@ -233,12 +271,28 @@
 
       async function load(){
         try{
-          const res = await fetch('listings.json', { cache: 'no-store' });
+          // Adjust select list to match your Supabase schema (safe to include extra columns)
+          const select = [
+            "id","title","listing_title",
+            "status","category",
+            "type","propertyType","property_type",
+            "country","city","price","currency",
+            "bedrooms","bathrooms","sizeM2",
+            "description","images","cover_url",
+            "created_at"
+          ].join(',');
+
+          const url = `${REST}?select=${encodeURIComponent(select)}&order=created_at.desc`;
+
+          const res = await fetch(url, { headers });
           if (!res.ok) throw new Error('HTTP ' + res.status);
+
           const data = await res.json();
-          all = Array.isArray(data.listings) ? data.listings : [];
+          all = Array.isArray(data) ? data : [];
           applyFilters();
+
         } catch(e){
+          console.error(e);
           grid.innerHTML = '';
           emptyState.style.display = 'none';
           errorState.style.display = 'block';
