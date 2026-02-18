@@ -6,13 +6,12 @@
   <title data-i18n="properties.pageTitle">Properties — PanAfric Properties</title>
   <meta name="description" content="Browse approved property listings." />
 
-  <!-- ✅ FIX: absolute favicon paths so they work on /properties/<id> and any nested route -->
+  <!-- ✅ absolute favicon paths -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Small visual polish for cards (does NOT touch header/footer) -->
   <style>
     .papCardMedia{
       width:100%;
@@ -26,6 +25,21 @@
       -webkit-box-orient:vertical;
       overflow:hidden;
       line-height:1.2;
+    }
+    .papBadges{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:flex-start;
+    }
+    .papPill{
+      display:inline-block;
+      padding:3px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.06);
+      font-weight:700;
+      white-space:nowrap;
     }
   </style>
 </head>
@@ -107,7 +121,6 @@
     </div>
   </footer>
 
-  <!-- ✅ IMPORTANT: absolute path -->
   <script src="/assets/js/i18n.js"></script>
 
   <script>
@@ -190,8 +203,21 @@
       }
 
       function getTitle(item){
-        // ✅ REQUIRED FIX: fallback to listing_title if title missing; and final fallback
         return (item.title || item.listing_title || '').toString().trim() || 'Untitled';
+      }
+
+      function statusLabel(st){
+        const s = normalize(st);
+        if (s === 'sold') return (document.querySelector('[data-i18n="properties.badgeSold"]')?.textContent || 'Sold');
+        if (s === 'under_offer') return (document.querySelector('[data-i18n="properties.badgeUnderOffer"]')?.textContent || 'Under offer');
+        return '';
+      }
+
+      function categoryLabel(cat){
+        const c = normalize(cat);
+        return c === 'rent'
+          ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
+          : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
       }
 
       function buildCard(item){
@@ -203,10 +229,8 @@
 
         const link = listingUrl(item.id);
 
-        const badge = escapeHtml((item.category || '').toLowerCase());
-        const badgeLabel = badge === 'rent'
-          ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
-          : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
+        const st = statusLabel(item.status);
+        const cat = categoryLabel(item.category);
 
         return `
           <article class="card" style="overflow:hidden;">
@@ -220,7 +244,10 @@
                 <h3 class="papTitleClamp" style="margin:0;">
                   <a href="${link}" style="text-decoration:none;">${safeTitle}</a>
                 </h3>
-                <span class="small" style="white-space:nowrap; opacity:.9;">${escapeHtml(badgeLabel)}</span>
+                <div class="papBadges small" style="opacity:.95;">
+                  ${st ? `<span class="papPill">${escapeHtml(st)}</span>` : ``}
+                  <span class="papPill">${escapeHtml(cat)}</span>
+                </div>
               </div>
 
               <p class="small" style="margin:6px 0 0;">${escapeHtml(loc)}</p>
@@ -257,15 +284,18 @@
         } catch(e){}
       }
 
+      function isPublicStatus(st){
+        const s = normalize(st);
+        return (s === 'approved' || s === 'published' || s === 'live' || s === 'sold' || s === 'under_offer' || s === '');
+      }
+
       function applyFilters(){
         const q = normalize(searchInput.value);
         const cat = normalize(categoryFilter.value);
         const type = normalize(typeFilter.value);
 
         const filtered = all.filter(p => {
-          const st = normalize(p.status);
-          const ok = (st === 'approved' || st === 'published' || st === 'live' || st === '');
-          if (!ok) return false;
+          if (!isPublicStatus(p.status)) return false;
 
           if (cat && normalize(p.category) !== cat) return false;
 
@@ -284,7 +314,6 @@
 
       async function load(){
         try{
-          // ✅ Schema-safe: select=* prevents HTTP 400 from missing columns
           const url = `${REST}?select=*`;
 
           const res = await fetch(url, { headers });
