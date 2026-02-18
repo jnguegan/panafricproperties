@@ -97,6 +97,18 @@
     </div>
   </footer>
 
+  <!-- Hidden translation labels for JS -->
+  <div style="display:none;">
+    <span id="lbl_id" data-i18n="property.details.id">ID</span>
+    <span id="lbl_type" data-i18n="property.details.type">Type</span>
+    <span id="lbl_category" data-i18n="property.details.category">Category</span>
+    <span id="lbl_bedrooms" data-i18n="property.details.bedrooms">Bedrooms</span>
+    <span id="lbl_bathrooms" data-i18n="property.details.bathrooms">Bathrooms</span>
+    <span id="lbl_size" data-i18n="property.details.size">Size</span>
+    <span id="lbl_yearBuilt" data-i18n="property.details.yearBuilt">Year built</span>
+    <span id="lbl_city" data-i18n="property.details.city">City</span>
+    <span id="lbl_country" data-i18n="property.details.country">Country</span>
+  </div>
   <!-- ✅ IMPORTANT: absolute path so it works on /properties/<id> -->
   <script src="/assets/js/i18n.js"></script>
 
@@ -179,10 +191,10 @@
         }
       }
 
-      function li(labelKey, value){
-        if (value === undefined || value === null || value === '') return '';
-        const label = document.querySelector(`[data-i18n="${labelKey}"]`)?.textContent || labelKey;
-        return `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`;
+      function li(labelId, value){
+  if (value === undefined || value === null || value === '') return '';
+  const label = document.getElementById(labelId)?.textContent || labelId;
+  return `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`;
       }
 
       function parseImages(item){
@@ -274,16 +286,16 @@
         const details = document.getElementById('detailsList');
         const ptype = item.propertyType || item.property_type || item.type || '';
         details.innerHTML = [
-          li('property.details.id', item.id),
-          li('property.details.type', ptype),
-          li('property.details.category', item.category),
-          li('property.details.bedrooms', item.bedrooms),
-          li('property.details.bathrooms', item.bathrooms),
-          li('property.details.size', item.sizeM2 ? `${item.sizeM2} m²` : ''),
-          li('property.details.yearBuilt', item.yearBuilt),
-          li('property.details.city', item.city),
-          li('property.details.country', item.country)
-        ].filter(Boolean).join('');
+  li('lbl_id', item.id),
+  li('lbl_type', ptype),
+  li('lbl_category', item.category),
+  li('lbl_bedrooms', item.bedrooms),
+  li('lbl_bathrooms', item.bathrooms),
+  li('lbl_size', item.sizeM2 ? `${item.sizeM2} m²` : ''),
+  li('lbl_yearBuilt', item.yearBuilt),
+  li('lbl_city', item.city),
+  li('lbl_country', item.country)
+].filter(Boolean).join('');
 
         document.getElementById('description').textContent = item.description || '';
 
