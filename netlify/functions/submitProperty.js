@@ -10,7 +10,9 @@ function json(statusCode, obj) {
     headers: {
       "Content-Type": "application/json",
       "Cache-Control": "no-store",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      "Access-Control-Allow-Methods": "POST, OPTIONS"
     },
     body: JSON.stringify(obj)
   };
@@ -18,9 +20,12 @@ function json(statusCode, obj) {
 
 function parseMultipart(event) {
   return new Promise((resolve, reject) => {
-    const contentType = event.headers["content-type"] || event.headers["Content-Type"];
-    if (!contentType || !contentType.includes("multipart/form-data")) {
+    const contentType = event.headers["content-type"] || event.headers["Content-Type"] || "";
+    if (!contentType.includes("multipart/form-data")) {
       return reject(new Error("Invalid content-type. Use multipart/form-data."));
+    }
+    if (!/boundary=/i.test(contentType)) {
+      return reject(new Error("Invalid multipart request (missing boundary)."));
     }
 
     const bb = Busboy({ headers: { "content-type": contentType } });
@@ -28,12 +33,14 @@ function parseMultipart(event) {
     const files = [];
 
     bb.on("field", (name, val) => {
+      // keep last value if duplicate keys appear
       fields[name] = val;
     });
 
     bb.on("file", (name, file, info) => {
       const { filename, mimeType } = info;
       const chunks = [];
+
       file.on("data", (d) => chunks.push(d));
       file.on("end", () => {
         const buffer = Buffer.concat(chunks);
@@ -52,7 +59,7 @@ function parseMultipart(event) {
     bb.on("finish", () => resolve({ fields, files }));
 
     const body = event.isBase64Encoded
-      ? Buffer.from(event.body, "base64")
+      ? Buffer.from(event.body || "", "base64")
       : Buffer.from(event.body || "", "utf8");
 
     bb.end(body);
@@ -91,9 +98,14 @@ function slugifyFilename(name) {
 async function uploadImages({ supabase, bucket, listingId, files }) {
   const publicUrls = [];
 
-  for (let i = 0; i < files.length; i++) {
-    const f = files[i];
-    if (!/^image\//i.test(f.mimeType)) continue;
+  // UI says up to 10 photos
+  const photos = (files || [])
+    .filter((f) => f.fieldname === "photos")
+    .filter((f) => /^image\//i.test(f.mimeType))
+    .slice(0, 10);
+
+  for (let i = 0; i < photos.length; i++) {
+    const f = photos[i];
 
     const cleanName = slugifyFilename(f.filename);
     const path = `${listingId}/${Date.now()}-${i}-${cleanName}`;
@@ -112,6 +124,11 @@ async function uploadImages({ supabase, bucket, listingId, files }) {
 }
 
 exports.handler = async (event) => {
+  // ✅ CORS preflight
+  if (event.httpMethod === "OPTIONS") {
+    return json(200, { ok: true });
+  }
+
   if (event.httpMethod !== "POST") {
     return json(405, { ok: false, error: "Method not allowed" });
   }
@@ -176,12 +193,14 @@ exports.handler = async (event) => {
       (fields.property_type || "").trim() ||
       (fields.propertyType || "").trim();
 
-    // ✅ Build row that matches your confirmed Supabase columns
+    // ✅ Size mapping: accept both size_m2 and sizeM2 (future-proof)
+    const sizeM2 = toNumber(fields.size_m2 ?? fields.sizeM2);
+
     const row = {
       id: listingId,
       status: "published",
 
-      title: title,
+      title,
       description: fields.description || "",
 
       price: toNumber(fields.price),
@@ -190,18 +209,18 @@ exports.handler = async (event) => {
       property_type: propertyType,
 
       country: (fields.country || "").trim(),
-      city: city,
+      city,
 
       address: (fields.address || "").trim(),
 
       // table uses size_m2 (snake_case)
-      size_m2: toNumber(fields.size_m2),
+      size_m2: sizeM2,
 
       bedrooms: toInt(fields.bedrooms),
       bathrooms: toInt(fields.bathrooms),
 
       features: featuresArr,
-      contact: contact,
+      contact,
       images: imageUrls
     };
 
