@@ -6,13 +6,12 @@
   <title data-i18n="property.pageTitle">Property — PanAfric Properties</title>
   <meta name="description" content="Property details." />
 
-  <!-- ✅ FIX: absolute favicon paths so they work on /properties/<id> -->
+  <!-- ✅ absolute favicon paths so they work on /properties/<id> -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Page-only polish (does NOT touch header/footer) -->
   <style>
     /* Gallery: no stretch, consistent crop, responsive */
     #gallery{
@@ -26,17 +25,16 @@
       overflow: hidden;
       border-radius: 14px;
       background: rgba(0,0,0,.04);
-      aspect-ratio: 16 / 10; /* consistent frame; prevents odd stretching */
+      aspect-ratio: 16 / 10;
     }
     .papGalleryItem img{
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;      /* ✅ key */
-      object-position: center;/* ✅ key */
+      object-fit: cover;
+      object-position: center;
     }
 
-    /* Details layout: cleaner spacing/typography without changing your theme */
     .papMetaRow{
       display:flex;
       flex-wrap:wrap;
@@ -58,13 +56,7 @@
       .papPriceBlock{ text-align:left; }
     }
 
-    .papCardTitle{
-      margin: 0 0 10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
+    .papCardTitle{ margin: 0 0 10px; }
 
     /* Details list: nicer + compact */
     #detailsList{
@@ -86,12 +78,18 @@
     #detailsList li strong{ font-weight: 700; }
     #detailsList li span{ opacity: .9; }
 
-    /* Features list: improve spacing without altering base .list */
-    #featuresList{ margin:0; }
-    #featuresList li{ margin: 6px 0; }
-
-    /* Description: better readability */
     #description{ white-space: pre-wrap; line-height: 1.55; }
+
+    /* Enquiry form polish */
+    .papFormGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 860px){
+      .papFormGrid{ grid-template-columns: 1fr; }
+    }
+    .papHoneypot{ display:none !important; }
   </style>
 </head>
 
@@ -160,13 +158,57 @@
               <ul class="list" id="featuresList" style="margin:0;"></ul>
             </div>
 
+            <!-- ✅ PUBLIC CONTACT = PANAFRIC ONLY -->
             <div class="card" style="padding:18px;">
-              <h3 class="papCardTitle" data-i18n="property.contactTitle">Contact</h3>
-              <div class="small" id="contactBox"></div>
-              <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
-                <a id="emailBtn" class="btn" href="#" data-i18n="property.emailBtn">Email</a>
-                <a id="waBtn" class="btn" href="#" target="_blank" rel="noopener" data-i18n="property.whatsappBtn">WhatsApp</a>
-              </div>
+              <h3 class="papCardTitle" data-i18n="property.enquiryTitle">Contact PanAfric Properties</h3>
+              <p class="small" style="margin:0 0 12px; opacity:.85;" data-i18n="property.enquiryNote">
+                Interested in this property? Send your enquiry here. Our team will contact you and connect you with the right partner.
+              </p>
+
+              <form id="enquiryForm">
+                <!-- honeypot anti-spam -->
+                <div class="papHoneypot">
+                  <label>Website <input type="text" name="website" autocomplete="off"></label>
+                </div>
+
+                <!-- hidden listing context -->
+                <input type="hidden" name="listing_id" id="enq_listing_id">
+                <input type="hidden" name="listing_title" id="enq_listing_title">
+                <input type="hidden" name="listing_url" id="enq_listing_url">
+
+                <div class="papFormGrid">
+                  <div>
+                    <label class="small" for="buyer_name" data-i18n="property.enquiry.name">Full name</label>
+                    <input class="input" id="buyer_name" name="buyer_name" type="text" required>
+                  </div>
+                  <div>
+                    <label class="small" for="buyer_email" data-i18n="property.enquiry.email">Email</label>
+                    <input class="input" id="buyer_email" name="buyer_email" type="email" required>
+                  </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                  <label class="small" for="buyer_phone" data-i18n="property.enquiry.phone">Phone (optional)</label>
+                  <input class="input" id="buyer_phone" name="buyer_phone" type="text">
+                </div>
+
+                <div style="margin-top:10px;">
+                  <label class="small" for="message" data-i18n="property.enquiry.message">Message</label>
+                  <textarea class="input" id="message" name="message" rows="5" required placeholder="Tell us what you need (budget, timeframe, viewing request)…"></textarea>
+                </div>
+
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <button class="btn green" type="submit" id="enqSubmitBtn" data-i18n="property.enquiry.submit">Send enquiry</button>
+                  <span id="enqSpinner" class="small" style="display:none; opacity:.8;" data-i18n="property.enquiry.sending">Sending…</span>
+                </div>
+
+                <div id="enqOk" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
+                <div id="enqErr" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
+
+                <p class="small" style="margin-top:10px; opacity:.75;" data-i18n="property.enquiry.privacy">
+                  Your enquiry is sent to PanAfric Properties. Partner contact details are not shared publicly.
+                </p>
+              </form>
             </div>
           </div>
 
@@ -194,7 +236,7 @@
     <span id="lbl_country" data-i18n="property.details.country">Country</span>
   </div>
 
-  <!-- ✅ IMPORTANT: absolute path so it works on /properties/<id> -->
+  <!-- ✅ absolute path so it works on /properties/<id> -->
   <script src="/assets/js/i18n.js"></script>
 
   <script>
@@ -313,13 +355,21 @@
         return (s === 'approved' || s === 'published' || s === 'live' || s === '');
       }
 
+      function setEnquiryContext(listingId, title){
+        const elId = document.getElementById('enq_listing_id');
+        const elTitle = document.getElementById('enq_listing_title');
+        const elUrl = document.getElementById('enq_listing_url');
+        if (elId) elId.value = listingId || '';
+        if (elTitle) elTitle.value = title || '';
+        if (elUrl) elUrl.value = location.href;
+      }
+
       async function load(){
         if (!id){
           showError("Missing listing id.");
           return;
         }
 
-        // ✅ Schema-safe: select=* prevents HTTP 400 from missing columns
         const url = `${REST}?select=*&id=eq.${encodeURIComponent(id)}&limit=1`;
 
         let res, text;
@@ -351,7 +401,7 @@
           return;
         }
 
-        const title = item.title || item.listing_title || '';
+        const title = (item.title || item.listing_title || '').toString().trim() || 'Untitled';
         document.getElementById('title').textContent = title;
         document.getElementById('location').textContent = [item.city, item.country].filter(Boolean).join(', ');
         document.getElementById('price').textContent = money(item.price, item.currency);
@@ -375,7 +425,6 @@
         const details = document.getElementById('detailsList');
         const ptype = item.propertyType || item.property_type || item.type || '';
 
-        // ✅ Accept both new and old field names for size
         const sizeM2 = item.size_m2 ?? item.sizeM2 ?? item.size_m ?? item.size ?? '';
         const sizeLabel = sizeM2 !== '' ? `${sizeM2} m²` : '';
 
@@ -399,37 +448,8 @@
           ? feats.map(f => `<li>${escapeHtml(f)}</li>`).join('')
           : `<li data-i18n="property.noFeatures">No features listed</li>`;
 
-        const c = item.contact || {
-          name: item.contact_name,
-          email: item.contact_email,
-          phone: item.contact_phone,
-          whatsapp: item.contact_whatsapp
-        } || {};
-
-        const contactBox = document.getElementById('contactBox');
-        contactBox.innerHTML = `
-          <div><strong>${escapeHtml(c.name || 'PanAfric Properties')}</strong></div>
-          ${c.email ? `<div>${escapeHtml(c.email)}</div>` : ''}
-          ${c.phone ? `<div>${escapeHtml(c.phone)}</div>` : ''}
-        `;
-
-        const emailBtn = document.getElementById('emailBtn');
-        emailBtn.href = c.email
-          ? `mailto:${encodeURIComponent(c.email)}?subject=${encodeURIComponent('Property enquiry: ' + (title || item.id))}`
-          : '#';
-        emailBtn.style.pointerEvents = c.email ? 'auto' : 'none';
-        emailBtn.style.opacity = c.email ? '1' : '.5';
-
-        const waBtn = document.getElementById('waBtn');
-        const waRaw = String(c.whatsapp || c.phone || '').trim();
-        let wa = waRaw.replace(/[^\d+]/g, '');
-        const waDigits = wa.replace(/^\+/, '');
-
-        waBtn.href = waDigits
-          ? `https://wa.me/${encodeURIComponent(waDigits)}?text=${encodeURIComponent('Hello, I am interested in: ' + (title || item.id))}`
-          : '#';
-        waBtn.style.pointerEvents = waDigits ? 'auto' : 'none';
-        waBtn.style.opacity = waDigits ? '1' : '.5';
+        // ✅ Set enquiry hidden fields (so you know which listing the buyer asked about)
+        setEnquiryContext(item.id, title);
 
         errorState.style.display = 'none';
         content.style.display = 'block';
@@ -441,6 +461,94 @@
       }
 
       load();
+    })();
+  </script>
+
+  <script>
+    (function(){
+      const form = document.getElementById('enquiryForm');
+      if (!form) return;
+
+      const btn = document.getElementById('enqSubmitBtn');
+      const sp = document.getElementById('enqSpinner');
+      const ok = document.getElementById('enqOk');
+      const err = document.getElementById('enqErr');
+
+      function showOk(html){
+        if (err) err.style.display = 'none';
+        if (ok){
+          ok.style.display = 'block';
+          ok.innerHTML = html;
+        }
+      }
+      function showErr(text){
+        if (ok) ok.style.display = 'none';
+        if (err){
+          err.style.display = 'block';
+          err.textContent = text || 'Something went wrong.';
+        }
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (ok) ok.style.display = 'none';
+        if (err) err.style.display = 'none';
+
+        // honeypot
+        const hp = (form.querySelector('input[name="website"]')?.value || '').trim();
+        if (hp) {
+          showOk('<strong>Thank you.</strong>');
+          return;
+        }
+
+        if (!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+
+        if (btn) btn.disabled = true;
+        if (sp) sp.style.display = 'inline';
+
+        try{
+          const payload = {
+            listing_id: (document.getElementById('enq_listing_id')?.value || '').trim(),
+            listing_title: (document.getElementById('enq_listing_title')?.value || '').trim(),
+            listing_url: (document.getElementById('enq_listing_url')?.value || '').trim(),
+            buyer_name: (form.querySelector('[name="buyer_name"]')?.value || '').trim(),
+            buyer_email: (form.querySelector('[name="buyer_email"]')?.value || '').trim(),
+            buyer_phone: (form.querySelector('[name="buyer_phone"]')?.value || '').trim(),
+            message: (form.querySelector('[name="message"]')?.value || '').trim(),
+            lang: (localStorage.getItem('pap_lang') || localStorage.getItem('lang') || 'en').toLowerCase(),
+            page: location.pathname
+          };
+
+          const res = await fetch('/.netlify/functions/submitEnquiry', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || data.ok === false) {
+            throw new Error(data.error || `Enquiry failed (${res.status})`);
+          }
+
+          // Keep listing hidden fields; reset user inputs only
+          form.reset();
+          showOk('<strong>Enquiry sent ✅</strong><br><span class="small">PanAfric Properties will contact you shortly.</span>');
+
+          try {
+            if (typeof papReapplyI18n === 'function') { papReapplyI18n(); setTimeout(papReapplyI18n, 0); }
+            else if (typeof papApplyI18n === 'function') { papApplyI18n(); setTimeout(papApplyI18n, 0); }
+          } catch(e){}
+
+        } catch(ex){
+          showErr(ex?.message || 'Enquiry failed.');
+        } finally {
+          if (btn) btn.disabled = false;
+          if (sp) sp.style.display = 'none';
+        }
+      });
     })();
   </script>
 </body>
