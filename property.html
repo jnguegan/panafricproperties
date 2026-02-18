@@ -6,9 +6,93 @@
   <title data-i18n="property.pageTitle">Property — PanAfric Properties</title>
   <meta name="description" content="Property details." />
 
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- ✅ FIX: absolute favicon paths so they work on /properties/<id> -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-only polish (does NOT touch header/footer) -->
+  <style>
+    /* Gallery: no stretch, consistent crop, responsive */
+    #gallery{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .papGalleryItem{
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: rgba(0,0,0,.04);
+      aspect-ratio: 16 / 10; /* consistent frame; prevents odd stretching */
+    }
+    .papGalleryItem img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;      /* ✅ key */
+      object-position: center;/* ✅ key */
+    }
+
+    /* Details layout: cleaner spacing/typography without changing your theme */
+    .papMetaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    .papTitleBlock{ min-width:260px; flex:1; }
+    #title{ line-height: 1.15; }
+    #location{ margin: 6px 0 0; opacity: .85; }
+
+    .papPriceBlock{ text-align:right; min-width:180px; }
+    #price{ font-size: 1.25rem; font-weight: 800; }
+    #badge{ opacity: .9; margin-top: 4px; }
+
+    .papGrid{ margin-top:16px; display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    @media (max-width: 860px){
+      .papGrid{ grid-template-columns: 1fr; }
+      .papPriceBlock{ text-align:left; }
+    }
+
+    .papCardTitle{
+      margin: 0 0 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    /* Details list: nicer + compact */
+    #detailsList{
+      margin:0;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding-left: 0;
+      list-style: none;
+    }
+    #detailsList li{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.03);
+    }
+    #detailsList li strong{ font-weight: 700; }
+    #detailsList li span{ opacity: .9; }
+
+    /* Features list: improve spacing without altering base .list */
+    #featuresList{ margin:0; }
+    #featuresList li{ margin: 6px 0; }
+
+    /* Description: better readability */
+    #description{ white-space: pre-wrap; line-height: 1.55; }
+  </style>
 </head>
 
 <body data-page="property">
@@ -46,38 +130,38 @@
 
         <div id="content" style="display:none;">
           <div class="card" style="padding:18px; margin-top:14px;">
-            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:flex-start;">
-              <div style="min-width:260px; flex:1;">
+            <div class="papMetaRow">
+              <div class="papTitleBlock">
                 <h1 id="title" style="margin:0;"></h1>
-                <p id="location" class="small" style="margin:6px 0 0;"></p>
+                <p id="location" class="small"></p>
               </div>
-              <div style="text-align:right;">
-                <div id="price" style="font-size:1.2rem; font-weight:700;"></div>
-                <div id="badge" class="small" style="opacity:.9; margin-top:4px;"></div>
+              <div class="papPriceBlock">
+                <div id="price"></div>
+                <div id="badge" class="small"></div>
               </div>
             </div>
 
-            <div id="gallery" style="margin-top:14px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;"></div>
+            <div id="gallery"></div>
           </div>
 
-          <div class="grid" style="margin-top:16px;">
+          <div class="papGrid">
             <div class="card" style="padding:18px;">
-              <h3 style="margin:0 0 10px;" data-i18n="property.detailsTitle">Details</h3>
-              <ul class="list" id="detailsList" style="margin:0;"></ul>
+              <h3 class="papCardTitle" data-i18n="property.detailsTitle">Details</h3>
+              <ul class="list" id="detailsList"></ul>
             </div>
 
             <div class="card" style="padding:18px;">
-              <h3 style="margin:0 0 10px;" data-i18n="property.descriptionTitle">Description</h3>
+              <h3 class="papCardTitle" data-i18n="property.descriptionTitle">Description</h3>
               <p class="small" id="description" style="margin:0;"></p>
             </div>
 
             <div class="card" style="padding:18px;">
-              <h3 style="margin:0 0 10px;" data-i18n="property.featuresTitle">Features</h3>
+              <h3 class="papCardTitle" data-i18n="property.featuresTitle">Features</h3>
               <ul class="list" id="featuresList" style="margin:0;"></ul>
             </div>
 
             <div class="card" style="padding:18px;">
-              <h3 style="margin:0 0 10px;" data-i18n="property.contactTitle">Contact</h3>
+              <h3 class="papCardTitle" data-i18n="property.contactTitle">Contact</h3>
               <div class="small" id="contactBox"></div>
               <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
                 <a id="emailBtn" class="btn" href="#" data-i18n="property.emailBtn">Email</a>
@@ -109,6 +193,7 @@
     <span id="lbl_city" data-i18n="property.details.city">City</span>
     <span id="lbl_country" data-i18n="property.details.country">Country</span>
   </div>
+
   <!-- ✅ IMPORTANT: absolute path so it works on /properties/<id> -->
   <script src="/assets/js/i18n.js"></script>
 
@@ -192,9 +277,9 @@
       }
 
       function li(labelId, value){
-  if (value === undefined || value === null || value === '') return '';
-  const label = document.getElementById(labelId)?.textContent || labelId;
-  return `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`;
+        if (value === undefined || value === null || value === '') return '';
+        const label = document.getElementById(labelId)?.textContent || labelId;
+        return `<li><strong>${escapeHtml(label)}:</strong> <span>${escapeHtml(value)}</span></li>`;
       }
 
       function parseImages(item){
@@ -280,22 +365,31 @@
         const gallery = document.getElementById('gallery');
         const imgs = parseImages(item);
         gallery.innerHTML = imgs.length
-          ? imgs.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(title)}" style="width:100%; height:220px; object-fit:cover; border-radius:14px; display:block;">`).join('')
+          ? imgs.map(src => `
+              <div class="papGalleryItem">
+                <img src="${escapeHtml(src)}" alt="${escapeHtml(title)}" loading="lazy">
+              </div>
+            `).join('')
           : `<div class="small" data-i18n="property.noImages">No images available</div>`;
 
         const details = document.getElementById('detailsList');
         const ptype = item.propertyType || item.property_type || item.type || '';
+
+        // ✅ Accept both new and old field names for size
+        const sizeM2 = item.size_m2 ?? item.sizeM2 ?? item.size_m ?? item.size ?? '';
+        const sizeLabel = sizeM2 !== '' ? `${sizeM2} m²` : '';
+
         details.innerHTML = [
-  li('lbl_id', item.id),
-  li('lbl_type', ptype),
-  li('lbl_category', item.category),
-  li('lbl_bedrooms', item.bedrooms),
-  li('lbl_bathrooms', item.bathrooms),
-  li('lbl_size', item.sizeM2 ? `${item.sizeM2} m²` : ''),
-  li('lbl_yearBuilt', item.yearBuilt),
-  li('lbl_city', item.city),
-  li('lbl_country', item.country)
-].filter(Boolean).join('');
+          li('lbl_id', item.id),
+          li('lbl_type', ptype),
+          li('lbl_category', item.category),
+          li('lbl_bedrooms', item.bedrooms),
+          li('lbl_bathrooms', item.bathrooms),
+          li('lbl_size', sizeLabel),
+          li('lbl_yearBuilt', item.yearBuilt),
+          li('lbl_city', item.city),
+          li('lbl_country', item.country)
+        ].filter(Boolean).join('');
 
         document.getElementById('description').textContent = item.description || '';
 
