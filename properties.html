@@ -12,7 +12,6 @@
 </head>
 
 <body data-page="properties">
-  <!-- Header (kept intentionally simple + compatible with your existing styling) -->
   <header class="header">
     <div class="wrap">
       <div class="navbar">
@@ -89,13 +88,13 @@
     </div>
   </footer>
 
-  <!-- i18n + page logic -->
-  <script src="/assets/js/i18n.js"></script>  <script>
+  <!-- ✅ IMPORTANT: absolute path -->
+  <script src="/assets/js/i18n.js"></script>
+
+  <script>
     (function(){
-      // Footer year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Hook into your existing language system safely
       const langSelect = document.getElementById('langSelect');
       const saved = (localStorage.getItem('pap_lang') || localStorage.getItem('lang') || 'en').toLowerCase();
       if (['en','fr','es'].includes(saved)) langSelect.value = saved;
@@ -123,14 +122,14 @@
       const categoryFilter = document.getElementById('categoryFilter');
       const typeFilter = document.getElementById('typeFilter');
 
-      // ✅ Supabase public config (anon only; never use service role in browser)
       const SUPABASE_URL = "https://ogyhfjdrqcupwesnjoly.supabase.co";
       const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9neWhmamRycWN1cHdlc25qb2x5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMzk3MzcsImV4cCI6MjA4NjkxNTczN30.rMf9nGeN2DxjSjzUAC4agcXEnsliiZWnTMOoV6qMsAo";
 
       const REST = `${SUPABASE_URL}/rest/v1/listings`;
       const headers = {
         "apikey": SUPABASE_ANON_KEY,
-        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+        "Accept": "application/json"
       };
 
       let all = [];
@@ -155,7 +154,6 @@
       function normalize(s){ return String(s ?? '').toLowerCase().trim(); }
 
       function parseImages(item){
-        // Supports: images as array, JSON string array, or single URL string
         const v = item.images;
         if (Array.isArray(v)) return v;
         if (typeof v === 'string' && v.trim()){
@@ -169,7 +167,6 @@
       }
 
       function listingUrl(id){
-        // ✅ clean URL; requires Netlify redirect: /properties/* /property.html 200
         return `/properties/${encodeURIComponent(id)}`;
       }
 
@@ -179,11 +176,6 @@
         const title = escapeHtml(item.title || item.listing_title || '');
         const loc = [item.city, item.country].filter(Boolean).join(', ');
         const price = money(item.price, item.currency);
-
-        const bed = Number.isFinite(Number(item.bedrooms)) ? `${item.bedrooms} bd` : '';
-        const bath = Number.isFinite(Number(item.bathrooms)) ? `${item.bathrooms} ba` : '';
-        const size = Number.isFinite(Number(item.sizeM2)) ? `${item.sizeM2} m²` : '';
-        const metaBits = [bed, bath, size].filter(Boolean).join(' · ');
 
         const link = listingUrl(item.id);
 
@@ -209,9 +201,8 @@
 
               <p class="small" style="margin:6px 0 0;">${escapeHtml(loc)}</p>
 
-              <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; margin-top:10px;">
+              <div style="margin-top:10px;">
                 <strong>${escapeHtml(price)}</strong>
-                <span class="small">${escapeHtml(metaBits)}</span>
               </div>
 
               <div style="margin-top:12px;">
@@ -236,7 +227,6 @@
         grid.innerHTML = list.map(buildCard).join('');
         resultsMeta.textContent = `${list.length} / ${all.length}`;
 
-        // Re-apply i18n if your system needs it after injecting HTML
         try { if (typeof papApplyI18n === 'function') papApplyI18n(); } catch(e){}
       }
 
@@ -246,21 +236,18 @@
         const type = normalize(typeFilter.value);
 
         const filtered = all.filter(p => {
-          // ✅ only show published/approved rows
           const st = normalize(p.status);
           const ok = (st === 'approved' || st === 'published' || st === 'live' || st === '');
           if (!ok) return false;
 
           if (cat && normalize(p.category) !== cat) return false;
 
-          // Support both "propertyType" and "property_type" and "type"
           const pt = normalize(p.propertyType || p.property_type || p.type);
           if (type && pt !== type) return false;
 
           if (!q) return true;
           const hay = [
-            p.title, p.listing_title, p.description, p.country, p.city, p.areaLabel, p.address,
-            (Array.isArray(p.features) ? p.features : []).join(' ')
+            p.title, p.listing_title, p.description, p.country, p.city, p.address
           ].join(' ');
           return normalize(hay).includes(q);
         });
@@ -270,23 +257,18 @@
 
       async function load(){
         try{
-          // Adjust select list to match your Supabase schema (safe to include extra columns)
-          const select = [
-            "id","title","listing_title",
-            "status","category",
-            "type","propertyType","property_type",
-            "country","city","price","currency",
-            "bedrooms","bathrooms","sizeM2",
-            "description","images","cover_url",
-            "created_at"
-          ].join(',');
-
-          const url = `${REST}?select=${encodeURIComponent(select)}&order=created_at.desc`;
+          // ✅ Schema-safe: select=* prevents HTTP 400 from missing columns
+          const url = `${REST}?select=*`;
 
           const res = await fetch(url, { headers });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const text = await res.text();
 
-          const data = await res.json();
+          if (!res.ok){
+            console.error("Supabase error:", res.status, text);
+            throw new Error('HTTP ' + res.status);
+          }
+
+          const data = JSON.parse(text);
           all = Array.isArray(data) ? data : [];
           applyFilters();
 
@@ -299,7 +281,6 @@
         }
       }
 
-      // Wire events
       searchInput.addEventListener('input', applyFilters);
       categoryFilter.addEventListener('change', applyFilters);
       typeFilter.addEventListener('change', applyFilters);
