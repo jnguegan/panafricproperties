@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <title>Submit Property — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ Add favicon (and use absolute paths so nested routes never break) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -90,6 +95,30 @@
           <div class="card" style="padding:14px;">
             <label class="small" data-i18n="submit.city">City / Area</label>
             <input class="input" type="text" name="city_area" required>
+          </div>
+
+          <!-- ✅ NEW: Address -->
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.address">Address</label>
+            <input class="input" type="text" name="address" placeholder="Street / District (optional)">
+          </div>
+
+          <!-- ✅ NEW: Size (m²) -->
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.size_m2">Size (m²)</label>
+            <input class="input" type="number" name="size_m2" min="0" step="1" placeholder="e.g. 120">
+          </div>
+
+          <!-- ✅ NEW: Bedrooms -->
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.bedrooms">Bedrooms</label>
+            <input class="input" type="number" name="bedrooms" min="0" step="1" placeholder="e.g. 3">
+          </div>
+
+          <!-- ✅ NEW: Bathrooms -->
+          <div class="card" style="padding:14px;">
+            <label class="small" data-i18n="submit.bathrooms">Bathrooms</label>
+            <input class="input" type="number" name="bathrooms" min="0" step="1" placeholder="e.g. 2">
           </div>
 
           <div class="card" style="padding:14px;">
@@ -230,6 +259,12 @@
       }
     }
 
+    // Helper: only send numeric fields if valid
+    function normalizeNumber(v){
+      const n = Number(String(v ?? '').trim());
+      return Number.isFinite(n) ? String(n) : '';
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (okBox) okBox.style.display = "none";
@@ -249,6 +284,19 @@
         // ✅ TITLE FIX: also send "title" so Supabase/Function can store correctly
         const lt = (fd.get("listing_title") || "").toString().trim();
         if (lt) fd.set("title", lt);
+
+        // ✅ Ensure new fields are present and clean
+        const address = (fd.get("address") || "").toString().trim();
+        if (address) fd.set("address", address);
+
+        const size = normalizeNumber(fd.get("size_m2"));
+        if (size) fd.set("size_m2", size); else fd.delete("size_m2");
+
+        const beds = normalizeNumber(fd.get("bedrooms"));
+        if (beds) fd.set("bedrooms", beds); else fd.delete("bedrooms");
+
+        const baths = normalizeNumber(fd.get("bathrooms"));
+        if (baths) fd.set("bathrooms", baths); else fd.delete("bathrooms");
 
         // Ensure we are not sending Netlify form fields; function expects raw fields + files
         fd.delete("form-name");
