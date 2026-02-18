@@ -73,6 +73,40 @@
         <h3 data-i18n="country.zimbabwe">Zimbabwe</h3><p class="small" data-i18n="countries.zimbabwe.cities">Harare • Bulawayo</p>
       </a>
     </div>
+<div class="card" style="margin-top:16px; padding:16px;">
+  <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="countries.globalTitle">
+    All countries (worldwide)
+  </h2>
+  <p class="small" style="margin:0 0 12px; opacity:.85;" data-i18n="countries.globalIntro">
+    Select a continent and country to browse listings in that market.
+  </p>
+
+  <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
+    <div style="flex:1; min-width:220px;">
+      <label class="small" for="continentSelect" data-i18n="countries.continent">Continent</label>
+      <select class="input" id="continentSelect">
+        <option value="" data-i18n="countries.selectContinent">Select continent…</option>
+      </select>
+    </div>
+
+    <div style="flex:1; min-width:220px;">
+      <label class="small" for="countrySelect" data-i18n="countries.country">Country</label>
+      <select class="input" id="countrySelect" disabled>
+        <option value="" data-i18n="countries.selectCountry">Select country…</option>
+      </select>
+    </div>
+
+    <div style="min-width:200px;">
+      <button class="btn green" id="viewBtn" disabled data-i18n="countries.viewBtn">
+        View opportunities
+      </button>
+    </div>
+  </div>
+
+  <div class="small" style="margin-top:10px; opacity:.75;" data-i18n="countries.hint">
+    Tip: this list includes all countries by continent — PanAfric can expand beyond Africa.
+  </div>
+</div>
 
     <!-- Global selector (Continent -> Country) -->
     <div class="card" style="margin-top:16px; padding:16px;">
