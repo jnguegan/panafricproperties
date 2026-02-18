@@ -133,9 +133,9 @@ exports.handler = async (event) => {
     });
 
     const { fields, files } = await parseMultipart(event);
-
     const listingId = crypto.randomUUID();
 
+    // Upload images (expects input name="photos")
     const imageUrls = await uploadImages({
       supabase,
       bucket: BUCKET,
@@ -143,6 +143,7 @@ exports.handler = async (event) => {
       files
     });
 
+    // Features
     const features = safeJsonParse(fields.features_json, null);
     const featuresArr = Array.isArray(features)
       ? features.map((x) => String(x)).filter(Boolean)
@@ -151,38 +152,74 @@ exports.handler = async (event) => {
           .map((s) => s.trim())
           .filter(Boolean);
 
+    // Contact (fallback to partner identity)
     const contact = {
-      name: fields.contact_name || "",
-      email: fields.contact_email || "",
-      phone: fields.contact_phone || "",
-      whatsapp: fields.contact_whatsapp || ""
+      name: (fields.contact_name || fields.partner_name || "").trim(),
+      email: (fields.contact_email || fields.partner_email || "").trim(),
+      phone: (fields.contact_phone || "").trim(),
+      whatsapp: (fields.contact_whatsapp || "").trim()
     };
 
+    // ✅ Title mapping: form uses listing_title, but table uses title
+    const title =
+      (fields.title || "").trim() ||
+      (fields.listing_title || "").trim() ||
+      "Untitled Listing";
+
+    // ✅ City mapping: form uses city_area, table uses city
+    const city =
+      (fields.city || "").trim() ||
+      (fields.city_area || "").trim();
+
+    // ✅ Property type mapping: form uses property_type, table uses property_type
+    const propertyType =
+      (fields.property_type || "").trim() ||
+      (fields.propertyType || "").trim();
+
+    // ✅ Build row that matches your confirmed Supabase columns
     const row = {
       id: listingId,
       status: "published",
-      title: fields.title || "Untitled Listing",
+
+      title: title,
       description: fields.description || "",
+
       price: toNumber(fields.price),
-      currency: fields.currency || "EUR",
-      property_type: fields.property_type || "",
-      country: fields.country || "",
-      city: fields.city || "",
-      address: fields.address || "",
+      currency: (fields.currency || "EUR").trim(),
+
+      property_type: propertyType,
+
+      country: (fields.country || "").trim(),
+      city: city,
+
+      address: (fields.address || "").trim(),
+
+      // table uses size_m2 (snake_case)
       size_m2: toNumber(fields.size_m2),
+
       bedrooms: toInt(fields.bedrooms),
       bathrooms: toInt(fields.bathrooms),
+
       features: featuresArr,
-      contact,
+      contact: contact,
       images: imageUrls
     };
+
+    // Remove undefined keys (keeps insert clean)
+    Object.keys(row).forEach((k) => {
+      if (row[k] === undefined) delete row[k];
+    });
 
     const { error: insErr } = await supabase.from("listings").insert(row);
     if (insErr) throw insErr;
 
-    return json(200, { ok: true, id: listingId, images: imageUrls });
+    return json(200, {
+      ok: true,
+      id: listingId,
+      url: `/properties/${encodeURIComponent(listingId)}`,
+      images: imageUrls
+    });
   } catch (e) {
     return json(500, { ok: false, error: e.message || String(e) });
   }
 };
-
