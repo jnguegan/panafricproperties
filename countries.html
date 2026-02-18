@@ -74,25 +74,6 @@
       </a>
     </div>
 
-    <div style="flex:1; min-width:220px;">
-      <label class="small" for="countrySelect" data-i18n="countries.country">Country</label>
-      <select class="input" id="countrySelect" disabled>
-        <option value="" data-i18n="countries.selectCountry">Select country…</option>
-      </select>
-    </div>
-
-    <div style="min-width:200px;">
-      <button class="btn green" id="viewBtn" disabled data-i18n="countries.viewBtn">
-        View opportunities
-      </button>
-    </div>
-  </div>
-
-  <div class="small" style="margin-top:10px; opacity:.75;" data-i18n="countries.hint">
-    Tip: this list includes all countries by continent — PanAfric can expand beyond Africa.
-  </div>
-</div>
-
     <!-- Global selector (Continent -> Country) -->
     <div class="card" style="margin-top:16px; padding:16px;">
       <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="countries.globalTitle">All countries (worldwide)</h2>
@@ -100,23 +81,24 @@
         Select a continent and country to browse listings in that market.
       </p>
 
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
-        <div style="flex:1; min-width:220px;">
+      <!-- ✅ width constrained inside card + wraps on mobile -->
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; max-width:920px;">
+        <div style="flex:1 1 260px; min-width:240px;">
           <label class="small" for="continentSelect" data-i18n="countries.continent">Continent</label>
           <select class="input" id="continentSelect">
             <option value="" data-i18n="countries.selectContinent">Select continent…</option>
           </select>
         </div>
 
-        <div style="flex:1; min-width:220px;">
-          <label class="small" for="countrySelect" data-i18n="countries.country">Country</label>
-          <select class="input" id="countrySelect" disabled>
+        <div style="flex:1 1 260px; min-width:240px;">
+          <label class="small" for="countrySelect2" data-i18n="countries.country">Country</label>
+          <select class="input" id="countrySelect2" disabled>
             <option value="" data-i18n="countries.selectCountry">Select country…</option>
           </select>
         </div>
 
-        <div style="min-width:200px;">
-          <button class="btn green" id="viewBtn" disabled data-i18n="countries.viewBtn">View opportunities</button>
+        <div style="flex:0 0 auto;">
+          <button class="btn green" id="viewBtn2" disabled data-i18n="countries.viewBtn">View opportunities</button>
         </div>
       </div>
 
@@ -169,19 +151,15 @@
   </div>
 </footer>
 
-<!-- ✅ Keep absolute script path -->
 <script src="/assets/js/i18n.js"></script>
-
-<!-- ✅ Add countries dataset -->
 <script src="/assets/js/countries.js"></script>
 
-<!-- ✅ Continent/Country dropdown logic -->
 <script>
   (function(){
     const data = window.PAP_COUNTRIES || {};
     const continentSelect = document.getElementById('continentSelect');
-    const countrySelect = document.getElementById('countrySelect');
-    const viewBtn = document.getElementById('viewBtn');
+    const countrySelect = document.getElementById('countrySelect2');
+    const viewBtn = document.getElementById('viewBtn2');
 
     function clearCountries(){
       countrySelect.innerHTML = '';
@@ -242,4 +220,3 @@
 
 </body>
 </html>
-
