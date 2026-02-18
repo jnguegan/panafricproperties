@@ -118,8 +118,30 @@
 
   <script>
     (function(){
-      const params = new URLSearchParams(location.search);
-      const id = params.get('id');
+      // ✅ Supabase public config (anon only; never use service role in browser)
+      const SUPABASE_URL = "https://ogyhfjdrqcupwesnjoly.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9neWhmamRycWN1cHdlc25qb2x5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMzk3MzcsImV4cCI6MjA4NjkxNTczN30.rMf9nGeN2DxjSjzUAC4agcXEnsliiZWnTMOoV6qMsAo";
+      const REST = `${SUPABASE_URL}/rest/v1/listings`;
+      const headers = {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+      };
+
+      function getId(){
+        // Supports:
+        // 1) Clean URL: /properties/<id>  (recommended)
+        // 2) Query: property.html?id=<id> (fallback)
+        const u = new URL(location.href);
+        const qid = u.searchParams.get('id');
+        if (qid) return qid;
+
+        const path = location.pathname || '';
+        const m = path.match(/\/properties\/([^\/?#]+)\/?$/);
+        if (m && m[1]) return decodeURIComponent(m[1]);
+        return '';
+      }
+
+      const id = getId();
 
       const errorState = document.getElementById('errorState');
       const content = document.getElementById('content');
@@ -147,22 +169,57 @@
         return `<li><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}</li>`;
       }
 
+      function parseImages(item){
+        // Supports images stored as array, JSON string array, or a single URL string
+        const v = item.images;
+        if (Array.isArray(v)) return v;
+        if (typeof v === 'string' && v.trim()){
+          try {
+            const arr = JSON.parse(v);
+            if (Array.isArray(arr)) return arr;
+          } catch(e){}
+          return [v];
+        }
+        return [];
+      }
+
+      function isAllowedStatus(st){
+        const s = String(st || '').toLowerCase().trim();
+        // Allow both "approved" and "published" (depending how your function writes status)
+        return (s === 'approved' || s === 'published' || s === 'live' || s === '');
+      }
+
       async function load(){
         try{
-          const res = await fetch('listings.json', { cache: 'no-store' });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          const data = await res.json();
-          const list = Array.isArray(data.listings) ? data.listings : [];
+          // Adjust select list to match your Supabase schema (safe to include extra columns)
+          const select = [
+            "id","title","listing_title",
+            "status","category",
+            "type","propertyType","property_type",
+            "country","city","price","currency",
+            "bedrooms","bathrooms","sizeM2","yearBuilt",
+            "description","features","images","cover_url",
+            "contact","contact_name","contact_email","contact_phone","contact_whatsapp",
+            "created_at"
+          ].join(',');
 
-          const item = list.find(x => String(x.id) === String(id) && String(x.status).toLowerCase() === 'approved');
-          if (!item){
+          const url = `${REST}?select=${encodeURIComponent(select)}&id=eq.${encodeURIComponent(id)}&limit=1`;
+
+          const res = await fetch(url, { headers });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+
+          const arr = await res.json();
+          const item = Array.isArray(arr) ? arr[0] : null;
+
+          if (!item || !isAllowedStatus(item.status)){
             errorState.style.display = 'block';
             content.style.display = 'none';
             return;
           }
 
           // Title + location + price
-          document.getElementById('title').textContent = item.title || '';
+          const title = item.title || item.listing_title || '';
+          document.getElementById('title').textContent = title;
           document.getElementById('location').textContent = [item.city, item.country].filter(Boolean).join(', ');
           document.getElementById('price').textContent = money(item.price, item.currency);
 
@@ -174,19 +231,20 @@
 
           // Gallery
           const gallery = document.getElementById('gallery');
-          const imgs = Array.isArray(item.images) ? item.images : [];
+          const imgs = parseImages(item);
           gallery.innerHTML = imgs.length
-            ? imgs.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(item.title || '')}" style="width:100%; height:220px; object-fit:cover; border-radius:14px; display:block;">`).join('')
+            ? imgs.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(title)}" style="width:100%; height:220px; object-fit:cover; border-radius:14px; display:block;">`).join('')
             : `<div class="small" data-i18n="property.noImages">No images available</div>`;
 
-          // Details list
+          // Details list (support multiple column names)
           const details = document.getElementById('detailsList');
+          const ptype = item.propertyType || item.property_type || item.type || '';
           details.innerHTML = [
             li('property.details.id', item.id),
-            li('property.details.type', item.propertyType),
+            li('property.details.type', ptype),
             li('property.details.category', item.category),
-            li('property.details.bedrooms', item.bedrooms),
-            li('property.details.bathrooms', item.bathrooms),
+            li('property.details.bedrooms', item.bedrooms ?? item.bedrooms),
+            li('property.details.bathrooms', item.bathrooms ?? item.bathrooms),
             li('property.details.size', item.sizeM2 ? `${item.sizeM2} m²` : ''),
             li('property.details.yearBuilt', item.yearBuilt),
             li('property.details.city', item.city),
@@ -196,11 +254,17 @@
           // Description + features
           document.getElementById('description').textContent = item.description || '';
           const features = document.getElementById('featuresList');
-          const feats = Array.isArray(item.features) ? item.features : [];
+          const feats = Array.isArray(item.features) ? item.features : (typeof item.features === 'string' && item.features.trim() ? item.features.split(',').map(s => s.trim()).filter(Boolean) : []);
           features.innerHTML = feats.length ? feats.map(f => `<li>${escapeHtml(f)}</li>`).join('') : `<li data-i18n="property.noFeatures">No features listed</li>`;
 
-          // Contact
-          const c = item.contact || {};
+          // Contact (supports contact JSON OR flat columns)
+          const c = item.contact || {
+            name: item.contact_name,
+            email: item.contact_email,
+            phone: item.contact_phone,
+            whatsapp: item.contact_whatsapp
+          } || {};
+
           const contactBox = document.getElementById('contactBox');
           contactBox.innerHTML = `
             <div><strong>${escapeHtml(c.name || 'PanAfric Properties')}</strong></div>
@@ -210,41 +274,46 @@
 
           const emailBtn = document.getElementById('emailBtn');
           emailBtn.href = c.email
-            ? `mailto:${encodeURIComponent(c.email)}?subject=${encodeURIComponent('Property enquiry: ' + (item.title || item.id))}`
+            ? `mailto:${encodeURIComponent(c.email)}?subject=${encodeURIComponent('Property enquiry: ' + (title || item.id))}`
             : '#';
           emailBtn.style.pointerEvents = c.email ? 'auto' : 'none';
           emailBtn.style.opacity = c.email ? '1' : '.5';
 
           const waBtn = document.getElementById('waBtn');
 
-// Prefer whatsapp, fallback to phone if whatsapp missing
-const waRaw = String(c.whatsapp || c.phone || '').trim();
+          // Prefer whatsapp, fallback to phone if whatsapp missing
+          const waRaw = String(c.whatsapp || c.phone || '').trim();
 
-// Keep only digits and + sign
-let wa = waRaw.replace(/[^\d+]/g, '');
+          // Keep only digits and + sign
+          let wa = waRaw.replace(/[^\d+]/g, '');
 
-// Remove ONLY the leading +
-const waDigits = wa.replace(/^\+/, '');
+          // Remove ONLY the leading +
+          const waDigits = wa.replace(/^\+/, '');
 
-waBtn.href = waDigits
-  ? `https://wa.me/${encodeURIComponent(waDigits)}?text=${encodeURIComponent('Hello, I am interested in: ' + (item.title || item.id))}`
-  : '#';
+          waBtn.href = waDigits
+            ? `https://wa.me/${encodeURIComponent(waDigits)}?text=${encodeURIComponent('Hello, I am interested in: ' + (title || item.id))}`
+            : '#';
 
-waBtn.style.pointerEvents = waDigits ? 'auto' : 'none';
-waBtn.style.opacity = waDigits ? '1' : '.5';
-
+          waBtn.style.pointerEvents = waDigits ? 'auto' : 'none';
+          waBtn.style.opacity = waDigits ? '1' : '.5';
 
           // Show content
           errorState.style.display = 'none';
           content.style.display = 'block';
 
-          // If your i18n needs re-apply after dynamic render, call it if it exists
-          if (typeof papReapplyI18n === 'function') {
-            papReapplyI18n();
-            setTimeout(papReapplyI18n, 0);
-          }
+          // Re-apply i18n after dynamic render
+          try {
+            if (typeof papReapplyI18n === 'function') {
+              papReapplyI18n();
+              setTimeout(papReapplyI18n, 0);
+            } else if (typeof papApplyI18n === 'function') {
+              papApplyI18n();
+              setTimeout(papApplyI18n, 0);
+            }
+          } catch(e){}
 
         } catch(e){
+          console.error(e);
           errorState.style.display = 'block';
           content.style.display = 'none';
         }
