@@ -48,7 +48,7 @@
 
     .papPriceBlock{ text-align:right; min-width:180px; }
     #price{ font-size: 1.25rem; font-weight: 800; }
-    #badge{ opacity: .9; margin-top: 4px; }
+    #badge{ opacity: .9; margin-top: 4px; font-weight: 700; }
 
     .papGrid{ margin-top:16px; display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     @media (max-width: 860px){
@@ -80,7 +80,7 @@
 
     #description{ white-space: pre-wrap; line-height: 1.55; }
 
-    /* Enquiry form polish */
+    /* Enquiry form */
     .papFormGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -90,6 +90,12 @@
       .papFormGrid{ grid-template-columns: 1fr; }
     }
     .papHoneypot{ display:none !important; }
+
+    /* Status callout */
+    .papStatusNote{
+      margin: 0 0 12px;
+      opacity: .9;
+    }
   </style>
 </head>
 
@@ -161,9 +167,23 @@
             <!-- ✅ PUBLIC CONTACT = PANAFRIC ONLY -->
             <div class="card" style="padding:18px;">
               <h3 class="papCardTitle" data-i18n="property.enquiryTitle">Contact PanAfric Properties</h3>
-              <p class="small" style="margin:0 0 12px; opacity:.85;" data-i18n="property.enquiryNote">
+
+              <!-- Status-driven note (sold/under offer) -->
+              <p class="small papStatusNote" id="statusNote" style="display:none;"></p>
+
+              <p class="small" id="enquiryIntro" style="margin:0 0 12px; opacity:.85;" data-i18n="property.enquiryNote">
                 Interested in this property? Send your enquiry here. Our team will contact you and connect you with the right partner.
               </p>
+
+              <div id="soldBox" class="card" style="padding:14px; display:none;">
+                <strong id="soldTitle">This property is sold.</strong>
+                <div class="small" style="margin-top:6px; opacity:.9;" id="soldText">
+                  You can request similar properties and our team will assist you.
+                </div>
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                  <a class="btn green" href="properties.html" id="soldBrowseBtn">Browse other properties</a>
+                </div>
+              </div>
 
               <form id="enquiryForm">
                 <!-- honeypot anti-spam -->
@@ -175,6 +195,7 @@
                 <input type="hidden" name="listing_id" id="enq_listing_id">
                 <input type="hidden" name="listing_title" id="enq_listing_title">
                 <input type="hidden" name="listing_url" id="enq_listing_url">
+                <input type="hidden" name="listing_status" id="enq_listing_status">
 
                 <div class="papFormGrid">
                   <div>
@@ -205,7 +226,7 @@
                 <div id="enqOk" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
                 <div id="enqErr" class="card" style="margin-top:12px; padding:14px; display:none;"></div>
 
-                <p class="small" style="margin-top:10px; opacity:.75;" data-i18n="property.enquiry.privacy">
+                <p class="small" style="margin-top:10px; opacity:.75;" data-i18n="property.enquiry.confirmLine">
                   Thank you for the enquiry. PanAfric Properties will contact you shortly.
                 </p>
               </form>
@@ -234,9 +255,12 @@
     <span id="lbl_yearBuilt" data-i18n="property.details.yearBuilt">Year built</span>
     <span id="lbl_city" data-i18n="property.details.city">City</span>
     <span id="lbl_country" data-i18n="property.details.country">Country</span>
+
+    <!-- optional future i18n keys (fallbacks are in JS) -->
+    <span id="lbl_status_sold" data-i18n="properties.badgeSold">Sold</span>
+    <span id="lbl_status_under_offer" data-i18n="properties.badgeUnderOffer">Under offer</span>
   </div>
 
-  <!-- ✅ absolute path so it works on /properties/<id> -->
   <script src="/assets/js/i18n.js"></script>
 
   <script>
@@ -350,18 +374,80 @@
         return [];
       }
 
-      function isAllowedStatus(st){
-        const s = String(st || '').toLowerCase().trim();
-        return (s === 'approved' || s === 'published' || s === 'live' || s === '');
+      function normalizeStatus(st){
+        return String(st || '').toLowerCase().trim();
       }
 
-      function setEnquiryContext(listingId, title){
+      // ✅ Visible statuses (so SOLD / UNDER OFFER still display)
+      function isAllowedStatus(st){
+        const s = normalizeStatus(st);
+        return (s === 'approved' || s === 'published' || s === 'live' || s === 'sold' || s === 'under_offer' || s === '');
+      }
+
+      function getStatusLabel(status){
+        const s = normalizeStatus(status);
+        if (s === 'sold') return (document.getElementById('lbl_status_sold')?.textContent || 'Sold');
+        if (s === 'under_offer') return (document.getElementById('lbl_status_under_offer')?.textContent || 'Under offer');
+        return '';
+      }
+
+      function setEnquiryContext(listingId, title, status){
         const elId = document.getElementById('enq_listing_id');
         const elTitle = document.getElementById('enq_listing_title');
         const elUrl = document.getElementById('enq_listing_url');
+        const elStatus = document.getElementById('enq_listing_status');
         if (elId) elId.value = listingId || '';
         if (elTitle) elTitle.value = title || '';
         if (elUrl) elUrl.value = location.href;
+        if (elStatus) elStatus.value = status || '';
+      }
+
+      function applyStatusUI(item){
+        const s = normalizeStatus(item.status);
+        const statusLabel = getStatusLabel(s);
+
+        // Badge: if sold/under_offer show status label, otherwise show rent/sale label
+        const badge = document.getElementById('badge');
+        if (badge){
+          if (s === 'sold' || s === 'under_offer'){
+            badge.textContent = statusLabel;
+          } else {
+            const cat = String(item.category || '').toLowerCase();
+            const badgeLabel = cat === 'rent'
+              ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
+              : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
+            badge.textContent = badgeLabel;
+          }
+        }
+
+        // Status note + form behavior
+        const statusNote = document.getElementById('statusNote');
+        const enquiryForm = document.getElementById('enquiryForm');
+        const soldBox = document.getElementById('soldBox');
+        const enquiryIntro = document.getElementById('enquiryIntro');
+
+        if (s === 'sold') {
+          if (statusNote){
+            statusNote.style.display = 'block';
+            statusNote.textContent = (statusLabel ? `${statusLabel}. ` : '') + 'This property is no longer available.';
+          }
+          if (soldBox) soldBox.style.display = 'block';
+          if (enquiryIntro) enquiryIntro.style.display = 'none';
+          if (enquiryForm) enquiryForm.style.display = 'none';
+        } else if (s === 'under_offer') {
+          if (statusNote){
+            statusNote.style.display = 'block';
+            statusNote.textContent = (statusLabel ? `${statusLabel}. ` : '') + 'You may still send an enquiry in case it becomes available.';
+          }
+          if (soldBox) soldBox.style.display = 'none';
+          if (enquiryIntro) enquiryIntro.style.display = 'block';
+          if (enquiryForm) enquiryForm.style.display = 'block';
+        } else {
+          if (statusNote) statusNote.style.display = 'none';
+          if (soldBox) soldBox.style.display = 'none';
+          if (enquiryIntro) enquiryIntro.style.display = 'block';
+          if (enquiryForm) enquiryForm.style.display = 'block';
+        }
       }
 
       async function load(){
@@ -406,12 +492,6 @@
         document.getElementById('location').textContent = [item.city, item.country].filter(Boolean).join(', ');
         document.getElementById('price').textContent = money(item.price, item.currency);
 
-        const badge = (item.category || '').toLowerCase();
-        const badgeLabel = badge === 'rent'
-          ? (document.querySelector('[data-i18n="properties.badgeRent"]')?.textContent || 'For rent')
-          : (document.querySelector('[data-i18n="properties.badgeSale"]')?.textContent || 'For sale');
-        document.getElementById('badge').textContent = badgeLabel;
-
         const gallery = document.getElementById('gallery');
         const imgs = parseImages(item);
         gallery.innerHTML = imgs.length
@@ -448,8 +528,11 @@
           ? feats.map(f => `<li>${escapeHtml(f)}</li>`).join('')
           : `<li data-i18n="property.noFeatures">No features listed</li>`;
 
-        // ✅ Set enquiry hidden fields (so you know which listing the buyer asked about)
-        setEnquiryContext(item.id, title);
+        // ✅ store listing context + status in enquiry payload
+        setEnquiryContext(item.id, title, normalizeStatus(item.status));
+
+        // ✅ apply SOLD / UNDER OFFER behaviors
+        applyStatusUI(item);
 
         errorState.style.display = 'none';
         content.style.display = 'block';
@@ -514,10 +597,13 @@
             listing_id: (document.getElementById('enq_listing_id')?.value || '').trim(),
             listing_title: (document.getElementById('enq_listing_title')?.value || '').trim(),
             listing_url: (document.getElementById('enq_listing_url')?.value || '').trim(),
+            listing_status: (document.getElementById('enq_listing_status')?.value || '').trim(),
+
             buyer_name: (form.querySelector('[name="buyer_name"]')?.value || '').trim(),
             buyer_email: (form.querySelector('[name="buyer_email"]')?.value || '').trim(),
             buyer_phone: (form.querySelector('[name="buyer_phone"]')?.value || '').trim(),
             message: (form.querySelector('[name="message"]')?.value || '').trim(),
+
             lang: (localStorage.getItem('pap_lang') || localStorage.getItem('lang') || 'en').toLowerCase(),
             page: location.pathname
           };
@@ -533,9 +619,10 @@
             throw new Error(data.error || `Enquiry failed (${res.status})`);
           }
 
-          // Keep listing hidden fields; reset user inputs only
           form.reset();
-          showOk('<strong>Enquiry sent ✅</strong><br><span class="small">PanAfric Properties will contact you shortly.</span>');
+
+          // ✅ Your preferred premium message
+          showOk('<strong>Thank you for the enquiry.</strong><br><span class="small">PanAfric Properties will contact you shortly.</span>');
 
           try {
             if (typeof papReapplyI18n === 'function') { papReapplyI18n(); setTimeout(papReapplyI18n, 0); }
