@@ -65,18 +65,22 @@ exports.handler = async (event) => {
       auth: { persistSession: false }
     });
 
-    const row = {
-      listing_id,
-      listing_title,
-      listing_url,
-      buyer_name,
-      buyer_email,
-      buyer_phone,
-      message,
-      lang,
-      page,
-      status: "new"
-    };
+   const listing_status = String(body.listing_status || "").trim();
+
+const row = {
+  listing_id,
+  listing_title,
+  listing_url,
+  listing_status,
+  buyer_name,
+  buyer_email,
+  buyer_phone,
+  message,
+  lang,
+  page,
+  status: "new"
+};
+
 
     const { data, error } = await supabase
       .from("enquiries")
