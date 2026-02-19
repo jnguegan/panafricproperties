@@ -685,6 +685,15 @@
       "projects.form.countrySelect": "Select country…",
       "projects.cta.view": "View opportunities",
       "projects.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa."
+      // EN
+"countries.globalTitle": "All countries (worldwide)",
+"countries.globalIntro": "Select a continent and country to browse listings in that market.",
+"countries.continent": "Continent",
+"countries.selectContinent": "Select continent…",
+"countries.country": "Country",
+"countries.selectCountry": "Select country…",
+"countries.cta.view": "View opportunities",
+"countries.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa.",
 
 
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
@@ -1498,7 +1507,16 @@
 "projects.form.countrySelect": "Sélectionner un pays…",
 "projects.cta.view": "Voir les opportunités",
 "projects.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique.",
-     
+"countries.globalTitle": "Tous les pays (monde entier)",
+"countries.globalIntro": "Sélectionnez un continent et un pays pour parcourir les annonces de ce marché.",
+"countries.continent": "Continent",
+"countries.selectContinent": "Sélectionner un continent…",
+"countries.country": "Pays",
+"countries.selectCountry": "Sélectionner un pays…",
+"countries.cta.view": "Voir les opportunités",
+"countries.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique.",
+
+
 
        
       // ✅ Keep your existing FR “academy / modules / sponsor / submit / etc.” keys here.
@@ -2340,6 +2358,14 @@
 "projects.form.countrySelect": "Seleccionar país…",
 "projects.cta.view": "Ver oportunidades",
 "projects.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África.",
+"countries.globalTitle": "Todos los países (en todo el mundo)",
+"countries.globalIntro": "Selecciona un continente y un país para ver anuncios en ese mercado.",
+"countries.continent": "Continente",
+"countries.selectContinent": "Seleccionar continente…",
+"countries.country": "País",
+"countries.selectCountry": "Seleccionar país…",
+"countries.cta.view": "Ver oportunidades",
+"countries.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África.",
 
       
       
