@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title data-i18n="projects.pageTitle">Projects — PanAfric Properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="/brand/primary_logo.png" alt="PanAfric Properties" height="42">
+      </a>
+
+      <nav class="navlinks">
+        <a href="countries.html" data-i18n="nav.countries">Countries</a>
+        <a href="properties.html" data-i18n="nav.properties">Properties</a>
+        <a href="projects.html" data-i18n="nav.projects">Projects</a>
+        <a href="agents.html" data-i18n="nav.agents">Agents</a>
+        <a href="franchise.html" data-i18n="nav.franchise">Work With Us</a>
+        <a href="training.html" data-i18n="nav.training">Training & Certification</a>
+        <a href="trust.html" data-i18n="nav.trust">Trust</a>
+        <a href="login.html" data-i18n="nav.login">Partner Login</a>
+
+        <!-- 🌍 Language Dropdown (keep as-is) -->
+        <div class="lang-switch">
+          <span class="lang-label" data-i18n="lang.label">Language</span>
+          <select class="lang-select" aria-label="Language" onchange="papSetLang(this.value)">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <a href="contact.html" class="btn" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <!-- HERO -->
+    <div class="card" style="padding:18px;">
+      <div class="small" style="opacity:.8;" data-i18n="projects.hero.badge">PanAfric Developments • Pre-sale • Growth</div>
+      <h1 style="color:var(--pap-blue); margin:8px 0 10px;" data-i18n="projects.hero.h1">PanAfric Real Estate Projects</h1>
+
+      <p class="small" style="max-width:920px; margin:0 0 14px; opacity:.9;" data-i18n="projects.hero.p">
+        We originate and execute real estate developments designed for disciplined growth — combining structured governance,
+        pre-sales, and clear exit strategy.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;">
+        <a class="btn" href="#active" data-i18n="projects.hero.cta1">View Active Developments</a>
+        <a class="btn green" href="#partner" data-i18n="projects.hero.cta2">Partner With PanAfric</a>
+      </div>
+
+      <div class="small" style="margin-top:12px; opacity:.75;" data-i18n="projects.hero.note">
+        Projects are PanAfric-led developments (not third-party listings). Developers can still list “Development” under Properties.
+      </div>
+    </div>
+
+    <!-- MODEL -->
+    <div class="grid" style="margin-top:14px;">
+      <div class="card">
+        <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="projects.model.h2">Our Development Model</h2>
+        <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.model.p">
+          A repeatable, governance-led cycle designed to reduce risk and accelerate value creation.
+        </p>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s1.t">1) Acquire</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s1.p">Secure land or assets with clear legal position and market demand.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s2.t">2) Structure</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s2.p">SPV setup, governance, controls, budget, and delivery plan.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s3.t">3) Pre-Sell</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s3.p">Launch pre-sales to validate demand and support project funding.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s4.t">4) Build</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s4.p">Controlled delivery with milestones, reporting, and quality gates.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s5.t">5) Exit</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s5.p">Defined completion + sales strategy with transparent close-out.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.model.s6.t">6) Recycle</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.model.s6.p">Reinvest into the next high-conviction development cycle.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOVERNANCE / TRUST -->
+      <div class="card">
+        <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="projects.gov.h2">Governance & Transparency</h2>
+        <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.gov.p">
+          Growth is only credible when governance is visible. We design projects with clear controls, documentation, and reporting.
+        </p>
+
+        <ul class="list">
+          <li data-i18n="projects.gov.li1">SPV-led structure with defined roles and decision rights</li>
+          <li data-i18n="projects.gov.li2">Milestone-based delivery plan and budget discipline</li>
+          <li data-i18n="projects.gov.li3">Pre-sales framework and buyer protection steps</li>
+          <li data-i18n="projects.gov.li4">Risk flags: title, permits, contractor performance, cost overruns</li>
+          <li data-i18n="projects.gov.li5">Periodic updates to partners (progress, photos, milestones)</li>
+        </ul>
+
+        <div style="margin-top:10px;">
+          <a class="btn" href="trust.html" data-i18n="projects.gov.cta">How we build trust</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVE DEVELOPMENTS -->
+    <div class="card" id="active" style="margin-top:14px; padding:16px;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; justify-content:space-between;">
+        <div>
+          <h2 style="margin:0 0 6px; color:var(--pap-blue);" data-i18n="projects.active.h2">Active Developments</h2>
+          <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.active.p">
+            These are PanAfric-led development projects. Details pages can be launched one-by-one as projects go live.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <input class="input" id="projectSearch"
+                 style="min-width:240px;"
+                 placeholder="Search by city, country, or keyword"
+                 data-i18n-placeholder="projects.searchPlaceholder" />
+          <select class="input" id="projectStatus">
+            <option value="" data-i18n="projects.filterAll">All statuses</option>
+            <option value="presale" data-i18n="projects.filterPreSale">Pre-sale</option>
+            <option value="planning" data-i18n="projects.filterPlanning">Planning</option>
+            <option value="build" data-i18n="projects.filterBuild">Under construction</option>
+            <option value="complete" data-i18n="projects.filterComplete">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cards container (filled by projects.js or kept static) -->
+      <div class="grid" id="projectsGrid" style="margin-top:12px;">
+        <!-- SAMPLE CARD 1 -->
+        <a class="card" href="project-detail.html?id=pap-dev-001" style="text-decoration:none;">
+          <div class="small" style="opacity:.75;" data-i18n="projects.card.badge.presale">Pre-sale open</div>
+          <h3 style="margin:6px 0 6px;" data-i18n="projects.sample1.title">PanAfric Residences — Phase 1</h3>
+          <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.sample1.desc">Mixed-use residential • High-demand corridor • Structured milestone delivery</p>
+          <div class="small" style="opacity:.85;" data-i18n="projects.sample1.meta"><b>Location:</b> City • Country • <b>Reserved:</b> 32%</div>
+          <div style="margin-top:10px;">
+            <span class="btn" data-i18n="projects.card.cta">View project</span>
+          </div>
+        </a>
+
+        <!-- SAMPLE CARD 2 -->
+        <a class="card" href="project-detail.html?id=pap-dev-002" style="text-decoration:none;">
+          <div class="small" style="opacity:.75;" data-i18n="projects.card.badge.planning">Planning</div>
+          <h3 style="margin:6px 0 6px;" data-i18n="projects.sample2.title">PanAfric Terraces</h3>
+          <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.sample2.desc">Family homes • Infrastructure-first • Clear title and permits path</p>
+          <div class="small" style="opacity:.85;" data-i18n="projects.sample2.meta"><b>Location:</b> City • Country • <b>Launch:</b> Soon</div>
+          <div style="margin-top:10px;">
+            <span class="btn" data-i18n="projects.card.cta">View project</span>
+          </div>
+        </a>
+
+        <!-- SAMPLE CARD 3 -->
+        <a class="card" href="project-detail.html?id=pap-dev-003" style="text-decoration:none;">
+          <div class="small" style="opacity:.75;" data-i18n="projects.card.badge.build">Under construction</div>
+          <h3 style="margin:6px 0 6px;" data-i18n="projects.sample3.title">PanAfric City Apartments</h3>
+          <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.sample3.desc">Urban apartments • Rental-demand zone • Controlled delivery milestones</p>
+          <div class="small" style="opacity:.85;" data-i18n="projects.sample3.meta"><b>Location:</b> City • Country • <b>Delivery:</b> Q4</div>
+          <div style="margin-top:10px;">
+            <span class="btn" data-i18n="projects.card.cta">View project</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="small" id="projectsEmpty" style="display:none; margin-top:12px; opacity:.8;" data-i18n="projects.empty">
+        No projects found for your filters.
+      </div>
+    </div>
+
+    <!-- PARTNER (Capital + Developers) -->
+    <div class="grid" id="partner" style="margin-top:14px;">
+      <div class="card">
+        <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="projects.partner.h2">Partner With PanAfric</h2>
+        <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.partner.p">
+          We welcome aligned capital partners and strategic operators. Partnerships are structured per-project with defined governance and exit intent.
+        </p>
+
+        <ul class="list">
+          <li data-i18n="projects.partner.li1">Capital partners seeking structured project exposure</li>
+          <li data-i18n="projects.partner.li2">Landowners with suitable sites and clean documentation</li>
+          <li data-i18n="projects.partner.li3">Contractors with proven delivery track record</li>
+          <li data-i18n="projects.partner.li4">Diaspora communities organising group pre-sales</li>
+        </ul>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a class="btn green" href="contact.html" data-i18n="projects.partner.cta1">Start a partnership conversation</a>
+          <a class="btn" href="properties.html" data-i18n="projects.partner.cta2">Browse properties instead</a>
+        </div>
+
+        <div class="small" style="margin-top:12px; opacity:.75;" data-i18n="projects.partner.note">
+          Note: This page is for PanAfric-led projects. Third-party developers should list under Properties → Type: Development.
+        </div>
+      </div>
+
+      <!-- PRE-SALES -->
+      <div class="card">
+        <h2 style="margin:0 0 8px; color:var(--pap-blue);" data-i18n="projects.presales.h2">Pre-Sales (Growth Engine)</h2>
+        <p class="small" style="margin:0 0 10px; opacity:.85;" data-i18n="projects.presales.p">
+          Pre-sales validate demand early, reduce funding pressure, and accelerate delivery timelines — when executed with transparent buyer protection steps.
+        </p>
+
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.presales.c1.t">Clear pricing</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.presales.c1.p">Pre-sale terms + milestone schedule + documented scope.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.presales.c2.t">Milestone payments</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.presales.c2.p">Payments aligned to deliverables and verified progress.</p>
+          </div>
+          <div class="card" style="background:rgba(0,0,0,.02);">
+            <h3 style="margin:0 0 6px;" data-i18n="projects.presales.c3.t">Progress updates</h3>
+            <p class="small" style="margin:0; opacity:.85;" data-i18n="projects.presales.c3.p">Photo evidence + timeline tracking + escalation path.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <a class="btn" href="contact.html" data-i18n="projects.presales.cta">Request pre-sale information</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="/brand/icon.png" alt="PanAfric Properties" height="34">
+        <p class="small" style="margin:10px 0 0;" data-i18n="footer.tagline">
+          Trusted access to verified African real estate opportunities — built for the diaspora.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform.h3">Platform</h3>
+        <p><a href="countries.html" data-i18n="footer.platform.countries">Countries</a></p>
+        <p><a href="properties.html" data-i18n="footer.platform.properties">Properties</a></p>
+        <p><a href="trust.html" data-i18n="footer.platform.trust">Trust & Verification</a></p>
+        <p><a href="login.html" data-i18n="footer.platform.login">Partner Login</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.work.h3">Work With Us</h3>
+        <p class="small" data-i18n="footer.work.p">Launch your own real estate business with training, certification, and diaspora buyer access.</p>
+        <p><a href="franchise.html" data-i18n="footer.work.apply">Apply to Join</a></p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact.h3">Contact</h3>
+        <p class="small" data-i18n="footer.contact.p">For buyers, developers, and partners.</p>
+        <p><a href="contact.html" data-i18n="footer.contact.link">Message us</a></p>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:18px;" data-i18n="footer.copyright">
+      © 2026 PanAfric Properties. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script src="/assets/js/i18n.js"></script>
+
+<!-- Optional: if you want simple client-side filtering on this page -->
+<script>
+  (function(){
+    const q = document.getElementById('projectSearch');
+    const status = document.getElementById('projectStatus');
+    const grid = document.getElementById('projectsGrid');
+    const empty = document.getElementById('projectsEmpty');
+
+    function norm(s){ return String(s||'').toLowerCase().trim(); }
+
+    function filter(){
+      const term = norm(q && q.value);
+      const st = norm(status && status.value);
+
+      const cards = Array.from(grid ? grid.querySelectorAll('a.card') : []);
+      let shown = 0;
+
+      cards.forEach(card => {
+        const text = norm(card.textContent);
+        const badge = norm((card.querySelector('.small') || {}).textContent);
+        const matchesTerm = !term || text.includes(term);
+        const matchesStatus =
+          !st ||
+          (st === 'presale' && badge.includes('pre')) ||
+          (st === 'planning' && badge.includes('planning')) ||
+          (st === 'build' && (badge.includes('construction') || badge.includes('build'))) ||
+          (st === 'complete' && badge.includes('complete'));
+
+        const ok = matchesTerm && matchesStatus;
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      if (empty) empty.style.display = shown ? 'none' : '';
+    }
+
+    if (q) q.addEventListener('input', filter);
+    if (status) status.addEventListener('change', filter);
+
+    // initial
+    filter();
+  })();
+</script>
+
+</body>
+</html>
