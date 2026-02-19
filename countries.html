@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Countries — PanAfric Properties</title>
+  <title data-i18n="countries.pageTitle">Countries — PanAfric Properties</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -23,7 +23,7 @@
         <a href="countries.html" data-i18n="nav.countries">Countries</a>
         <a href="properties.html" data-i18n="nav.properties">Properties</a>
         <a href="agents.html" data-i18n="nav.agents">Agents</a>
-        <a href="franchise.html" data-i18n="nav.work">Work With Us</a>
+        <a href="franchise.html" data-i18n="nav.franchise">Work With Us</a>
         <a href="training.html" data-i18n="nav.training">Training & Certification</a>
         <a href="trust.html" data-i18n="nav.trust">Trust</a>
         <a href="login.html" data-i18n="nav.login">Partner Login</a>
@@ -98,11 +98,11 @@
         </div>
 
         <div style="flex:0 0 auto;">
-          <button class="btn green" id="viewBtn2" disabled data-i18n="countries.viewBtn">View opportunities</button>
+          <button class="btn green" id="viewBtn2" disabled data-i18n="countries.cta.view">View opportunities</button>
         </div>
       </div>
 
-      <div class="small" style="margin-top:10px; opacity:.75;" data-i18n="countries.hint">
+      <div class="small" style="margin-top:10px; opacity:.75;" data-i18n="countries.tip">
         Tip: this list includes all countries by continent — PanAfric can expand beyond Africa.
       </div>
     </div>
@@ -125,27 +125,27 @@
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform">Platform</h3>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.platform.h3">Platform</h3>
         <p><a href="countries.html" data-i18n="nav.countries">Countries</a></p>
         <p><a href="properties.html" data-i18n="nav.properties">Properties</a></p>
-        <p><a href="trust.html" data-i18n="footer.trust">Trust & Verification</a></p>
-        <p><a href="login.html" data-i18n="nav.login">Partner Login</a></p>
+        <p><a href="trust.html" data-i18n="footer.platform.trust">Trust & Verification</a></p>
+        <p><a href="login.html" data-i18n="footer.platform.login">Partner Login</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.franchise">Franchise</h3>
-        <p class="small" data-i18n="footer.franchise_text">Become a local partner and list verified opportunities in your territory.</p>
-        <p><a href="contact.html" data-i18n="footer.apply">Apply / Enquire</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.work.h3">Work With Us</h3>
+        <p class="small" data-i18n="index.footer.franchise.p">Become a local partner and list verified opportunities in your territory.</p>
+        <p><a href="contact.html" data-i18n="index.footer.franchise.link">Apply / Enquire</a></p>
       </div>
 
       <div>
-        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact">Contact</h3>
-        <p class="small" data-i18n="footer.contact_text">For buyers, developers, and partners.</p>
-        <p><a href="contact.html" data-i18n="footer.message">Message us</a></p>
+        <h3 style="margin:0 0 8px;color:var(--pap-blue);" data-i18n="footer.contact.h3">Contact</h3>
+        <p class="small" data-i18n="footer.contact.p">For buyers, developers, and partners.</p>
+        <p><a href="contact.html" data-i18n="footer.contact.link">Message us</a></p>
       </div>
     </div>
 
-    <p class="small" style="margin-top:18px;" data-i18n="footer.rights">
+    <p class="small" style="margin-top:18px;" data-i18n="footer.copyright">
       © 2026 PanAfric Properties. All rights reserved.
     </p>
   </div>
@@ -161,11 +161,22 @@
     const countrySelect = document.getElementById('countrySelect2');
     const viewBtn = document.getElementById('viewBtn2');
 
+    const getText = (key, fallback) => {
+      try {
+        if (window.papT) {
+          const v = window.papT(key);
+          if (v && String(v).trim().length) return v;
+        }
+      } catch(e){}
+      return fallback;
+    };
+
     function clearCountries(){
       countrySelect.innerHTML = '';
       const opt0 = document.createElement('option');
       opt0.value = '';
-      opt0.textContent = 'Select country…';
+      opt0.textContent = getText('countries.selectCountry', 'Select country…');
+      opt0.setAttribute('data-i18n', 'countries.selectCountry');
       countrySelect.appendChild(opt0);
       countrySelect.disabled = true;
       viewBtn.disabled = true;
@@ -177,7 +188,8 @@
 
       const opt0 = document.createElement('option');
       opt0.value = '';
-      opt0.textContent = 'Select country…';
+      opt0.textContent = getText('countries.selectCountry', 'Select country…');
+      opt0.setAttribute('data-i18n', 'countries.selectCountry');
       countrySelect.appendChild(opt0);
 
       list.forEach(c => {
@@ -194,7 +206,7 @@
     Object.keys(data).forEach(cont => {
       const opt = document.createElement('option');
       opt.value = cont;
-      opt.textContent = cont;
+      opt.textContent = cont; // continent names are proper nouns; keep as-is
       continentSelect.appendChild(opt);
     });
 
@@ -213,6 +225,22 @@
       if (!country) return;
       location.href = `properties.html?country=${encodeURIComponent(country)}`;
     });
+
+    // Re-apply translations to dynamic option labels when language changes
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'pap_lang' || e.key === 'lang') {
+        // reset placeholder option text for current language
+        const first = countrySelect.querySelector('option[value=""]');
+        if (first) first.textContent = getText('countries.selectCountry', 'Select country…');
+
+        const firstC = continentSelect.querySelector('option[value=""]');
+        if (firstC) firstC.textContent = getText('countries.selectContinent', 'Select continent…');
+      }
+    });
+
+    // Set initial placeholder in current language (after i18n loads)
+    const initCont0 = continentSelect.querySelector('option[value=""]');
+    if (initCont0) initCont0.textContent = getText('countries.selectContinent', 'Select continent…');
 
     clearCountries();
   })();
