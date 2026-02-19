@@ -677,24 +677,6 @@
       "module_fail_msg": "❌ Not yet. You have {correct}/{total}. Please review and try again.",
       "module_quick_test_title": "Quick test",
       "module_quick_test_help": "Answer all questions correctly to complete this module.",
-       "projects.allCountries.title": "All countries (worldwide)",
-      "projects.allCountries.intro": "Select a continent and country to browse listings in that market.",  
-      "projects.form.continent": "Continent",
-      "projects.form.continentSelect": "Select continent…",
-      "projects.form.country": "Country",
-      "projects.form.countrySelect": "Select country…",
-      "projects.cta.view": "View opportunities",
-      "projects.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa."
-      // EN
-"countries.globalTitle": "All countries (worldwide)",
-"countries.globalIntro": "Select a continent and country to browse listings in that market.",
-"countries.continent": "Continent",
-"countries.selectContinent": "Select continent…",
-"countries.country": "Country",
-"countries.selectCountry": "Select country…",
-"countries.cta.view": "View opportunities",
-"countries.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa."
-
 
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
       // Keeping them as-is from your 2-days file avoids breaking anything.)
@@ -1498,25 +1480,7 @@
 "submit.consent": "Je confirme avoir le droit de soumettre ce bien et que les informations sont exactes.",
 "submit.cta.submit": "Soumettre pour validation",
 "submit.cta.cancel": "Annuler",
-"submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires.",
-  "projects.allCountries.title": "Tous les pays (monde entier)",
-"projects.allCountries.intro": "Sélectionnez un continent et un pays pour parcourir les annonces de ce marché.",
-"projects.form.continent": "Continent",
-"projects.form.continentSelect": "Sélectionner un continent…",
-"projects.form.country": "Pays",
-"projects.form.countrySelect": "Sélectionner un pays…",
-"projects.cta.view": "Voir les opportunités",
-"projects.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique.",
-"countries.globalTitle": "Tous les pays (monde entier)",
-"countries.globalIntro": "Sélectionnez un continent et un pays pour parcourir les annonces de ce marché.",
-"countries.continent": "Continent",
-"countries.selectContinent": "Sélectionner un continent…",
-"countries.country": "Pays",
-"countries.selectCountry": "Sélectionner un pays…",
-"countries.cta.view": "Voir les opportunités",
-"countries.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique."
-
-
+"submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires."
 
        
       // ✅ Keep your existing FR “academy / modules / sponsor / submit / etc.” keys here.
@@ -2349,23 +2313,7 @@
 "submit.consent": "Confirmo que tengo derecho a enviar esta propiedad y que la información es correcta.",
 "submit.cta.submit": "Enviar para revisión",
 "submit.cta.cancel": "Cancelar",
-"submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones.",
-"projects.allCountries.title": "Todos los países (en todo el mundo)",
-"projects.allCountries.intro": "Selecciona un continente y un país para ver anuncios en ese mercado.",
-"projects.form.continent": "Continente",
-"projects.form.continentSelect": "Seleccionar continente…",
-"projects.form.country": "País",
-"projects.form.countrySelect": "Seleccionar país…",
-"projects.cta.view": "Ver oportunidades",
-"projects.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África.",
-"countries.globalTitle": "Todos los países (en todo el mundo)",
-"countries.globalIntro": "Selecciona un continente y un país para ver anuncios en ese mercado.",
-"countries.continent": "Continente",
-"countries.selectContinent": "Seleccionar continente…",
-"countries.country": "País",
-"countries.selectCountry": "Seleccionar país…",
-"countries.cta.view": "Ver oportunidades",
-"countries.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África."
+"submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones."
 
       
       
