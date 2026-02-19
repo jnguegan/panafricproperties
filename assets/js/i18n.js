@@ -287,6 +287,46 @@
       "property.details.yearBuilt": "Année de construction",
       "property.details.city": "Ville",
       "property.details.country": "Pays"
+      "index.hero.badge": "Diaspora d’abord • Confiance d’abord",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": "Votre passerelle de confiance vers l’immobilier africain — connectant les Africains du monde entier à des opportunités vérifiées dans leur pays d’origine via un réseau local de franchise encadré.",
+"index.hero.cta1": "Explorer les biens",
+"index.hero.cta2": "Parler à un agent local",
+
+"index.kpi1.t": "Marchés en lancement",
+"index.kpi2.t": "Types d’annonces",
+"index.kpi2.v": "Terrains • Maisons • Projets",
+"index.kpi3.t": "Modèle",
+"index.kpi3.v": "Réseau de franchise",
+
+"index.how.h2": "Comment ça marche",
+"index.how.card1.h3": "1) Parcourir des opportunités vérifiées",
+"index.how.card1.p": "Explorez des terrains, maisons et projets listés par des partenaires franchisés agréés dans chaque territoire.",
+"index.how.card2.h3": "2) Être mis en relation avec un agent local",
+"index.how.card2.p": "Votre demande est orientée vers le bon professionnel sur place pour vous guider et vous protéger.",
+"index.how.card3.h3": "3) Acheter avec clarté & accompagnement",
+"index.how.card3.p": "Nous mettons en avant le niveau de diligence et fournissons des étapes transparentes pour finaliser en sécurité.",
+
+"index.countries.h2": "Explorer les pays",
+"index.countries.p": "Choisissez un marché pour voir des opportunités vérifiées et des partenaires franchisés locaux.",
+"index.countries.cta1": "Voir les pays",
+"index.countries.cta2": "Voir les annonces",
+
+"index.country.ghana": "Ghana",
+"index.country.nigeria": "Nigeria",
+"index.country.cameroon": "Cameroun",
+"index.country.senegal": "Sénégal",
+"index.country.ivory": "Côte d’Ivoire",
+"index.country.mali": "Mali",
+"index.country.zimbabwe": "Zimbabwe",
+
+"index.franchise.h2": "Devenir partenaire franchisé",
+"index.franchise.p": "Lancez votre activité immobilière avec formation, certification et accès à des acheteurs de la diaspora via notre plateforme.",
+"index.franchise.cta": "Travailler avec nous",
+
+"index.footer.franchise.p": "Devenez partenaire local et listez des opportunités vérifiées dans votre territoire.",
+"index.footer.franchise.link": "Candidater / Demander des informations"
+
     },
 
     es: {
@@ -352,6 +392,46 @@
       "property.details.yearBuilt": "Año de construcción",
       "property.details.city": "Ciudad",
       "property.details.country": "País"
+  "index.hero.badge": "Primero la diáspora • Primero la confianza",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": "Tu puerta de entrada de confianza al mercado inmobiliario africano — conectando a africanos en todo el mundo con oportunidades verificadas en su país de origen mediante una red local de franquicias regulada.",
+"index.hero.cta1": "Explorar propiedades",
+"index.hero.cta2": "Hablar con un agente local",
+
+"index.kpi1.t": "Mercados en lanzamiento",
+"index.kpi2.t": "Tipos de anuncios",
+"index.kpi2.v": "Terrenos • Viviendas • Proyectos",
+"index.kpi3.t": "Modelo",
+"index.kpi3.v": "Red de franquicias",
+
+"index.how.h2": "Cómo funciona",
+"index.how.card1.h3": "1) Explora oportunidades verificadas",
+"index.how.card1.p": "Explora terrenos, viviendas y proyectos publicados por socios franquiciados autorizados en cada territorio.",
+"index.how.card2.h3": "2) Te conectamos con un agente local",
+"index.how.card2.p": "Tu consulta se dirige al profesional adecuado en el terreno para guiarte y protegerte.",
+"index.how.card3.h3": "3) Compra con claridad y apoyo",
+"index.how.card3.p": "Destacamos el estado de la debida diligencia y proporcionamos pasos transparentes para completar de forma segura.",
+
+"index.countries.h2": "Explorar países",
+"index.countries.p": "Elige un mercado para ver oportunidades verificadas y socios franquiciados locales.",
+"index.countries.cta1": "Ver países",
+"index.countries.cta2": "Ver anuncios",
+
+"index.country.ghana": "Ghana",
+"index.country.nigeria": "Nigeria",
+"index.country.cameroon": "Camerún",
+"index.country.senegal": "Senegal",
+"index.country.ivory": "Costa de Marfil",
+"index.country.mali": "Malí",
+"index.country.zimbabwe": "Zimbabue",
+
+"index.franchise.h2": "Conviértete en socio franquiciado",
+"index.franchise.p": "Lanza tu negocio inmobiliario con formación, certificación y acceso a compradores de la diáspora a través de nuestra plataforma.",
+"index.franchise.cta": "Trabaja con nosotros",
+
+"index.footer.franchise.p": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
+"index.footer.franchise.link": "Solicitar / Consultar"
+
     }
   };
 
