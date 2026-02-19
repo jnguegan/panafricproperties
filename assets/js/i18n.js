@@ -1490,7 +1490,7 @@
     // =========================
     // SPANISH
     // =========================
-    es: {
+ es: {
       "lang_label": "Idioma",
       "lang.label": "Idioma",
 
@@ -1548,11 +1548,772 @@
       "property.details.size": "Superficie",
       "property.details.yearBuilt": "Año de construcción",
       "property.details.city": "Ciudad",
-      "property.details.country": "País"
-      "nav.countries": "Países", "nav.properties": "Propiedades", "nav.agents": "Agentes", "nav.franchise": "Trabaja con nosotros", "nav.training": "Formación y certificación", "nav.trust": "Confianza", "nav.login": "Acceso de socios", "nav.contact": "Contacto", "franchise.hero.badge": "Emprendimiento • Franquicia • Impacto social", "franchise.hero.h1": "De graduado a emprendedor inmobiliario", "franchise.hero.p": Empoderamos a jóvenes africanos, graduados, no graduados y profesionales desempleados para lanzar su propio negocio inmobiliario como autónomos en sus ciudades, bajo nuestro modelo de franquicia. PanAfric Properties ofrece formación, certificación interna y acceso a compradores de la diáspora a través de nuestra plataforma de marketplace verificada., "franchise.training.h2": "Formación y certificación", "franchise.training.p": Todos los solicitantes aprobados completan nuestro programa interno online de Formación y Certificación antes de operar bajo la marca PanAfric Properties., "franchise.training.card1.h3": "Academia de socios online", "franchise.training.card1.p": Accede a módulos estructurados que cubren fundamentos inmobiliarios, due diligence, ética y procesos de la plataforma., "franchise.training.card2.h3": "Pruebas cortas", "franchise.training.card2.p": "Cada módulo incluye una breve evaluación para verificar la comprensión.", "franchise.training.card3.h3": "Certificación interna", "franchise.training.card3.p": "Obtén la certificación de socio de PanAfric Properties al finalizar.", "franchise.training.card4.h3": "Activación del marketplace", "franchise.training.card4.p": "Solo los socios certificados pueden publicar propiedades y gestionar compradores.", "franchise.training.cta": "Ver el programa de formación y certificación", "franchise.hero.cta_apply": "Solicitar el programa de franquicia", "franchise.hero.cta_trust": "Cómo construimos confianza", "franchise.clarification.h3": "Aclaración importante", "franchise.clarification.p": PanAfric Properties no ofrece empleo asalariado ni puestos tradicionales. Este programa es una oportunidad de emprendimiento basada en franquicia. Los candidatos seleccionados operan como autónomos y propietarios de su negocio bajo la marca PanAfric Properties y su marco de confianza., "franchise.who.h2": "Para quién es", "franchise.who.card1.h3": "Graduados y jóvenes profesionales", "franchise.who.card1.p": Si has completado estudios universitarios o formación profesional y buscas una oportunidad práctica para generar ingresos en tu ciudad., "franchise.who.card2.h3": "No graduados con ambición", "franchise.who.card2.p": No necesitas un título formal para triunfar. Ofrecemos formación, estructura y certificación para operar con profesionalidad., "franchise.who.card3.h3": "Profesionales desempleados", "franchise.who.card3.p": Si estás desempleado o subempleado y quieres convertirte en autónomo en un sector en crecimiento con demanda real., "franchise.who.card4.h3": "Regreso de la diáspora", "franchise.who.card4.p": Si regresas a África y quieres construir un negocio creíble y estructurado con una marca establecida y un flujo de compradores de la diáspora., "franchise.provide.h2": "Qué ofrecemos", "franchise.provide.card1.h3": "Formación e incorporación", "franchise.provide.card1.p": Incorporación estructurada sobre fundamentos inmobiliarios, atención al cliente, procedimientos de due diligence, procesos de plataforma y ética., "franchise.provide.card2.h3": "Certificación interna", "franchise.provide.card2.p": Todos los socios completan la certificación para operar bajo la marca PanAfric Properties y su marco de confianza., "franchise.provide.card3.h3": "Acceso a marca y marketplace", "franchise.provide.card3.p": Usa nuestra marca, plataforma e infraestructura para publicar oportunidades verificadas y llegar a compradores de la diáspora en todo el mundo., "franchise.provide.card4.h3": "Leads de compradores", "franchise.provide.card4.p": Recibe consultas cualificadas de compradores de la diáspora e internacionales canalizadas a través del marketplace., "franchise.model.h2": "Cómo funciona el modelo de franquicia", "franchise.model.card1.h3": "Por territorio", "franchise.model.card1.p": Operas en una ciudad o territorio definido como socio de PanAfric Properties. Pueden aplicarse derechos exclusivos o semi-exclusivos según el tamaño del mercado., "franchise.model.card2.h3": "Ingresos por comisión", "franchise.model.card2.p": Gana comisiones por transacciones exitosas y referidos de clientes completados a través de la plataforma., "franchise.model.card3.h3": "Independiente pero estructurado", "franchise.model.card3.p": Gestionas tu propio negocio autónomo siguiendo nuestros estándares, marco de confianza y procesos de cumplimiento., "franchise.model.card4.h3": "Ruta de crecimiento", "franchise.model.card4.p": Los socios con mejor rendimiento pueden crecer a operadores multi-ciudad, gestores de territorio o líderes regionales., "franchise.econ.h2": "Economía del socio", "franchise.econ.p": Los socios de PanAfric Properties operan como autónomos. Tus ingresos dependen de las transacciones completadas — con apoyo de nuestra formación, marco de verificación y pipeline de compradores de la diáspora., "franchise.econ.card1.h3": "Inversión típica (ilustrativa)", "franchise.econ.card1.p1": "Una estructura inicial simple y transparente:", "franchise.econ.card1.p2": "• Formación y certificación (pago único): <strong>€250</strong>", "franchise.econ.card1.p3": "• Activación de territorio / puesta en marcha (pago único): <strong>€750</strong>", "franchise.econ.card1.p4": "Inversión inicial total: <strong>€1,000</strong>", "franchise.econ.card1.p5": "(El precio final puede variar según territorio y fase de lanzamiento.)", "franchise.econ.card1.p6": En fases iniciales, PanAfric Properties puede, a su discreción, eximir o reducir ciertos cargos para candidatos destacados o territorios estratégicos., "franchise.econ.card2.h3": "Cómo ganas", "franchise.econ.card2.p1": "Los socios reciben una parte de las comisiones por operaciones completadas.", "franchise.econ.card2.p2": "Rango típico de comisión: <strong>3%–5%</strong>", "franchise.econ.card2.p3": "Parte típica del socio: <strong>50%–70%</strong>", "franchise.econ.card2.p4": "Las estructuras exactas varían por mercado, tipo de propiedad y acuerdos con promotores.", "franchise.econ.card3.h3": "Ingresos ilustrativos por operación", "franchise.econ.card3.p1": "Ejemplos para entender el modelo:", "franchise.econ.card3.p2": "<strong>Conservador</strong>: €30,000 × 3% × 50% = <strong>€450</strong>", "franchise.econ.card3.p3": "<strong>Base</strong>: €50,000 × 4% × 60% = <strong>€1,200</strong>", "franchise.econ.card3.p4": "<strong>Fuerte</strong>: €80,000 × 5% × 70% = <strong>€2,800</strong>", "franchise.econ.card3.p5": Muchos socios recuperan la inversión inicial en 1–3 transacciones, según el tamaño del acuerdo y las comisiones locales., "franchise.econ.note.h3": "Nota importante (transparencia)", "franchise.econ.note.p": Las cifras anteriores son ejemplos ilustrativos para explicar el modelo. Los ingresos no están garantizados y dependen de tu actividad, condiciones del mercado, precios y cierre exitoso de la transacción., "franchise.econ.cta_team": "Hablar con el equipo", "franchise.econ.cta_apply": "Solicitar el programa de socios", "franchise.econ.cta_training": "Ver formación y certificación", "franchise.compliance.h2": "Confianza, ética y cumplimiento", "franchise.compliance.card1.h3": "Estándares de verificación", "franchise.compliance.card1.p": Todas las publicaciones deben pasar verificaciones básicas legales, de propiedad y documentación antes de publicarse en la plataforma., "franchise.compliance.card2.h3": "Código de conducta", "franchise.compliance.card2.p": Todos los socios operan bajo un código de ética profesional que cubre transparencia, protección del cliente y trato justo., "franchise.compliance.card3.h3": "Monitoreo continuo", "franchise.compliance.card3.p": Monitoreamos el rendimiento y cumplimiento para mantener la confianza de la marketplace y de la diáspora., "franchise.compliance.card4.h3": "Gobernanza de la plataforma", "franchise.compliance.card4.p": Los socios operan dentro del marco de gobernanza del marketplace para proteger compradores, vendedores y la marca PanAfric Properties., "franchise.apply.h2": "Solicitar el programa de franquicia", "franchise.apply.p": Si eres ambicioso, estás motivado y comprometido con construir un negocio inmobiliario creíble en tu ciudad, te invitamos a completar el formulario para convertirte en socio franquiciado de PanAfric Properties. No se requiere experiencia previa en el sector., "franchise.form.full_name": "Nombre completo", "franchise.form.email": "Correo electrónico", "franchise.form.phone": "Teléfono / WhatsApp", "franchise.form.location": "Ciudad y país", "franchise.form.education": "Nivel educativo", "franchise.form.employment": "Situación laboral", "franchise.form.select": "Seleccionar", "franchise.form.education.secondary": "Educación secundaria", "franchise.form.education.diploma": "Diploma", "franchise.form.education.university": "Título universitario", "franchise.form.education.other": "Otro", "franchise.form.employment.unemployed": "Desempleado", "franchise.form.employment.self": "Autónomo", "franchise.form.employment.employed": "Empleado", "franchise.form.employment.student": "Estudiante", "franchise.form.why": "¿Por qué quieres unirte a PanAfric Properties?", "franchise.form.submit": "Enviar solicitud", "footer.tagline": "Acceso confiable a oportunidades inmobiliarias africanas verificadas — construido para la diáspora.", "footer.platform.h3": "Plataforma", "footer.platform.countries": "Países", "footer.platform.properties": "Propiedades", "footer.platform.trust": "Confianza y verificación", "footer.platform.login": "Acceso de socios", "footer.work.h3": "Trabaja con nosotros", "footer.work.p": Lanza tu propio negocio inmobiliario con formación, certificación y acceso a compradores de la diáspora., "footer.work.apply": "Solicitar", "footer.contact.h3": "Contacto", "footer.contact.p": "Para compradores, promotores y socios.", "footer.contact.link": "Escríbenos", "footer.copyright": "© 2026 PanAfric Properties. Todos los derechos reservados.", "index.hero.badge": "Diáspora primero • Confianza primero","index.hero.h1": "PanAfric Properties","index.hero.p": Tu puerta de entrada de confianza al inmobiliario africano — conectando a africanos de todo el mundo con oportunidades verificadas en su país mediante una red local de franquicias regulada.,"index.hero.cta1": "Explorar propiedades","index.hero.cta2": "Hablar con un agente local","index.kpi1.t": "Mercados en lanzamiento","index.kpi2.t": "Tipos de anuncios","index.kpi2.v": "Terrenos • Viviendas • Proyectos","index.kpi3.t": "Modelo","index.kpi3.v": "Red de franquicias","index.how.h2": "Cómo funciona","index.how.card1.h3": "1) Explora oportunidades verificadas","index.how.card1.p": "Explora terrenos, viviendas y proyectos listados por socios franquiciados autorizados en cada territorio.","index.how.card2.h3": "2) Te conectamos con un agente local","index.how.card2.p": "Tu consulta se canaliza al profesional adecuado sobre el terreno para guiarte y protegerte.","index.how.card3.h3": "3) Compra con claridad y apoyo","index.how.card3.p": "Mostramos el estado de la due diligence y pasos transparentes para completar con seguridad.","index.franchise.h2": "De graduado a emprendedor inmobiliario","index.franchise.p": Empoderamos a jóvenes africanos, graduados, no graduados y profesionales desempleados para lanzar su propio negocio inmobiliario como autónomos en sus ciudades bajo nuestro modelo de franquicia. PanAfric Properties ofrece formación, certificación interna y acceso a compradores de la diáspora mediante nuestro marketplace de confianza.,"index.franchise.cta": "Solicitar el programa de franquicia","index.countries.h2": "Empieza por países","index.countries.p": "Elige un mercado para ver oportunidades y la red local de socios franquiciados.","index.countries.cta1": "Ver todos los países","index.countries.cta2": "Cómo construimos confianza","index.country.ghana": "Accra • Kumasi • Tema","index.country.nigeria": "Lagos • Abuja","index.country.cameroon": "Douala • Yaundé","index.country.senegal": "Dakar • Thiès","index.country.ivory": "Abiyán • Bouaké","index.country.mali": "Bamako","index.country.zimbabwe": "Harare • Bulawayo","index.footer.franchise.p": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.","index.footer.franchise.link": "Solicitar / Consultar",// ===== TRAINING ====="training.top.approved": ¿Ya estás aprobado? <a href="login.html"><strong>Acceso de socios</strong></a>,"training.top.login_strong": "Acceso de socios","training.hero.badge": "Academia de socios • Certificación • Confianza","training.hero.h1": "Formación y certificación de PanAfric Properties","training.hero.p": Todos los solicitantes de franquicia aprobados completan nuestro programa interno online de formación y certificación antes de operar bajo la marca PanAfric Properties.,"training.hero.cta_apply": "Solicitar el programa de franquicia","training.hero.cta_login": "Acceso de socios","training.standards.h2": "Estándares profesionales. Confianza. Cumplimiento.","training.standards.p1": PanAfric Properties opera un marketplace inmobiliario de confianza para la diáspora y compradores internacionales. Para proteger a los clientes, mantener la credibilidad de la plataforma y asegurar una conducta profesional, todos los socios franquiciados deben completar nuestro programa interno de formación y certificación antes de la incorporación.,"training.standards.p2": "Nuestro programa de formación y certificación garantiza que cada socio:","training.standards.card1.h3": "Comprende los fundamentos inmobiliarios","training.standards.card1.p": "Aprende lo básico de mercados, valoración y procesos de transacción.","training.standards.card2.h3": "Sigue estándares de due diligence","training.standards.card2.p": "Comprende procedimientos de verificación, prevención de fraude y controles documentales.","training.standards.card3.h3": "Opera éticamente","training.standards.card3.p": "Respeta principios de transparencia, profesionalidad y protección al cliente.","training.standards.card4.h3": "Cumple la gobernanza de la plataforma","training.standards.card4.p": "Sigue reglas de reporting, cumplimiento y marketplace.","training.access.h2": "Quién puede acceder al programa de formación","training.access.p": El programa de Formación y Certificación de PanAfric Properties está disponible exclusivamente para solicitantes de franquicia aprobados. No necesitas experiencia previa en el sector para calificar.,"training.access.card1.h3": "Graduados y jóvenes profesionales","training.access.card1.p": "Buscando una oportunidad estructurada y generadora de ingresos en tu ciudad.","training.access.card2.h3": "No graduados con ambición","training.access.card2.p": "Ofrecemos formación, estructura y certificación para operar con profesionalidad.","training.access.card3.h3": "Profesionales desempleados","training.access.card3.p": "Hazte autónomo en un sector en crecimiento con demanda real.","training.access.card4.h3": "Regreso de la diáspora","training.access.card4.p": "Construye un negocio creíble con una marca establecida y un flujo de compradores.","training.academy.h2": "Cómo funciona la academia de socios","training.academy.step1.h3": "1) Solicitar y ser aceptado","training.academy.step1.p": "Envía tu solicitud. Los candidatos aprobados reciben acceso a la plataforma de formación.","training.academy.step2.h3": "2) Iniciar sesión en la plataforma de formación","training.academy.step2.p": "Accede a nuestro sistema interno de aprendizaje online con tus credenciales personales.","training.academy.step3.h3": "3) Estudiar los módulos","training.academy.step3.p": "Lee módulos estructurados sobre fundamentos, due diligence, ética y procesos de plataforma.","training.academy.step4.h3": "4) Completar pruebas cortas","training.academy.step4.p": "Cada módulo incluye una evaluación breve para verificar la comprensión.","training.academy.step5.h3": "5) Obtener tu certificación","training.academy.step5.p": "Cuando apruebas módulos y pruebas, recibes la certificación de socio.","training.curriculum.h2": "Plan de estudios","training.curriculum.p": "Este es un resumen público. Los módulos completos y pruebas solo están disponibles dentro de la academia de socios.","training.curriculum.m1.h3": "Módulo 1 — Introducción a PanAfric Properties","training.curriculum.m1.p": "Visión de la plataforma, modelo de franquicia, responsabilidades, marco de gobernanza.","training.curriculum.m2.h3": "Módulo 2 — Fundamentos inmobiliarios","training.curriculum.m2.p": "Tipos de propiedad, fundamentos de valoración, dinámica del mercado local.","training.curriculum.m3.h3": "Módulo 3 — Due diligence y verificación","training.curriculum.m3.p": "Comprobación de propiedad, documentación de título, prevención de fraude, señales de alerta.","training.curriculum.m4.h3": "Módulo 4 — Atención al cliente y ética","training.curriculum.m4.p": "Conducta profesional, transparencia, comunicación, conflictos de interés.","training.curriculum.m5.h3": "Módulo 5 — Expectativas del comprador diáspora","training.curriculum.m5.p": "Psicología del inversor, preocupaciones de confianza, gestión de transacciones a distancia.","training.curriculum.m6.h3": "Módulo 6 — Publicaciones y procesos de plataforma","training.curriculum.m6.p": "Incorporación de propiedades, estándares documentales, reglas del marketplace.","training.curriculum.m7.h3": "Módulo 7 — Alfabetización legal (básica)","training.curriculum.m7.p": "Contratos, relaciones de agencia, conceptos de escrow.","training.curriculum.m8.h3": "Módulo 8 — Cierre de transacciones","training.curriculum.m8.p": "Incorporación del comprador, hitos, principios de pago.","training.curriculum.m9.h3": "Módulo 9 — Cumplimiento y reporting","training.curriculum.m9.p": "Obligaciones de reporting, monitoreo, gestión de disputas.","training.cert.h2": "Certificación de socio","training.cert.p": La certificación de socio de PanAfric Properties confirma que has completado con éxito el programa de formación y certificación y has cumplido nuestros estándares operativos.,"training.cert.card1.h3": "Autorización de marca","training.cert.card1.p": "Opera bajo la marca PanAfric Properties.","training.cert.card2.h3": "Acceso al marketplace","training.cert.card2.p": "Publica oportunidades verificadas y recibe consultas de compradores de la diáspora.","training.cert.card3.h3": "Reconocimiento oficial","training.cert.card3.p": "Estatus de socio franquiciado certificado.","training.cert.card4.h3": "Cumplimiento continuo","training.cert.card4.p": "Certificación mantenida mediante conducta ética y estándares de desempeño.","training.eligibility.h2": "Acceso y elegibilidad","training.eligibility.p": El programa de formación y certificación no es accesible públicamente. El acceso se concede solo a solicitantes de franquicia aprobados.,"training.eligibility.step1.h3": "Paso 1","training.eligibility.step1.p": "Solicitar el programa de franquicia.","training.eligibility.step2.h3": "Paso 2","training.eligibility.step2.p": "Recibir el resultado de la revisión.","training.eligibility.step3.h3": "Paso 3","training.eligibility.step3.p": "Obtener acceso de inicio de sesión a la plataforma de formación.","training.eligibility.step4.h3": "Paso 4","training.eligibility.step4.p": "Completar módulos y pruebas.","training.eligibility.step5.h3": "Paso 5","training.eligibility.step5.p": "Obtener certificación.","training.clarification.h3": "Aclaración importante","training.clarification.p": PanAfric Properties no ofrece empleo asalariado ni puestos tradicionales. Este programa es una oportunidad de emprendimiento basada en franquicia. Los solicitantes seleccionados operan como autónomos y propietarios de su negocio bajo la marca PanAfric Properties y su marco de confianza.,"training.journey.h2": "Inicia tu camino de formación","training.journey.p": Solicita convertirte en socio franquiciado de PanAfric Properties y comienza tu camino de formación y certificación.,"training.journey.cta": "Solicitar el programa de franquicia",// trust.html"trust.title": "Confianza y Verificación","trust.intro": "PanAfric Properties opera a través de una red local de franquicias regulada para mejorar la transparencia, reducir el riesgo de fraude y proteger a los compradores de la diáspora.","trust.c1.t": "Socios franquiciados locales con licencia","trust.c1.p": "Los anuncios son enviados por socios verificados que operan bajo las leyes locales y los requisitos del sector.","trust.c2.t": "Comprobaciones de título y propiedad","trust.c2.p": "Cuando está disponible, la documentación del título se revisa y se marca como Verificado / En revisión / No verificado.","trust.c3.t": "Evaluación de promotores","trust.c3.p": "Promotores y vendedores pasan comprobaciones básicas de antecedentes y validación de referencias antes de publicar.","trust.c4.t": "Estado de diligencia debida","trust.c4.p": "Cada oportunidad mostrará claramente su estado de diligencia debida y los siguientes pasos recomendados.","trust.c5.t": "Soporte al comprador","trust.c5.p": "Guiamos a los compradores durante el proceso y dirigimos las consultas al socio correcto en el país.","trust.c6.t": "Proceso claro, precios claros","trust.c6.p": "Comunicación transparente sobre tarifas, pasos y plazos—para que los compradores de la diáspora puedan planificar con confianza.","trust.cta.agent": "Hablar con un agente local","trust.cta.browse": "Ver propiedades","trust.promo.t": "Construye un negocio inmobiliario con nosotros","trust.promo.p": "PanAfric Properties impulsa a jóvenes africanos — graduados, no graduados y profesionales desempleados — a lanzar sus propios negocios inmobiliarios por cuenta propia bajo nuestro modelo de franquicia. Se ofrece formación, certificación interna y acceso a compradores de la diáspora.","trust.promo.cta": "Solicitar unirse a nuestro programa de franquicia",// contact.html"contact.title": "Contáctanos","contact.intro": "Consultas inmobiliarias, solicitudes de franquicia, alianzas con promotores — envíanos un mensaje.","contact.form.title": "Formulario de consulta","contact.form.name.label": "Tu nombre","contact.form.name.ph": "Nombre completo","contact.form.email.label": "Correo","contact.form.email.ph": "nombre@email.com","contact.form.role.label": "Soy…","contact.form.role.opt1": "Comprador de la diáspora","contact.form.role.opt2": "Comprador local","contact.form.role.opt3": "Promotor / vendedor","contact.form.role.opt4": "Agente / candidato a franquicia","contact.form.role.opt5": "Socio / inversor","contact.form.country.label": "País de interés","contact.form.msg.label": "Tu mensaje","contact.form.msg.ph": "Cuéntanos qué quieres comprar/construir o cómo quieres colaborar.","contact.form.submit": "Enviar mensaje","contact.next.title": "¿Qué pasa después?","contact.next.s1": "<b>1)</b> Revisamos tu consulta.","contact.next.s2": "<b>2)</b> Te conectamos con el socio local adecuado.","contact.next.s3": "<b>3)</b> Recibes un plan de acción claro y los siguientes pasos.","contact.links.title": "Enlaces rápidos","contact.links.p1": "Ver propiedades","contact.links.p2": "Confianza y verificación","contact.links.p3": "Socios franquiciados",// agents.html"agents.title": "Socios franquiciados locales","agents.intro": "Cada territorio está representado por un Socio Franquiciado de PanAfric Properties — formado, certificado y supervisado bajo nuestro marco de confianza y verificación. Los profesionales inmobiliarios con licencia son bienvenidos y pueden ser acelerados, pero no se requiere licencia para postular.","agents.card1.title": "Accra Oeste — Ghana","agents.card1.coverage": "<b>Cobertura:</b> East Legon, Airport, Cantonments","agents.card1.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card2.title": "Lagos — Nigeria","agents.card2.coverage": "<b>Cobertura:</b> Lekki, Victoria Island","agents.card2.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card3.title": "Douala — Camerún","agents.card3.coverage": "<b>Cobertura:</b> Bonapriso, Akwa","agents.card3.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card4.title": "Dakar — Senegal","agents.card4.coverage": "<b>Cobertura:</b> Almadies, Plateau","agents.card4.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card5.title": "Bamako — Malí","agents.card5.coverage": "<b>Cobertura:</b> ACI 2000, Hippodrome","agents.card5.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card6.title": "Harare — Zimbabue","agents.card6.coverage": "<b>Cobertura:</b> Borrowdale, Avondale","agents.card6.status": "<b>Estado:</b> Socio franquiciado (certificado)","agents.card.cta": "Contactar a este socio","agents.join.title": "Conviértete en socio franquiciado","agents.join.text": "No necesitas experiencia previa en bienes raíces — ofrecemos formación, certificación interna y un marco de confianza. Los agentes con licencia y profesionales del sector también pueden postular y pueden ser acelerados según el territorio.","agents.join.cta.apply": "Solicitar unirse a nuestro programa de socios","agents.join.cta.training": "Ver formación",// countries.html"countries.title": "Explorar países","countries.intro": "Elige un mercado para ver oportunidades verificadas y socios franquiciados locales.","countries.ghana.cities": "Accra • Kumasi • Tema","countries.nigeria.cities": "Lagos • Abuja","countries.cameroon.cities": "Douala • Yaundé","countries.senegal.cities": "Dakar • Thiès","countries.ivorycoast.cities": "Abidjan • Bouaké","countries.mali.cities": "Bamako","countries.zimbabwe.cities": "Harare • Bulawayo","countries.cta.browse": "Ver anuncios","countries.cta.franchise": "Consulta de franquicia",// properties.html"properties.title": "Anuncios de propiedades","properties.intro": "Anuncios MVP — estático por ahora. Siguiente paso: filtros reales + páginas por país.","properties.filter.country": "País","properties.filter.type": "Tipo","properties.filter.budget": "Presupuesto","properties.filter.dd": "Diligencia debida","properties.filter.all": "Todos","properties.type.land": "Terreno","properties.type.home": "Vivienda","properties.type.dev": "Proyecto / Sobre plano","properties.budget.any": "Cualquiera","properties.budget.under50": "Menos de 50.000 €","properties.budget.50to150": "50.000 € – 150.000 €","properties.budget.150plus": "150.000 €+","properties.dd.any": "Cualquiera","properties.dd.verified": "Verificado","properties.dd.review": "En revisión","properties.cta.enquire": "Consultar","properties.cta.how": "Cómo funciona la verificación","properties.list1.title": "Villa moderna — Accra (Ghana)","properties.list1.desc": "Villa de 3 habitaciones • East Legon • Lista para entrar","properties.list1.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Accra Oeste","properties.list2.title": "Terreno residencial — Douala (Camerún)","properties.list2.desc": "Parcela de 500 m² • Buen acceso • Ideal para construir","properties.list2.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Douala","properties.list3.title": "Apartamentos sobre plano — Lekki (Nigeria)","properties.list3.desc": "Apartamentos de 2 habitaciones • Plan de pagos disponible","properties.list3.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Lagos","properties.list4.title": "Parcela residencial — Bamako (Malí)","properties.list4.desc": "Terreno con título • Zona residencial • Buen acceso","properties.list4.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Bamako","properties.list5.title": "Casa familiar — Harare (Zimbabue)","properties.list5.desc": "Casa de 3 habitaciones • Barrio seguro","properties.list5.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Harare","properties.list6.title": "Apartamento en la ciudad — Dakar (Senegal)","properties.list6.desc": "Apartamento de 2 habitaciones • Alta demanda de alquiler","properties.list6.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Dakar","properties.card.cta": "Solicitar detalles","properties.promo.title": "¿Quieres crear un negocio inmobiliario en tu ciudad?","properties.promo.text": "Únete a PanAfric Properties como socio franquiciado. Formamos y certificamos a socios locales para operar actividades de corretaje inmobiliario y conectarlos con compradores de la diáspora en todo el mundo.","properties.promo.cta": "Trabaja con nosotros",// login.html"login.title": "Acceso de socios","login.intro": "Accede a la plataforma de formación de PanAfric Properties. El acceso está disponible solo para socios aprobados.","login.cta.login": "Iniciar sesión","login.cta.back": "Volver","login.note.q": "¿Aún no estás aprobado?","login.note.link": "Solicitar unirse a nuestro programa de socios",// franchise-apply.html"apply.badge": "Solicitud de franquicia","apply.title": "Solicita unirte a nuestro programa de franquicia","apply.intro": "Este programa está pensado para personas ambiciosas que quieren crear un negocio inmobiliario por cuenta propia en su ciudad de origen, bajo el modelo de franquicia de PanAfric Properties. No se requiere experiencia previa en bienes raíces.","apply.form.title": "Formulario de solicitud de socio","apply.f.name": "Nombre completo","apply.f.email": "Correo electrónico","apply.f.phone": "Número de teléfono","apply.f.residence": "País de residencia","apply.f.city": "Ciudad en la que quieres operar","apply.f.education": "Nivel educativo","apply.f.employment": "Situación laboral","apply.f.why": "¿Por qué quieres unirte a PanAfric Properties?","apply.f.experience": "¿Tienes experiencia en bienes raíces?","apply.f.capital": "¿Puedes invertir en costos básicos de puesta en marcha (marketing, transporte, administración)?","apply.f.notes": "¿Algo más que te gustaría que supiéramos?","apply.opt.select": "Seleccionar","apply.opt.nongrad": "Sin estudios universitarios","apply.opt.grad": "Graduado","apply.opt.postgrad": "Posgrado","apply.opt.unemployed": "Desempleado","apply.opt.employed": "Empleado","apply.opt.selfemployed": "Autónomo","apply.opt.no": "No","apply.opt.yes": "Sí","apply.cta.submit": "Enviar solicitud","apply.cta.back": "Volver","apply.note": "Tras la revisión, los solicitantes aprobados reciben acceso por invitación a la Partner Academy.",// academy.html"academy.title": "Academia de Socios","academy.progress": "Progreso","academy.resume": "Continuar siguiente módulo","academy.complete_note": "Completa todos los módulos para desbloquear la certificación.","academy.cert": "Certificación","academy.view_cert": "Ver certificado","academy.badge": "Socio certificado","academy.session": "Sesión","academy.logout": "Cerrar sesión","academy.admin": "Abrir panel admin","academy.modules": "Módulos","academy.welcome": "Bienvenido, {name}{email}.","academy.progress_text": "{passed} / {total} módulos completados ({pct}%).","academy.unlocked": "Desbloqueado — has completado todos los módulos.","academy.locked": "Bloqueado — completa todos los módulos para desbloquear.","academy.status": "Estado","academy.completed": "Completado ","academy.not_completed": "No completado",// certificate.html"cert.back": "← Volver a la Academia","cert.locked.title": "Certificado bloqueado","cert.locked.text": "Completa todos los módulos para desbloquear tu certificación de socio.","cert.locked.progress": "Progreso: {passed}/{total} módulos completados.","cert.brand": "PanAfric Properties","cert.program": "Programa de formación y certificación","cert.title": "Certificado de finalización","cert.desc": "Certifica que el socio nombrado a continuación ha completado con éxito todos los módulos de formación y evaluaciones de la Academia de Socios de PanAfric Properties.","cert.cta.print": "Imprimir / Guardar PDF","cert.cta.logout": "Cerrar sesión","cert.note": "La certificación se mantiene activa sujeta al cumplimiento continuo, la ética y los estándares de la plataforma.","cert.meta.id": "ID del certificado: {id}","cert.meta.issued": "Emitido el: {date}",// Module titles"module.1.title": "Introducción a PanAfric Properties","module.2.title": "Fundamentos inmobiliarios","module.3.title": "Debida diligencia y verificación","module.4.title": "Gestión del cliente y ética","module.5.title": "Expectativas del comprador de la diáspora","module.6.title": "Procesos de anuncios y de la plataforma","module.7.title": "Alfabetización legal (básicos)","module.8.title": "Cierre de transacciones","module.9.title": "Cumplimiento e informes",/* ===== MODULE TRANSLATIONS — SPANISH ===== */"module.1.title": "Introducción a PanAfric Properties","module.1.p1": "PanAfric Properties conecta a africanos en la diáspora con oportunidades inmobiliarias verificadas.","module.1.p2": "Nuestro modelo escala mediante socios locales capacitados.","module.1.p3": "Los socios protegen a los compradores siguiendo estándares éticos.","module.1.q1": "¿Cuál es el propósito principal?","module.1.q1.o1": "Vender propiedades al azar","module.1.q1.o2": "Conectar compradores con oportunidades verificadas","module.1.q1.o3": "Listar propiedades de un solo país","module.2.title": "Conceptos básicos de bienes raíces","module.2.p1": "Comprende los tipos de activos.","module.2.p2": "Aprende factores clave de valoración.","module.2.p3": "Conoce el flujo de transacciones.","module.2.q1": "¿Cuál NO es un tipo típico?","module.2.q1.o1": "Terrenos","module.2.q1.o2": "Viviendas","module.2.q1.o3": "Coches usados","module.3.title": "Verificación y due diligence","module.3.p1": "La verificación protege a compradores y marca.","module.3.p2": "Señales de alerta incluyen documentos faltantes.","module.3.p3": "Publica solo anuncios verificados.","module.3.q1": "¿Por qué es importante la due diligence?","module.3.q1.o1": "Para retrasar","module.3.q1.o2": "Para proteger clientes","module.3.q1.o3": "Para extender anuncios","module.4.title": "Atención al cliente y ética","module.4.p1": "Guía al comprador con profesionalismo.","module.4.p2": "No tergiverses información.","module.4.p3": "Mantén registros escritos.","module.4.q1": "¿Mejor enfoque?","module.4.q1.o1": "Prometer todo","module.4.q1.o2": "Ser transparente","module.4.q1.o3": "Ocultar riesgos","module.5.title": "Expectativas del comprador","module.5.p1": "Los compradores valoran seguridad.","module.5.p2": "Comunicación clara es esencial.","module.5.p3": "Nunca presiones.","module.5.q1": "Lo más importante es:","module.5.q1.o1": "Presión rápida","module.5.q1.o2": "Seguridad","module.5.q1.o3": "Rumores","module.6.title": "Procesos de anuncios","module.6.p1": "Los anuncios deben ser claros.","module.6.p2": "Usa plantillas consistentes.","module.6.p3": "Acepta solo fuentes verificadas.","module.6.q1": "Un anuncio debe incluir:","module.6.q1.o1": "Fotos borrosas","module.6.q1.o2": "Detalles precisos","module.6.q1.o3": "Sin precio","module.7.title": "Conceptos legales","module.7.p1": "Comprende conceptos básicos legales.","module.7.p2": "No des asesoría legal.","module.7.p3": "Registra hitos importantes.","module.7.q1": "Un socio debe:","module.7.q1.o1": "Dar asesoría legal","module.7.q1.o2": "Facilitar revisión legal","module.7.q1.o3": "Ignorar contratos","module.8.title": "Cierre de transacciones","module.8.p1": "El cierre debe ser controlado.","module.8.p2": "Mantén informado al comprador.","module.8.p3": "Documenta todo.","module.8.q1": "El pago final debe hacerse:","module.8.q1.o1": "Antes de verificar","module.8.q1.o2": "Después de validar","module.8.q1.o3": "Al azar","module.9.title": "Cumplimiento y reporting","module.9.p1": "El cumplimiento protege la plataforma.","module.9.p2": "Reporta problemas temprano.","module.9.p3": "Mantén estándares.","module.9.q1": "El cumplimiento existe para:","module.9.q1.o1": "Reducir crecimiento","module.9.q1.o2": "Proteger confianza","module.9.q1.o3": "Evitar transparencia", "module_word": "Módulo","select_option": "Seleccionar","submit_test_btn": "Enviar test","module_pass_msg": " Test aprobado. Módulo completado. Vuelve a la Academia para continuar.","module_fail_msg": " Aún no. Tienes {correct}/{total}. Revisa y vuelve a intentarlo.","module_quick_test_title": "Test rápido","module_quick_test_help": "Responde correctamente a todas las preguntas para completar este módulo.", // Module 1 — Quiz (ES)"module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?","module.1.q1.o1": "Vender propiedades al azar sin controles","module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas","module.1.q1.o3": "Publicar solo propiedades de un país","module.1.q2": "¿Quién puede solicitar ser socio?","module.1.q2.o1": "Solo agentes inmobiliarios con licencia","module.1.q2.o2": "Solo personas con títulos universitarios","module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición","module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?","module.1.q3.o1": "Nada, puede empezar inmediatamente","module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento","module.1.q3.o3": "Solo una cuenta de redes sociales", // Module 1 — Spanish"module.1.p1": "PanAfric Properties es un marketplace centrado en la diáspora que conecta a africanos de todo el mundo con oportunidades inmobiliarias verificadas en su país.","module.1.p2": "Nuestro modelo escala mediante socios franquiciados locales capacitados, certificados y gestionados bajo un marco de confianza y cumplimiento.","module.1.p3": "Los socios protegen a los compradores siguiendo estándares de verificación, conducta ética y procesos de la plataforma.","module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?","module.1.q1.o1": "Vender propiedades al azar sin controles","module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas","module.1.q1.o3": "Publicar solo propiedades de un país","module.1.q2": "¿Quién puede solicitar ser socio?","module.1.q2.o1": "Solo agentes inmobiliarios con licencia","module.1.q2.o2": "Solo personas con títulos universitarios","module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición","module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?","module.1.q3.o1": "Nada, puede empezar inmediatamente","module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento","module.1.q3.o3": "Solo una cuenta de redes sociales", "sponsor.hero.title": "Patrocina a un futuro socio","sponsor.hero.lead": "Ayuda a un familiar o a un joven profesional a convertirse en Socio certificado de PanAfric Properties y a generar ingresos localmente mediante el emprendimiento (no es caridad y no hay garantías de ingresos).","sponsor.hero.ctaPrimary": "Patrocinar a un candidato","sponsor.hero.ctaSecondary": "Ver el programa de Socios","sponsor.hero.note": "Esta página no aparece en la navegación principal. Compártela directamente con tu comunidad de la diáspora.","sponsor.how.title": "Cómo funciona","sponsor.how.step1Title": "1) Elige un candidato","sponsor.how.step1Text": "Patrocinas a un familiar o a una persona joven motivada (18+) que quiera construir un camino profesional en el sector inmobiliario.","sponsor.how.step2Title": "2) Financia la activación del socio","sponsor.how.step2Text": "El patrocinio es de 1.000 € e incluye formación y el proceso de onboarding y activación dentro del ecosistema PanAfric.","sponsor.how.step3Title": "3) Se certifica","sponsor.how.step3Text": "Tras completar los módulos y el onboarding, podrá operar como Socio bajo nuestros estándares y normas de cumplimiento.","sponsor.cost.title": "Qué cubren los 1.000 €","sponsor.cost.trainingTitle": "Formación — 250 €","sponsor.cost.trainingItem1": "Acceso a módulos y cuestionarios de la Academia de Socios","sponsor.cost.trainingItem2": "Guiones prácticos, plantillas y flujo de trabajo de operaciones","sponsor.cost.trainingItem3": "Certificación al completar","sponsor.cost.onboardingTitle": "Onboarding y Activación — 750 €","sponsor.cost.onboardingItem1": "Configuración del perfil del Socio y pasos de verificación","sponsor.cost.onboardingItem2": "Orientación sobre herramientas: anuncios, leads y registro de clientes","sponsor.cost.onboardingItem3": "Apoyo de lanzamiento: primeros anuncios y primer pipeline de clientes","sponsor.cost.noteTitle": "Importante:","sponsor.cost.noteText": "Este es un programa de empoderamiento. No es una donación y no prometemos ingresos ni resultados.","sponsor.who.title": "¿Para quién es?","sponsor.who.card1Title": "Patrocinadores de la diáspora","sponsor.who.card1Text": "Quieres empoderar a alguien en su país con un camino real de habilidades.","sponsor.who.card2Title": "Candidatos motivados","sponsor.who.card2Text": "Jóvenes profesionales que puedan aprender y seguir un proceso.","sponsor.who.card3Title": "Grupos comunitarios","sponsor.who.card3Text": "Asociaciones que quieran crear actividad económica estructurada.","partner_dash.title": "Panel del Socio","partner_dash.welcome": "Bienvenido, {name}.","partner_dash.status.title": "Estado","partner_dash.status.certified": "Certificado ","partner_dash.status.not_certified": "No certificado","partner_dash.status.not_certified_note": "Debes completar la Partner Academy para publicar propiedades.","partner_dash.status.certified_note": "Estás certificado y puedes enviar propiedades para revisión.","partner_dash.actions.title": "Acciones rápidas","partner_dash.actions.note": "Las solicitudes se revisan en PanAfric Properties antes de publicarse.","partner_dash.account.title": "Cuenta","partner_dash.account.name": "Nombre","partner_dash.account.email": "Email","partner_dash.cta.add_property": "Añadir propiedad","partner_dash.cta.view_certificate": "Ver certificado","partner_dash.cta.go_academy": "Ir a la Academy","partner_dash.cta.back_academy": "Volver a la Academy","partner_dash.cta.logout": "Cerrar sesión","submit.back": "← Volver al panel","submit.title": "Enviar una propiedad","submit.subtitle": "Envía una propiedad para revisión. Una vez aprobada, podrá publicarse en PanAfric Properties.","submit.blocked": "Debes completar la Partner Academy para enviar propiedades.","submit.go_academy": "Ir a la Academy","submit.partner_name": "Nombre completo del socio","submit.partner_email": "Email del socio","submit.listing_title": "Título del anuncio","submit.property_type": "Tipo de propiedad","submit.select": "Seleccionar…","submit.type.land": "Terreno","submit.type.house": "Casa","submit.type.apartment": "Apartamento","submit.type.commercial": "Comercial","submit.country": "País","submit.city": "Ciudad / Zona","submit.price": "Precio","submit.currency": "Moneda","submit.description": "Descripción","submit.description_note": "Incluye tamaño, estado, situación de propiedad, puntos de referencia y cualquier restricción.","submit.photos": "Fotos (hasta 10)","submit.photos_note": "Recomendado JPG/PNG. Exterior + interior + límites del terreno.","submit.docs": "Documentos de propiedad (opcional)","submit.docs_note": "Escritura, certificado de terreno o prueba de autorización para publicar.","submit.contact_phone": "Teléfono (opcional)","submit.contact_whatsapp": "WhatsApp (opcional)","submit.consent": "Confirmo que tengo derecho a enviar esta propiedad y que la información es correcta.","submit.cta.submit": "Enviar para revisión","submit.cta.cancel": "Cancelar","submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones.
-
-    // ✅ Keep your existing ES “academy / modules / sponsor / submit / etc.” keys here.
+      "property.details.country": "País"  
+   
+      // ✅ Keep your existing ES “academy / modules / sponsor / submit / etc.” keys here.
       // (Paste your full ES block under this comment — but ensure every line ends with a comma except the last one.)
+"franchise.hero.badge": "Emprendimiento • Franquicia • Impacto social",
+      "franchise.hero.h1": "De graduado a emprendedor inmobiliario",
+      "franchise.hero.p": `Empoderamos a jóvenes africanos, graduados, no graduados y profesionales desempleados
+      para lanzar su propio negocio inmobiliario como autónomos en sus ciudades, bajo nuestro modelo de franquicia.
+      PanAfric Properties ofrece formación, certificación interna y acceso a compradores de la diáspora
+      a través de nuestra plataforma de marketplace verificada.`,
+
+      "franchise.training.h2": "Formación y certificación",
+      "franchise.training.p": `Todos los solicitantes aprobados completan nuestro programa interno online de Formación y Certificación
+      antes de operar bajo la marca PanAfric Properties.`,
+      "franchise.training.card1.h3": "Academia de socios online",
+      "franchise.training.card1.p": `Accede a módulos estructurados que cubren fundamentos inmobiliarios,
+          due diligence, ética y procesos de la plataforma.`,
+      "franchise.training.card2.h3": "Pruebas cortas",
+      "franchise.training.card2.p": "Cada módulo incluye una breve evaluación para verificar la comprensión.",
+      "franchise.training.card3.h3": "Certificación interna",
+      "franchise.training.card3.p": "Obtén la certificación de socio de PanAfric Properties al finalizar.",
+      "franchise.training.card4.h3": "Activación del marketplace",
+      "franchise.training.card4.p": "Solo los socios certificados pueden publicar propiedades y gestionar compradores.",
+      "franchise.training.cta": "Ver el programa de formación y certificación",
+
+      "franchise.hero.cta_apply": "Solicitar el programa de franquicia",
+      "franchise.hero.cta_trust": "Cómo construimos confianza",
+
+      "franchise.clarification.h3": "Aclaración importante",
+      "franchise.clarification.p": `PanAfric Properties no ofrece empleo asalariado ni puestos tradicionales.
+        Este programa es una oportunidad de emprendimiento basada en franquicia.
+        Los candidatos seleccionados operan como autónomos y propietarios de su negocio
+        bajo la marca PanAfric Properties y su marco de confianza.`,
+
+      "franchise.who.h2": "Para quién es",
+      "franchise.who.card1.h3": "Graduados y jóvenes profesionales",
+      "franchise.who.card1.p": `Si has completado estudios universitarios o formación profesional y buscas una oportunidad práctica
+          para generar ingresos en tu ciudad.`,
+      "franchise.who.card2.h3": "No graduados con ambición",
+      "franchise.who.card2.p": `No necesitas un título formal para triunfar. Ofrecemos formación, estructura
+          y certificación para operar con profesionalidad.`,
+      "franchise.who.card3.h3": "Profesionales desempleados",
+      "franchise.who.card3.p": `Si estás desempleado o subempleado y quieres convertirte en autónomo
+          en un sector en crecimiento con demanda real.`,
+      "franchise.who.card4.h3": "Regreso de la diáspora",
+      "franchise.who.card4.p": `Si regresas a África y quieres construir un negocio creíble y estructurado
+          con una marca establecida y un flujo de compradores de la diáspora.`,
+
+      "franchise.provide.h2": "Qué ofrecemos",
+      "franchise.provide.card1.h3": "Formación e incorporación",
+      "franchise.provide.card1.p": `Incorporación estructurada sobre fundamentos inmobiliarios, atención al cliente,
+          procedimientos de due diligence, procesos de plataforma y ética.`,
+      "franchise.provide.card2.h3": "Certificación interna",
+      "franchise.provide.card2.p": `Todos los socios completan la certificación para operar bajo la marca PanAfric Properties
+          y su marco de confianza.`,
+      "franchise.provide.card3.h3": "Acceso a marca y marketplace",
+      "franchise.provide.card3.p": `Usa nuestra marca, plataforma e infraestructura para publicar oportunidades verificadas
+          y llegar a compradores de la diáspora en todo el mundo.`,
+      "franchise.provide.card4.h3": "Leads de compradores",
+      "franchise.provide.card4.p": `Recibe consultas cualificadas de compradores de la diáspora e internacionales
+          canalizadas a través del marketplace.`,
+
+      "franchise.model.h2": "Cómo funciona el modelo de franquicia",
+      "franchise.model.card1.h3": "Por territorio",
+      "franchise.model.card1.p": `Operas en una ciudad o territorio definido como socio de PanAfric Properties.
+          Pueden aplicarse derechos exclusivos o semi-exclusivos según el tamaño del mercado.`,
+      "franchise.model.card2.h3": "Ingresos por comisión",
+      "franchise.model.card2.p": `Gana comisiones por transacciones exitosas y referidos de clientes
+          completados a través de la plataforma.`,
+      "franchise.model.card3.h3": "Independiente pero estructurado",
+      "franchise.model.card3.p": `Gestionas tu propio negocio autónomo siguiendo nuestros estándares,
+          marco de confianza y procesos de cumplimiento.`,
+      "franchise.model.card4.h3": "Ruta de crecimiento",
+      "franchise.model.card4.p": `Los socios con mejor rendimiento pueden crecer a operadores multi-ciudad,
+          gestores de territorio o líderes regionales.`,
+
+      "franchise.econ.h2": "Economía del socio",
+      "franchise.econ.p": `Los socios de PanAfric Properties operan como autónomos. Tus ingresos dependen de las
+      transacciones completadas — con apoyo de nuestra formación, marco de verificación y pipeline de compradores de la diáspora.`,
+
+      "franchise.econ.card1.h3": "Inversión típica (ilustrativa)",
+      "franchise.econ.card1.p1": "Una estructura inicial simple y transparente:",
+      "franchise.econ.card1.p2": "• Formación y certificación (pago único): <strong>€250</strong>",
+      "franchise.econ.card1.p3": "• Activación de territorio / puesta en marcha (pago único): <strong>€750</strong>",
+      "franchise.econ.card1.p4": "Inversión inicial total: <strong>€1,000</strong>",
+      "franchise.econ.card1.p5": "(El precio final puede variar según territorio y fase de lanzamiento.)",
+      "franchise.econ.card1.p6": `En fases iniciales, PanAfric Properties puede, a su discreción, eximir o reducir ciertos cargos
+  para candidatos destacados o territorios estratégicos.`,
+
+      "franchise.econ.card2.h3": "Cómo ganas",
+      "franchise.econ.card2.p1": "Los socios reciben una parte de las comisiones por operaciones completadas.",
+      "franchise.econ.card2.p2": "Rango típico de comisión: <strong>3%–5%</strong>",
+      "franchise.econ.card2.p3": "Parte típica del socio: <strong>50%–70%</strong>",
+      "franchise.econ.card2.p4": "Las estructuras exactas varían por mercado, tipo de propiedad y acuerdos con promotores.",
+
+      "franchise.econ.card3.h3": "Ingresos ilustrativos por operación",
+      "franchise.econ.card3.p1": "Ejemplos para entender el modelo:",
+      "franchise.econ.card3.p2": "<strong>Conservador</strong>: €30,000 × 3% × 50% = <strong>€450</strong>",
+      "franchise.econ.card3.p3": "<strong>Base</strong>: €50,000 × 4% × 60% = <strong>€1,200</strong>",
+      "franchise.econ.card3.p4": "<strong>Fuerte</strong>: €80,000 × 5% × 70% = <strong>€2,800</strong>",
+      "franchise.econ.card3.p5": `Muchos socios recuperan la inversión inicial en 1–3 transacciones,
+          según el tamaño del acuerdo y las comisiones locales.`,
+
+      "franchise.econ.note.h3": "Nota importante (transparencia)",
+      "franchise.econ.note.p": `Las cifras anteriores son ejemplos ilustrativos para explicar el modelo. Los ingresos no están garantizados y
+        dependen de tu actividad, condiciones del mercado, precios y cierre exitoso de la transacción.`,
+
+      "franchise.econ.cta_team": "Hablar con el equipo",
+      "franchise.econ.cta_apply": "Solicitar el programa de socios",
+      "franchise.econ.cta_training": "Ver formación y certificación",
+
+      "franchise.compliance.h2": "Confianza, ética y cumplimiento",
+      "franchise.compliance.card1.h3": "Estándares de verificación",
+      "franchise.compliance.card1.p": `Todas las publicaciones deben pasar verificaciones básicas legales, de propiedad y documentación
+          antes de publicarse en la plataforma.`,
+      "franchise.compliance.card2.h3": "Código de conducta",
+      "franchise.compliance.card2.p": `Todos los socios operan bajo un código de ética profesional que cubre
+          transparencia, protección del cliente y trato justo.`,
+      "franchise.compliance.card3.h3": "Monitoreo continuo",
+      "franchise.compliance.card3.p": `Monitoreamos el rendimiento y cumplimiento para mantener la confianza de la marketplace
+          y de la diáspora.`,
+      "franchise.compliance.card4.h3": "Gobernanza de la plataforma",
+      "franchise.compliance.card4.p": `Los socios operan dentro del marco de gobernanza del marketplace
+          para proteger compradores, vendedores y la marca PanAfric Properties.`,
+
+      "franchise.apply.h2": "Solicitar el programa de franquicia",
+      "franchise.apply.p": `Si eres ambicioso, estás motivado y comprometido con construir un negocio inmobiliario creíble
+        en tu ciudad, te invitamos a completar el formulario para convertirte en socio franquiciado de PanAfric Properties.
+        No se requiere experiencia previa en el sector.`,
+
+      "franchise.form.full_name": "Nombre completo",
+      "franchise.form.email": "Correo electrónico",
+      "franchise.form.phone": "Teléfono / WhatsApp",
+      "franchise.form.location": "Ciudad y país",
+      "franchise.form.education": "Nivel educativo",
+      "franchise.form.employment": "Situación laboral",
+      "franchise.form.select": "Seleccionar",
+      "franchise.form.education.secondary": "Educación secundaria",
+      "franchise.form.education.diploma": "Diploma",
+      "franchise.form.education.university": "Título universitario",
+      "franchise.form.education.other": "Otro",
+      "franchise.form.employment.unemployed": "Desempleado",
+      "franchise.form.employment.self": "Autónomo",
+      "franchise.form.employment.employed": "Empleado",
+      "franchise.form.employment.student": "Estudiante",
+      "franchise.form.why": "¿Por qué quieres unirte a PanAfric Properties?",
+      "franchise.form.submit": "Enviar solicitud",
+
+      "footer.tagline": "Acceso confiable a oportunidades inmobiliarias africanas verificadas — construido para la diáspora.",
+      "footer.platform.h3": "Plataforma",
+      "footer.platform.countries": "Países",
+      "footer.platform.properties": "Propiedades",
+      "footer.platform.trust": "Confianza y verificación",
+      "footer.platform.login": "Acceso de socios",
+      "footer.work.h3": "Trabaja con nosotros",
+      "footer.work.p": `Lanza tu propio negocio inmobiliario con formación,
+          certificación y acceso a compradores de la diáspora.`,
+      "footer.work.apply": "Solicitar",
+      "footer.contact.h3": "Contacto",
+      "footer.contact.p": "Para compradores, promotores y socios.",
+      "footer.contact.link": "Escríbenos",
+      "footer.copyright": "© 2026 PanAfric Properties. Todos los derechos reservados.",
+
+      "index.hero.badge": "Diáspora primero • Confianza primero",
+"index.hero.h1": "PanAfric Properties",
+"index.hero.p": `Tu puerta de entrada de confianza al inmobiliario africano — conectando a africanos de todo el mundo con
+      oportunidades verificadas en su país mediante una red local de franquicias regulada.`,
+"index.hero.cta1": "Explorar propiedades",
+"index.hero.cta2": "Hablar con un agente local",
+
+"index.kpi1.t": "Mercados en lanzamiento",
+"index.kpi2.t": "Tipos de anuncios",
+"index.kpi2.v": "Terrenos • Viviendas • Proyectos",
+"index.kpi3.t": "Modelo",
+"index.kpi3.v": "Red de franquicias",
+
+"index.how.h2": "Cómo funciona",
+"index.how.card1.h3": "1) Explora oportunidades verificadas",
+"index.how.card1.p": "Explora terrenos, viviendas y proyectos listados por socios franquiciados autorizados en cada territorio.",
+"index.how.card2.h3": "2) Te conectamos con un agente local",
+"index.how.card2.p": "Tu consulta se canaliza al profesional adecuado sobre el terreno para guiarte y protegerte.",
+"index.how.card3.h3": "3) Compra con claridad y apoyo",
+"index.how.card3.p": "Mostramos el estado de la due diligence y pasos transparentes para completar con seguridad.",
+
+"index.franchise.h2": "De graduado a emprendedor inmobiliario",
+"index.franchise.p": `Empoderamos a jóvenes africanos, graduados, no graduados y profesionales desempleados para lanzar su propio negocio inmobiliario como autónomos en sus ciudades bajo nuestro modelo de franquicia.
+        PanAfric Properties ofrece formación, certificación interna y acceso a compradores de la diáspora mediante nuestro marketplace de confianza.`,
+"index.franchise.cta": "Solicitar el programa de franquicia",
+
+"index.countries.h2": "Empieza por países",
+"index.countries.p": "Elige un mercado para ver oportunidades y la red local de socios franquiciados.",
+"index.countries.cta1": "Ver todos los países",
+"index.countries.cta2": "Cómo construimos confianza",
+
+"index.country.ghana": "Accra • Kumasi • Tema",
+"index.country.nigeria": "Lagos • Abuja",
+"index.country.cameroon": "Douala • Yaundé",
+"index.country.senegal": "Dakar • Thiès",
+"index.country.ivory": "Abiyán • Bouaké",
+"index.country.mali": "Bamako",
+"index.country.zimbabwe": "Harare • Bulawayo",
+
+"index.footer.franchise.p": "Conviértete en socio local y publica oportunidades verificadas en tu territorio.",
+"index.footer.franchise.link": "Solicitar / Consultar",
+// ===== TRAINING =====
+"training.top.approved": `¿Ya estás aprobado? <a href="login.html"><strong>Acceso de socios</strong></a>`,
+"training.top.login_strong": "Acceso de socios",
+
+"training.hero.badge": "Academia de socios • Certificación • Confianza",
+"training.hero.h1": "Formación y certificación de PanAfric Properties",
+"training.hero.p": `Todos los solicitantes de franquicia aprobados completan nuestro programa interno online de formación y certificación
+      antes de operar bajo la marca PanAfric Properties.`,
+"training.hero.cta_apply": "Solicitar el programa de franquicia",
+"training.hero.cta_login": "Acceso de socios",
+
+"training.standards.h2": "Estándares profesionales. Confianza. Cumplimiento.",
+"training.standards.p1": `PanAfric Properties opera un marketplace inmobiliario de confianza para la diáspora y compradores internacionales.
+      Para proteger a los clientes, mantener la credibilidad de la plataforma y asegurar una conducta profesional, todos los socios franquiciados
+      deben completar nuestro programa interno de formación y certificación antes de la incorporación.`,
+"training.standards.p2": "Nuestro programa de formación y certificación garantiza que cada socio:",
+
+"training.standards.card1.h3": "Comprende los fundamentos inmobiliarios",
+"training.standards.card1.p": "Aprende lo básico de mercados, valoración y procesos de transacción.",
+"training.standards.card2.h3": "Sigue estándares de due diligence",
+"training.standards.card2.p": "Comprende procedimientos de verificación, prevención de fraude y controles documentales.",
+"training.standards.card3.h3": "Opera éticamente",
+"training.standards.card3.p": "Respeta principios de transparencia, profesionalidad y protección al cliente.",
+"training.standards.card4.h3": "Cumple la gobernanza de la plataforma",
+"training.standards.card4.p": "Sigue reglas de reporting, cumplimiento y marketplace.",
+
+"training.access.h2": "Quién puede acceder al programa de formación",
+"training.access.p": `El programa de Formación y Certificación de PanAfric Properties está disponible exclusivamente para solicitantes de franquicia aprobados.
+      No necesitas experiencia previa en el sector para calificar.`,
+"training.access.card1.h3": "Graduados y jóvenes profesionales",
+"training.access.card1.p": "Buscando una oportunidad estructurada y generadora de ingresos en tu ciudad.",
+"training.access.card2.h3": "No graduados con ambición",
+"training.access.card2.p": "Ofrecemos formación, estructura y certificación para operar con profesionalidad.",
+"training.access.card3.h3": "Profesionales desempleados",
+"training.access.card3.p": "Hazte autónomo en un sector en crecimiento con demanda real.",
+"training.access.card4.h3": "Regreso de la diáspora",
+"training.access.card4.p": "Construye un negocio creíble con una marca establecida y un flujo de compradores.",
+
+"training.academy.h2": "Cómo funciona la academia de socios",
+"training.academy.step1.h3": "1) Solicitar y ser aceptado",
+"training.academy.step1.p": "Envía tu solicitud. Los candidatos aprobados reciben acceso a la plataforma de formación.",
+"training.academy.step2.h3": "2) Iniciar sesión en la plataforma de formación",
+"training.academy.step2.p": "Accede a nuestro sistema interno de aprendizaje online con tus credenciales personales.",
+"training.academy.step3.h3": "3) Estudiar los módulos",
+"training.academy.step3.p": "Lee módulos estructurados sobre fundamentos, due diligence, ética y procesos de plataforma.",
+"training.academy.step4.h3": "4) Completar pruebas cortas",
+"training.academy.step4.p": "Cada módulo incluye una evaluación breve para verificar la comprensión.",
+"training.academy.step5.h3": "5) Obtener tu certificación",
+"training.academy.step5.p": "Cuando apruebas módulos y pruebas, recibes la certificación de socio.",
+
+"training.curriculum.h2": "Plan de estudios",
+"training.curriculum.p": "Este es un resumen público. Los módulos completos y pruebas solo están disponibles dentro de la academia de socios.",
+"training.curriculum.m1.h3": "Módulo 1 — Introducción a PanAfric Properties",
+"training.curriculum.m1.p": "Visión de la plataforma, modelo de franquicia, responsabilidades, marco de gobernanza.",
+"training.curriculum.m2.h3": "Módulo 2 — Fundamentos inmobiliarios",
+"training.curriculum.m2.p": "Tipos de propiedad, fundamentos de valoración, dinámica del mercado local.",
+"training.curriculum.m3.h3": "Módulo 3 — Due diligence y verificación",
+"training.curriculum.m3.p": "Comprobación de propiedad, documentación de título, prevención de fraude, señales de alerta.",
+"training.curriculum.m4.h3": "Módulo 4 — Atención al cliente y ética",
+"training.curriculum.m4.p": "Conducta profesional, transparencia, comunicación, conflictos de interés.",
+"training.curriculum.m5.h3": "Módulo 5 — Expectativas del comprador diáspora",
+"training.curriculum.m5.p": "Psicología del inversor, preocupaciones de confianza, gestión de transacciones a distancia.",
+"training.curriculum.m6.h3": "Módulo 6 — Publicaciones y procesos de plataforma",
+"training.curriculum.m6.p": "Incorporación de propiedades, estándares documentales, reglas del marketplace.",
+"training.curriculum.m7.h3": "Módulo 7 — Alfabetización legal (básica)",
+"training.curriculum.m7.p": "Contratos, relaciones de agencia, conceptos de escrow.",
+"training.curriculum.m8.h3": "Módulo 8 — Cierre de transacciones",
+"training.curriculum.m8.p": "Incorporación del comprador, hitos, principios de pago.",
+"training.curriculum.m9.h3": "Módulo 9 — Cumplimiento y reporting",
+"training.curriculum.m9.p": "Obligaciones de reporting, monitoreo, gestión de disputas.",
+
+"training.cert.h2": "Certificación de socio",
+"training.cert.p": `La certificación de socio de PanAfric Properties confirma que has completado con éxito
+      el programa de formación y certificación y has cumplido nuestros estándares operativos.`,
+"training.cert.card1.h3": "Autorización de marca",
+"training.cert.card1.p": "Opera bajo la marca PanAfric Properties.",
+"training.cert.card2.h3": "Acceso al marketplace",
+"training.cert.card2.p": "Publica oportunidades verificadas y recibe consultas de compradores de la diáspora.",
+"training.cert.card3.h3": "Reconocimiento oficial",
+"training.cert.card3.p": "Estatus de socio franquiciado certificado.",
+"training.cert.card4.h3": "Cumplimiento continuo",
+"training.cert.card4.p": "Certificación mantenida mediante conducta ética y estándares de desempeño.",
+
+"training.eligibility.h2": "Acceso y elegibilidad",
+"training.eligibility.p": `El programa de formación y certificación no es accesible públicamente.
+      El acceso se concede solo a solicitantes de franquicia aprobados.`,
+"training.eligibility.step1.h3": "Paso 1",
+"training.eligibility.step1.p": "Solicitar el programa de franquicia.",
+"training.eligibility.step2.h3": "Paso 2",
+"training.eligibility.step2.p": "Recibir el resultado de la revisión.",
+"training.eligibility.step3.h3": "Paso 3",
+"training.eligibility.step3.p": "Obtener acceso de inicio de sesión a la plataforma de formación.",
+"training.eligibility.step4.h3": "Paso 4",
+"training.eligibility.step4.p": "Completar módulos y pruebas.",
+"training.eligibility.step5.h3": "Paso 5",
+"training.eligibility.step5.p": "Obtener certificación.",
+
+"training.clarification.h3": "Aclaración importante",
+"training.clarification.p": `PanAfric Properties no ofrece empleo asalariado ni puestos tradicionales.
+      Este programa es una oportunidad de emprendimiento basada en franquicia.
+      Los solicitantes seleccionados operan como autónomos y propietarios de su negocio
+      bajo la marca PanAfric Properties y su marco de confianza.`,
+
+"training.journey.h2": "Inicia tu camino de formación",
+"training.journey.p": `Solicita convertirte en socio franquiciado de PanAfric Properties y comienza tu
+      camino de formación y certificación.`,
+"training.journey.cta": "Solicitar el programa de franquicia",
+// trust.html
+"trust.title": "Confianza y Verificación",
+"trust.intro": "PanAfric Properties opera a través de una red local de franquicias regulada para mejorar la transparencia, reducir el riesgo de fraude y proteger a los compradores de la diáspora.",
+
+"trust.c1.t": "Socios franquiciados locales con licencia",
+"trust.c1.p": "Los anuncios son enviados por socios verificados que operan bajo las leyes locales y los requisitos del sector.",
+
+"trust.c2.t": "Comprobaciones de título y propiedad",
+"trust.c2.p": "Cuando está disponible, la documentación del título se revisa y se marca como Verificado / En revisión / No verificado.",
+
+"trust.c3.t": "Evaluación de promotores",
+"trust.c3.p": "Promotores y vendedores pasan comprobaciones básicas de antecedentes y validación de referencias antes de publicar.",
+
+"trust.c4.t": "Estado de diligencia debida",
+"trust.c4.p": "Cada oportunidad mostrará claramente su estado de diligencia debida y los siguientes pasos recomendados.",
+
+"trust.c5.t": "Soporte al comprador",
+"trust.c5.p": "Guiamos a los compradores durante el proceso y dirigimos las consultas al socio correcto en el país.",
+
+"trust.c6.t": "Proceso claro, precios claros",
+"trust.c6.p": "Comunicación transparente sobre tarifas, pasos y plazos—para que los compradores de la diáspora puedan planificar con confianza.",
+
+"trust.cta.agent": "Hablar con un agente local",
+"trust.cta.browse": "Ver propiedades",
+
+"trust.promo.t": "Construye un negocio inmobiliario con nosotros",
+"trust.promo.p": "PanAfric Properties impulsa a jóvenes africanos — graduados, no graduados y profesionales desempleados — a lanzar sus propios negocios inmobiliarios por cuenta propia bajo nuestro modelo de franquicia. Se ofrece formación, certificación interna y acceso a compradores de la diáspora.",
+"trust.promo.cta": "Solicitar unirse a nuestro programa de franquicia",
+// contact.html
+"contact.title": "Contáctanos",
+"contact.intro": "Consultas inmobiliarias, solicitudes de franquicia, alianzas con promotores — envíanos un mensaje.",
+
+"contact.form.title": "Formulario de consulta",
+"contact.form.name.label": "Tu nombre",
+"contact.form.name.ph": "Nombre completo",
+"contact.form.email.label": "Correo",
+"contact.form.email.ph": "nombre@email.com",
+"contact.form.role.label": "Soy…",
+"contact.form.role.opt1": "Comprador de la diáspora",
+"contact.form.role.opt2": "Comprador local",
+"contact.form.role.opt3": "Promotor / vendedor",
+"contact.form.role.opt4": "Agente / candidato a franquicia",
+"contact.form.role.opt5": "Socio / inversor",
+"contact.form.country.label": "País de interés",
+"contact.form.msg.label": "Tu mensaje",
+"contact.form.msg.ph": "Cuéntanos qué quieres comprar/construir o cómo quieres colaborar.",
+"contact.form.submit": "Enviar mensaje",
+
+"contact.next.title": "¿Qué pasa después?",
+"contact.next.s1": "<b>1)</b> Revisamos tu consulta.",
+"contact.next.s2": "<b>2)</b> Te conectamos con el socio local adecuado.",
+"contact.next.s3": "<b>3)</b> Recibes un plan de acción claro y los siguientes pasos.",
+
+"contact.links.title": "Enlaces rápidos",
+"contact.links.p1": "Ver propiedades",
+"contact.links.p2": "Confianza y verificación",
+"contact.links.p3": "Socios franquiciados",
+// agents.html
+"agents.title": "Socios franquiciados locales",
+"agents.intro": "Cada territorio está representado por un Socio Franquiciado de PanAfric Properties — formado, certificado y supervisado bajo nuestro marco de confianza y verificación. Los profesionales inmobiliarios con licencia son bienvenidos y pueden ser acelerados, pero no se requiere licencia para postular.",
+
+"agents.card1.title": "Accra Oeste — Ghana",
+"agents.card1.coverage": "<b>Cobertura:</b> East Legon, Airport, Cantonments",
+"agents.card1.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card2.title": "Lagos — Nigeria",
+"agents.card2.coverage": "<b>Cobertura:</b> Lekki, Victoria Island",
+"agents.card2.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card3.title": "Douala — Camerún",
+"agents.card3.coverage": "<b>Cobertura:</b> Bonapriso, Akwa",
+"agents.card3.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card4.title": "Dakar — Senegal",
+"agents.card4.coverage": "<b>Cobertura:</b> Almadies, Plateau",
+"agents.card4.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card5.title": "Bamako — Malí",
+"agents.card5.coverage": "<b>Cobertura:</b> ACI 2000, Hippodrome",
+"agents.card5.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card6.title": "Harare — Zimbabue",
+"agents.card6.coverage": "<b>Cobertura:</b> Borrowdale, Avondale",
+"agents.card6.status": "<b>Estado:</b> Socio franquiciado (certificado)",
+
+"agents.card.cta": "Contactar a este socio",
+
+"agents.join.title": "Conviértete en socio franquiciado",
+"agents.join.text": "No necesitas experiencia previa en bienes raíces — ofrecemos formación, certificación interna y un marco de confianza. Los agentes con licencia y profesionales del sector también pueden postular y pueden ser acelerados según el territorio.",
+"agents.join.cta.apply": "Solicitar unirse a nuestro programa de socios",
+"agents.join.cta.training": "Ver formación",
+// countries.html
+"countries.title": "Explorar países",
+"countries.intro": "Elige un mercado para ver oportunidades verificadas y socios franquiciados locales.",
+
+"countries.ghana.cities": "Accra • Kumasi • Tema",
+"countries.nigeria.cities": "Lagos • Abuja",
+"countries.cameroon.cities": "Douala • Yaundé",
+"countries.senegal.cities": "Dakar • Thiès",
+"countries.ivorycoast.cities": "Abidjan • Bouaké",
+"countries.mali.cities": "Bamako",
+"countries.zimbabwe.cities": "Harare • Bulawayo",
+
+"countries.cta.browse": "Ver anuncios",
+"countries.cta.franchise": "Consulta de franquicia",
+// properties.html
+"properties.title": "Anuncios de propiedades",
+"properties.intro": "Anuncios MVP — estático por ahora. Siguiente paso: filtros reales + páginas por país.",
+
+"properties.filter.country": "País",
+"properties.filter.type": "Tipo",
+"properties.filter.budget": "Presupuesto",
+"properties.filter.dd": "Diligencia debida",
+"properties.filter.all": "Todos",
+
+"properties.type.land": "Terreno",
+"properties.type.home": "Vivienda",
+"properties.type.dev": "Proyecto / Sobre plano",
+
+"properties.budget.any": "Cualquiera",
+"properties.budget.under50": "Menos de 50.000 €",
+"properties.budget.50to150": "50.000 € – 150.000 €",
+"properties.budget.150plus": "150.000 €+",
+
+"properties.dd.any": "Cualquiera",
+"properties.dd.verified": "Verificado",
+"properties.dd.review": "En revisión",
+
+"properties.cta.enquire": "Consultar",
+"properties.cta.how": "Cómo funciona la verificación",
+
+"properties.list1.title": "Villa moderna — Accra (Ghana)",
+"properties.list1.desc": "Villa de 3 habitaciones • East Legon • Lista para entrar",
+"properties.list1.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Accra Oeste",
+
+"properties.list2.title": "Terreno residencial — Douala (Camerún)",
+"properties.list2.desc": "Parcela de 500 m² • Buen acceso • Ideal para construir",
+"properties.list2.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Douala",
+
+"properties.list3.title": "Apartamentos sobre plano — Lekki (Nigeria)",
+"properties.list3.desc": "Apartamentos de 2 habitaciones • Plan de pagos disponible",
+"properties.list3.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Lagos",
+
+"properties.list4.title": "Parcela residencial — Bamako (Malí)",
+"properties.list4.desc": "Terreno con título • Zona residencial • Buen acceso",
+"properties.list4.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Bamako",
+
+"properties.list5.title": "Casa familiar — Harare (Zimbabue)",
+"properties.list5.desc": "Casa de 3 habitaciones • Barrio seguro",
+"properties.list5.meta": "<b>Estado:</b> Verificado • <b>Agente:</b> Socio Harare",
+
+"properties.list6.title": "Apartamento en la ciudad — Dakar (Senegal)",
+"properties.list6.desc": "Apartamento de 2 habitaciones • Alta demanda de alquiler",
+"properties.list6.meta": "<b>Estado:</b> En revisión • <b>Agente:</b> Socio Dakar",
+
+"properties.card.cta": "Solicitar detalles",
+
+"properties.promo.title": "¿Quieres crear un negocio inmobiliario en tu ciudad?",
+"properties.promo.text": "Únete a PanAfric Properties como socio franquiciado. Formamos y certificamos a socios locales para operar actividades de corretaje inmobiliario y conectarlos con compradores de la diáspora en todo el mundo.",
+"properties.promo.cta": "Trabaja con nosotros",
+// login.html
+"login.title": "Acceso de socios",
+"login.intro": "Accede a la plataforma de formación de PanAfric Properties. El acceso está disponible solo para socios aprobados.",
+"login.cta.login": "Iniciar sesión",
+"login.cta.back": "Volver",
+"login.note.q": "¿Aún no estás aprobado?",
+"login.note.link": "Solicitar unirse a nuestro programa de socios",
+// franchise-apply.html
+"apply.badge": "Solicitud de franquicia",
+"apply.title": "Solicita unirte a nuestro programa de franquicia",
+"apply.intro": "Este programa está pensado para personas ambiciosas que quieren crear un negocio inmobiliario por cuenta propia en su ciudad de origen, bajo el modelo de franquicia de PanAfric Properties. No se requiere experiencia previa en bienes raíces.",
+
+"apply.form.title": "Formulario de solicitud de socio",
+
+"apply.f.name": "Nombre completo",
+"apply.f.email": "Correo electrónico",
+"apply.f.phone": "Número de teléfono",
+"apply.f.residence": "País de residencia",
+"apply.f.city": "Ciudad en la que quieres operar",
+"apply.f.education": "Nivel educativo",
+"apply.f.employment": "Situación laboral",
+"apply.f.why": "¿Por qué quieres unirte a PanAfric Properties?",
+"apply.f.experience": "¿Tienes experiencia en bienes raíces?",
+"apply.f.capital": "¿Puedes invertir en costos básicos de puesta en marcha (marketing, transporte, administración)?",
+"apply.f.notes": "¿Algo más que te gustaría que supiéramos?",
+
+"apply.opt.select": "Seleccionar",
+"apply.opt.nongrad": "Sin estudios universitarios",
+"apply.opt.grad": "Graduado",
+"apply.opt.postgrad": "Posgrado",
+"apply.opt.unemployed": "Desempleado",
+"apply.opt.employed": "Empleado",
+"apply.opt.selfemployed": "Autónomo",
+"apply.opt.no": "No",
+"apply.opt.yes": "Sí",
+
+"apply.cta.submit": "Enviar solicitud",
+"apply.cta.back": "Volver",
+"apply.note": "Tras la revisión, los solicitantes aprobados reciben acceso por invitación a la Partner Academy.",
+// academy.html
+"academy.title": "Academia de Socios",
+"academy.progress": "Progreso",
+"academy.resume": "Continuar siguiente módulo",
+"academy.complete_note": "Completa todos los módulos para desbloquear la certificación.",
+"academy.cert": "Certificación",
+"academy.view_cert": "Ver certificado",
+"academy.badge": "Socio certificado",
+"academy.session": "Sesión",
+"academy.logout": "Cerrar sesión",
+"academy.admin": "Abrir panel admin",
+"academy.modules": "Módulos",
+"academy.welcome": "Bienvenido, {name}{email}.",
+"academy.progress_text": "{passed} / {total} módulos completados ({pct}%).",
+"academy.unlocked": "Desbloqueado — has completado todos los módulos.",
+"academy.locked": "Bloqueado — completa todos los módulos para desbloquear.",
+"academy.status": "Estado",
+"academy.completed": "Completado ✅",
+"academy.not_completed": "No completado",
+// certificate.html
+"cert.back": "← Volver a la Academia",
+
+"cert.locked.title": "Certificado bloqueado",
+"cert.locked.text": "Completa todos los módulos para desbloquear tu certificación de socio.",
+"cert.locked.progress": "Progreso: {passed}/{total} módulos completados.",
+
+"cert.brand": "PanAfric Properties",
+"cert.program": "Programa de formación y certificación",
+"cert.title": "Certificado de finalización",
+"cert.desc": "Certifica que el socio nombrado a continuación ha completado con éxito todos los módulos de formación y evaluaciones de la Academia de Socios de PanAfric Properties.",
+
+"cert.cta.print": "Imprimir / Guardar PDF",
+"cert.cta.logout": "Cerrar sesión",
+
+"cert.note": "La certificación se mantiene activa sujeta al cumplimiento continuo, la ética y los estándares de la plataforma.",
+
+"cert.meta.id": "ID del certificado: {id}",
+"cert.meta.issued": "Emitido el: {date}",
+// Module titles
+"module.1.title": "Introducción a PanAfric Properties",
+"module.2.title": "Fundamentos inmobiliarios",
+"module.3.title": "Debida diligencia y verificación",
+"module.4.title": "Gestión del cliente y ética",
+"module.5.title": "Expectativas del comprador de la diáspora",
+"module.6.title": "Procesos de anuncios y de la plataforma",
+"module.7.title": "Alfabetización legal (básicos)",
+"module.8.title": "Cierre de transacciones",
+"module.9.title": "Cumplimiento e informes",
+/* ===== MODULE TRANSLATIONS — SPANISH ===== */
+
+"module.1.title": "Introducción a PanAfric Properties",
+"module.1.p1": "PanAfric Properties conecta a africanos en la diáspora con oportunidades inmobiliarias verificadas.",
+"module.1.p2": "Nuestro modelo escala mediante socios locales capacitados.",
+"module.1.p3": "Los socios protegen a los compradores siguiendo estándares éticos.",
+"module.1.q1": "¿Cuál es el propósito principal?",
+"module.1.q1.o1": "Vender propiedades al azar",
+"module.1.q1.o2": "Conectar compradores con oportunidades verificadas",
+"module.1.q1.o3": "Listar propiedades de un solo país",
+
+"module.2.title": "Conceptos básicos de bienes raíces",
+"module.2.p1": "Comprende los tipos de activos.",
+"module.2.p2": "Aprende factores clave de valoración.",
+"module.2.p3": "Conoce el flujo de transacciones.",
+"module.2.q1": "¿Cuál NO es un tipo típico?",
+"module.2.q1.o1": "Terrenos",
+"module.2.q1.o2": "Viviendas",
+"module.2.q1.o3": "Coches usados",
+
+"module.3.title": "Verificación y due diligence",
+"module.3.p1": "La verificación protege a compradores y marca.",
+"module.3.p2": "Señales de alerta incluyen documentos faltantes.",
+"module.3.p3": "Publica solo anuncios verificados.",
+"module.3.q1": "¿Por qué es importante la due diligence?",
+"module.3.q1.o1": "Para retrasar",
+"module.3.q1.o2": "Para proteger clientes",
+"module.3.q1.o3": "Para extender anuncios",
+
+"module.4.title": "Atención al cliente y ética",
+"module.4.p1": "Guía al comprador con profesionalismo.",
+"module.4.p2": "No tergiverses información.",
+"module.4.p3": "Mantén registros escritos.",
+"module.4.q1": "¿Mejor enfoque?",
+"module.4.q1.o1": "Prometer todo",
+"module.4.q1.o2": "Ser transparente",
+"module.4.q1.o3": "Ocultar riesgos",
+
+"module.5.title": "Expectativas del comprador",
+"module.5.p1": "Los compradores valoran seguridad.",
+"module.5.p2": "Comunicación clara es esencial.",
+"module.5.p3": "Nunca presiones.",
+"module.5.q1": "Lo más importante es:",
+"module.5.q1.o1": "Presión rápida",
+"module.5.q1.o2": "Seguridad",
+"module.5.q1.o3": "Rumores",
+
+"module.6.title": "Procesos de anuncios",
+"module.6.p1": "Los anuncios deben ser claros.",
+"module.6.p2": "Usa plantillas consistentes.",
+"module.6.p3": "Acepta solo fuentes verificadas.",
+"module.6.q1": "Un anuncio debe incluir:",
+"module.6.q1.o1": "Fotos borrosas",
+"module.6.q1.o2": "Detalles precisos",
+"module.6.q1.o3": "Sin precio",
+
+"module.7.title": "Conceptos legales",
+"module.7.p1": "Comprende conceptos básicos legales.",
+"module.7.p2": "No des asesoría legal.",
+"module.7.p3": "Registra hitos importantes.",
+"module.7.q1": "Un socio debe:",
+"module.7.q1.o1": "Dar asesoría legal",
+"module.7.q1.o2": "Facilitar revisión legal",
+"module.7.q1.o3": "Ignorar contratos",
+
+"module.8.title": "Cierre de transacciones",
+"module.8.p1": "El cierre debe ser controlado.",
+"module.8.p2": "Mantén informado al comprador.",
+"module.8.p3": "Documenta todo.",
+"module.8.q1": "El pago final debe hacerse:",
+"module.8.q1.o1": "Antes de verificar",
+"module.8.q1.o2": "Después de validar",
+"module.8.q1.o3": "Al azar",
+
+"module.9.title": "Cumplimiento y reporting",
+"module.9.p1": "El cumplimiento protege la plataforma.",
+"module.9.p2": "Reporta problemas temprano.",
+"module.9.p3": "Mantén estándares.",
+"module.9.q1": "El cumplimiento existe para:",
+"module.9.q1.o1": "Reducir crecimiento",
+"module.9.q1.o2": "Proteger confianza",
+"module.9.q1.o3": "Evitar transparencia",
+      
+"module_word": "Módulo",
+"select_option": "Seleccionar",
+"submit_test_btn": "Enviar test",
+"module_pass_msg": "✅ Test aprobado. Módulo completado. Vuelve a la Academia para continuar.",
+"module_fail_msg": "❌ Aún no. Tienes {correct}/{total}. Revisa y vuelve a intentarlo.",
+"module_quick_test_title": "Test rápido",
+"module_quick_test_help": "Responde correctamente a todas las preguntas para completar este módulo.",
+
+      // Module 1 — Quiz (ES)
+"module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?",
+"module.1.q1.o1": "Vender propiedades al azar sin controles",
+"module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas",
+"module.1.q1.o3": "Publicar solo propiedades de un país",
+
+"module.1.q2": "¿Quién puede solicitar ser socio?",
+"module.1.q2.o1": "Solo agentes inmobiliarios con licencia",
+"module.1.q2.o2": "Solo personas con títulos universitarios",
+"module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición",
+
+"module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?",
+"module.1.q3.o1": "Nada, puede empezar inmediatamente",
+"module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
+"module.1.q3.o3": "Solo una cuenta de redes sociales",
+
+      // Module 1 — Spanish
+"module.1.p1": "PanAfric Properties es un marketplace centrado en la diáspora que conecta a africanos de todo el mundo con oportunidades inmobiliarias verificadas en su país.",
+"module.1.p2": "Nuestro modelo escala mediante socios franquiciados locales capacitados, certificados y gestionados bajo un marco de confianza y cumplimiento.",
+"module.1.p3": "Los socios protegen a los compradores siguiendo estándares de verificación, conducta ética y procesos de la plataforma.",
+
+"module.1.q1": "¿Cuál es el propósito principal de PanAfric Properties?",
+"module.1.q1.o1": "Vender propiedades al azar sin controles",
+"module.1.q1.o2": "Conectar a compradores de la diáspora con oportunidades inmobiliarias africanas verificadas",
+"module.1.q1.o3": "Publicar solo propiedades de un país",
+
+"module.1.q2": "¿Quién puede solicitar ser socio?",
+"module.1.q2.o1": "Solo agentes inmobiliarios con licencia",
+"module.1.q2.o2": "Solo personas con títulos universitarios",
+"module.1.q2.o3": "Graduados, no graduados y profesionales desempleados con ambición",
+
+"module.1.q3": "¿Qué se requiere antes de que un socio opere bajo la marca?",
+"module.1.q3.o1": "Nada, puede empezar inmediatamente",
+"module.1.q3.o2": "Formación, certificación interna e incorporación de cumplimiento",
+"module.1.q3.o3": "Solo una cuenta de redes sociales",
+
+      "sponsor.hero.title": "Patrocina a un futuro socio",
+"sponsor.hero.lead": "Ayuda a un familiar o a un joven profesional a convertirse en Socio certificado de PanAfric Properties y a generar ingresos localmente mediante el emprendimiento (no es caridad y no hay garantías de ingresos).",
+"sponsor.hero.ctaPrimary": "Patrocinar a un candidato",
+"sponsor.hero.ctaSecondary": "Ver el programa de Socios",
+"sponsor.hero.note": "Esta página no aparece en la navegación principal. Compártela directamente con tu comunidad de la diáspora.",
+
+"sponsor.how.title": "Cómo funciona",
+"sponsor.how.step1Title": "1) Elige un candidato",
+"sponsor.how.step1Text": "Patrocinas a un familiar o a una persona joven motivada (18+) que quiera construir un camino profesional en el sector inmobiliario.",
+"sponsor.how.step2Title": "2) Financia la activación del socio",
+"sponsor.how.step2Text": "El patrocinio es de 1.000 € e incluye formación y el proceso de onboarding y activación dentro del ecosistema PanAfric.",
+"sponsor.how.step3Title": "3) Se certifica",
+"sponsor.how.step3Text": "Tras completar los módulos y el onboarding, podrá operar como Socio bajo nuestros estándares y normas de cumplimiento.",
+
+"sponsor.cost.title": "Qué cubren los 1.000 €",
+"sponsor.cost.trainingTitle": "Formación — 250 €",
+"sponsor.cost.trainingItem1": "Acceso a módulos y cuestionarios de la Academia de Socios",
+"sponsor.cost.trainingItem2": "Guiones prácticos, plantillas y flujo de trabajo de operaciones",
+"sponsor.cost.trainingItem3": "Certificación al completar",
+"sponsor.cost.onboardingTitle": "Onboarding y Activación — 750 €",
+"sponsor.cost.onboardingItem1": "Configuración del perfil del Socio y pasos de verificación",
+"sponsor.cost.onboardingItem2": "Orientación sobre herramientas: anuncios, leads y registro de clientes",
+"sponsor.cost.onboardingItem3": "Apoyo de lanzamiento: primeros anuncios y primer pipeline de clientes",
+"sponsor.cost.noteTitle": "Importante:",
+"sponsor.cost.noteText": "Este es un programa de empoderamiento. No es una donación y no prometemos ingresos ni resultados.",
+
+"sponsor.who.title": "¿Para quién es?",
+"sponsor.who.card1Title": "Patrocinadores de la diáspora",
+"sponsor.who.card1Text": "Quieres empoderar a alguien en su país con un camino real de habilidades.",
+"sponsor.who.card2Title": "Candidatos motivados",
+"sponsor.who.card2Text": "Jóvenes profesionales que puedan aprender y seguir un proceso.",
+"sponsor.who.card3Title": "Grupos comunitarios",
+"sponsor.who.card3Text": "Asociaciones que quieran crear actividad económica estructurada.",
+"partner_dash.title": "Panel del Socio",
+"partner_dash.welcome": "Bienvenido, {name}.",
+"partner_dash.status.title": "Estado",
+"partner_dash.status.certified": "Certificado ✅",
+"partner_dash.status.not_certified": "No certificado",
+"partner_dash.status.not_certified_note": "Debes completar la Partner Academy para publicar propiedades.",
+"partner_dash.status.certified_note": "Estás certificado y puedes enviar propiedades para revisión.",
+"partner_dash.actions.title": "Acciones rápidas",
+"partner_dash.actions.note": "Las solicitudes se revisan en PanAfric Properties antes de publicarse.",
+"partner_dash.account.title": "Cuenta",
+"partner_dash.account.name": "Nombre",
+"partner_dash.account.email": "Email",
+"partner_dash.cta.add_property": "Añadir propiedad",
+"partner_dash.cta.view_certificate": "Ver certificado",
+"partner_dash.cta.go_academy": "Ir a la Academy",
+"partner_dash.cta.back_academy": "Volver a la Academy",
+"partner_dash.cta.logout": "Cerrar sesión",
+
+"submit.back": "← Volver al panel",
+"submit.title": "Enviar una propiedad",
+"submit.subtitle": "Envía una propiedad para revisión. Una vez aprobada, podrá publicarse en PanAfric Properties.",
+"submit.blocked": "Debes completar la Partner Academy para enviar propiedades.",
+"submit.go_academy": "Ir a la Academy",
+"submit.partner_name": "Nombre completo del socio",
+"submit.partner_email": "Email del socio",
+"submit.listing_title": "Título del anuncio",
+"submit.property_type": "Tipo de propiedad",
+"submit.select": "Seleccionar…",
+"submit.type.land": "Terreno",
+"submit.type.house": "Casa",
+"submit.type.apartment": "Apartamento",
+"submit.type.commercial": "Comercial",
+"submit.country": "País",
+"submit.city": "Ciudad / Zona",
+"submit.price": "Precio",
+"submit.currency": "Moneda",
+"submit.description": "Descripción",
+"submit.description_note": "Incluye tamaño, estado, situación de propiedad, puntos de referencia y cualquier restricción.",
+"submit.photos": "Fotos (hasta 10)",
+"submit.photos_note": "Recomendado JPG/PNG. Exterior + interior + límites del terreno.",
+"submit.docs": "Documentos de propiedad (opcional)",
+"submit.docs_note": "Escritura, certificado de terreno o prueba de autorización para publicar.",
+"submit.contact_phone": "Teléfono (opcional)",
+"submit.contact_whatsapp": "WhatsApp (opcional)",
+"submit.consent": "Confirmo que tengo derecho a enviar esta propiedad y que la información es correcta.",
+"submit.cta.submit": "Enviar para revisión",
+"submit.cta.cancel": "Cancelar",
+"submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones."
 
       
       
