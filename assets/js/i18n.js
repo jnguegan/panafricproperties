@@ -693,7 +693,7 @@
 "countries.country": "Country",
 "countries.selectCountry": "Select country…",
 "countries.cta.view": "View opportunities",
-"countries.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa.",
+"countries.tip": "Tip: this list includes all countries by continent — PanAfric can expand beyond Africa."
 
 
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
@@ -1514,7 +1514,7 @@
 "countries.country": "Pays",
 "countries.selectCountry": "Sélectionner un pays…",
 "countries.cta.view": "Voir les opportunités",
-"countries.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique.",
+"countries.tip": "Astuce : cette liste inclut tous les pays par continent — PanAfric peut s’étendre au-delà de l’Afrique."
 
 
 
@@ -2365,7 +2365,7 @@
 "countries.country": "País",
 "countries.selectCountry": "Seleccionar país…",
 "countries.cta.view": "Ver oportunidades",
-"countries.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África.",
+"countries.tip": "Consejo: esta lista incluye todos los países por continente — PanAfric puede expandirse más allá de África."
 
       
       
