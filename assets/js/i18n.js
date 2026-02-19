@@ -7,9 +7,11 @@
   const I18N = {
     en: {
       "lang_label": "Language",
+      "lang.label": "Language",
 
       "nav.countries": "Countries",
       "nav.properties": "Properties",
+      "nav.projects": "Projects",
       "nav.agents": "Agents",
       "nav.franchise": "Work With Us",
       "nav.training": "Training & Certification",
@@ -175,11 +177,6 @@
       "footer.contact.link": "Message us",
       "footer.copyright": "© 2026 PanAfric Properties. All rights reserved.",
 
-      // --- YOUR EXISTING CONTENT CONTINUES ---
-      // NOTE: I am leaving everything else unchanged, only fixing the broken commas/quotes near the end
-      // and adding the properties/property keys you already included.
-
-      // ====== REQUIRED FIXES (you already had these keys) ======
       "academy.go_dashboard": "Go to Partner Dashboard",
 
       "properties.pageTitle": "Properties — PanAfric Properties",
@@ -230,16 +227,22 @@
 
     fr: {
       "lang_label": "Langue",
-      // ... keep your existing FR content ...
+      "lang.label": "Langue",
 
-      // ✅ FIXED missing comma previously after sponsor.who.card3Text
+      "nav.countries": "Pays",
+      "nav.properties": "Propriétés",
+      "nav.projects": "Projets",
+      "nav.agents": "Agents",
+      "nav.franchise": "Travailler avec nous",
+      "nav.training": "Formation & Certification",
+      "nav.trust": "Confiance",
+      "nav.login": "Connexion Partenaire",
+      "nav.contact": "Contact",
+
       "sponsor.who.card3Text": "Associations voulant créer une activité économique structurée.",
-
-      // ✅ FIXED missing commas previously around submit.footer_note / academy.go_dashboard
       "submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires.",
       "academy.go_dashboard": "Aller au tableau de bord partenaire",
 
-      // properties + property keys (you already had them)
       "properties.pageTitle": "Biens — PanAfric Properties",
       "properties.h1": "Annonces approuvées",
       "properties.intro": "Parcourez les annonces approuvées. Chaque bien est vérifié avant publication.",
@@ -288,17 +291,23 @@
 
     es: {
       "lang_label": "Idioma",
-      // ... keep your existing ES content ...
+      "lang.label": "Idioma",
 
-      // ✅ FIXED missing comma previously after sponsor.who.card3Text
+      "nav.countries": "Países",
+      "nav.properties": "Propiedades",
+      "nav.projects": "Proyectos",
+      "nav.agents": "Agentes",
+      "nav.franchise": "Trabaja con nosotros",
+      "nav.training": "Formación y Certificación",
+      "nav.trust": "Confianza",
+      "nav.login": "Acceso Socios",
+      "nav.contact": "Contacto",
+
       "sponsor.who.card3Text": "Asociaciones que quieran crear actividad económica estructurada.",
-
-      // ✅ FIXED missing quote/comma in module.9.q1.o3 line and submit.footer_note line
       "module.9.q1.o3": "Evitar transparencia",
       "submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones.",
       "academy.go_dashboard": "Ir al panel del socio",
 
-      // properties + property keys (you already had them)
       "properties.pageTitle": "Propiedades — PanAfric Properties",
       "properties.h1": "Listado de propiedades aprobadas",
       "properties.intro": "Explora los anuncios aprobados. Cada propiedad se revisa antes de publicarse.",
@@ -347,12 +356,11 @@
   };
 
   function getLang() {
-    const saved = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
+    const saved = (localStorage.getItem(STORAGE_KEY) || localStorage.getItem("lang") || "").toLowerCase();
     return SUPPORTED.includes(saved) ? saved : "en";
   }
 
   function syncSelect(lang) {
-    // supports both your old global dropdown (.lang-select) AND the simple page dropdown (#langSelect)
     const selA = document.querySelector(".lang-select");
     const selB = document.getElementById("langSelect");
     if (selA) selA.value = lang;
@@ -370,16 +378,16 @@
   function t(lang, key) {
     const table = (I18N && I18N[lang]) ? I18N[lang] : null;
     if (table && Object.prototype.hasOwnProperty.call(table, key)) return table[key];
-    // fallback to English if missing
+
     const en = I18N.en || {};
     if (Object.prototype.hasOwnProperty.call(en, key)) return en[key];
+
     return "";
   }
 
   function applyLang(lang) {
     document.documentElement.setAttribute("lang", lang);
 
-    // innerHTML translation
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (!key) return;
@@ -397,7 +405,6 @@
       }
     });
 
-    // placeholder translation
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
       const key = el.getAttribute("data-i18n-placeholder");
       if (!key) return;
@@ -419,11 +426,11 @@
   function setLang(lang) {
     const safe = SUPPORTED.includes((lang || "").toLowerCase()) ? lang.toLowerCase() : "en";
     localStorage.setItem(STORAGE_KEY, safe);
+    localStorage.setItem("lang", safe); // keep compatibility
     syncSelect(safe);
     applyLang(safe);
   }
 
-  // ✅ Export translator for dynamic strings (modules, quizzes, etc.)
   window.papT = function (key) {
     try {
       const lang = getLang();
@@ -435,10 +442,12 @@
   window.papSetLang = setLang;
   window.papGetLang = getLang;
 
-  // convenience: re-apply i18n after dynamic rendering (cards, modules, etc.)
   window.papReapplyI18n = function () {
     try { applyLang(getLang()); } catch (e) {}
   };
+
+  // ✅ Backward compatibility for older pages
+  window.papApplyI18n = window.papReapplyI18n;
 
   document.addEventListener("DOMContentLoaded", () => {
     const lang = getLang();
