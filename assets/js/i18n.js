@@ -1432,7 +1432,7 @@
 "sponsor.who.card2Title": "Candidats motivés",
 "sponsor.who.card2Text": "Jeunes professionnels capables d’apprendre et de suivre un processus.",
 "sponsor.who.card3Title": "Groupes communautaires",
-"sponsor.who.card3Text": "Associations voulant créer une activité économique structurée."
+"sponsor.who.card3Text": "Associations voulant créer une activité économique structurée.",
 "partner_dash.title": "Tableau de bord partenaire",
 "partner_dash.welcome": "Bienvenue, {name}.",
 "partner_dash.status.title": "Statut",
@@ -1548,7 +1548,7 @@
       "property.details.size": "Superficie",
       "property.details.yearBuilt": "Año de construcción",
       "property.details.city": "Ciudad",
-      "property.details.country": "País"  
+      "property.details.country": "País",  
    
       // ✅ Keep your existing ES “academy / modules / sponsor / submit / etc.” keys here.
       // (Paste your full ES block under this comment — but ensure every line ends with a comma except the last one.)
