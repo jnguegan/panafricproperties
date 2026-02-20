@@ -187,6 +187,18 @@
 
 <!-- i18n -->
 <script src="/assets/js/i18n.js"></script>
+<script>
+  // SAFETY FALLBACK: if i18n.js fails, reload GOLD version automatically
+  window.addEventListener('error', function (e) {
+    var msg = String(e.message || '');
+    if (msg.includes('i18n.js') || msg.includes('Unexpected token')) {
+      console.warn('i18n error detected — loading GOLD fallback');
+      var s = document.createElement('script');
+      s.src = '/assets/js/_protected/i18n.GOLD.js';
+      document.head.appendChild(s);
+    }
+  });
+</script>
 <script src="/assets/js/feature-flags.js"></script>
 </body>
 </html>
