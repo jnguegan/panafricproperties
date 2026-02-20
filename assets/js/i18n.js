@@ -678,71 +678,6 @@
       "module_quick_test_title": "Quick test",
       "module_quick_test_help": "Answer all questions correctly to complete this module.",
 
-   <section id="partnerProgramV2" style="display:none; padding:24px 0;">
-  <div class="wrap">
-    <h2 data-i18n="partner.title">Partner Program</h2>
-    <p class="small" data-i18n="partner.subtitle">
-      Two partner levels designed for quality, growth, and trust.
-    </p>
-
-    <div class="cols" style="gap:16px;">
-
-      <!-- Associate -->
-      <div class="card">
-        <h3 data-i18n="partner.associateTitle">
-          Associate Partner (Free)
-        </h3>
-        <ul class="list">
-          <li data-i18n="partner.associateLi1">Free entry</li>
-          <li data-i18n="partner.associateLi2">Free dashboard</li>
-          <li data-i18n="partner.associateLi3">Free listings (reviewed)</li>
-          <li data-i18n="partner.associateLi4">Access to academy</li>
-        </ul>
-      </div>
-
-      <!-- Certified -->
-      <div class="card">
-        <h3 data-i18n="partner.certifiedTitle">
-          Certified Partner (Investment Package)
-        </h3>
-
-        <p class="small">
-          <strong data-i18n="partner.investment">
-            Investment: €1,000 (flexible payment options available)
-          </strong>
-        </p>
-
-        <ul class="list">
-          <li data-i18n="partner.certifiedLi1">
-            Priority listing placement
-          </li>
-          <li data-i18n="partner.certifiedLi2">
-            Enhanced exposure within PanAfric distribution channels
-          </li>
-          <li data-i18n="partner.certifiedLi3">
-            Enhanced partner profile
-          </li>
-          <li data-i18n="partner.certifiedLi4">
-            Training + certification badge
-          </li>
-          <li data-i18n="partner.certifiedLi5">
-            Territory recognition
-          </li>
-          <li data-i18n="partner.certifiedLi6">
-            Access to PanAfric Projects
-          </li>
-        </ul>
-
-        <p class="small" style="margin-top:10px;" data-i18n="partner.eligibility">
-          Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix).
-        </p>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
       // Keeping them as-is from your 2-days file avoids breaking anything.)
     },
@@ -1545,29 +1480,7 @@
 "submit.consent": "Je confirme avoir le droit de soumettre ce bien et que les informations sont exactes.",
 "submit.cta.submit": "Soumettre pour validation",
 "submit.cta.cancel": "Annuler",
-"submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires.",
-
-partner: {
-  title: "Programme Partenaires",
-  subtitle: "Deux niveaux de partenariat conçus pour la qualité, la croissance et la confiance.",
-
-  associateTitle: "Partenaire Associé (Gratuit)",
-  associateLi1: "Accès gratuit",
-  associateLi2: "Tableau de bord gratuit",
-  associateLi3: "Annonces gratuites (soumis à validation)",
-  associateLi4: "Accès à l’Académie",
-
-  certifiedTitle: "Partenaire Certifié (Pack d’Investissement)",
-  investment: "Investissement : 1 000 € (options de paiement flexibles disponibles)",
-  certifiedLi1: "Mise en avant prioritaire des annonces",
-  certifiedLi2: "Visibilité renforcée via les canaux de distribution PanAfric",
-  certifiedLi3: "Profil partenaire enrichi",
-  certifiedLi4: "Formation + badge de certification",
-  certifiedLi5: "Reconnaissance territoriale",
-  certifiedLi6: "Accès aux Projets PanAfric",
-
-  eligibility: "Éligibilité : Académie validée + minimum 3 annonces approuvées (vente, location ou mix)."
-}
+"submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires."
 
        
       // ✅ Keep your existing FR “academy / modules / sponsor / submit / etc.” keys here.
@@ -2400,29 +2313,7 @@ partner: {
 "submit.consent": "Confirmo que tengo derecho a enviar esta propiedad y que la información es correcta.",
 "submit.cta.submit": "Enviar para revisión",
 "submit.cta.cancel": "Cancelar",
-"submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones.",
- 
-   partner: {
-  title: "Programa de Socios",
-  subtitle: "Dos niveles de asociación diseñados para la calidad, el crecimiento y la confianza.",
-
-  associateTitle: "Socio Asociado (Gratuito)",
-  associateLi1: "Acceso gratuito",
-  associateLi2: "Panel de control gratuito",
-  associateLi3: "Publicaciones gratuitas (revisadas)",
-  associateLi4: "Acceso a la Academia",
-
-  certifiedTitle: "Socio Certificado (Paquete de Inversión)",
-  investment: "Inversión: 1.000 € (opciones de pago flexibles disponibles)",
-  certifiedLi1: "Posicionamiento prioritario de anuncios",
-  certifiedLi2: "Mayor visibilidad en los canales de distribución de PanAfric",
-  certifiedLi3: "Perfil de socio mejorado",
-  certifiedLi4: "Formación + distintivo de certificación",
-  certifiedLi5: "Reconocimiento territorial",
-  certifiedLi6: "Acceso a los Proyectos PanAfric",
-
-  eligibility: "Elegibilidad: Academia completada + mínimo 3 propiedades aprobadas (venta, alquiler o mixto)."
-}
+"submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones."
 
       
       
