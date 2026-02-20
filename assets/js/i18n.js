@@ -678,28 +678,24 @@
       "module_quick_test_title": "Quick test",
       "module_quick_test_help": "Answer all questions correctly to complete this module.",
        
-partner: {
-  title: "Partner Program",
-  subtitle: "Two partner levels designed for quality, growth, and trust.",
+"partner.title": "Partner Program",
+"partner.subtitle": "Two partner levels designed for quality, growth, and trust.",
+"partner.associateTitle": "Associate Partner (Free)",
+"partner.associateLi1": "Free entry",
+"partner.associateLi2": "Free dashboard",
+"partner.associateLi3": "Free listings (reviewed)",
+"partner.associateLi4": "Access to academy",
+"partner.certifiedTitle": "Certified Partner (Investment Package)",
+"partner.investment": "Investment: €1,000 (flexible payment options available)",
+"partner.certifiedLi1": "Priority listing placement",
+"partner.certifiedLi2": "Enhanced exposure within PanAfric distribution channels",
+"partner.certifiedLi3": "Enhanced partner profile",
+"partner.certifiedLi4": "Training + certification badge",
+"partner.certifiedLi5": "Territory recognition",
+"partner.certifiedLi6": "Access to PanAfric Projects",
+"partner.eligibility": "Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix)."
 
-  associateTitle: "Associate Partner (Free)",
-  associateLi1: "Free entry",
-  associateLi2: "Free dashboard",
-  associateLi3: "Free listings (reviewed)",
-  associateLi4: "Access to academy",
-
-  certifiedTitle: "Certified Partner (Investment Package)",
-  investment: "Investment: €1,000 (flexible payment options available)",
-  certifiedLi1: "Priority listing placement",
-  certifiedLi2: "Enhanced exposure within PanAfric distribution channels",
-  certifiedLi3: "Enhanced partner profile",
-  certifiedLi4: "Training + certification badge",
-  certifiedLi5: "Territory recognition",
-  certifiedLi6: "Access to PanAfric Projects",
-
-  eligibility: "Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix)."
-}
-
+       
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
       // Keeping them as-is from your 2-days file avoids breaking anything.)
     },
@@ -1504,27 +1500,22 @@ partner: {
 "submit.cta.cancel": "Annuler",
 "submit.footer_note": "Après soumission, notre équipe examinera et vous contactera si des précisions sont nécessaires.",
 
-partner: {
-  title: "Programme Partenaires",
-  subtitle: "Deux niveaux de partenariat conçus pour la qualité, la croissance et la confiance.",
-
-  associateTitle: "Partenaire Associé (Gratuit)",
-  associateLi1: "Accès gratuit",
-  associateLi2: "Tableau de bord gratuit",
-  associateLi3: "Annonces gratuites (soumis à validation)",
-  associateLi4: "Accès à l’Académie",
-
-  certifiedTitle: "Partenaire Certifié (Pack d’Investissement)",
-  investment: "Investissement : 1 000 € (options de paiement flexibles disponibles)",
-  certifiedLi1: "Mise en avant prioritaire des annonces",
-  certifiedLi2: "Visibilité renforcée via les canaux de distribution PanAfric",
-  certifiedLi3: "Profil partenaire enrichi",
-  certifiedLi4: "Formation + badge de certification",
-  certifiedLi5: "Reconnaissance territoriale",
-  certifiedLi6: "Accès aux Projets PanAfric",
-
-  eligibility: "Éligibilité : Académie validée + minimum 3 annonces approuvées (vente, location ou mix)."
-}
+"partner.title": "Programme Partenaires",
+"partner.subtitle": "Deux niveaux de partenariat conçus pour la qualité, la croissance et la confiance.",
+"partner.associateTitle": "Partenaire Associé (Gratuit)",
+"partner.associateLi1": "Accès gratuit",
+"partner.associateLi2": "Tableau de bord gratuit",
+"partner.associateLi3": "Annonces gratuites (soumis à validation)",
+"partner.associateLi4": "Accès à l’Académie",
+"partner.certifiedTitle": "Partenaire Certifié (Pack d’Investissement)",
+"partner.investment": "Investissement : 1 000 € (options de paiement flexibles disponibles)",
+"partner.certifiedLi1": "Mise en avant prioritaire des annonces",
+"partner.certifiedLi2": "Visibilité renforcée via les canaux de distribution PanAfric",
+"partner.certifiedLi3": "Profil partenaire enrichi",
+"partner.certifiedLi4": "Formation + badge de certification",
+"partner.certifiedLi5": "Reconnaissance territoriale",
+"partner.certifiedLi6": "Accès aux Projets PanAfric",
+"partner.eligibility": "Éligibilité : Académie validée + minimum 3 annonces approuvées (vente, location ou mix)."
 
        
       // ✅ Keep your existing FR “academy / modules / sponsor / submit / etc.” keys here.
@@ -2359,27 +2350,22 @@ partner: {
 "submit.cta.cancel": "Cancelar",
 "submit.footer_note": "Después del envío, nuestro equipo revisará y te contactará si necesita aclaraciones.",
     
-partner: {
-  title: "Programa de Socios",
-  subtitle: "Dos niveles de asociación diseñados para la calidad, el crecimiento y la confianza.",
-
-  associateTitle: "Socio Asociado (Gratuito)",
-  associateLi1: "Acceso gratuito",
-  associateLi2: "Panel de control gratuito",
-  associateLi3: "Publicaciones gratuitas (revisadas)",
-  associateLi4: "Acceso a la Academia",
-
-  certifiedTitle: "Socio Certificado (Paquete de Inversión)",
-  investment: "Inversión: 1.000 € (opciones de pago flexibles disponibles)",
-  certifiedLi1: "Posicionamiento prioritario de anuncios",
-  certifiedLi2: "Mayor visibilidad en los canales de distribución de PanAfric",
-  certifiedLi3: "Perfil de socio mejorado",
-  certifiedLi4: "Formación + distintivo de certificación",
-  certifiedLi5: "Reconocimiento territorial",
-  certifiedLi6: "Acceso a los Proyectos PanAfric",
-
-  eligibility: "Elegibilidad: Academia completada + mínimo 3 propiedades aprobadas (venta, alquiler o mixto)."
-}
+"partner.title": "Programa de Socios",
+"partner.subtitle": "Dos niveles de asociación diseñados para la calidad, el crecimiento y la confianza.",
+"partner.associateTitle": "Socio Asociado (Gratuito)",
+"partner.associateLi1": "Acceso gratuito",
+"partner.associateLi2": "Panel de control gratuito",
+"partner.associateLi3": "Publicaciones gratuitas (revisadas)",
+"partner.associateLi4": "Acceso a la Academia",
+"partner.certifiedTitle": "Socio Certificado (Paquete de Inversión)",
+"partner.investment": "Inversión: 1.000 € (opciones de pago flexibles disponibles)",
+"partner.certifiedLi1": "Posicionamiento prioritario de anuncios",
+"partner.certifiedLi2": "Mayor visibilidad en los canales de distribución de PanAfric",
+"partner.certifiedLi3": "Perfil de socio mejorado",
+"partner.certifiedLi4": "Formación + distintivo de certificación",
+"partner.certifiedLi5": "Reconocimiento territorial",
+"partner.certifiedLi6": "Acceso a los Proyectos PanAfric",
+"partner.eligibility": "Elegibilidad: Academia completada + mínimo 3 propiedades aprobadas (venta, alquiler o mixto)."
       
       
     }
