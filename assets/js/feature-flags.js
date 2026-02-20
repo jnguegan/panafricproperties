@@ -1,3 +1,3 @@
 window.PAP_FEATURES = {
-  partnerProgramV2: false
+  partnerProgramV2: true
 };
