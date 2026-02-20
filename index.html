@@ -148,48 +148,6 @@
   </div>
 </section>
 
-<section id="partnerProgramV2" style="display:none; padding:24px 0;">
-  <div class="wrap">
-    <h2 data-i18n="partner.title">Partner Program</h2>
-    <p class="small" data-i18n="partner.subtitle">
-      Two partner levels designed for quality, growth, and trust.
-    </p>
-
-    <div class="cols" style="gap:16px;">
-      <div class="card">
-        <h3 data-i18n="partner.associateTitle">Associate Partner (Free)</h3>
-        <ul class="list">
-          <li data-i18n="partner.associateLi1">Free entry</li>
-          <li data-i18n="partner.associateLi2">Free dashboard</li>
-          <li data-i18n="partner.associateLi3">Free listings (reviewed)</li>
-          <li data-i18n="partner.associateLi4">Access to academy</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 data-i18n="partner.certifiedTitle">Certified Partner (Investment Package)</h3>
-
-        <p class="small">
-          <strong data-i18n="partner.investment">Investment: €1,000 (flexible payment options available)</strong>
-        </p>
-
-        <ul class="list">
-          <li data-i18n="partner.certifiedLi1">Priority listing placement</li>
-          <li data-i18n="partner.certifiedLi2">Enhanced exposure within PanAfric distribution channels</li>
-          <li data-i18n="partner.certifiedLi3">Enhanced partner profile</li>
-          <li data-i18n="partner.certifiedLi4">Training + certification badge</li>
-          <li data-i18n="partner.certifiedLi5">Territory recognition</li>
-          <li data-i18n="partner.certifiedLi6">Access to PanAfric Projects</li>
-        </ul>
-
-        <p class="small" style="margin-top:10px;" data-i18n="partner.eligibility">
-          Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix).
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-  
 <footer class="footer">
   <div class="wrap">
     <div class="cols">
@@ -228,27 +186,7 @@
 </footer>
 
 <!-- i18n -->
-<script>
-  (function () {
-    function showPartnerProgram() {
-      if (window.PAP_FEATURES && window.PAP_FEATURES.partnerProgramV2) {
-        var el = document.getElementById("partnerProgramV2");
-        if (el) el.style.display = "";
-
-        // Re-apply translations after showing the hidden section
-        var lang = localStorage.getItem("pap_lang") || "en";
-        if (typeof window.papSetLang === "function") {
-          window.papSetLang(lang);
-        }
-      }
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", showPartnerProgram);
-    } else {
-      showPartnerProgram();
-    }
-  })();
-</script>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/feature-flags.js"></script>
 </body>
 </html>
