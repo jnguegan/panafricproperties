@@ -186,14 +186,6 @@
   </div>
 </section>
 
-<script>
-  (function () {
-    if (window.PAP_FEATURES && window.PAP_FEATURES.partnerProgramV2) {
-      var el = document.getElementById('partnerProgramV2');
-      if (el) el.style.display = '';
-    }
-  })();
-</script>  
   
 <footer class="footer">
   <div class="wrap">
@@ -235,5 +227,20 @@
 <!-- i18n -->
 <script src="/assets/js/i18n.js"></script>
 <script src="/assets/js/feature-flags.js"></script>
+ <script>
+  (function () {
+    function showPartnerProgram() {
+      if (window.PAP_FEATURES && window.PAP_FEATURES.partnerProgramV2) {
+        var el = document.getElementById('partnerProgramV2');
+        if (el) el.style.display = '';
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", showPartnerProgram);
+    } else {
+      showPartnerProgram();
+    }
+  })();
+</script>
 </body>
 </html>
