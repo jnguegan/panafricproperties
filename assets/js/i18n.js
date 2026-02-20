@@ -677,7 +677,7 @@
       "module_fail_msg": "❌ Not yet. You have {correct}/{total}. Please review and try again.",
       "module_quick_test_title": "Quick test",
       "module_quick_test_help": "Answer all questions correctly to complete this module.",
-       ,
+       
 partner: {
   title: "Partner Program",
   subtitle: "Two partner levels designed for quality, growth, and trust.",
