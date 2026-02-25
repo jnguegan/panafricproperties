@@ -113,3 +113,21 @@ label{display:block;margin-top:12px;font-weight:900;color:var(--pap-blue)}
   text-decoration:none;
 }
 
+
+/* ===============================
+   LOGO SIZE CONTROL
+================================= */
+
+.site-logo {
+  height: 64px;     /* increase from 42 */
+  width: auto;
+  display: block;
+}
+
+/* Slightly smaller on mobile */
+@media (max-width: 768px) {
+  .site-logo {
+    height: 72px;
+  }
+}
+
