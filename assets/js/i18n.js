@@ -24,6 +24,8 @@
       "nav.trust": "Trust",
       "nav.login": "Partner Login",
       "nav.contact": "Contact",
+       "nav.partners": "Partners",
+
 
       // ===== FRANCHISE (work with us) =====
       "franchise.hero.badge": "Entrepreneurship • Franchise • Social Impact",
@@ -693,12 +695,15 @@
 "partner.certifiedLi4": "Training + certification badge",
 "partner.certifiedLi5": "Territory recognition",
 "partner.certifiedLi6": "Access to PanAfric Projects",
-"partner.eligibility": "Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix)."
+"partner.eligibility": "Eligibility: Academy completed + minimum 3 approved listings (sales, rentals, or mix).",
+      
 
        
       // (Your module.* reading/quiz keys can remain exactly as used in module.html / academy.js.
       // Keeping them as-is from your 2-days file avoids breaking anything.)
     },
+     
+ 
 
     // =========================
     // FRENCH
@@ -716,6 +721,8 @@
       "nav.trust": "Confiance",
       "nav.login": "Connexion Partenaire",
       "nav.contact": "Contact",
+      "nav.partners": "Partenaires",
+
 
       // NOTE: we keep your existing FR translations from the 2-days file.
       // IMPORTANT: I fixed ALL the missing commas that were breaking the file.
@@ -1515,7 +1522,8 @@
 "partner.certifiedLi4": "Formation + badge de certification",
 "partner.certifiedLi5": "Reconnaissance territoriale",
 "partner.certifiedLi6": "Accès aux Projets PanAfric",
-"partner.eligibility": "Éligibilité : Académie validée + minimum 3 annonces approuvées (vente, location ou mix)."
+"partner.eligibility": "Éligibilité : Académie validée + minimum 3 annonces approuvées (vente, location ou mix).",
+
 
        
       // ✅ Keep your existing FR “academy / modules / sponsor / submit / etc.” keys here.
@@ -1538,6 +1546,8 @@
       "nav.trust": "Confianza",
       "nav.login": "Acceso de socios",
       "nav.contact": "Contacto",
+     "nav.partners": "Socios",
+
 
       // ✅ REQUIRED ES KEYS (from yesterday additions)
       "properties.pageTitle": "Propiedades — PanAfric Properties",
@@ -2365,7 +2375,8 @@
 "partner.certifiedLi4": "Formación + distintivo de certificación",
 "partner.certifiedLi5": "Reconocimiento territorial",
 "partner.certifiedLi6": "Acceso a los Proyectos PanAfric",
-"partner.eligibility": "Elegibilidad: Academia completada + mínimo 3 propiedades aprobadas (venta, alquiler o mixto)."
+"partner.eligibility": "Elegibilidad: Academia completada + mínimo 3 propiedades aprobadas (venta, alquiler o mixto).",
+
       
       
     }
